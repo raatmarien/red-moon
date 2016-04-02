@@ -10,4 +10,18 @@
     <string name="shades_intensity_level">Grad der Intensität</string>
     <string name="pref_title_startup">App Start</string>
     <string name="toast_warning_install">Sie können keine APKs installieren während der Filter läuft.</string>
+
+    <!-- Profiles -->
+    <string-array name="standard_profiles_array">
+        <item>Benutzerdefiniert</item>
+        <item>Standard</item>
+        <item>Lesen</item>
+    </string-array>
+
+    <!-- Automatic filter -->
+    <string-array name="automatic_filter_options_array">
+        <item>Niemals</item>
+        <item>Benutzerdefinierte Zeiten</item>
+        <item>Sonnenstand</item>
+    </string-array>
 </resources>
