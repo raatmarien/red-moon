@@ -46,15 +46,6 @@
       <item name="colorPrimaryDark">@color/color_primary_dark</item>
     </style>
 
-    <style name="AppThemeNoActionBar"
-           parent="Theme.AppCompat.Light.NoActionBar"
-           xmlns:tools="http://schemas.android.com/tools" >
-      <!-- Translucent status bar is only available in API 19+ -->
-      <item
-          tools:targetApi="19"
-          name="android:windowTranslucentStatus">true</item>
-    </style>
-
     <!-- Preference TextView Style -->
     <style name="PreferenceTextStyle">
       <item name="android:textAppearance">@android:style/TextAppearance.Holo.Medium</item>
