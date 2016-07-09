@@ -41,7 +41,6 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -50,7 +49,6 @@ import android.widget.CompoundButton;
 import android.provider.Settings;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build.VERSION;
 import android.widget.Toast;
 
 import com.jmstudios.redmoon.R;
@@ -60,7 +58,6 @@ import com.jmstudios.redmoon.helper.FilterCommandSender;
 import com.jmstudios.redmoon.model.SettingsModel;
 import com.jmstudios.redmoon.presenter.ShadesPresenter;
 import com.jmstudios.redmoon.service.ScreenFilterService;
-import com.jmstudios.redmoon.activity.Intro;
 
 public class ShadesActivity extends AppCompatActivity {
     private static final String TAG = "ShadesActivity";

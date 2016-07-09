@@ -44,7 +44,6 @@ import com.jmstudios.redmoon.preference.ColorSeekBarPreference;
 import com.jmstudios.redmoon.preference.DimSeekBarPreference;
 import com.jmstudios.redmoon.preference.IntensitySeekBarPreference;
 
-
 public class ScreenFilterView extends View {
     public static final int MIN_DIM       = 0;
     public static final int MIN_INTENSITY = 0;

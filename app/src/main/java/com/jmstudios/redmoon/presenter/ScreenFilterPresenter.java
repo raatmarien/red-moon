@@ -53,7 +53,6 @@ import android.view.WindowManager;
 import android.content.ContentResolver;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
-import android.os.Build.VERSION;
 import android.app.NotificationManager;
 
 import com.jmstudios.redmoon.R;

@@ -49,7 +49,6 @@ import com.jmstudios.redmoon.helper.FilterCommandSender;
 import com.jmstudios.redmoon.model.SettingsModel;
 import com.jmstudios.redmoon.service.ScreenFilterService;
 import com.jmstudios.redmoon.presenter.ScreenFilterPresenter;
-import com.jmstudios.redmoon.receiver.AutomaticFilterChangeReceiver;
 
 public class BootReceiver extends BroadcastReceiver {
     private static final String TAG = "BootReceiver";

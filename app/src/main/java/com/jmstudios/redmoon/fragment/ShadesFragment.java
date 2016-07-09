@@ -37,7 +37,6 @@ package com.jmstudios.redmoon.fragment;
 
 import android.os.Bundle;
 import android.preference.SwitchPreference;
-import android.preference.SwitchPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
@@ -49,10 +48,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v7.widget.SwitchCompat;
 import android.provider.Settings;
-import android.os.Build.VERSION;
 import android.net.Uri;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -60,9 +57,6 @@ import android.support.v4.app.ActivityCompat;
 import android.location.Location;
 import android.location.LocationManager;
 import android.support.design.widget.FloatingActionButton;
-import android.view.ViewTreeObserver;
-import android.widget.ListView;
-import android.preference.PreferenceScreen;
 import android.support.design.widget.Snackbar;
 import android.widget.TextView;
 

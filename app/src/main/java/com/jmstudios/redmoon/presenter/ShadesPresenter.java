@@ -45,7 +45,6 @@ import com.jmstudios.redmoon.fragment.ShadesFragment;
 import com.jmstudios.redmoon.helper.FilterCommandFactory;
 import com.jmstudios.redmoon.helper.FilterCommandSender;
 import com.jmstudios.redmoon.model.SettingsModel;
-import com.jmstudios.redmoon.service.ScreenFilterService;
 import com.jmstudios.redmoon.receiver.AutomaticFilterChangeReceiver;
 
 import com.jmstudios.redmoon.preference.ColorSeekBarPreference;
@@ -55,7 +54,6 @@ import com.jmstudios.redmoon.preference.DimSeekBarPreference;
 public class ShadesPresenter implements SettingsModel.OnSettingsChangedListener {
     private static final String TAG = "ShadesPresenter";
     private static final boolean DEBUG = true;
-;
     private ShadesFragment mView;
     private SettingsModel mSettingsModel;
     private FilterCommandFactory mFilterCommandFactory;

@@ -41,8 +41,6 @@ import com.jmstudios.redmoon.model.ProfilesModel;
 import com.jmstudios.redmoon.model.SettingsModel;
 import com.jmstudios.redmoon.activity.ShadesActivity;
 import com.jmstudios.redmoon.fragment.ShadesFragment;
-import com.jmstudios.redmoon.preference.ColorSeekBarPreference;
-import com.jmstudios.redmoon.model.SettingsModel;
 import com.jmstudios.redmoon.helper.ProfilesHelper;
 
 public class ProfileSelectorPreference extends Preference
