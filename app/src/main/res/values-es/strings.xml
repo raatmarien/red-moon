@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="app_name">Red Moon</string>
+    <string name="intro_label">Introducción</string>
+    <string name="shades_settings">Red Moon</string>
+    <string name="show_intro_text">Ver la introducción</string>
+
+    <string name="paused">En pausa</string>
+    <string name="resume_action">Reanudar</string>
+    <string name="pause_action">Pausar</string>
+
+    <string name="pref_title_appearance">Filtro</string>
+    <string name="pref_title_automatic_filter">Horas de funcionamiento</string>
+    <string name="pref_title_startup">Inicio</string>
+    <string name="pref_title_other">Otros</string>
+
+    <string name="button_add_profile">Nuevo</string>
+    <string name="button_remove_profile">Borrar</string>
+    <string name="shades_color_temp">Temperatura de color</string>
+    <string name="automatic_filter_title">Modos de activación</string>
+    <string name="custom_end_time_title">Pausar a las</string>
+    <string name="custom_start_time_title">Reanudar a las</string>
+    <string name="location_title">Ubicación</string>
+    <string name="searching_location">Buscando ubicación</string>
+
+    <string name="dark_theme">Tema oscuro</string>
+
+    <string name="email_me_title">Mándame correos a marienraat@riseup.net</string>
+    <string name="email_me_summary">Envíame errores y sugerencias</string>
+    <string name="project_page_title">Visitar la página del proyecto</string>
+    <string name="toast_warning_install">No podrás instalar APKs con el filtro activo.</string>
+    <string name="toast_warning_no_location">Activa los servicios de ubicación para actualizar tu posición</string>
+
+    <string name="help_snackbar_text">Utiliza el control para activar Red Moon</string>
+
+    <string name="add_new_profile_dialog_title">Escribe un nombre de perfil</string>
+    <string name="add_new_profile_edit_hint">Nombre del perfil</string>
+    <string name="remove_profile_dialog_title">¿Seguro que quieres borrarlo?</string>
+    <string name="intro_slide_1_text">Te damos la bienvenida a «Red Moon».</string>
+
+    <string name="intro_slide_2_title">Proteje tus ojos</string>
+    <string name="intro_slide_3_title">Te ayuda a dormir bien</string>
+    <string name="intro_slide_4_title">¡Empecemos!</string>
+    <string name="standard_profiles_array_0">Personalizado</string>
+    <string name="standard_profiles_array_1">Predeterminado</string>
+    <string name="standard_profiles_array_2">Lectura</string>
+
+    <string name="automatic_filter_options_array_2">Automático (personalizado)</string>
+
+    <string name="automatic_filter_options_array_1">Automático (sol)</string>
+    <string name="intro_slide_1_title">¡Hola!</string>
+    <string name="ok_dialog">Aceptar</string>
+    <string name="cancel_dialog">Cancelar</string>
+
+    <string name="toggle_shortcut_title">Des/activar</string>
+
+    <string name="shortcut_activity">Des/activar Red Moon</string>
+    <string name="running">En ejecución, pausa para instalar apks</string>
+    <string name="control_brightness_title">Limitar brillo</string>
+
+    <string name="location_not_set">Sin establecer</string>
+    <string name="project_page_summary">Para más información y contribuir tu tiempo</string>
+    <string name="set_dialog">Establecer</string>
+    <string name="intro_slide_2_text">No es bueno forzar la vista cuando es de noche, puedes utilizar Red Moon para limitar el brillo de tu pantalla.</string>
+
+    <string name="intro_slide_4_text">Para activar Red Moon utiliza el control de la esquina superior derecha.</string>
+
+    <string name="shades_intensity_level">Intensidad</string>
+    <string name="shades_dim_level">Atenuar</string>
+    <string name="intro_slide_3_text">La luz azul inhibe la producción de melatonina, una hormona que ayuda a que tengamos sueño. Red Moon filtra la luz azul de la pantalla para que normalicemos nuestro ciclo nocturno.</string>
+
+    <string name="latitude_short">Lat</string>
+    <string name="longitude_short">Long</string>
+    <string name="automatic_filter_options_array_0">Manual</string>
+    </resources>

@@ -3,32 +3,32 @@
     <string name="shortcut_activity">Activer Red Moon</string>
 
     <string name="running">En exécution. Suspendre pour installer des apks</string>
-    <string name="paused">Suspendu</string>
+    <string name="paused">En pause</string>
 
     <string name="pref_title_appearance">Filtre</string>
-    <string name="pref_title_automatic_filter">Horaires filtre</string>
+    <string name="pref_title_automatic_filter">Horaires du filtre</string>
     <string name="pref_title_startup">Démarrer</string>
     <string name="pref_title_other">Autre</string>
 
     <string name="button_add_profile">Ajouter</string>
     <string name="button_remove_profile">Supprimer</string>
-    <string name="shades_dim_level">Niveau luminosité</string>
-    <string name="shades_intensity_level">Niveau intensité</string>
-    <string name="shades_color_temp">Température couleur</string>
+    <string name="shades_dim_level">Niveau de luminosité</string>
+    <string name="shades_intensity_level">Niveau d\'intensité</string>
+    <string name="shades_color_temp">Température de couleur</string>
     <string name="control_brightness_title">Luminosité minimale</string>
 
     <string name="automatic_filter_title">Mode d\'activation</string>
     <string name="custom_start_time_title">Reprendre à</string>
     <string name="custom_end_time_title">Suspendre à</string>
     <string name="location_title">Localisation</string>
-    <string name="location_not_set">Non défini</string>
+    <string name="location_not_set">Non définie</string>
     <string name="latitude_short">Lat</string>
     <string name="longitude_short">Long</string>
     <string name="searching_location">Recherche de localisation</string>
 
     <string name="dark_theme">Thème sombre</string>
 
-    <string name="email_me_title">E-mail : marienraat@riseup.net</string>
+    <string name="email_me_title">E-mail : marienraat@riseup.net</string>
     <string name="email_me_summary">Envoyer un e-mail pour signaler un problème ou une suggestion</string>
     <string name="project_page_title">Accéder au projet</string>
     <string name="project_page_summary">Pour trouver plus d\'informations, laisser un commentaire et contribuer</string>
@@ -39,7 +39,7 @@
 
     <string name="add_new_profile_dialog_title">Entrez un nom de profil</string>
     <string name="add_new_profile_edit_hint">Nom de profil</string>
-    <string name="remove_profile_dialog_title">Supprimer ce profil ?</string>
+    <string name="remove_profile_dialog_title">Supprimer ce profil ?</string>
     <string name="set_dialog">OK</string>
     <string name="ok_dialog">OK</string>
     <string name="cancel_dialog">Annuler</string>
@@ -56,6 +56,21 @@
     <string name="automatic_filter_options_array_2">Automatique (personnalisé)</string>
 
     <string name="resume_action">Reprendre</string>
-    <string name="pause_action">Suspendre</string>
+    <string name="pause_action">Mettre en pause</string>
+
+    <string name="intro_label">Intro</string>
+    <string name="show_intro_text">Afficher l\'intro</string>
+
+    <string name="intro_slide_1_title">Bienvenue !</string>
+    <string name="intro_slide_1_text">Bienvenue dans Red Moon !</string>
+
+    <string name="intro_slide_2_title">Protéger vos yeux</string>
+    <string name="intro_slide_2_text">La nuit, quand fixer votre téléphone vous fait mal aux yeux, vous pouvez utiliser Red Moon pour assombrir votre écran.</string>
+
+    <string name="intro_slide_3_title">Améliorer votre sommeil</string>
+    <string name="intro_slide_3_text">La lumière bleue empêche la production de mélatonine, une hormone qui vous aide à vous endormir la nuit. Red Moon bloque la lumière bleue produite par votre écran, ce qui vous permet de vous endormir plus facilement.</string>
+
+    <string name="intro_slide_4_title">Commencer !</string>
+    <string name="intro_slide_4_text">Pour activer Red Moon, appuyez sur le bouton dans le coin supérieur droit.</string>
 
     </resources>
