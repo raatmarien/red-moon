@@ -25,8 +25,6 @@ import java.util.Calendar;
 
 import com.luckycatlabs.sunrisesunset.SunriseSunsetCalculator;
 
-import com.jmstudios.redmoon.preference.TimePickerPreference;
-
 public class FilterTimePreference extends TimePickerPreference {
     public static final String TAG = "FilterTimePreference";
     public static final boolean DEBUG = true;

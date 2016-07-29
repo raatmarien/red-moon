@@ -20,14 +20,8 @@ import android.app.Activity;
 import android.util.Log;
 import android.os.Bundle;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 
 import com.jmstudios.redmoon.R;
-import com.jmstudios.redmoon.helper.FilterCommandFactory;
-import com.jmstudios.redmoon.model.SettingsModel;
-import com.jmstudios.redmoon.service.ScreenFilterService;
-import com.jmstudios.redmoon.activity.ShadesActivity;
 
 public class ShortcutCreationActivity extends Activity {
     public static final boolean DEBUG = true;

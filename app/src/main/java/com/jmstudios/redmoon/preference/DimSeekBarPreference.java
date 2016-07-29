@@ -46,7 +46,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuff.Mode;
 import android.graphics.Color;
 
 import com.jmstudios.redmoon.R;

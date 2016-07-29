@@ -22,9 +22,7 @@ import android.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TimePicker;
-import android.util.Log;
 import android.support.annotation.NonNull;
-import android.os.Build.VERSION;
 import android.text.format.DateFormat;
 
 import com.jmstudios.redmoon.R;
