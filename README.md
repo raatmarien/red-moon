@@ -9,7 +9,7 @@ will have a healthier sleep.
 
 [![F-Droid](https://f-droid.org/wiki/images/0/06/F-Droid-button_get-it-on.png)](https://f-droid.org/repository/browse/?fdid=com.jmstudios.redmoon)
 
-<a href='https://play.google.com/store/apps/details?id=com.jmstudios.redmoon'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="200" height="100"/></a> *
+<a href='https://play.google.com/store/apps/details?id=com.jmstudios.redmoon'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="323" height="125"/></a> *
 
 [Direct download](https://github.com/raatmarien/red-moon/releases/download/v2.8.1/red-moon-v2.8.1.apk)
 
