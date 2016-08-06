@@ -127,6 +127,8 @@
     <string name="automatic_filter_options_array_1">Automatic (sun)</string>
     <string name="automatic_filter_options_array_2">Automatic (custom)</string>
     <string name="pref_key_stop_temporarily">pref_key_stop_temporarily</string>
+    <string name="intro_slide_5_title">Package Installer (RedMoon)</string>
+    <string name="intro_slide_5_text">Use Package Installer (RedMoon) to install APK files even if RedMoon is active.</string>
 
     <string-array name="automatic_filter_values_array"
                   translatable="false">

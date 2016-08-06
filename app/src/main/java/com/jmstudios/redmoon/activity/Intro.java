@@ -45,6 +45,12 @@ public class Intro extends AppIntro {
                   0xFF388E3C));
 
         addSlide(AppIntroFragment.newInstance
+                (getString(R.string.intro_slide_5_title),
+                        getString(R.string.intro_slide_5_text),
+                        R.drawable.intro_slide_4, //TODO, make icon
+                        0xFFAAB3D5));
+
+        addSlide(AppIntroFragment.newInstance
                  (getString(R.string.intro_slide_4_title),
                   getString(R.string.intro_slide_4_text),
                   R.drawable.intro_slide_4,
