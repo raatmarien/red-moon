@@ -61,7 +61,8 @@ import com.jmstudios.redmoon.model.SettingsModel;
 import com.jmstudios.redmoon.presenter.ShadesPresenter;
 import com.jmstudios.redmoon.service.ScreenFilterService;
 
-import eu.chainfire.libsuperuser.Shell;
+import java.io.DataOutputStream;
+import java.io.IOException;
 
 public class ShadesActivity extends AppCompatActivity {
     private static final String TAG = "ShadesActivity";
@@ -69,7 +70,7 @@ public class ShadesActivity extends AppCompatActivity {
     private static final String FRAGMENT_TAG_SHADES = "jmstudios.fragment.tag.SHADES";
 
     public static final String EXTRA_FROM_SHORTCUT_BOOL =
-        "com.jmstudios.redmoon.activity.ShadesActivity.EXTRA_FROM_SHORTCUT_BOOL";
+            "com.jmstudios.redmoon.activity.ShadesActivity.EXTRA_FROM_SHORTCUT_BOOL";
     public static int OVERLAY_PERMISSION_REQ_CODE = 1234;
 
     private ShadesPresenter mPresenter;
@@ -113,10 +114,9 @@ public class ShadesActivity extends AppCompatActivity {
                         public void onClick(DialogInterface dialog, int id) {
                             sharedPreferences.edit().putBoolean("screen_overlays", true).apply();
                             dialog.cancel();
-                            if (Shell.SU.available()) {
-                                // Do nothing, we dont need root
-                                // Just to show Superuser SU reguest dialog for our app
-                            }
+                            getSuPrompt();
+                            // Do nothing, we dont need root
+                            // Just to show Superuser SU reguest dialog for our app
                         }
                     })
                     .show();
@@ -139,7 +139,7 @@ public class ShadesActivity extends AppCompatActivity {
         }
 
         mPresenter = new ShadesPresenter(view, mSettingsModel, filterCommandFactory,
-                                         filterCommandSender, context);
+                filterCommandSender, context);
         view.registerPresenter(mPresenter);
 
         // Make Presenter listen to settings changes
@@ -152,6 +152,17 @@ public class ShadesActivity extends AppCompatActivity {
         }
     }
 
+    private void getSuPrompt() {
+        try {
+            Process p = Runtime.getRuntime().exec("su");
+            DataOutputStream os = new DataOutputStream(p.getOutputStream());
+            os.writeBytes("echo redmoon\n");
+            os.writeBytes("exit\n");
+            os.flush();
+        } catch (IOException ignored) {
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -161,36 +172,36 @@ public class ShadesActivity extends AppCompatActivity {
         mSwitch = (SwitchCompat) item.getActionView();
         mSwitch.setChecked(mSettingsModel.getShadesPowerState());
         mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if (ignoreNextSwitchChange) {
-                        if (DEBUG) Log.i(TAG, "Switch change ignored");
-                        ignoreNextSwitchChange = false;
-                        return;
-                    }
-
-                    // http://stackoverflow.com/a/3993933
-                    if (android.os.Build.VERSION.SDK_INT >= 23) {
-                        if (!Settings.canDrawOverlays(context)) {
-                            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                                                       Uri.parse("package:" + getPackageName()));
-                            startActivityForResult(intent, OVERLAY_PERMISSION_REQ_CODE);
-                        }
-
-                        if (Settings.canDrawOverlays(context)) {
-                            mPresenter.sendCommand(isChecked ?
-                                                   ScreenFilterService.COMMAND_PAUSE :
-                                                   ScreenFilterService.COMMAND_OFF);
-                        } else {
-                            buttonView.setChecked(false);
-                        }
-                    } else {
-                        mPresenter.sendCommand(isChecked ?
-                                               ScreenFilterService.COMMAND_PAUSE :
-                                               ScreenFilterService.COMMAND_OFF);
-                    }
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (ignoreNextSwitchChange) {
+                    if (DEBUG) Log.i(TAG, "Switch change ignored");
+                    ignoreNextSwitchChange = false;
+                    return;
                 }
-            });
+
+                // http://stackoverflow.com/a/3993933
+                if (android.os.Build.VERSION.SDK_INT >= 23) {
+                    if (!Settings.canDrawOverlays(context)) {
+                        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                                Uri.parse("package:" + getPackageName()));
+                        startActivityForResult(intent, OVERLAY_PERMISSION_REQ_CODE);
+                    }
+
+                    if (Settings.canDrawOverlays(context)) {
+                        mPresenter.sendCommand(isChecked ?
+                                ScreenFilterService.COMMAND_PAUSE :
+                                ScreenFilterService.COMMAND_OFF);
+                    } else {
+                        buttonView.setChecked(false);
+                    }
+                } else {
+                    mPresenter.sendCommand(isChecked ?
+                            ScreenFilterService.COMMAND_PAUSE :
+                            ScreenFilterService.COMMAND_OFF);
+                }
+            }
+        });
 
         return true;
     }
@@ -248,11 +259,11 @@ public class ShadesActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-        case R.id.show_intro_button:
-            startIntro();
-            return true;
-        default:
-            return super.onOptionsItemSelected(item);
+            case R.id.show_intro_button:
+                startIntro();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 
@@ -262,8 +273,8 @@ public class ShadesActivity extends AppCompatActivity {
 
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(getApplicationContext(),
-                                     getString(R.string.toast_warning_install),
-                                     duration);
+                getString(R.string.toast_warning_install),
+                duration);
         toast.show();
 
         hasShownWarningToast = true;
