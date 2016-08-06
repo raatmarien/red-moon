@@ -25,4 +25,5 @@ dependencies {
     compile 'com.android.support:design:23.2.1'
     compile 'com.luckycatlabs:SunriseSunsetCalculator:1.2'
     compile 'com.github.paolorotolo:appintro:3.4.0'
+    compile 'eu.chainfire:libsuperuser:1.0.0.+'
 }

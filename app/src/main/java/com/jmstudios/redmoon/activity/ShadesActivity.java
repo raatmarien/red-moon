@@ -36,14 +36,12 @@
 package com.jmstudios.redmoon.activity;
 
 import android.app.FragmentManager;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
@@ -60,9 +58,6 @@ import com.jmstudios.redmoon.helper.FilterCommandSender;
 import com.jmstudios.redmoon.model.SettingsModel;
 import com.jmstudios.redmoon.presenter.ShadesPresenter;
 import com.jmstudios.redmoon.service.ScreenFilterService;
-
-import java.io.DataOutputStream;
-import java.io.IOException;
 
 public class ShadesActivity extends AppCompatActivity {
     private static final String TAG = "ShadesActivity";
@@ -106,22 +101,6 @@ public class ShadesActivity extends AppCompatActivity {
 
         ShadesFragment view;
 
-        if (!sharedPreferences.getBoolean("screen_overlays", false)) {
-            new AlertDialog.Builder(this)
-                    .setTitle("Screen overlays")
-                    .setMessage("App uses screen overlays to control screen, but Android system prevents installing APKs if such overlay is applied. Please use our Package Installer (RedMoon) which just stops RedMoon, opens Android's Package Installer and after installation, it resumes RedMoon.\n\nAlso, Superuser apps disable allow/deny buttons when other apps request root access if screen overlay is aplied. You can grant root access for this app  in the next dialog so app can get info from Superuser apps whether to show screen overlays or not and app can handle it properly.")
-                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            sharedPreferences.edit().putBoolean("screen_overlays", true).apply();
-                            dialog.cancel();
-                            getSuPrompt();
-                            // Do nothing, we dont need root
-                            // Just to show Superuser SU reguest dialog for our app
-                        }
-                    })
-                    .show();
-        }
-
         // Only create and attach a new fragment on the first Activity creation.
         // On Activity re-creation, retrieve the existing fragment stored in the FragmentManager.
         if (savedInstanceState == null) {
@@ -149,17 +128,6 @@ public class ShadesActivity extends AppCompatActivity {
 
         if (!mSettingsModel.getIntroShown()) {
             startIntro();
-        }
-    }
-
-    private void getSuPrompt() {
-        try {
-            Process p = Runtime.getRuntime().exec("su");
-            DataOutputStream os = new DataOutputStream(p.getOutputStream());
-            os.writeBytes("echo redmoon\n");
-            os.writeBytes("exit\n");
-            os.flush();
-        } catch (IOException ignored) {
         }
     }
 

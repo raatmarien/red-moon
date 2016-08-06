@@ -35,44 +35,45 @@
  */
 package com.jmstudios.redmoon.fragment;
 
+import android.Manifest;
+import android.content.ComponentName;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
-import android.preference.SwitchPreference;
-import android.preference.SwitchPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
-import android.preference.ListPreference;
+import android.preference.SwitchPreference;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v7.widget.SwitchCompat;
-import android.provider.Settings;
-import android.os.Build.VERSION;
-import android.net.Uri;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.Manifest;
-import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
-import android.location.Location;
-import android.location.LocationManager;
-import android.support.design.widget.FloatingActionButton;
-import android.view.ViewTreeObserver;
-import android.widget.ListView;
-import android.preference.PreferenceScreen;
-import android.support.design.widget.Snackbar;
 import android.widget.TextView;
 
 import com.jmstudios.redmoon.R;
-import com.jmstudios.redmoon.presenter.ShadesPresenter;
 import com.jmstudios.redmoon.activity.ShadesActivity;
+import com.jmstudios.redmoon.model.SettingsModel;
 import com.jmstudios.redmoon.preference.FilterTimePreference;
 import com.jmstudios.redmoon.preference.LocationPreference;
-import com.jmstudios.redmoon.model.SettingsModel;
+import com.jmstudios.redmoon.presenter.ShadesPresenter;
 import com.jmstudios.redmoon.service.ScreenFilterService;
+
+import eu.chainfire.libsuperuser.Shell;
 
 public class ShadesFragment extends PreferenceFragment {
     private static final String TAG = "ShadesFragment";
@@ -86,6 +87,7 @@ public class ShadesFragment extends PreferenceFragment {
     // Preferences
     private SwitchPreference darkThemePref;
     private SwitchPreference lowerBrightnessPref;
+    private SwitchPreference stopTemporarilyPref;
     private ListPreference automaticFilterPref;
     private FilterTimePreference automaticTurnOnPref;
     private FilterTimePreference automaticTurnOffPref;
@@ -111,10 +113,14 @@ public class ShadesFragment extends PreferenceFragment {
         String automaticTurnOffPrefKey = getString(R.string.pref_key_custom_end_time);
         String locationPrefKey = getString(R.string.pref_key_location);
         String otherCategoryPrefKey = getString(R.string.pref_key_other);
+        String stopTemporarilyPrefKey = "pref_key_stop_temporarily";
 
+        final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         PreferenceScreen prefScreen = getPreferenceScreen();
         darkThemePref = (SwitchPreference) prefScreen.findPreference(darkThemePrefKey);
         lowerBrightnessPref = (SwitchPreference) prefScreen.findPreference(lowerBrightnessPrefKey);
+        stopTemporarilyPref = (SwitchPreference) prefScreen.findPreference(stopTemporarilyPrefKey);
+
         automaticFilterPref = (ListPreference) prefScreen.findPreference(automaticFilterPrefKey);
         automaticTurnOnPref = (FilterTimePreference) prefScreen.findPreference(automaticTurnOnPrefKey);
         automaticTurnOffPref = (FilterTimePreference) prefScreen.findPreference(automaticTurnOffPrefKey);
@@ -177,6 +183,36 @@ public class ShadesFragment extends PreferenceFragment {
                 }
             });
 
+        stopTemporarilyPref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                if (!sharedPreferences.getBoolean("screen_overlays", false)) {
+                    new AlertDialog.Builder(getActivity())
+                            .setTitle("Screen overlays")
+                            .setMessage("App uses screen overlays to control screen, but Android system prevents installing APKs if such overlay is applied. Please use our Package Installer (RedMoon) which just stops RedMoon, opens Android's Package Installer and after installation, it resumes RedMoon.\n\nIf you are familiar with ADB shell, run \"adb shell pm grant com.jmstudios.redmoon android.permission.DUMP\" for even better results.\n\nAlso, Superuser apps disable allow/deny buttons when other apps request root access if screen overlay is aplied. You can grant root access for this app  in the next dialog so app can get info from Superuser apps whether to show screen overlays or not and app can handle it properly.")
+                            .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    sharedPreferences.edit().putBoolean("screen_overlays", true).apply();
+                                    dialog.cancel();
+                                    getSuPrompt();
+                                    // Do nothing, we dont need root
+                                    // Just to show Superuser SU reguest dialog for our app
+                                }
+                            })
+                            .show();
+                }
+                int state = (boolean)newValue ?
+                        PackageManager.COMPONENT_ENABLED_STATE_ENABLED :
+                        PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
+                ComponentName alias = new ComponentName(getActivity(), "com.jmstudios.redmoon.activity.PackageInstallerActivity" );
+                getActivity().getPackageManager().setComponentEnabledSetting( alias, state, PackageManager.DONT_KILL_APP );
+                return true;
+            }
+        });
+    }
+
+    private void getSuPrompt() {
+        Shell.SU.run("pm grant com.jmstudios.redmoon android.permission.DUMP");
     }
 
     private boolean onAutomaticFilterPreferenceChange(Preference preference, Object newValue) {

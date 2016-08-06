@@ -57,6 +57,11 @@
         android:key="@string/pref_key_control_brightness"
         android:title="@string/control_brightness_title"
         android:defaultValue="true" />
+
+    <SwitchPreference
+        android:key="@string/pref_key_stop_temporarily"
+        android:title="Stop temporarily for Package Instaler/Superuser app"
+        android:defaultValue="true" />
   </PreferenceCategory>
 
   <PreferenceCategory android:title="@string/pref_title_automatic_filter">
