@@ -25,6 +25,7 @@ public class PackageInstalledReceiver extends BroadcastReceiver {
 
         if (sharedPreferences.getBoolean("package_installer_interrupt", false) && paused) {
             commandSender.send(onCommand);
+            sharedPreferences.edit().putBoolean("package_installer_interrupt", false).apply();
         }
 
     }
