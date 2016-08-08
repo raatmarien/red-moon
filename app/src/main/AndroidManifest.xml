@@ -36,12 +36,15 @@
  *     CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.jmstudios.redmoon" >
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.DUMP"
+        tools:ignore="ProtectedPermissions" />
 
     <application
         android:allowBackup="true"
@@ -49,6 +52,23 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
         android:supportsRtl="true" >
+        <activity android:name="com.jmstudios.redmoon.activity.PackageInstallerActivity"
+            android:label="Package Installer (RedMoon)" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.INSTALL_PACKAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file" />
+                <data android:mimeType="application/vnd.android.package-archive" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.INSTALL_PACKAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name="com.jmstudios.redmoon.activity.ShadesActivity"
             android:label="@string/shades_settings" >
@@ -63,6 +83,21 @@
             android:name="com.jmstudios.redmoon.activity.Intro"
             android:label="@string/intro_label"
             android:theme="@style/AppThemeNoActionBar" />
+
+        <receiver android:name="com.jmstudios.redmoon.receiver.PackageInstalledReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_INSTALL" />
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.jmstudios.redmoon.receiver.HideScreenOverlaysReceiver" >
+            <intent-filter>
+                <action android:name="eu.chainfire.supersu.action.HIDE_OVERLAYS" />
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </receiver>
 
         <receiver android:name="com.jmstudios.redmoon.receiver.BootReceiver">
             <intent-filter>

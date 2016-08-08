@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
         applicationId "com.jmstudios.redmoon"
@@ -25,4 +25,5 @@ dependencies {
     compile 'com.android.support:design:23.2.1'
     compile 'com.luckycatlabs:SunriseSunsetCalculator:1.2'
     compile 'com.github.paolorotolo:appintro:3.4.0'
+    compile 'eu.chainfire:libsuperuser:1.0.0.+'
 }

@@ -50,6 +50,7 @@ import android.view.WindowManager;
 
 import com.jmstudios.redmoon.helper.FilterCommandFactory;
 import com.jmstudios.redmoon.helper.FilterCommandParser;
+import com.jmstudios.redmoon.helper.FilterCommandSender;
 import com.jmstudios.redmoon.manager.ScreenManager;
 import com.jmstudios.redmoon.manager.WindowViewManager;
 import com.jmstudios.redmoon.model.SettingsModel;
@@ -57,6 +58,10 @@ import com.jmstudios.redmoon.presenter.ScreenFilterPresenter;
 import com.jmstudios.redmoon.receiver.OrientationChangeReceiver;
 import com.jmstudios.redmoon.receiver.SwitchAppWidgetProvider;
 import com.jmstudios.redmoon.view.ScreenFilterView;
+
+import java.util.List;
+
+import eu.chainfire.libsuperuser.Shell;
 
 public class ScreenFilterService extends Service implements ServiceLifeCycleController {
     public static final int VALID_COMMAND_START = 0;
@@ -104,6 +109,37 @@ public class ScreenFilterService extends Service implements ServiceLifeCycleCont
         mSettingsModel.addOnSettingsChangedListener(mPresenter);
 
         registerOrientationReceiver(mPresenter);
+
+        final FilterCommandSender commandSender = new FilterCommandSender(this);
+        final FilterCommandFactory commandFactory = new FilterCommandFactory(this);
+        final Intent onCommand = commandFactory.createCommand(ScreenFilterService.COMMAND_ON);
+        final Intent pauseCommand = commandFactory.createCommand(ScreenFilterService.COMMAND_PAUSE);
+
+        final SettingsModel settingsModel = new SettingsModel(this.getResources(), sharedPreferences);
+
+        if (sharedPreferences.getBoolean("pref_key_stop_temporarily", true)) {
+            new Thread(new Runnable() {
+                public void run() {
+                    while (true) {
+                        try {
+                            List<String> out = Shell.SH.run("dumpsys activity | grep top-activity | egrep 'packageinstaller|supersu'\n");
+                            boolean isProtectedAppRunning = (out != null && !out.isEmpty());
+                            boolean paused = settingsModel.getShadesPauseState();
+
+                            if (!isProtectedAppRunning) {
+                                if (paused) commandSender.send(onCommand);
+                            } else {
+                                commandSender.send(pauseCommand);
+                            }
+
+                            Thread.sleep(2000); // 2 seconds
+                        } catch (Exception e) {
+                        }
+                    }
+
+                }
+            }).start();
+        }
     }
 
     @Override

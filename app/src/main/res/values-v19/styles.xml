@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppThemeNoActionBar"
+        parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Translucent status bar is only available in API 19+ -->
+        <item
+            name="android:windowTranslucentStatus">true
+        </item>
+    </style>
+</resources>

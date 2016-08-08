@@ -36,21 +36,19 @@
 package com.jmstudios.redmoon.activity;
 
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.support.v7.widget.SwitchCompat;
 import android.widget.CompoundButton;
-import android.provider.Settings;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Build.VERSION;
 import android.widget.Toast;
 
 import com.jmstudios.redmoon.R;
@@ -60,7 +58,6 @@ import com.jmstudios.redmoon.helper.FilterCommandSender;
 import com.jmstudios.redmoon.model.SettingsModel;
 import com.jmstudios.redmoon.presenter.ShadesPresenter;
 import com.jmstudios.redmoon.service.ScreenFilterService;
-import com.jmstudios.redmoon.activity.Intro;
 
 public class ShadesActivity extends AppCompatActivity {
     private static final String TAG = "ShadesActivity";
@@ -68,7 +65,7 @@ public class ShadesActivity extends AppCompatActivity {
     private static final String FRAGMENT_TAG_SHADES = "jmstudios.fragment.tag.SHADES";
 
     public static final String EXTRA_FROM_SHORTCUT_BOOL =
-        "com.jmstudios.redmoon.activity.ShadesActivity.EXTRA_FROM_SHORTCUT_BOOL";
+            "com.jmstudios.redmoon.activity.ShadesActivity.EXTRA_FROM_SHORTCUT_BOOL";
     public static int OVERLAY_PERMISSION_REQ_CODE = 1234;
 
     private ShadesPresenter mPresenter;
@@ -90,7 +87,7 @@ public class ShadesActivity extends AppCompatActivity {
         }
 
         // Wire MVP classes
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mSettingsModel = new SettingsModel(getResources(), sharedPreferences);
         FilterCommandFactory filterCommandFactory = new FilterCommandFactory(this);
         FilterCommandSender filterCommandSender = new FilterCommandSender(this);
@@ -121,7 +118,7 @@ public class ShadesActivity extends AppCompatActivity {
         }
 
         mPresenter = new ShadesPresenter(view, mSettingsModel, filterCommandFactory,
-                                         filterCommandSender, context);
+                filterCommandSender, context);
         view.registerPresenter(mPresenter);
 
         // Make Presenter listen to settings changes
@@ -143,36 +140,36 @@ public class ShadesActivity extends AppCompatActivity {
         mSwitch = (SwitchCompat) item.getActionView();
         mSwitch.setChecked(mSettingsModel.getShadesPowerState());
         mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if (ignoreNextSwitchChange) {
-                        if (DEBUG) Log.i(TAG, "Switch change ignored");
-                        ignoreNextSwitchChange = false;
-                        return;
-                    }
-
-                    // http://stackoverflow.com/a/3993933
-                    if (android.os.Build.VERSION.SDK_INT >= 23) {
-                        if (!Settings.canDrawOverlays(context)) {
-                            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                                                       Uri.parse("package:" + getPackageName()));
-                            startActivityForResult(intent, OVERLAY_PERMISSION_REQ_CODE);
-                        }
-
-                        if (Settings.canDrawOverlays(context)) {
-                            mPresenter.sendCommand(isChecked ?
-                                                   ScreenFilterService.COMMAND_PAUSE :
-                                                   ScreenFilterService.COMMAND_OFF);
-                        } else {
-                            buttonView.setChecked(false);
-                        }
-                    } else {
-                        mPresenter.sendCommand(isChecked ?
-                                               ScreenFilterService.COMMAND_PAUSE :
-                                               ScreenFilterService.COMMAND_OFF);
-                    }
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (ignoreNextSwitchChange) {
+                    if (DEBUG) Log.i(TAG, "Switch change ignored");
+                    ignoreNextSwitchChange = false;
+                    return;
                 }
-            });
+
+                // http://stackoverflow.com/a/3993933
+                if (android.os.Build.VERSION.SDK_INT >= 23) {
+                    if (!Settings.canDrawOverlays(context)) {
+                        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                                Uri.parse("package:" + getPackageName()));
+                        startActivityForResult(intent, OVERLAY_PERMISSION_REQ_CODE);
+                    }
+
+                    if (Settings.canDrawOverlays(context)) {
+                        mPresenter.sendCommand(isChecked ?
+                                ScreenFilterService.COMMAND_PAUSE :
+                                ScreenFilterService.COMMAND_OFF);
+                    } else {
+                        buttonView.setChecked(false);
+                    }
+                } else {
+                    mPresenter.sendCommand(isChecked ?
+                            ScreenFilterService.COMMAND_PAUSE :
+                            ScreenFilterService.COMMAND_OFF);
+                }
+            }
+        });
 
         return true;
     }
@@ -230,11 +227,11 @@ public class ShadesActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-        case R.id.show_intro_button:
-            startIntro();
-            return true;
-        default:
-            return super.onOptionsItemSelected(item);
+            case R.id.show_intro_button:
+                startIntro();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 
@@ -244,8 +241,8 @@ public class ShadesActivity extends AppCompatActivity {
 
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(getApplicationContext(),
-                                     getString(R.string.toast_warning_install),
-                                     duration);
+                getString(R.string.toast_warning_install),
+                duration);
         toast.show();
 
         hasShownWarningToast = true;
