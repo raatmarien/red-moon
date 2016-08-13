@@ -308,10 +308,6 @@ public class ShadesFragment extends PreferenceFragment {
                 mHelpSnackbar.dismiss();
             mToggleFab.show();
         }
-
-        if (powerState && !pauseState) {
-            activity.displayInstallWarningToast();
-        }
     }
 
     private void updateFabIcon() {
