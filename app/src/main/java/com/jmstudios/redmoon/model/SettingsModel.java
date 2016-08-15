@@ -224,7 +224,7 @@ public class SettingsModel implements SharedPreferences.OnSharedPreferenceChange
     }
 
     public boolean getAutomaticSuspend() {
-        return mSharedPreferences.getBoolean(mAutomaticSuspendPrefKey, false);
+        return mSharedPreferences.getBoolean(mAutomaticSuspendPrefKey, true);
     }
 
     public void addOnSettingsChangedListener(OnSettingsChangedListener listener) {

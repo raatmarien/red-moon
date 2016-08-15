@@ -77,7 +77,6 @@ public class ShadesActivity extends AppCompatActivity {
     private SwitchCompat mSwitch;
     private ShadesActivity context = this;
 
-    private boolean hasShownWarningToast = false;
     private boolean ignoreNextSwitchChange = false;
 
     @Override
@@ -238,18 +237,6 @@ public class ShadesActivity extends AppCompatActivity {
         }
     }
 
-
-    public void displayInstallWarningToast() {
-        if (hasShownWarningToast) return;
-
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(getApplicationContext(),
-                                     getString(R.string.toast_warning_install),
-                                     duration);
-        toast.show();
-
-        hasShownWarningToast = true;
-    }
 
     private void startIntro() {
         Intent introIntent = new Intent(this, Intro.class);

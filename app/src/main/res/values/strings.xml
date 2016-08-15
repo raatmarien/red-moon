@@ -45,7 +45,7 @@
     <string name="automatic_suspend_preference_activity">Automatic suspend</string>
 
     <!-- Notification -->
-    <string name="running">Running. Pause to install apks</string>
+    <string name="running">Running</string>
     <string name="paused">Paused</string>
     <string name="resume_action">Resume</string>
     <string name="pause_action">Pause</string>
@@ -90,7 +90,6 @@
     <string name="project_page_url" translatable="false">https://github.com/raatmarien/red-moon</string>
 
     <!-- Toasts -->
-    <string name="toast_warning_install">You won\'t be able to install APKs while the filter is running.</string>
     <string name="toast_warning_no_location">Enable location services to update location</string>
 
     <!-- Snackbar -->
