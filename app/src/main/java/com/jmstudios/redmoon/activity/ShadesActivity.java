@@ -78,7 +78,6 @@ public class ShadesActivity extends AppCompatActivity {
     private ShadesActivity context = this;
 
     private boolean hasShownWarningToast = false;
-    private boolean ignoreNextSwitchChange = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,15 +140,10 @@ public class ShadesActivity extends AppCompatActivity {
 
         final MenuItem item = menu.findItem(R.id.screen_filter_switch);
         mSwitch = (SwitchCompat) item.getActionView();
-        mSwitch.setChecked(mSettingsModel.getShadesPowerState());
+        mSwitch.setChecked(mSettingsModel.getShadesPauseState());
         mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if (ignoreNextSwitchChange) {
-                        if (DEBUG) Log.i(TAG, "Switch change ignored");
-                        ignoreNextSwitchChange = false;
-                        return;
-                    }
 
                     // http://stackoverflow.com/a/3993933
                     if (android.os.Build.VERSION.SDK_INT >= 23) {
@@ -161,15 +155,15 @@ public class ShadesActivity extends AppCompatActivity {
 
                         if (Settings.canDrawOverlays(context)) {
                             mPresenter.sendCommand(isChecked ?
-                                                   ScreenFilterService.COMMAND_PAUSE :
-                                                   ScreenFilterService.COMMAND_OFF);
+                                                   ScreenFilterService.COMMAND_ON :
+                                                   ScreenFilterService.COMMAND_PAUSE);
                         } else {
                             buttonView.setChecked(false);
                         }
                     } else {
                         mPresenter.sendCommand(isChecked ?
-                                               ScreenFilterService.COMMAND_PAUSE :
-                                               ScreenFilterService.COMMAND_OFF);
+                                               ScreenFilterService.COMMAND_ON :
+                                               ScreenFilterService.COMMAND_PAUSE);
                     }
                 }
             });
@@ -230,11 +224,21 @@ public class ShadesActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-        case R.id.show_intro_button:
-            startIntro();
-            return true;
-        default:
-            return super.onOptionsItemSelected(item);
+            case R.id.show_intro_button:
+                startIntro();
+                return true;
+            case R.id.view_github:
+                String github = getResources().getString(R.string.project_page_url);
+                Intent projectIntent = new Intent(Intent.ACTION_VIEW)
+                                            .setData(Uri.parse(github));
+                startActivity(projectIntent);
+            case R.id.email_developer:
+                String email = getResources().getString(R.string.contact_email_adress);
+                Intent emailIntent = new Intent(Intent.ACTION_VIEW)
+                                            .setData(Uri.parse(email));
+                startActivity(emailIntent);
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 
@@ -271,10 +275,6 @@ public class ShadesActivity extends AppCompatActivity {
         return mSettingsModel.getShadesIntensityLevel();
     }
 
-    public void setIgnoreNextSwitchChange(boolean ignore) {
-        ignoreNextSwitchChange = ignore;
-    }
-
     public int getDimLevelProgress() {
         return mSettingsModel.getShadesDimLevel();
     }
@@ -295,10 +295,9 @@ public class ShadesActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         SettingsModel settingsModel = new SettingsModel(getResources(), sharedPreferences);
-        boolean poweredOn = settingsModel.getShadesPowerState();
         boolean paused = settingsModel.getShadesPauseState();
 
-        if (!poweredOn || paused) {
+        if (paused) {
             commandSender.send(onCommand);
         } else {
             commandSender.send(pauseCommand);

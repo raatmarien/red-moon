@@ -68,10 +68,9 @@ public class ShortcutToggleActivity extends Activity {
         SharedPreferences sharedPreferences =
                 PreferenceManager.getDefaultSharedPreferences(activity);
         SettingsModel settingsModel = new SettingsModel(activity.getResources(), sharedPreferences);
-        boolean poweredOn = settingsModel.getShadesPowerState();
         boolean paused = settingsModel.getShadesPauseState();
 
-        if (!poweredOn || paused) {
+        if (paused) {
             commandSender.send(onCommand);
         } else {
             commandSender.send(pauseCommand);

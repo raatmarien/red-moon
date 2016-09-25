@@ -95,14 +95,14 @@ public class SwitchAppWidgetProvider extends AppWidgetProvider {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         SettingsModel settingsModel = new SettingsModel(context.getResources(), sharedPreferences);
 
-        if(settingsModel.getShadesPauseState() || !(settingsModel.getShadesPowerState())) {
+        if(settingsModel.getShadesPauseState()) {
             context.startService(onCommand);
         } else {
             context.startService(pauseCommand);
         }
     }
 
-    void updateImage(Context context, boolean powerState) {
+    void updateImage(Context context, boolean pausedState) {
         if(DEBUG) Log.i(TAG, "Updating image!");
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.appwidget_switch);
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
@@ -110,7 +110,7 @@ public class SwitchAppWidgetProvider extends AppWidgetProvider {
 
         int drawable;
 
-        if(!powerState) drawable = R.drawable.ic_play;
+        if(!pausedState) drawable = R.drawable.ic_play;
         else drawable = R.drawable.ic_pause;
 
         views.setInt(R.id.widget_pause_play_button, "setImageResource", drawable);

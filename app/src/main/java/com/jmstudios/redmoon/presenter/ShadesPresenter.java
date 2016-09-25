@@ -75,9 +75,8 @@ public class ShadesPresenter implements SettingsModel.OnSettingsChangedListener 
     }
 
     public void onStart() {
-        boolean poweredOn = mSettingsModel.getShadesPowerState();
         boolean paused = mSettingsModel.getShadesPauseState();
-        mView.setSwitchOn(poweredOn, paused);
+        mView.setSwitchOn(paused);
     }
 
     public void sendCommand(int command) {
@@ -87,21 +86,8 @@ public class ShadesPresenter implements SettingsModel.OnSettingsChangedListener 
 
     //region OnSettingsChangedListener
     @Override
-    public void onShadesPowerStateChanged(boolean powerState) {
-        mView.setSwitchOn(powerState, mSettingsModel.getShadesPauseState());
-
-        if (!powerState) {
-            AutomaticFilterChangeReceiver.cancelAlarms(mContext);
-        } else {
-            AutomaticFilterChangeReceiver.cancelAlarms(mContext);
-            AutomaticFilterChangeReceiver.scheduleNextOnCommand(mContext);
-            AutomaticFilterChangeReceiver.scheduleNextPauseCommand(mContext);
-        }
-    }
-
-    @Override
     public void onShadesPauseStateChanged(boolean pauseState) {
-        mView.setSwitchOn(mSettingsModel.getShadesPowerState(), pauseState);
+        mView.setSwitchOn(pauseState);
     }
 
     @Override

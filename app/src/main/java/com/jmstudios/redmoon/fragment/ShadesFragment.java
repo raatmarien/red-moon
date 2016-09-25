@@ -79,7 +79,6 @@ public class ShadesFragment extends PreferenceFragment {
     private static final boolean DEBUG = true;
 
     private ShadesPresenter mPresenter;
-    private FloatingActionButton mToggleFab;
     private View mView;
     private Snackbar mHelpSnackbar;
 
@@ -261,25 +260,7 @@ public class ShadesFragment extends PreferenceFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         final View v = super.onCreateView(inflater, container, savedInstanceState);
-
-        mToggleFab = (FloatingActionButton) getActivity().findViewById(R.id.toggle_fab);
-        mToggleFab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    SettingsModel settingsModel = ((ShadesActivity) getActivity()).getSettingsModel();
-                    boolean poweredOn = settingsModel.getShadesPowerState();
-                    boolean paused = settingsModel.getShadesPauseState();
-
-                    if (!poweredOn || paused) {
-                        mPresenter.sendCommand(ScreenFilterService.COMMAND_ON);
-                    } else {
-                        mPresenter.sendCommand(ScreenFilterService.COMMAND_PAUSE);
-                    }
-                }
-            });
-
         mView = v;
-
         return v;
     }
 
@@ -289,40 +270,15 @@ public class ShadesFragment extends PreferenceFragment {
         if (DEBUG) Log.i(TAG, "Registered Presenter");
     }
 
-    public void setSwitchOn(boolean powerState, boolean pauseState) {
+    public void setSwitchOn(boolean pauseState) {
         ShadesActivity activity = (ShadesActivity) getActivity();
         SwitchCompat filterSwitch = activity.getSwitch();
         if (filterSwitch != null) {
-            activity.setIgnoreNextSwitchChange(powerState != filterSwitch.isChecked());
-            filterSwitch.setChecked(powerState);
-        }
-        updateFabIcon();
-
-        if (!powerState) {
-            disableFilterPreferences();
-            mToggleFab.hide();
-            showHelpSnackbar();
-        } else {
-            setPreferencesEnabled();
-            if (mHelpSnackbar != null)
-                mHelpSnackbar.dismiss();
-            mToggleFab.show();
+            filterSwitch.setChecked(pauseState);
         }
 
-        if (powerState && !pauseState) {
+        if (!pauseState) {
             activity.displayInstallWarningToast();
-        }
-    }
-
-    private void updateFabIcon() {
-        SettingsModel settingsModel = ((ShadesActivity) getActivity()).getSettingsModel();
-        boolean poweredOn = settingsModel.getShadesPowerState();
-        boolean paused = settingsModel.getShadesPauseState();
-
-        if (!poweredOn || paused) {
-            mToggleFab.setImageResource(R.drawable.fab_start);
-        } else {
-            mToggleFab.setImageResource(R.drawable.fab_pause);
         }
     }
 

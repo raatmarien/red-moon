@@ -146,8 +146,7 @@ public class ScreenFilterPresenter implements OrientationChangeReceiver.OnOrient
         mScreenStateReceiver = new ScreenStateReceiver(this);
         oldScreenBrightness = -1;
 
-        if (model.getShadesPowerState())
-            mCurrentState.onScreenFilterCommand(ScreenFilterService.COMMAND_PAUSE);
+        mCurrentState.onScreenFilterCommand(ScreenFilterService.COMMAND_PAUSE);
     }
 
     private void refreshForegroundNotification() {
@@ -238,24 +237,12 @@ public class ScreenFilterPresenter implements OrientationChangeReceiver.OnOrient
 
     //region OnSettingsChangedListener
     @Override
-    public void onShadesPowerStateChanged(boolean powerState) {
-        //Broadcast to keep appwidgets in sync
-        if(DEBUG) Log.i(TAG, "Sending update broadcast");
-        Intent updateAppWidgetIntent = new Intent(mContext, SwitchAppWidgetProvider.class);
-        updateAppWidgetIntent.setAction(SwitchAppWidgetProvider.ACTION_UPDATE);
-        updateAppWidgetIntent.putExtra(SwitchAppWidgetProvider.EXTRA_POWER,
-                                       powerState && !mSettingsModel.getShadesPauseState());
-        mContext.sendBroadcast(updateAppWidgetIntent);
-    }
-
-    @Override
     public void onShadesPauseStateChanged(boolean pauseState) {
         //Broadcast to keep appwidgets in sync
         if(DEBUG) Log.i(TAG, "Sending update broadcast");
         Intent updateAppWidgetIntent = new Intent(mContext, SwitchAppWidgetProvider.class);
         updateAppWidgetIntent.setAction(SwitchAppWidgetProvider.ACTION_UPDATE);
-        updateAppWidgetIntent.putExtra(SwitchAppWidgetProvider.EXTRA_POWER,
-                                       mSettingsModel.getShadesPowerState() && !pauseState);
+        updateAppWidgetIntent.putExtra(SwitchAppWidgetProvider.EXTRA_POWER, !pauseState);
         mContext.sendBroadcast(updateAppWidgetIntent);
     }
 
@@ -560,7 +547,6 @@ public class ScreenFilterPresenter implements OrientationChangeReceiver.OnOrient
 
         mCurrentState = newState;
 
-        mSettingsModel.setShadesPowerState(!isOff());
         mSettingsModel.setShadesPauseState(isPaused());
     }
 
@@ -787,7 +773,6 @@ public class ScreenFilterPresenter implements OrientationChangeReceiver.OnOrient
                     break;
 
                 case ScreenFilterService.COMMAND_OFF:
-                    mSettingsModel.setShadesPowerState(false);
 
                     break;
             }
