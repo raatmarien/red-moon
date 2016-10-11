@@ -145,6 +145,8 @@ public class ShadesActivity extends AppCompatActivity {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
+                    boolean isPaused = mSettingsModel.getShadesPauseState();
+
                     // http://stackoverflow.com/a/3993933
                     if (android.os.Build.VERSION.SDK_INT >= 23) {
                         if (!Settings.canDrawOverlays(context)) {
@@ -154,16 +156,20 @@ public class ShadesActivity extends AppCompatActivity {
                         }
 
                         if (Settings.canDrawOverlays(context)) {
-                            mPresenter.sendCommand(isChecked ?
-                                                   ScreenFilterService.COMMAND_ON :
-                                                   ScreenFilterService.COMMAND_PAUSE);
+                            if (isChecked == isPaused) {
+                                mPresenter.sendCommand(isChecked ?
+                                            ScreenFilterService.COMMAND_ON :
+                                            ScreenFilterService.COMMAND_PAUSE);
+                            }
                         } else {
                             buttonView.setChecked(false);
                         }
                     } else {
-                        mPresenter.sendCommand(isChecked ?
-                                               ScreenFilterService.COMMAND_ON :
-                                               ScreenFilterService.COMMAND_PAUSE);
+                        if (isChecked == isPaused) {
+                            mPresenter.sendCommand(isChecked ?
+                                            ScreenFilterService.COMMAND_ON :
+                                            ScreenFilterService.COMMAND_PAUSE);
+                        }
                     }
                 }
             });

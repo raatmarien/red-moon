@@ -274,7 +274,7 @@ public class ShadesFragment extends PreferenceFragment {
         ShadesActivity activity = (ShadesActivity) getActivity();
         SwitchCompat filterSwitch = activity.getSwitch();
         if (filterSwitch != null) {
-            filterSwitch.setChecked(pauseState);
+            filterSwitch.setChecked(!pauseState);
         }
 
         if (!pauseState) {
