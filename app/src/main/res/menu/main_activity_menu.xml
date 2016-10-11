@@ -18,9 +18,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" >
     <item
+        android:id="@+id/screen_filter_switch"
+        android:title=""
+        app:showAsAction="always"
+        app:actionLayout="@layout/switch_layout" />
+
+    <item
         android:id="@+id/show_intro_button"
         android:title="@string/show_intro_text"
-        app:showAsAction="ifRoom"
+        app:showAsAction="never"
         android:icon="@drawable/ic_help_white_24dp"/>
 
     <item
@@ -32,10 +38,4 @@
         android:id="@+id/email_developer"
         android:title="@string/email_me_title"
         app:showAsAction="never"/>
-
-    <item
-        android:id="@+id/screen_filter_switch"
-        android:title=""
-        app:showAsAction="always"
-        app:actionLayout="@layout/switch_layout" />
 </menu>

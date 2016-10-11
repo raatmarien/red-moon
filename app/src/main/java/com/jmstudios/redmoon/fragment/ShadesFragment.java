@@ -35,43 +35,40 @@
  */
 package com.jmstudios.redmoon.fragment;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
+import android.Manifest;
+import android.net.Uri;
+import android.os.Build.VERSION;
 import android.os.Bundle;
-import android.preference.SwitchPreference;
-import android.preference.SwitchPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
-import android.preference.ListPreference;
+import android.preference.SwitchPreference;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v7.widget.SwitchCompat;
-import android.provider.Settings;
-import android.os.Build.VERSION;
-import android.net.Uri;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.Manifest;
-import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
-import android.location.Location;
-import android.location.LocationManager;
-import android.support.design.widget.FloatingActionButton;
 import android.view.ViewTreeObserver;
 import android.widget.ListView;
-import android.preference.PreferenceScreen;
-import android.support.design.widget.Snackbar;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.jmstudios.redmoon.R;
-import com.jmstudios.redmoon.presenter.ShadesPresenter;
 import com.jmstudios.redmoon.activity.ShadesActivity;
+import com.jmstudios.redmoon.model.SettingsModel;
+import com.jmstudios.redmoon.presenter.ShadesPresenter;
 import com.jmstudios.redmoon.preference.FilterTimePreference;
 import com.jmstudios.redmoon.preference.LocationPreference;
-import com.jmstudios.redmoon.model.SettingsModel;
 import com.jmstudios.redmoon.service.ScreenFilterService;
 
 public class ShadesFragment extends PreferenceFragment {
@@ -272,7 +269,7 @@ public class ShadesFragment extends PreferenceFragment {
 
     public void setSwitchOn(boolean pauseState) {
         ShadesActivity activity = (ShadesActivity) getActivity();
-        SwitchCompat filterSwitch = activity.getSwitch();
+        Switch filterSwitch = activity.getSwitch();
         if (filterSwitch != null) {
             filterSwitch.setChecked(!pauseState);
         }

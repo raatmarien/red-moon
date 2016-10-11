@@ -34,7 +34,7 @@
       android:textStyle="bold"
       android:textColor="@color/color_white"
       android:textAlignment="viewStart" />
-  <android.support.v7.widget.SwitchCompat
+  <android.widget.Switch
       xmlns:android="http://schemas.android.com/apk/res/android"
       android:id="@+id/switch_bar_switch"
       android:layout_width="wrap_content"
