@@ -35,7 +35,9 @@
  */
 package com.jmstudios.redmoon.activity;
 
+import android.app.AlertDialog;
 import android.app.FragmentManager;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -150,9 +152,7 @@ public class ShadesActivity extends AppCompatActivity {
                     // http://stackoverflow.com/a/3993933
                     if (android.os.Build.VERSION.SDK_INT >= 23) {
                         if (!Settings.canDrawOverlays(context)) {
-                            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                                                       Uri.parse("package:" + getPackageName()));
-                            startActivityForResult(intent, OVERLAY_PERMISSION_REQ_CODE);
+                            createOverlayPermissionDialog();
                         }
 
                         if (Settings.canDrawOverlays(context)) {
@@ -175,6 +175,23 @@ public class ShadesActivity extends AppCompatActivity {
             });
 
         return true;
+    }
+
+    private void createOverlayPermissionDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage(R.string.overlay_dialog_message)
+            .setTitle(R.string.overlay_dialog_title)
+            .setPositiveButton(R.string.ok_dialog, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                                                   Uri.parse("package:" + getPackageName()));
+                        startActivityForResult(intent, OVERLAY_PERMISSION_REQ_CODE);
+                    }
+                });
+
+        builder.show();
     }
 
     @Override
