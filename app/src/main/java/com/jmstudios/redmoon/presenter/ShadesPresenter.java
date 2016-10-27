@@ -41,6 +41,7 @@ import android.content.Context;
 import android.util.Log;
 
 import com.jmstudios.redmoon.R;
+import com.jmstudios.redmoon.activity.ShadesActivity;
 import com.jmstudios.redmoon.fragment.ShadesFragment;
 import com.jmstudios.redmoon.helper.FilterCommandFactory;
 import com.jmstudios.redmoon.helper.FilterCommandSender;
@@ -61,6 +62,7 @@ public class ShadesPresenter implements SettingsModel.OnSettingsChangedListener 
     private FilterCommandFactory mFilterCommandFactory;
     private FilterCommandSender mFilterCommandSender;
     private Context mContext;
+    private ShadesActivity mActivity;
 
     public ShadesPresenter(@NonNull ShadesFragment view,
                            @NonNull SettingsModel settingsModel,
@@ -72,22 +74,21 @@ public class ShadesPresenter implements SettingsModel.OnSettingsChangedListener 
         mFilterCommandFactory = filterCommandFactory;
         mFilterCommandSender = filterCommandSender;
         mContext = context;
+        mActivity = (ShadesActivity) context;
     }
 
     public void onStart() {
         boolean paused = mSettingsModel.getShadesPauseState();
-        mView.setSwitchOn(paused);
-    }
-
-    public void sendCommand(int command) {
-        Intent iCommand = mFilterCommandFactory.createCommand(command);
-        mFilterCommandSender.send(iCommand);
+        mActivity.setSwitch(!paused);
     }
 
     //region OnSettingsChangedListener
     @Override
     public void onShadesPauseStateChanged(boolean pauseState) {
-        mView.setSwitchOn(pauseState);
+        mActivity.setSwitch(!pauseState);
+        if (!pauseState) {
+            mActivity.displayInstallWarningToast();
+        }
     }
 
     @Override

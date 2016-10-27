@@ -267,27 +267,13 @@ public class ShadesFragment extends PreferenceFragment {
         if (DEBUG) Log.i(TAG, "Registered Presenter");
     }
 
-    public void setSwitchOn(boolean pauseState) {
-        ShadesActivity activity = (ShadesActivity) getActivity();
-        Switch filterSwitch = activity.getSwitch();
-        if (filterSwitch != null) {
-            filterSwitch.setChecked(!pauseState);
+    private void setPreferencesEnabled(boolean enabled) {
+        PreferenceScreen root = getPreferenceScreen();
+        for (int i = 0; i < root.getPreferenceCount(); i++) {
+            root.getPreference(i).setEnabled(enabled);
         }
-
-        if (!pauseState) {
-            activity.displayInstallWarningToast();
-        }
-    }
-
-    private void disableFilterPreferences() {
-        setAllPreferencesEnabled(false);
         otherPrefCategory.setEnabled(true);
-        automaticSuspendPref.setEnabled(false);
-    }
-
-    private void setPreferencesEnabled() {
-        setAllPreferencesEnabled(true);
-        automaticSuspendPref.setEnabled(true);
+        automaticSuspendPref.setEnabled(enabled);
 
         boolean custom = automaticFilterPref.getValue().toString().equals("custom");
         automaticTurnOnPref.setEnabled(custom);

@@ -77,6 +77,8 @@ public class ShadesActivity extends AppCompatActivity {
     private ShadesFragment mFragment;
     private SettingsModel mSettingsModel;
     private Switch mSwitch;
+    private FilterCommandFactory mFilterCommandFactory;
+    private FilterCommandSender mFilterCommandSender;
     private ShadesActivity context = this;
 
     private boolean hasShownWarningToast = false;
@@ -85,16 +87,18 @@ public class ShadesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();
         if (DEBUG) Log.i(TAG, "Got intent");
+
+        // Wire MVP classes
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mSettingsModel = new SettingsModel(getResources(), sharedPreferences);
+        mFilterCommandFactory = new FilterCommandFactory(this);
+        mFilterCommandSender = new FilterCommandSender(this);
+
         boolean fromShortcut = intent.getBooleanExtra(EXTRA_FROM_SHORTCUT_BOOL, false);
         if (fromShortcut) {
             toggleAndFinish();
         }
 
-        // Wire MVP classes
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mSettingsModel = new SettingsModel(getResources(), sharedPreferences);
-        FilterCommandFactory filterCommandFactory = new FilterCommandFactory(this);
-        FilterCommandSender filterCommandSender = new FilterCommandSender(this);
 
         if (mSettingsModel.getDarkThemeFlag()) setTheme(R.style.AppThemeDark);
 
@@ -121,8 +125,8 @@ public class ShadesActivity extends AppCompatActivity {
             view = (ShadesFragment) fragmentManager.findFragmentByTag(FRAGMENT_TAG_SHADES);
         }
 
-        mPresenter = new ShadesPresenter(view, mSettingsModel, filterCommandFactory,
-                                         filterCommandSender, context);
+        mPresenter = new ShadesPresenter(view, mSettingsModel, mFilterCommandFactory,
+                                         mFilterCommandSender, context);
         view.registerPresenter(mPresenter);
 
         // Make Presenter listen to settings changes
@@ -146,40 +150,51 @@ public class ShadesActivity extends AppCompatActivity {
         mSwitch.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // http://stackoverflow.com/a/3993933
-                    if (android.os.Build.VERSION.SDK_INT >= 23) {
-                        if (!Settings.canDrawOverlays(context)) {
-                            createOverlayPermissionDialog();
-                        }
-                        if (!Settings.canDrawOverlays(context)) {
-                            mSwitch.setChecked(false);
-                        }
-                    }
-                    boolean isChecked = mSwitch.isChecked();
-                    mPresenter.sendCommand(isChecked ?
+                    if (hasOverlayPermission()) {
+                        sendCommand(mSwitch.isChecked() ?
                                             ScreenFilterService.COMMAND_ON :
                                             ScreenFilterService.COMMAND_PAUSE);
+                    } else {
+                        mSwitch.setChecked(false);
+                    }
                 }
         });
 
         return true;
     }
 
-    private void createOverlayPermissionDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    public void setSwitch(boolean onState) {
+        if (mSwitch != null) {
+            mSwitch.setChecked(onState);
+        }
+    }
 
-        builder.setMessage(R.string.overlay_dialog_message)
-            .setTitle(R.string.overlay_dialog_title)
-            .setPositiveButton(R.string.ok_dialog, new DialogInterface.OnClickListener() {
+    private boolean hasOverlayPermission() {
+        // http://stackoverflow.com/a/3993933
+        if (android.os.Build.VERSION.SDK_INT < 23) { return true; }
+
+        if (!Settings.canDrawOverlays(context)) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+            builder.setMessage(R.string.overlay_dialog_message)
+                .setTitle(R.string.overlay_dialog_title)
+                .setPositiveButton(R.string.ok_dialog, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                                                   Uri.parse("package:" + getPackageName()));
+                                Uri.parse("package:" + getPackageName()));
                         startActivityForResult(intent, OVERLAY_PERMISSION_REQ_CODE);
                     }
                 });
 
-        builder.show();
+            builder.show();
+        }
+        return Settings.canDrawOverlays(context);
+    }
+
+    private void sendCommand(int command) {
+        Intent iCommand = mFilterCommandFactory.createCommand(command);
+        mFilterCommandSender.send(iCommand);
     }
 
     @Override
@@ -299,21 +314,9 @@ public class ShadesActivity extends AppCompatActivity {
     }
 
     private void toggleAndFinish() {
-        FilterCommandSender commandSender = new FilterCommandSender(this);
-        FilterCommandFactory commandFactory = new FilterCommandFactory(this);
-        Intent onCommand = commandFactory.createCommand(ScreenFilterService.COMMAND_ON);
-        Intent pauseCommand = commandFactory.createCommand(ScreenFilterService.COMMAND_PAUSE);
-
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        SettingsModel settingsModel = new SettingsModel(getResources(), sharedPreferences);
-        boolean paused = settingsModel.getShadesPauseState();
-
-        if (paused) {
-            commandSender.send(onCommand);
-        } else {
-            commandSender.send(pauseCommand);
-        }
-
+        boolean paused = mSettingsModel.getShadesPauseState();
+        sendCommand( paused ? ScreenFilterService.COMMAND_ON
+                            : ScreenFilterService.COMMAND_PAUSE);
         finish();
     }
 }
