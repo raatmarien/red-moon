@@ -17,28 +17,35 @@
 package com.jmstudios.redmoon.preference;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.TypedArray;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.preference.Preference;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
-import android.widget.SeekBar;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuff;
 
+import com.jmstudios.redmoon.helper.FilterCommandFactory;
+import com.jmstudios.redmoon.helper.FilterCommandSender;
+import com.jmstudios.redmoon.service.ScreenFilterService;
 import com.jmstudios.redmoon.R;
 import com.jmstudios.redmoon.view.ScreenFilterView;
 import com.jmstudios.redmoon.activity.ShadesActivity;
-import com.jmstudios.redmoon.helper.SeekBarTouchListener;
 
 public class IntensitySeekBarPreference extends Preference {
     public static final int DEFAULT_VALUE = 50;
+    private static final String TAG = "IntensitySeekBarPreference";
 
     public SeekBar mIntensityLevelSeekBar;
     private int mIntensityLevel;
     private View mView;
+    private FilterCommandSender mCommandSender;
+    private FilterCommandFactory mCommandFactory;
 
     public IntensitySeekBarPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -80,6 +87,8 @@ public class IntensitySeekBarPreference extends Preference {
     }
 
     private void initLayout() {
+        mCommandSender = new FilterCommandSender(mView.getContext());
+        mCommandFactory = new FilterCommandFactory(mView.getContext());
         mIntensityLevelSeekBar.setProgress(mIntensityLevel);
 
         mIntensityLevelSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -93,13 +102,23 @@ public class IntensitySeekBarPreference extends Preference {
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {}
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                Log.i(TAG, "Touch down on a seek bar");
+
+                Intent showPreviewCommand = mCommandFactory.createCommand
+                    (ScreenFilterService.COMMAND_SHOW_PREVIEW);
+                mCommandSender.send(showPreviewCommand);
+            }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {}
-        });
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                Log.d(TAG, "Released a seek bar");
 
-        mIntensityLevelSeekBar.setOnTouchListener(new SeekBarTouchListener());
+                Intent hidePreviewCommand = mCommandFactory.createCommand
+                    (ScreenFilterService.COMMAND_HIDE_PREVIEW);
+                mCommandSender.send(hidePreviewCommand);
+            }
+        });
 
         updateMoonIconColor();
         updateProgressText();

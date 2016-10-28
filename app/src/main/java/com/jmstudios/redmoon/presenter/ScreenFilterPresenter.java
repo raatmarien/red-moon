@@ -364,9 +364,7 @@ public class ScreenFilterPresenter implements OrientationChangeReceiver.OnOrient
     }
 
     private boolean isPaused() {
-        return mCurrentState == mPauseState ||
-            (isPreviewing() &&
-             mPreviewStateCast.stateOnStart == ScreenFilterService.COMMAND_PAUSE);
+        return mCurrentState.isPaused();
     }
 
     private boolean isPreviewing() {
@@ -533,16 +531,46 @@ public class ScreenFilterPresenter implements OrientationChangeReceiver.OnOrient
         mScreenFilterOpen = false;
     }
 
-    private void moveToState(@NonNull State newState) {
-        if (DEBUG) Log.i(TAG, String.format("Transitioning state from %s to %s", mCurrentState, newState));
+    private void moveToState(int commandFlag) {
+        switch (commandFlag) {
+            case ScreenFilterService.COMMAND_PAUSE:
+                moveToState(mPauseState);
+                break;
 
+            case ScreenFilterService.COMMAND_ON:
+                moveToState(mOnState);
+                break;
+
+            case ScreenFilterService.COMMAND_SHOW_PREVIEW:
+                moveToState(mPreviewState);
+                break;
+
+            case ScreenFilterService.COMMAND_START_SUSPEND:
+                moveToState(mSuspendState);
+                break;
+        }
+    }
+
+    private void moveToState(@NonNull State newState) {
+        if (DEBUG) Log.i(TAG, String.format("Transitioning state from %s to %s",
+                                                      mCurrentState, newState));
+        if (newState == mCurrentState) return;
+
+        State oldState = mCurrentState;
         mCurrentState = newState;
 
+        mCurrentState.onActivation(oldState);
         mSettingsModel.setShadesPauseState(isPaused());
     }
 
+
     private abstract class State {
-        protected abstract void onScreenFilterCommand(int commandFlag);
+        protected abstract void onActivation(State prevState);
+        protected abstract boolean isPaused();
+
+        protected void onScreenFilterCommand(int commandFlag) {
+            moveToState(commandFlag);
+        }
 
         @Override
         public String toString() {
@@ -552,123 +580,64 @@ public class ScreenFilterPresenter implements OrientationChangeReceiver.OnOrient
 
     private class OnState extends State {
         @Override
-        protected void onScreenFilterCommand(int commandFlag) {
-            switch (commandFlag) {
-                case ScreenFilterService.COMMAND_PAUSE:
-                    mServiceController.stopForeground(false);
+        protected void onActivation(State prevState) {
+            refreshForegroundNotification();
 
-                    animateIntensityLevel(ScreenFilterView.MIN_INTENSITY, null);
-                    animateDimLevel(ScreenFilterView.MIN_DIM, new AbstractAnimatorListener() {
-                        @Override
-                        public void onAnimationCancel(Animator animator) {
-                            closeScreenFilter();
+            openScreenFilter();
 
-                            moveToState(mPauseState);
+            animateDimLevel(mSettingsModel.getShadesDimLevel(), null);
+            animateIntensityLevel(mSettingsModel.getShadesIntensityLevel(), null);
 
-                            mServiceController.stopForeground(false);
+            if (mSettingsModel.getBrightnessControlFlag()) {
+                saveOldBrightnessState();
+                setBrightnessState(0, false, mContext);
+            }
 
-                            refreshForegroundNotification();
-                        }
-
-                        @Override
-                        public void onAnimationEnd(Animator animator) {
-                            closeScreenFilter();
-
-                            moveToState(mPauseState);
-
-                            refreshForegroundNotification();
-                        }
-                    });
-
-                    if (mSettingsModel.getBrightnessControlFlag()) {
-                        restoreBrightnessState();
-                    }
-
-                    if (mSettingsModel.getAutomaticSuspend()) {
-                        stopAppMonitoring();
-                    }
-
-                    break;
-
-                case ScreenFilterService.COMMAND_SHOW_PREVIEW:
-                    mPreviewStateCast.stateToReturnTo  =
-                        mPreviewStateCast.stateOnStart = ScreenFilterService.COMMAND_ON;
-                    mPreviewStateCast.pressesActive = 1;
-
-                    moveToState(mPreviewState);
-
-                    break;
-
-                case ScreenFilterService.COMMAND_START_SUSPEND:
-                    mSuspendStateCast.stateToReturnTo  =
-                        mSuspendStateCast.stateOnStart = ScreenFilterService.COMMAND_ON;
-
-                    mServiceController.stopForeground(false);
-
-                    closeScreenFilter();
-
-                    moveToState(mSuspendState);
-
-                    refreshForegroundNotification();
-
-                    break;
+            if (mSettingsModel.getAutomaticSuspend()) {
+                startAppMonitoring();
             }
         }
+
+        @Override
+        protected boolean isPaused() { return false; }
     }
 
     private class PauseState extends State {
         @Override
-        protected void onScreenFilterCommand(int commandFlag) {
-            switch (commandFlag) {
-                case ScreenFilterService.COMMAND_ON:
-                    moveToState(mOnState);
-                    refreshForegroundNotification();
+        protected void onActivation(State prevState) {
+            mServiceController.stopForeground(false);
+            refreshForegroundNotification();
 
-                    openScreenFilter();
-
-                    animateDimLevel(mSettingsModel.getShadesDimLevel(), null);
-                    animateIntensityLevel(mSettingsModel.getShadesIntensityLevel(), null);
-
-                    if (mSettingsModel.getBrightnessControlFlag()) {
-                        saveOldBrightnessState();
-                        setBrightnessState(0, false, mContext);
+            if (prevState==mPreviewState) {
+                mServiceController.stopForeground(false);
+                closeScreenFilter();
+            } else {
+                animateIntensityLevel(ScreenFilterView.MIN_INTENSITY, null);
+                animateDimLevel(ScreenFilterView.MIN_DIM, new AbstractAnimatorListener() {
+                    @Override
+                    public void onAnimationCancel(Animator animator) {
+                        closeScreenFilter();
+                        mServiceController.stopForeground(false);
                     }
 
-                    if (mSettingsModel.getAutomaticSuspend()) {
-                        startAppMonitoring();
+                    @Override
+                    public void onAnimationEnd(Animator animator) {
+                        closeScreenFilter();
                     }
+                });
+            }
 
-                    break;
+            if (mSettingsModel.getBrightnessControlFlag()) {
+                restoreBrightnessState();
+            }
 
-                case ScreenFilterService.COMMAND_SHOW_PREVIEW:
-                    mPreviewStateCast.stateToReturnTo  =
-                        mPreviewStateCast.stateOnStart = ScreenFilterService.COMMAND_PAUSE;
-                    mPreviewStateCast.pressesActive = 1;
-
-                    moveToState(mPreviewState);
-                    refreshForegroundNotification();
-
-                    int dim = mSettingsModel.getShadesDimLevel();
-                    int intensity = mSettingsModel.getShadesIntensityLevel();
-                    int filterColor = mSettingsModel.getShadesColor();
-
-                    mView.setFilterDimLevel(dim);
-                    mView.setFilterIntensityLevel(intensity);
-                    mView.setColorTempProgress(filterColor);
-
-                    openScreenFilter();
-
-                    break;
-
-                case ScreenFilterService.COMMAND_START_SUSPEND:
-                    mSuspendStateCast.stateToReturnTo  =
-                        mSuspendStateCast.stateOnStart = ScreenFilterService.COMMAND_PAUSE;
-
-                    moveToState(mSuspendState);
-
-                    break;
+            if (mSettingsModel.getAutomaticSuspend()) {
+                stopAppMonitoring();
             }
         }
+
+        @Override
+        protected boolean isPaused() { return true; }
     }
 
     /* This State is used to present the filter to the user when (s)he
@@ -677,89 +646,64 @@ public class ScreenFilterPresenter implements OrientationChangeReceiver.OnOrient
      * turned off.
      */
     private class PreviewState extends State {
-        public int stateOnStart;
-        public int stateToReturnTo;
+        public State stateToReturnTo;
         public int pressesActive;
 
         @Override
+        protected void onActivation(State prevState) {
+            stateToReturnTo = prevState;
+            pressesActive = 1;
+            refreshForegroundNotification();
+            openScreenFilter();
+
+            int dim = mSettingsModel.getShadesDimLevel();
+            int intensity = mSettingsModel.getShadesIntensityLevel();
+            int filterColor = mSettingsModel.getShadesColor();
+
+            mView.setFilterDimLevel(dim);
+            mView.setFilterIntensityLevel(intensity);
+            mView.setColorTempProgress(filterColor);
+        }
+
+        @Override
         protected void onScreenFilterCommand(int commandFlag) {
+            if (DEBUG) Log.d(TAG, String.format("Preview, got command: %d", commandFlag));
             switch (commandFlag) {
-            case ScreenFilterService.COMMAND_ON:
-            case ScreenFilterService.COMMAND_PAUSE:
-                if (DEBUG)
-                    Log.d(TAG,
-                          String.format("State to return to changed to %d while in preview mode",
-                                        commandFlag));
+                case ScreenFilterService.COMMAND_ON:
+                    stateToReturnTo = mOnState;
+                    break;
 
-                stateToReturnTo = commandFlag;
+                case ScreenFilterService.COMMAND_PAUSE:
+                    if (DEBUG) Log.d(TAG, String.format("State to return to changed to %d while in preview mode", commandFlag));
+                    stateToReturnTo = mPauseState;
+                    break;
 
-                break;
+                case ScreenFilterService.COMMAND_SHOW_PREVIEW:
+                    pressesActive++;
+                    if (DEBUG) Log.d(TAG,
+                            String.format("%d presses active", pressesActive));
+                    break;
 
-            case ScreenFilterService.COMMAND_SHOW_PREVIEW:
-                pressesActive++;
+                case ScreenFilterService.COMMAND_HIDE_PREVIEW:
+                    pressesActive--;
+                    if (DEBUG) Log.d(TAG,
+                            String.format("%d presses active", pressesActive));
 
-                if (DEBUG) Log.d(TAG,
-                                 String.format("%d presses active", pressesActive));
-
-                break;
-
-            case ScreenFilterService.COMMAND_HIDE_PREVIEW:
-                pressesActive--;
-
-                if (DEBUG) Log.d(TAG,
-                                 String.format("%d presses active", pressesActive));
-
-                if (pressesActive <= 0) {
-                    if (DEBUG)
-                        Log.d(TAG, String.format("Moving back to state %d", stateToReturnTo));
-                    moveBackToState(stateToReturnTo);
-                }
-
-                break;
+                    if (pressesActive <= 0) {
+                        if (DEBUG)
+                            Log.d(TAG, String.format("Moving back to state %d", stateToReturnTo));
+                        if (isPaused()) {
+                            mServiceController.stopForeground(false);
+                            closeScreenFilter();
+                        }
+                        moveToState(stateToReturnTo);
+                    }
+                    break;
             }
         }
 
-        private void moveBackToState(int state) {
-            switch (state) {
-            case ScreenFilterService.COMMAND_ON:
-                moveToState(mOnState);
-
-                if (stateOnStart == ScreenFilterService.COMMAND_PAUSE) {
-                    if (mSettingsModel.getBrightnessControlFlag()) {
-                        saveOldBrightnessState();
-                        setBrightnessState(0, false, mContext);
-                    }
-
-                    if (mSettingsModel.getAutomaticSuspend()) {
-                        startAppMonitoring();
-                    }
-                }
-
-                break;
-
-            case ScreenFilterService.COMMAND_PAUSE:
-                mServiceController.stopForeground(false);
-
-                mView.setFilterDimLevel(ScreenFilterView.MIN_DIM);
-                mView.setFilterIntensityLevel(ScreenFilterView.MIN_INTENSITY);
-
-                closeScreenFilter();
-                moveToState(mPauseState);
-                refreshForegroundNotification();
-
-                if (stateOnStart == ScreenFilterService.COMMAND_ON) {
-                    if (mSettingsModel.getBrightnessControlFlag()) {
-                        restoreBrightnessState();
-                    }
-
-                    if (mSettingsModel.getAutomaticSuspend()) {
-                        stopAppMonitoring();
-                    }
-                }
-
-                break;
-            }
-        }
+        @Override
+        protected boolean isPaused() { return stateToReturnTo.isPaused(); }
     }
 
     /* This state is used when the filter is suspended temporarily,
@@ -770,65 +714,36 @@ public class ScreenFilterPresenter implements OrientationChangeReceiver.OnOrient
      * state and applies them when the suspend state is deactivated.
      */
     private class SuspendState extends State {
-        public int stateOnStart;
-        public int stateToReturnTo;
+        public State stateToReturnTo;
+
+        @Override
+        protected void onActivation(State prevState) {
+            stateToReturnTo = prevState;
+            mServiceController.stopForeground(false);
+            closeScreenFilter();
+            refreshForegroundNotification();
+        }
 
         @Override
         public void onScreenFilterCommand(int commandFlag) {
+            if (DEBUG) Log.d(TAG, String.format("Suspend, got command: %d", commandFlag));
             switch (commandFlag) {
-            case ScreenFilterService.COMMAND_ON:
-            case ScreenFilterService.COMMAND_PAUSE:
-                stateToReturnTo = commandFlag;
-                break;
-            case ScreenFilterService.COMMAND_SHOW_PREVIEW:
-            case ScreenFilterService.COMMAND_HIDE_PREVIEW:
-                // Preview is ignored when the filter is suspended
-                break;
-            case ScreenFilterService.COMMAND_STOP_SUSPEND:
-                moveBackToState(stateToReturnTo);
-                break;
+                case ScreenFilterService.COMMAND_STOP_SUSPEND:
+                    moveToState(stateToReturnTo);
+                    break;
+                case ScreenFilterService.COMMAND_PAUSE:
+                    moveToState(commandFlag);
+                    break;
+                case ScreenFilterService.COMMAND_ON:
+                    // Suspended is a subset of on, so there is nothing to do
+                case ScreenFilterService.COMMAND_SHOW_PREVIEW:
+                case ScreenFilterService.COMMAND_HIDE_PREVIEW:
+                    // Preview is ignored when the filter is suspended
+                    break;
             }
         }
 
-        private void moveBackToState(int commandFlag) {
-            switch (commandFlag) {
-            case ScreenFilterService.COMMAND_ON:
-                moveToState(mOnState);
-                refreshForegroundNotification();
-
-                openScreenFilter();
-
-                mView.setFilterDimLevel(mSettingsModel.getShadesDimLevel());
-                mView.setFilterIntensityLevel(mSettingsModel.getShadesIntensityLevel());
-                mView.setColorTempProgress(mSettingsModel.getShadesColor());
-
-                if (stateOnStart == ScreenFilterService.COMMAND_PAUSE) {
-                    if (mSettingsModel.getBrightnessControlFlag()) {
-                        saveOldBrightnessState();
-                        setBrightnessState(0, false, mContext);
-                    }
-
-                    if (mSettingsModel.getAutomaticSuspend()) {
-                        startAppMonitoring();
-                    }
-                }
-
-                break;
-            case ScreenFilterService.COMMAND_PAUSE:
-                moveToState(mPauseState);
-
-                if (stateOnStart == ScreenFilterService.COMMAND_ON) {
-                    if (mSettingsModel.getBrightnessControlFlag()) {
-                        restoreBrightnessState();
-                    }
-
-                    if (mSettingsModel.getAutomaticSuspend()) {
-                        stopAppMonitoring();
-                    }
-                }
-
-                break;
-            }
-        }
+        @Override
+        protected boolean isPaused() { return stateToReturnTo.isPaused(); }
     }
 }
