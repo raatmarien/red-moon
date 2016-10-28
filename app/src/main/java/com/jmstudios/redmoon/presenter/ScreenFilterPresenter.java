@@ -522,7 +522,7 @@ public class ScreenFilterPresenter implements OrientationChangeReceiver.OnOrient
     }
 
     private void closeScreenFilter() {
-        if (!mScreenFilterOpen) {
+        if (!mScreenFilterOpen || !mCurrentState.isPaused()) {
             return;
         }
 
@@ -617,7 +617,6 @@ public class ScreenFilterPresenter implements OrientationChangeReceiver.OnOrient
                     @Override
                     public void onAnimationCancel(Animator animator) {
                         closeScreenFilter();
-                        mServiceController.stopForeground(false);
                     }
 
                     @Override
