@@ -69,69 +69,40 @@ public class BootReceiver extends BroadcastReceiver {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         SettingsModel settingsModel = new SettingsModel(context.getResources(), sharedPreferences);
 
-        boolean poweredOnBeforeReboot = settingsModel.getShadesPowerState();
         boolean pausedBeforeReboot = settingsModel.getShadesPauseState();
 
-        // Handle "Always open on startup" flag
-        boolean alwaysOpenOnBoot = false;
-        if (alwaysOpenOnBoot) {
-            if (DEBUG) Log.i(TAG, "\"Always open on startup\" flag was set; starting now.");
-
-            AutomaticFilterChangeReceiver.scheduleNextOnCommand(context);
-            AutomaticFilterChangeReceiver.scheduleNextPauseCommand(context);
-
-            commandSender.send(onCommand);
-            return;
+        // If the filter was on when the device was powered down and the
+        // automatic brightness setting is on, then it still uses the
+        // dimmed brightness and we need to restore the saved brightness
+        // before proceeding.
+        if (!pausedBeforeReboot && settingsModel.getBrightnessControlFlag()) {
+            ScreenFilterPresenter.setBrightnessState
+                (settingsModel.getBrightnessLevel(),
+                 settingsModel.getBrightnessAutomatic(),
+                 context);
         }
 
-        // Handle "Keep running after reboot" flag
-        boolean resumeAfterReboot = true;
-        if (resumeAfterReboot) {
-            if (DEBUG) Log.i(TAG, "\"Keep running after reboot\" flag was set.");
+        AutomaticFilterChangeReceiver.scheduleNextOnCommand(context);
+        AutomaticFilterChangeReceiver.scheduleNextPauseCommand(context);
 
-            if (poweredOnBeforeReboot) {
-                if (DEBUG) Log.i(TAG, "Shades was on before reboot; resuming state.");
+        boolean isPausePredicted =
+            getPredictedPauseState(pausedBeforeReboot, settingsModel);
+        commandSender.send(isPausePredicted ?
+                pauseCommand : onCommand);
 
-                // If the filter was on when the device was powered down and the
-                // automatic brightness setting is on, then it still uses the
-                // dimmed brightness and we need to restore the saved brightness
-                // before proceeding.
-                if (!pausedBeforeReboot && settingsModel.getBrightnessControlFlag()) {
-                    ScreenFilterPresenter.setBrightnessState
-                        (settingsModel.getBrightnessLevel(),
-                         settingsModel.getBrightnessAutomatic(),
-                         context);
-                }
+        if (isPausePredicted) {
+            // We want to dismiss the notification if the filter is paused
+            // automatically.
+            // However, the filter fades out and the notification is only
+            // refreshed when this animation has been completed.  To make sure
+            // that the new notification is removed we create a new runnable to
+            // be excecuted 100 ms after the filter has faded out.
+            Handler handler = new Handler();
 
-                AutomaticFilterChangeReceiver.scheduleNextOnCommand(context);
-                AutomaticFilterChangeReceiver.scheduleNextPauseCommand(context);
-
-                boolean isPausePredicted =
-                    getPredictedPauseState(pausedBeforeReboot, settingsModel);
-                commandSender.send(isPausePredicted ?
-                                   pauseCommand : onCommand);
-
-                if (isPausePredicted) {
-                    // We want to dismiss the notification if the filter is paused
-                    // automatically.
-                    // However, the filter fades out and the notification is only
-                    // refreshed when this animation has been completed.  To make sure
-                    // that the new notification is removed we create a new runnable to
-                    // be excecuted 100 ms after the filter has faded out.
-                    Handler handler = new Handler();
-
-                    DismissNotificationRunnable runnable = new DismissNotificationRunnable(context);
-                    handler.postDelayed(runnable, ScreenFilterPresenter.FADE_DURATION_MS + 100);
-                }
-            } else {
-                if (DEBUG) Log.i(TAG, "Shades was off before reboot; no state to resume from.");
-            }
-            return;
+            DismissNotificationRunnable runnable = new DismissNotificationRunnable(context);
+            handler.postDelayed(runnable, ScreenFilterPresenter.FADE_DURATION_MS + 100);
         }
-
-        // Allow ScreenFilterService to sync its state and any shared preferences to "off" mode
-        Intent offCommand = commandFactory.createCommand(ScreenFilterService.COMMAND_OFF);
-        commandSender.send(offCommand);
+        return;
     }
 
     private static boolean getPredictedPauseState(boolean pausedBeforeReboot,

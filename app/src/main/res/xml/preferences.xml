@@ -98,23 +98,5 @@
         android:key="@string/pref_key_dark_theme"
         android:title="@string/dark_theme"
         android:defaultValue="false" />
-
-    <Preference
-        android:key="pref_key_github"
-        android:title="@string/project_page_title"
-        android:summary="@string/project_page_summary" >
-      <intent
-          android:action="android.intent.action.VIEW"
-          android:data="@string/project_page_url" />
-    </Preference>
-
-    <Preference
-        android:key="pref_key_email"
-        android:title="@string/email_me_title"
-        android:summary="@string/email_me_summary">
-      <intent
-          android:action="android.intent.action.VIEW"
-          android:data="@string/contact_email_adress" />
-    </Preference>
   </PreferenceCategory>
 </PreferenceScreen>

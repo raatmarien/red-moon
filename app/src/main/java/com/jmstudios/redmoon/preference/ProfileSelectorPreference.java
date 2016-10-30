@@ -333,9 +333,6 @@ public class ProfileSelectorPreference extends Preference
         SettingsModel model = ((ShadesActivity) getContext()).getSettingsModel();
         model.addOnSettingsChangedListener(new SettingsModel.OnSettingsChangedListener() {
                 @Override
-                public void onShadesPowerStateChanged(boolean powerState) { }
-
-                @Override
                 public void onShadesPauseStateChanged(boolean pauseState) { }
 
                 @Override

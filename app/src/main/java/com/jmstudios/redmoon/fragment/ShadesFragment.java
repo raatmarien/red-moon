@@ -35,43 +35,40 @@
  */
 package com.jmstudios.redmoon.fragment;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
+import android.Manifest;
+import android.net.Uri;
+import android.os.Build.VERSION;
 import android.os.Bundle;
-import android.preference.SwitchPreference;
-import android.preference.SwitchPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
-import android.preference.ListPreference;
+import android.preference.SwitchPreference;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v7.widget.SwitchCompat;
-import android.provider.Settings;
-import android.os.Build.VERSION;
-import android.net.Uri;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.Manifest;
-import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
-import android.location.Location;
-import android.location.LocationManager;
-import android.support.design.widget.FloatingActionButton;
 import android.view.ViewTreeObserver;
 import android.widget.ListView;
-import android.preference.PreferenceScreen;
-import android.support.design.widget.Snackbar;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.jmstudios.redmoon.R;
-import com.jmstudios.redmoon.presenter.ShadesPresenter;
 import com.jmstudios.redmoon.activity.ShadesActivity;
+import com.jmstudios.redmoon.model.SettingsModel;
+import com.jmstudios.redmoon.presenter.ShadesPresenter;
 import com.jmstudios.redmoon.preference.FilterTimePreference;
 import com.jmstudios.redmoon.preference.LocationPreference;
-import com.jmstudios.redmoon.model.SettingsModel;
 import com.jmstudios.redmoon.service.ScreenFilterService;
 
 public class ShadesFragment extends PreferenceFragment {
@@ -79,7 +76,6 @@ public class ShadesFragment extends PreferenceFragment {
     private static final boolean DEBUG = true;
 
     private ShadesPresenter mPresenter;
-    private FloatingActionButton mToggleFab;
     private View mView;
     private Snackbar mHelpSnackbar;
 
@@ -261,25 +257,7 @@ public class ShadesFragment extends PreferenceFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         final View v = super.onCreateView(inflater, container, savedInstanceState);
-
-        mToggleFab = (FloatingActionButton) getActivity().findViewById(R.id.toggle_fab);
-        mToggleFab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    SettingsModel settingsModel = ((ShadesActivity) getActivity()).getSettingsModel();
-                    boolean poweredOn = settingsModel.getShadesPowerState();
-                    boolean paused = settingsModel.getShadesPauseState();
-
-                    if (!poweredOn || paused) {
-                        mPresenter.sendCommand(ScreenFilterService.COMMAND_ON);
-                    } else {
-                        mPresenter.sendCommand(ScreenFilterService.COMMAND_PAUSE);
-                    }
-                }
-            });
-
         mView = v;
-
         return v;
     }
 
@@ -289,52 +267,13 @@ public class ShadesFragment extends PreferenceFragment {
         if (DEBUG) Log.i(TAG, "Registered Presenter");
     }
 
-    public void setSwitchOn(boolean powerState, boolean pauseState) {
-        ShadesActivity activity = (ShadesActivity) getActivity();
-        SwitchCompat filterSwitch = activity.getSwitch();
-        if (filterSwitch != null) {
-            activity.setIgnoreNextSwitchChange(powerState != filterSwitch.isChecked());
-            filterSwitch.setChecked(powerState);
+    private void setPreferencesEnabled(boolean enabled) {
+        PreferenceScreen root = getPreferenceScreen();
+        for (int i = 0; i < root.getPreferenceCount(); i++) {
+            root.getPreference(i).setEnabled(enabled);
         }
-        updateFabIcon();
-
-        if (!powerState) {
-            disableFilterPreferences();
-            mToggleFab.hide();
-            showHelpSnackbar();
-        } else {
-            setPreferencesEnabled();
-            if (mHelpSnackbar != null)
-                mHelpSnackbar.dismiss();
-            mToggleFab.show();
-        }
-
-        if (powerState && !pauseState) {
-            activity.displayInstallWarningToast();
-        }
-    }
-
-    private void updateFabIcon() {
-        SettingsModel settingsModel = ((ShadesActivity) getActivity()).getSettingsModel();
-        boolean poweredOn = settingsModel.getShadesPowerState();
-        boolean paused = settingsModel.getShadesPauseState();
-
-        if (!poweredOn || paused) {
-            mToggleFab.setImageResource(R.drawable.fab_start);
-        } else {
-            mToggleFab.setImageResource(R.drawable.fab_pause);
-        }
-    }
-
-    private void disableFilterPreferences() {
-        setAllPreferencesEnabled(false);
         otherPrefCategory.setEnabled(true);
-        automaticSuspendPref.setEnabled(false);
-    }
-
-    private void setPreferencesEnabled() {
-        setAllPreferencesEnabled(true);
-        automaticSuspendPref.setEnabled(true);
+        automaticSuspendPref.setEnabled(enabled);
 
         boolean custom = automaticFilterPref.getValue().toString().equals("custom");
         automaticTurnOnPref.setEnabled(custom);

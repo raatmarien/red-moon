@@ -33,7 +33,7 @@ import android.provider.Settings;
 import android.app.Activity;
 import android.net.Uri;
 
-import android.support.v7.widget.SwitchCompat;
+import android.widget.Switch;
 
 import com.jmstudios.redmoon.thread.CurrentAppMonitoringThread;
 import com.jmstudios.redmoon.activity.AutomaticSuspendPreferenceActivity;
@@ -52,7 +52,7 @@ public class SwitchBarPreference extends Preference
     private Context mContext;
     private Activity mActivity;
     private TextView mTextView;
-    private SwitchCompat mSwitch;
+    private Switch mSwitch;
 
     public SwitchBarPreference(Context context, Activity activity) {
         super(context);
@@ -88,7 +88,7 @@ public class SwitchBarPreference extends Preference
         bar.setBackgroundColor(mContext.getResources().getColor(R.color.switch_bar_background));
         bar.setOnClickListener(this);
 
-        mSwitch = (SwitchCompat) view.findViewById(R.id.switch_bar_switch);
+        mSwitch = (Switch) view.findViewById(R.id.switch_bar_switch);
         mSwitch.setOnCheckedChangeListener(this);
         mSwitch.setChecked(mValue);
     }

@@ -44,6 +44,10 @@
     <string name="show_intro_text">Show intro</string>
     <string name="automatic_suspend_preference_activity">Automatic suspend</string>
 
+    <!-- Overlay popup -->
+    <string name="overlay_dialog_title">Drawing over other apps</string>
+    <string name="overlay_dialog_message">Permit drawing over other apps in the next screen to allow Red Moon to turn on the filter.</string>
+
     <!-- Notification -->
     <string name="running">Running. Pause to install apks</string>
     <string name="running_no_warning">Running</string>
@@ -78,8 +82,8 @@
     <string name="automatic_suspend_summary">Some features of Android are protected against screen overlays and won\'t work when Red Moon is enabled. For example installing APKs or granting permissions on Android 6.0+.\n\nWhen this feature is enabled Red Moon will automatically suspend when one of these features is opened and restore the filter when you are done. This way you don\'t have to worry about manually turning Red Moon on and off.\n\nThis feature may slightly lower the battery life of your device. Furthermore this feature may not work on all devices.</string>
     <string name="text_switch_on">On</string>
     <string name="text_switch_off">Off</string>
-    <string name="usage_stats_dialog_title">Allow usage access</string>
-    <string name="usage_stats_dialog_message">Allow Red Moon to access app usage stats in the next screen to enable this feature.\n\nRed Moon needs usage access to see what app you are in and suspend the filter in secured apps. Red Moon will use this data only to suspend the filter when needed.</string>
+    <string name="usage_stats_dialog_title">Usage access</string>
+    <string name="usage_stats_dialog_message">Permit usage access in the next screen to allow Red Moon to suspend the filter in secured apps.\n\nRed Moon will use this data only to determine whether you are using an app which requires suspending the filter.</string>
 
     <string name="dark_theme">Dark theme</string>
 

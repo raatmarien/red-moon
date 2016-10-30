@@ -66,7 +66,6 @@ public class SettingsModel implements SharedPreferences.OnSharedPreferenceChange
     private SharedPreferences mSharedPreferences;
     private ArrayList<OnSettingsChangedListener> mSettingsChangedListeners;
 
-    private String mPowerStatePrefKey;
     private String mPauseStatePrefKey;
     private String mDimPrefKey;
     private String mIntensityPrefKey;
@@ -90,7 +89,6 @@ public class SettingsModel implements SharedPreferences.OnSharedPreferenceChange
         mSharedPreferences = sharedPreferences;
         mSettingsChangedListeners = new ArrayList<OnSettingsChangedListener>();
 
-        mPowerStatePrefKey = resources.getString(R.string.pref_key_shades_power_state);
         mPauseStatePrefKey = resources.getString(R.string.pref_key_shades_pause_state);
         mDimPrefKey = resources.getString(R.string.pref_key_shades_dim_level);
         mIntensityPrefKey = resources.getString(R.string.pref_key_shades_intensity_level);
@@ -109,14 +107,6 @@ public class SettingsModel implements SharedPreferences.OnSharedPreferenceChange
         mAmmountProfilesPrefKey = resources.getString(R.string.pref_key_ammount_profiles);
         mIntroShownPrefKey = resources.getString(R.string.pref_key_intro_shown);
         mAutomaticSuspendPrefKey = resources.getString(R.string.pref_key_automatic_suspend);
-    }
-
-    public boolean getShadesPowerState() {
-        return mSharedPreferences.getBoolean(mPowerStatePrefKey, false);
-    }
-
-    public void setShadesPowerState(boolean state) {
-        mSharedPreferences.edit().putBoolean(mPowerStatePrefKey, state).apply();
     }
 
     public boolean getShadesPauseState() {
@@ -251,13 +241,7 @@ public class SettingsModel implements SharedPreferences.OnSharedPreferenceChange
                 mSettingsChangedListeners.remove(mSettingsChangedListeners.indexOf(mSettingsChangedListener));
             }
 
-        if (key.equals(mPowerStatePrefKey))
-        {
-            boolean powerState = getShadesPowerState();
-            for (OnSettingsChangedListener mSettingsChangedListener : mSettingsChangedListeners)
-                mSettingsChangedListener.onShadesPowerStateChanged(powerState);
-        }
-        else if (key.equals(mPauseStatePrefKey))
+        if (key.equals(mPauseStatePrefKey))
         {
             boolean pauseState = getShadesPauseState();
             for (OnSettingsChangedListener mSettingsChangedListener : mSettingsChangedListeners)
@@ -316,7 +300,6 @@ public class SettingsModel implements SharedPreferences.OnSharedPreferenceChange
     //endregion
 
     public interface OnSettingsChangedListener {
-        void onShadesPowerStateChanged(boolean powerState);
         void onShadesPauseStateChanged(boolean pauseState);
         void onShadesDimLevelChanged(int dimLevel);
         void onShadesIntensityLevelChanged(int intensityLevel);
