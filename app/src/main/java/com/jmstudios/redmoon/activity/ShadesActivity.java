@@ -289,10 +289,6 @@ public class ShadesActivity extends AppCompatActivity {
         mSettingsModel.setIntroShown(true);
     }
 
-    public Switch getSwitch() {
-        return mSwitch;
-    }
-
     public int getColorTempProgress() {
         return mSettingsModel.getShadesColor();
     }
