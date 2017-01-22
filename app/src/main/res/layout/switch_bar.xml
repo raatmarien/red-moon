@@ -1,45 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-* Copyright (c) 2016 Marien Raat <marienraat@riseup.net>
-*
-*  This file is free software: you may copy, redistribute and/or modify it
-*  under the terms of the GNU General Public License as published by the Free
-*  Software Foundation, either version 3 of the License, or (at your option)
-*  any later version.
-*
-*  This file is distributed in the hope that it will be useful, but WITHOUT ANY
-*  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-*  FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
-*  details.
-*
-*  You should have received a copy of the GNU General Public License along with
-*  this program.  If not, see <http://www.gnu.org/licenses/>.
--->
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/frame_layout_switch_bar"
-    android:layout_height="?android:attr/actionBarSize"
-    android:layout_width="match_parent"
-    android:backgroundTint="@color/switch_bar_background" >
-  <android.support.v7.widget.AppCompatTextView
-      android:id="@+id/switch_text"
-      android:layout_height="wrap_content"
-      android:layout_width="wrap_content"
-      android:layout_weight="1"
-      android:layout_gravity="start|center_vertical"
-      android:paddingStart="60dp"
-      android:maxLines="2"
-      android:ellipsize="end"
-      android:textSize="20sp"
-      android:textStyle="bold"
-      android:textColor="@color/color_white"
-      android:textAlignment="viewStart" />
-  <android.support.v7.widget.SwitchCompat
-      xmlns:android="http://schemas.android.com/apk/res/android"
-      android:id="@+id/switch_bar_switch"
-      android:layout_width="wrap_content"
-      android:layout_height="match_parent"
-      android:layout_gravity="end"
-      android:paddingStart="6dp"
-      android:paddingEnd="6dp" />
+<?xml version='1.0' encoding='utf-8'?>
+  <!--
+  * Copyright (c) 2016 Marien Raat <marienraat@riseup.net>
+  *
+  *  This file is free software: you may copy, redistribute and/or modify it
+  *  under the terms of the GNU General Public License as published by the Free
+  *  Software Foundation, either version 3 of the License, or (at your option)
+  *  any later version.
+  *
+  *  This file is distributed in the hope that it will be useful, but WITHOUT ANY
+  *  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+  *  FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+  *  details.
+  *
+  *  You should have received a copy of the GNU General Public License along with
+  *  this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+  <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/frame_layout_switch_bar"
+  android:layout_height="?android:attr/actionBarSize"
+  android:layout_width="match_parent"
+  android:backgroundTint="@color/switch_bar_background">
+
+  <android.support.v7.widget.AppCompatTextView android:id="@+id/switch_text"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_gravity="start|center_vertical"
+    android:paddingStart="60dp"
+    android:maxLines="2"
+    android:ellipsize="end"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    android:textColor="@color/color_white"
+    android:textAlignment="viewStart">
+    <!--Removed ObsoleteLayoutParam: layout_weight-->
+  </android.support.v7.widget.AppCompatTextView>
+
+  <android.support.v7.widget.SwitchCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/switch_bar_switch"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="end"
+    android:paddingStart="6dp"
+    android:paddingEnd="6dp"/>
 </FrameLayout>
