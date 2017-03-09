@@ -8,6 +8,7 @@
     <string name="pause_action">일시 중지</string>
 
     <string name="secure_suspend_summary">Android의 일부 기능은 화면 오버레이로부터 보호되며 Red Moon이 작동 중일 때 작동하지 않습니다. 예를 들어 APK를 설치하거나 Android 6.0 이상에서 권한 부여하기가 있습니다.</string>
-    <string name="pref_title_appearance">필터</string>
+    <string name="pref_title_filter">필터</string>
     <string name="button_add_profile">추가</string>
-    </resources>
+    <string name="pref_title_appearance">필터</string>
+</resources>

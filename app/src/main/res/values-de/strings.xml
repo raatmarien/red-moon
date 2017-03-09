@@ -21,13 +21,13 @@
     <string name="paused">Angehalten</string>
     <string name="running">Red Moon wird ausgeführt. Red Moon anhalten, um APKs installieren zu können</string>
     <string name="shades_color_temp">Farbtemperatur</string>
-    <string name="pref_title_appearance">Filter</string>
+    <string name="pref_title_filter">Filter</string>
     <string name="shades_dim_level">Grad der Abblendung</string>
     <string name="shades_intensity_level">Grad der Intensität</string>
     <string name="pref_title_startup">App Start</string>
     <string name="toast_warning_install">Sie können keine APKs installieren, während der Filter läuft.</string>
-    <string name="add_new_profile_dialog_title">Name für das Profil eingeben</string>
-    <string name="add_new_profile_edit_hint">Profilname</string>
+    <string name="add_new_filter_dialog_title">Name für das Profil eingeben</string>
+    <string name="add_new_filter_edit_hint">Profilname</string>
     <string name="time_toggle_title">Filter automatisch einschalten</string>
     <string name="button_add_profile">Hinzufügen</string>
     <string name="button_remove_profile">Löschen</string>
@@ -43,7 +43,7 @@
     <string name="pref_title_time_toggle">Automatischer Filter</string>
     <string name="project_page_summary">Mehr Informationen, Feedback und eigener Beitrag</string>
     <string name="project_page_title">Homepage des Projektes</string>
-    <string name="remove_profile_dialog_title">Dieses Profil löschen?</string>
+    <string name="remove_filter_dialog_title">Dieses Profil löschen?</string>
     <string name="set_dialog">Festlegen</string>
     <string name="toast_warning_no_location">Standortdienst ist nicht eingeschaltet. Es werden benutzerdefinierte Zeiten verwendet. Bitte den Standortdienst einschalten um Sonnenauf- und untergangszeiten verwenden zu können</string>
     <string name="toggle_shortcut_title">Red Moon
@@ -100,4 +100,9 @@ ein-/ausschalten</string>
 
 Red Moon benötigt den Zugriff auf die Daten, um festzustellen, welche App du gerade benutzt, um so ggf. automatisch den Filter pausieren zu können.</string>
 
+<!-- Currently unused -->
+    <string name="add_new_profile_dialog_title">Name für das Profil eingeben</string>
+    <string name="add_new_profile_edit_hint">Profilname</string>
+    <string name="remove_profile_dialog_title">Dieses Profil löschen?</string>
+    <string name="pref_title_appearance">Filter</string>
     </resources>

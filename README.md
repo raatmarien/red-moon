@@ -1,11 +1,11 @@
 <img align="right" height="256" src="https://lut.im/3IqLwsAZWH/piFLRMOgNLWmiqB8.png">
 # Red Moon [![Translation status](https://hosted.weblate.org/widgets/red-moon/-/svg-badge.svg)](https://hosted.weblate.org/engage/red-moon/?utm_source=widget)
 
-Red Moon is a screen filter app for night time phone use. When the
-lowest brightness setting of your phone won't do the trick, Red Moon
-makes your screen even darker. With Red Moon, using your phone in the
-dark won't hurt your eyes and thanks to its red filter feature, you
-will have a healthier sleep.
+Red Moon is a screen filter app for night time phone use. It helps
+you sleep healthier by filtering out blue light, which can disrupt
+your sleep cycle (circadian rhythm). And when your phone's lowest
+brightness isn't low enough, Red Moon protects your eyes by making
+your screen even darker. 
 
 [<img src="https://f-droid.org/badge/get-it-on.png"
       alt="Get it on F-Droid"
@@ -18,14 +18,13 @@ will have a healthier sleep.
 
 ## Features
 
-* Excercise fine control with separate color, intensity and dim settings.
-* Use the default profiles or create your own to quickly choose the
-right settings
-* Set the timer so you don't have to worry about turning Red Moon on at night
-    and off in the morning.
-* Use the persistent notification to turn Red Moon off without
-leaving the application you're using (and to turn it on again when you're done).
-* Toggle Red Moon with a widget or a shortcut, right from your home screen.
+* Use the default filters or create your own, with separate color, intensity and dim settings.
+* Automatically turn Red Moon on from sunset to sunrise, or set custom times.
+* Switch between filters right in the notification, without leaving the app you're using.
+* Turn Red Moon on and off without opening the app using:
+  * A widget or a shortcut on your home screen.
+  * A quick settings tile, like WiFi or Airplane mode (Android 7.0+). 
+  * The notification (if Red Moon is on, or was recently on).
 
 ## Screenshots
 

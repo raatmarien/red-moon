@@ -15,7 +15,7 @@
     <string name="cancel_dialog">取消</string>
 
     <string name="running">运行中……需要暂停来安装APK</string>
-    <string name="pref_title_appearance">滤镜</string>
+    <string name="pref_title_filter">滤镜</string>
     <string name="time_toggle_activity">滤镜时间段</string>
     <string name="pref_title_time_toggle">滤镜时间段</string>
     <string name="pref_title_startup">启动</string>
@@ -26,24 +26,24 @@
     <string name="control_brightness_title">降低亮度</string>
     <string name="location_not_set">未设置</string>
     <string name="set_dialog">设置</string>
-    <string name="remove_profile_dialog_title">是否删除配置？</string>
+    <string name="remove_filter_dialog_title">是否删除配置？</string>
     <string name="searching_location">正在搜索位置</string>
     <string name="project_page_title">浏览官方网站</string>
-    <string name="standard_profiles_array_0">自定义</string>
-    <string name="standard_profiles_array_1">默认</string>
-    <string name="standard_profiles_array_2">阅读</string>
     <string name="toggle_shortcut_title">切换</string>
     <string name="help_snackbar_text">点击按钮切换红月模式</string>
     <string name="email_me_title">给我发送邮件：marienraat@riseup.net</string>
     <string name="dark_theme">暗黑主题</string>
     <string name="custom_start_time_title">恢复时间</string>
     <string name="custom_end_time_title">中止时间</string>
-    <string name="add_new_profile_edit_hint">配置文件名</string>
-    <string name="add_new_profile_dialog_title">输入配置文件名</string>
+    <string name="add_new_filter_edit_hint">配置文件名</string>
+    <string name="add_new_filter_dialog_title">输入配置文件名</string>
     <string name="time_toggle_title">切换模式</string>
     <string name="time_toggle_options_array_2">自动(自定义)</string>
     <string name="time_toggle_options_array_1">自动(日落时间)</string>
     <string name="time_toggle_options_array_0">手动</string>
+    <string name="standard_profiles_array_0">自定义</string>
+    <string name="standard_profiles_array_1">默认</string>
+    <string name="standard_profiles_array_2">阅读</string>
     <string name="email_me_summary">发邮件给我报告Bug或者提意见</string>
     <string name="project_page_summary">查看更多信息，提交反馈和贡献</string>
     <string name="toast_warning_no_location">启用位置服务来更新位置</string>
@@ -52,4 +52,9 @@
 <string name="resume_action">恢复</string>
     <string name="pause_action">暂停</string>
 
+    <!-- Currently unused -->
+    <string name="remove_profile_dialog_title">是否删除配置？</string>
+    <string name="add_new_profile_edit_hint">配置文件名</string>
+    <string name="add_new_profile_dialog_title">输入配置文件名</string>
+    <string name="pref_title_appearance">滤镜</string>
     </resources>

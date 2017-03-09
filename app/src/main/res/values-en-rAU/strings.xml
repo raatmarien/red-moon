@@ -10,7 +10,7 @@
     <string name="resume_action">Resume</string>
     <string name="pause_action">Pause</string>
 
-    <string name="pref_title_appearance">Filter</string>
+    <string name="pref_title_filter">Filter</string>
     <string name="time_toggle_activity">Filter times</string>
     <string name="pref_title_time_toggle">Filter times</string>
     <string name="pref_title_startup">Startup</string>
@@ -43,9 +43,9 @@
 
     <string name="help_snackbar_text">Press the switch to enable Red Moon</string>
 
-    <string name="add_new_profile_dialog_title">Enter profile name</string>
-    <string name="add_new_profile_edit_hint">Profile name</string>
-    <string name="remove_profile_dialog_title">Delete this profile?</string>
+    <string name="add_new_filter_dialog_title">Enter profile name</string>
+    <string name="add_new_filter_edit_hint">Profile name</string>
+    <string name="remove_filter_dialog_title">Delete this profile?</string>
     <string name="set_dialog">Set</string>
     <string name="ok_dialog">OK</string>
     <string name="cancel_dialog">Cancel</string>
@@ -77,4 +77,9 @@
     <string name="time_toggle_options_array_1">Automatic (sun)</string>
     <string name="time_toggle_options_array_2">Automatic (custom)</string>
 
+    <!-- Currently unused -->
+    <string name="add_new_profile_dialog_title">Enter profile name</string>
+    <string name="add_new_profile_edit_hint">Profile name</string>
+    <string name="remove_profile_dialog_title">Delete this profile?</string>
+    <string name="pref_title_appearance">Filter</string>
     </resources>

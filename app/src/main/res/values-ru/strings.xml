@@ -10,7 +10,7 @@
     <string name="paused">Приостановлено</string>
 
     <!-- Preference -->
-    <string name="pref_title_appearance">Фильтр</string>
+    <string name="pref_title_filter">Фильтр</string>
     <string name="time_toggle_activity">Время фильтра</string>
     <string name="pref_title_time_toggle">Время фильтра</string>
     <string name="pref_title_startup">Запуск</string>
@@ -47,9 +47,9 @@
     <string name="help_snackbar_text">Нажмите на переключатель, для включения Red Moon</string>
 
     <!-- Dialog -->
-    <string name="add_new_profile_dialog_title">Введите названия профиля</string>
-    <string name="add_new_profile_edit_hint">Названия профиля</string>
-    <string name="remove_profile_dialog_title">Удалить этот профиль?</string>
+    <string name="add_new_filter_dialog_title">Введите названия профиля</string>
+    <string name="add_new_filter_edit_hint">Названия профиля</string>
+    <string name="remove_filter_dialog_title">Удалить этот профиль?</string>
     <string name="set_dialog">Задать</string>
     <string name="ok_dialog">OK</string>
     <string name="cancel_dialog">Отмена</string>
@@ -103,4 +103,9 @@ Red Moon необходим доступ к статистике использ�
     <string name="intro_slide_4_text">Чтобы включить Red Moon, нажмите на переключатель в правом верхнем углу.</string>
 
     <string name="usage_stats_dialog_title">Разрешить доступ к статистике использования</string>
+    <!-- Currently unused -->
+    <string name="add_new_profile_dialog_title">Введите названия профиля</string>
+    <string name="add_new_profile_edit_hint">Названия профиля</string>
+    <string name="remove_profile_dialog_title">Удалить этот профиль?</string>
+    <string name="pref_title_appearance">Фильтр</string>
     </resources>

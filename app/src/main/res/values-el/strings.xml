@@ -9,7 +9,7 @@
     <string name="resume_action">Συνέχισε</string>
     <string name="pause_action">Παύση</string>
 
-    <string name="pref_title_appearance">Φίλτρο</string>
+    <string name="pref_title_filter">Φίλτρο</string>
     <string name="time_toggle_activity">Ώρες φίλτρου</string>
     <string name="pref_title_time_toggle">Ώρες φίλτρου</string>
     <string name="pref_title_startup">Εκκίνηση</string>
@@ -55,9 +55,9 @@
 
     <string name="help_snackbar_text">Πιέστε τον διακόπτη για ενεργοποίησετε το Κόκκινο Φεγγάρι</string>
 
-    <string name="add_new_profile_dialog_title">Δώστε όνομα προφίλ</string>
-    <string name="add_new_profile_edit_hint">Όνομα προφίλ</string>
-    <string name="remove_profile_dialog_title">Διαγραφή του προφίλ;</string>
+    <string name="add_new_filter_dialog_title">Δώστε όνομα προφίλ</string>
+    <string name="add_new_filter_edit_hint">Όνομα προφίλ</string>
+    <string name="remove_filter_dialog_title">Διαγραφή του προφίλ;</string>
     <string name="set_dialog">Όρισε</string>
     <string name="ok_dialog">ΟΚ</string>
     <string name="cancel_dialog">Άκυρο</string>
@@ -92,4 +92,9 @@
     <string name="app_name">Κόκκινο Φεγγάρι</string>
     <string name="settings">Κόκκινο Φεγγάρι</string>
     <string name="shortcut_activity">Κόκκινο Φεγγάρι εναλλαγή</string>
+    <!-- Currently unused -->
+    <string name="add_new_profile_dialog_title">Δώστε όνομα προφίλ</string>
+    <string name="add_new_profile_edit_hint">Όνομα προφίλ</string>
+    <string name="remove_profile_dialog_title">Διαγραφή του προφίλ;</string>
+    <string name="pref_title_appearance">Φίλτρο</string>
     </resources>

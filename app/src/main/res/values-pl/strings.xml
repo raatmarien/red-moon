@@ -6,7 +6,7 @@
     <string name="running">Uruchomiono. Zatrzymaj aby instalować aplikacje</string>
     <string name="paused">Wstrzymano</string>
 
-    <string name="pref_title_appearance">Profil</string>
+    <string name="pref_title_filter">Profil</string>
     <string name="time_toggle_activity">Czas filtrowania</string>
     <string name="pref_title_time_toggle">Czas filtrowania</string>
     <string name="pref_title_startup">Uruchamianie</string>
@@ -39,9 +39,9 @@
 
     <string name="help_snackbar_text">Naciśnij przełącznik by włączyć Red Moon</string>
 
-    <string name="add_new_profile_dialog_title">Wpisz nazwę profilu</string>
-    <string name="add_new_profile_edit_hint">Nazwa profilu</string>
-    <string name="remove_profile_dialog_title">Usunąć profil?</string>
+    <string name="add_new_filter_dialog_title">Wpisz nazwę profilu</string>
+    <string name="add_new_filter_edit_hint">Nazwa profilu</string>
+    <string name="remove_filter_dialog_title">Usunąć profil?</string>
     <string name="set_dialog">Ustaw</string>
     <string name="ok_dialog">Dobrze</string>
     <string name="cancel_dialog">Anuluj</string>
@@ -106,7 +106,7 @@ przesuń włącznik w prawym górnym rogu.</string>
     <string name="off">Wyłączony</string>
     <string name="action_on">Włącz</string>
     <string name="action_off">Wyłącz</string>
-    <string name="action_next_profile">Następny profil</string>
+    <string name="action_next_filter">Następny profil</string>
 
     <string name="use_location_title">Czas z lokalizacji</string>
     <string name="menu_about">O programie</string>
@@ -114,7 +114,13 @@ przesuń włącznik w prawym górnym rogu.</string>
     <string name="pref_title_integration">Integracja z innymi aplikacjami</string>
     <string name="pref_summary_integration">Niektóre aplikacje, takie jak LibreTasks lub Tasker pozwalają na wywoływanie zadań pod wpływem określonych zdarzeń. Red Moon wysyła publiczne powiadomienie podczas włączania i wyłączania, więc te aplikacje mogą odpowiedzieć. Jeżeli nie używasz lub programujesz tych aplikacji, możesz pominąć następny akapit.
 
-Red Moon rozsyła publiczny zamiar (intent) \'com.jmstudios.redmoon.RED_MOON_TOGGLED\'. Ten zamiar zawiera dodatkową wartość logiczną z kluczem \'jmstudios.bundle.key.FILTER_IS_ON\', która wskazuje czy filtr jest włączany, czy wyłączany.</string>
+Red Moon rozsyła publiczny zamiar (intent) \'com.jmstudios.redmoon.RED_MOON_TOGGLED\'. Ten zamiar zawiera dodatkową wartość logiczną z kluczem \'jmstudios.bundle.key.FILTER_IS_ON\', która wskazuje czy Red Moon jest włączany, czy wyłączany.</string>
     <string name="pref_title_version">Wersja</string>
 
+    <!-- Currently unused -->
+    <string name="add_new_profile_dialog_title">Wpisz nazwę profilu</string>
+    <string name="add_new_profile_edit_hint">Nazwa profilu</string>
+    <string name="remove_profile_dialog_title">Usunąć profil?</string>
+    <string name="action_next_profile">Następny profil</string>
+    <string name="pref_title_appearance">Profil</string>
     </resources>

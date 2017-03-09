@@ -227,7 +227,7 @@ class ScreenFilterPresenter(private val mServiceController: ServiceLifeCycleCont
             addAction(toggleIconResId, toggleActionText, togglePI)
 
             // Add profile switch action
-            val nextProfileText   = context.getString(R.string.action_next_profile)
+            val nextProfileText   = context.getString(R.string.action_next_filter)
             val nextProfileIntent = Intent(context, NextProfileCommandReceiver::class.java)
             val nextProfilePI     = PendingIntent.getBroadcast(context, REQUEST_CODE_NEXT_PROFILE,
                                                                nextProfileIntent, 0)

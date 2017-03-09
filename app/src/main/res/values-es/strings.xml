@@ -8,7 +8,7 @@
     <string name="resume_action">Reanudar</string>
     <string name="pause_action">Pausar</string>
 
-    <string name="pref_title_appearance">Filtro</string>
+    <string name="pref_title_filter">Filtro</string>
     <string name="time_toggle_activity">Horas de funcionamiento</string>
     <string name="pref_title_time_toggle">Horas de funcionamiento</string>
     <string name="pref_title_startup">Inicio</string>
@@ -33,9 +33,9 @@
 
     <string name="help_snackbar_text">Activa Red Moon para empezar</string>
 
-    <string name="add_new_profile_dialog_title">Escribe un nombre de perfil</string>
-    <string name="add_new_profile_edit_hint">Nombre del perfil</string>
-    <string name="remove_profile_dialog_title">¿Seguro que quieres borrarlo?</string>
+    <string name="add_new_filter_dialog_title">Escribe un nombre de perfil</string>
+    <string name="add_new_filter_edit_hint">Nombre del perfil</string>
+    <string name="remove_filter_dialog_title">¿Seguro que quieres borrarlo?</string>
     <string name="intro_slide_1_text">Te damos la bienvenida a «Red Moon».</string>
 
     <string name="intro_slide_2_title">Protege tus ojos</string>
@@ -103,7 +103,7 @@ Red Moon necesita acceder a los datos de uso para saber si la aplicación en pri
     <string name="write_settings_dialog_message">Activa el permiso en la siguiente pantalla para que Red Moon pueda ajustar el brillo de la pantalla según sea necesario.</string>
 
     <string name="write_settings_dialog_title">Cambiar ajustes del sistema</string>
-    <string name="action_next_profile">Siguiente perfil</string>
+    <string name="action_next_filter">Siguiente perfil</string>
 
     <string name="menu_about">Acerca de</string>
     <string name="activity_about">Acerca de Red Moon</string>
@@ -113,4 +113,10 @@ Red Moon necesita acceder a los datos de uso para saber si la aplicación en pri
     <string name="pref_summary_integration">Algunas aplicaciones como LibreTasks o Tasker permiten automatizar tareas. Red Moon envía una notificación global cuando se suspende y reanuda, por lo que esas aplicaciones pueden hacer cosas al cambiar el filtro. Puedes saltarte el siguiente párrafo si no eres desarrollador o no te interesa.
 
 Red Moon emite un «intent» público con la acción `com.jmstudios.redmoon.RED_MOON_TOGGLED`. El «intent» contiene un valor booleano extra con la clave `jmstudios.bundle.key.FILTER_IS_ON`, indicando el estado del filtro.</string>
-    </resources>
+    <!-- Currently unused -->
+    <string name="add_new_profile_dialog_title">Escribe un nombre de perfil</string>
+    <string name="add_new_profile_edit_hint">Nombre del perfil</string>
+    <string name="remove_profile_dialog_title">¿Seguro que quieres borrarlo?</string>
+    <string name="action_next_profile">Siguiente perfil</string>
+    <string name="pref_title_appearance">Filtro</string>
+</resources>

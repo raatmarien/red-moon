@@ -5,40 +5,37 @@
     <string name="button_remove_profile">Sil</string>
     <string name="shades_color_temp">Renk sıcaklığı</string>
     <string name="project_page_title">Tasarı sayfasını ziyaret et</string>
-    <string name="add_new_profile_edit_hint">Profil ismi</string>
+    <string name="add_new_filter_edit_hint">Profil ismi</string>
     <string name="intro_slide_1_title">Hoş geldiniz!</string>
     <string name="intro_slide_3_text">Mavi ışık geceleri uyumanı sağlayan Melatonin hormonu üretimini baskılar. Red Moon daha kolay uyumanız için ekranınızdaki mavi ışığı kaldırır.</string>
 
-    <string name="standard_profiles_array_0">Özel</string>
-    <string name="standard_profiles_array_1">Varsayılan</string>
-    <string name="pref_title_appearance">Süzgeç</string>
+    <string name="pref_title_filter">Süzgeç</string>
     <string name="resume_action">Devam et</string>
     <string name="pref_title_other">Diğer</string>
 
     <string name="paused">Durduruldu</string>
     <string name="shades_dim_level">Karartma düzeyi</string>
     <string name="shades_intensity_level">Yoğunluk düzeyi</string>
-    <string name="add_new_profile_dialog_title">Profil ismini gir</string>
+    <string name="add_new_filter_dialog_title">Profil ismini gir</string>
     <string name="cancel_dialog">İptal</string>
 
     <string name="ok_dialog">Tamam</string>
     <string name="time_toggle_options_array_0">Elle</string>
-    <string name="standard_profiles_array_2">Okuma</string>
 
-    <string name="running">Çalışıyor. Apk kurmak için durdurun</string>
+    <string name="running">Çalışıyor. Apk kurmak için kapat</string>
     <string name="app_name">Red Moon</string>
     <string name="settings">Red Moon</string>
     <string name="time_toggle_activity">Süzgeç zamanları</string>
     <string name="pref_title_time_toggle">Süzgeç zamanları</string>
-    <string name="custom_start_time_title">Devam et</string>
-    <string name="custom_end_time_title">Durdur</string>
+    <string name="custom_start_time_title">Aç</string>
+    <string name="custom_end_time_title">Kapat</string>
     <string name="dark_theme">Siyah tema</string>
 
     <string name="toast_warning_no_location">Konumu güncellemek için konum hizmetlerini aç</string>
 
-    <string name="toast_warning_install">Süzgeç çalışırken APK yükleyemezsin.</string>
+    <string name="toast_warning_install">Red Moon çalışırken APK yükleyemezsin.</string>
     <string name="intro_label">Tanıtım</string>
-    <string name="show_intro_text">Tanıtımı göster</string>
+    <string name="show_intro_text">Tanıtımı yeniden oynat</string>
 
     <string name="location_not_set">Ayarlanmamış</string>
     <string name="location_title">Konum</string>
@@ -58,29 +55,57 @@
     <string name="control_brightness_title">Düşük parlaklık</string>
 
     <string name="time_toggle_title">Geçiş kipi</string>
-    <string name="intro_slide_4_text">Red Moon\'u etkinleştirmek için sağ üst köşedeki düğmeyi açın.</string>
+    <string name="intro_slide_4_text">Red Moon\'u açmak için sağ üst
+köşedeki düğmeyi aç.</string>
 
     <string name="help_snackbar_text">Red Moon\'u etkinleştirmek için düğmeye bas</string>
 
-    <string name="remove_profile_dialog_title">Bu profili sil?</string>
+    <string name="remove_filter_dialog_title">Bu profili sil?</string>
     <string name="intro_slide_2_text">Gece telefonuna bakmak gözlerine zarar verir, Red Moon\'u kullanıp ekranını karartabilirsin.</string>
 
-    <string name="secure_suspend_activity">Kendiliğinden askıya al</string>
+    <string name="standard_profiles_array_0">Özel</string>
+    <string name="standard_profiles_array_1">Varsayılan</string>
+    <string name="standard_profiles_array_2">Okuma</string>
+    <string name="secure_suspend_activity">Güvenli uygulamalarda duraklat</string>
 
     <string name="latitude_short">Enlem</string>
-    <string name="secure_suspend_title">Güvenli uygulamalarda kendiliğinden durdur</string>
+    <string name="secure_suspend_title">Güvenli uygulamalarda duraklat</string>
     <string name="text_switch_on">Açık</string>
     <string name="text_switch_off">Kapalı</string>
-    <string name="usage_stats_dialog_title">Kullanım erişimine izin ver</string>
+    <string name="usage_stats_dialog_title">Kullanım erişimi</string>
     <string name="email_me_summary">Bana hataları ya da önerileri e-postayla gönder</string>
     <string name="intro_slide_4_title">Başlayın!</string>
-    <string name="secure_suspend_summary">Android\'in bazı özellikleri ekran katmanlarına karşı korunmaktadır ve Red Moon etkinken çalışmamaktadır. Örneğin APK\'ler yüklenirken ya da Android 6.0+ üzerinde izin verilirken.
+    <string name="secure_suspend_summary">Bazı özellikler Red Moon açıkken* çalışmayacaktır. Örneğin APK\'ler yüklenirken, Android 6.0+ üzerinde izin verirken ya da (kök erişimi olan aygıtlarda) SuperUser uygulaması kullanırken.
 
-Bu özellik etkinken bu özelliklerden biri açıldığında Red Moon kendiliğinden askıya alınacak ve işiniz bittiğinde süzgeç geri getirilecek. Bu yolla Red Moon\'u elle açıp kapatmayı düşünmeyeceksiniz.
+Bu ayar etkinken, bu özelliklerden biri açıldığında Red Moon duraklayacak.
 
-Bu özellik aygıtınızın pil ömrünü azıcık düşürebilir. Üstelik bu özellik tüm aygıtlarda çalışmayabilir.</string>
+Bu özellik aygıtınızın pil ömrünü azıcık düşürebilir. Üstelik bu özellik tüm aygıtlarda çalışmayabilir.
+
+*Red Moon tüm ekran üzerinde saydam kırmızı katman çizerek çalışır; bu uygulamalar eğer başka uygulama onların üzerine çizim yaparsa çalışmayacaktır. Bu yolla, başka uygulamanın istemediğiniz bir seçeneği seçmesi ya da ne yaptığınızı anlamak için dokunuşlarınızı izlemesi engellenir.</string>
     <string name="usage_stats_dialog_message">Bu özelliği etkinleştirmek için sonraki ekranda Red Moon\'un uygulama kullanım bilgilerine erişmesine izin verin.
 
 Red Moon güvenli uygulamalarda süzgeci askıya almak ve hangi uygulamanın içinde olduğunuzu görmek için kullanım iznine gereksinir. Red Moon bu veriyi gerektiğinde sadece süzgeci askıya almak için kullanacak.</string>
 
+<!-- Currently unused -->
+    <string name="add_new_profile_edit_hint">Profil ismi</string>
+    <string name="add_new_profile_dialog_title">Profil ismini gir</string>
+    <string name="remove_profile_dialog_title">Bu profili sil?</string>
+    <string name="pref_title_appearance">Profil</string>
+    <string name="menu_about">Hakkında</string>
+    <string name="activity_about">Red Moon Hakkında</string>
+    <string name="running_no_warning">Çalışıyor</string>
+    <string name="pref_title_version">Sürüm</string>
+
+    <string name="overlay_dialog_title">Diğer uygulamalar üzerine çizim</string>
+    <string name="overlay_dialog_message">Red Moon\'un açılması için sonraki ekranda diğer uygulamar üzerine çizime izin ver.</string>
+
+    <string name="write_settings_dialog_title">Sistem ayarları düzenleniyor</string>
+    <string name="off">Kapalı</string>
+    <string name="action_on">Aç</string>
+    <string name="action_off">Kapat</string>
+    <string name="action_next_filter">Sonraki süzgeç</string>
+
+    <string name="pref_title_startup">Başlangıç</string>
+    <string name="pref_title_integration">Diğer uygulamalarla tümleşme</string>
+    <string name="action_next_profile">Sonraki profil</string>
     </resources>

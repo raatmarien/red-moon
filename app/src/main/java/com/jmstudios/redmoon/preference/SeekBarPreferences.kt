@@ -117,7 +117,7 @@ class ColorSeekBarPreference(context: Context, attrs: AttributeSet) : SeekBarPre
 
     // TODO: Get the default value from the XML and handle it in the parent class
     companion object : Logger() {
-        val DEFAULT_VALUE = 10
+        const val DEFAULT_VALUE = 10
     }
 
     // Changes to DEFAULT_VALUE should be reflected in preferences.xml
@@ -139,7 +139,7 @@ class IntensitySeekBarPreference(context: Context, attrs: AttributeSet) : SeekBa
 
     // TODO: Get the default value from the XML and handle it in the parent class
     companion object : Logger() {
-        val DEFAULT_VALUE = 50
+        const val DEFAULT_VALUE = 50
     }
 
     // Changes to DEFAULT_VALUE should be reflected in preferences.xml
@@ -161,7 +161,7 @@ class DimSeekBarPreference(context: Context, attrs: AttributeSet) : SeekBarPrefe
 
     // TODO: Get the default value from the XML and handle it in the parent class
     companion object : Logger() {
-        val DEFAULT_VALUE = 50
+        const val DEFAULT_VALUE = 50
     }
 
     // Changes to DEFAULT_VALUE should be reflected in preferences.xml

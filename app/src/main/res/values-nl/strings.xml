@@ -3,7 +3,7 @@
     <string name="running">Loopt. Zet uit om apks te installeren</string>
     <string name="paused">Gepauzeerd</string>
 
-    <string name="pref_title_appearance">Profiel</string>
+    <string name="pref_title_filter">Profiel</string>
     <string name="time_toggle_activity">Filter tijden</string>
     <string name="pref_title_time_toggle">Filter tijden</string>
     <string name="pref_title_startup">Opstarten</string>
@@ -36,9 +36,9 @@
 
     <string name="help_snackbar_text">Druk de schakelaar om Red Moon in te schakelen</string>
 
-    <string name="add_new_profile_dialog_title">Voer de naam van het profiel in</string>
-    <string name="add_new_profile_edit_hint">Profielnaam</string>
-    <string name="remove_profile_dialog_title">Verwijder dit profiel?</string>
+    <string name="add_new_filter_dialog_title">Voer de naam van het profiel in</string>
+    <string name="add_new_filter_edit_hint">Profielnaam</string>
+    <string name="remove_filter_dialog_title">Verwijder dit profiel?</string>
     <string name="set_dialog">Stel in</string>
     <string name="ok_dialog">OK</string>
     <string name="cancel_dialog">Annuleren</string>
@@ -101,7 +101,7 @@ Het aanzetten van deze functie kan uw batterijduur lichtelijk verminderen op som
 
 Red Moon zal deze data alleen gebruiken om te bepalen wanneer u beveiligde functies gebruikt, zodat de filter automatisch gepauzeerd kan worden.</string>
 
-    <string name="action_next_profile">Volgende profiel</string>
+    <string name="action_next_filter">Volgende profiel</string>
 
     <string name="menu_about">Over Red Moon</string>
     <string name="activity_about">Over Red Moon</string>
@@ -111,4 +111,10 @@ Red Moon zal deze data alleen gebruiken om te bepalen wanneer u beveiligde funct
 Red Moon verstuurd een publieke Intent met the actie `com.jmstudios.redmoon.RED_MOON_TOGGLED` . Deze intent bevat een boolean extra waarde met de key `jmstudios.bundle.key.FILTER_IS_ON`, die aangeeft of de filter aan of uit aan het gaan is."</string>
     <string name="pref_title_version">Versie</string>
 
+    <!-- Currently unused -->
+    <string name="add_new_profile_dialog_title">Voer de naam van het profiel in</string>
+    <string name="add_new_profile_edit_hint">Profielnaam</string>
+    <string name="remove_profile_dialog_title">Verwijder dit profiel?</string>
+    <string name="action_next_profile">Volgende profiel</string>
+    <string name="pref_title_appearance">Profiel</string>
     </resources>

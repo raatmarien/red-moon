@@ -147,7 +147,7 @@ class ProfileSelectorPreference(private val mContext: Context, attrs: AttributeS
 
     private fun openRemoveProfileDialog() {
         val builder = AlertDialog.Builder(context)
-        builder.setTitle(context.resources.getString(R.string.remove_profile_dialog_title))
+        builder.setTitle(context.resources.getString(R.string.remove_filter_dialog_title))
 
         val okString = context.resources.getString(R.string.button_remove_profile)
         val cancelString = context.resources.getString(R.string.cancel_dialog)
@@ -167,11 +167,11 @@ class ProfileSelectorPreference(private val mContext: Context, attrs: AttributeS
 
     private fun openAddNewProfileDialog() {
         val builder = AlertDialog.Builder(context)
-        builder.setTitle(context.resources.getString(R.string.add_new_profile_dialog_title))
+        builder.setTitle(context.resources.getString(R.string.add_new_filter_dialog_title))
 
         val nameInput = EditText(context)
         nameInput.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_SENTENCES
-        nameInput.hint = context.resources.getString(R.string.add_new_profile_edit_hint)
+        nameInput.hint = context.resources.getString(R.string.add_new_filter_edit_hint)
 
         builder.setView(nameInput)
 
