@@ -39,8 +39,8 @@ android {
         applicationId appId
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 29
-        versionName "3.0.0"
+        versionCode 30
+        versionName "3.1.0"
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [ eventBusIndex : 'com.jmstudios.redmoon.event.EventBusIndex' ]
@@ -77,7 +77,7 @@ dependencies {
     compile 'de.cketti.library.changelog:ckchangelog:1.2.2'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile 'org.greenrobot:eventbus:3.0.0'
-    compile 'me.smichel.android:kpreferences:0.6.0'
+    compile 'me.smichel.android:kpreferences:0.7.0'
     annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.0.1'
 }
 

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2016 Marien Raat <marienraat@riseup.net>
- * Copyright (c) 2017  Stephen Michel <s@smichel.me>
+ * Copyright (c) 2017 Stephen Michel <s@smichel.me>
  *
  *  This file is free software: you may copy, redistribute and/or modify it
  *  under the terms of the GNU General Public License as published by the Free
@@ -19,12 +19,8 @@ package com.jmstudios.redmoon.helper
 
 import android.graphics.Color
 
-import com.jmstudios.redmoon.R
-import com.jmstudios.redmoon.util.getString
-
 import org.json.JSONObject
 
-private const val KEY_NAME      = "name"
 private const val KEY_COLOR     = "color"
 private const val KEY_INTENSITY = "intensity"
 private const val KEY_DIM_LEVEL = "dim"
@@ -41,19 +37,21 @@ private const val KEY_LOWER_BRIGHTNESS = "lower-brightness"
  * intensity: 0 doesn't color the filter; 100 is the maximum the system allows.
  */
 data class Profile(
-        val name:            String  = NAME_CUSTOM,
-        val color:           Int     = DEFAULT_COLOR,
-        val intensity:       Int     = DEFAULT_INTENSITY,
-        val dimLevel:        Int     = DEFAULT_DIM_LEVEL,
-        val lowerBrightness: Boolean = false) : EventBus.Event {
+        val color: Int,
+        val intensity: Int,
+        val dimLevel: Int,
+        val lowerBrightness: Boolean) : EventBus.Event, Comparable<Profile> {
 
     override fun toString() = JSONObject().run {
-        put(KEY_NAME,      name     )
         put(KEY_COLOR,     color    )
         put(KEY_INTENSITY, intensity)
         put(KEY_DIM_LEVEL, dimLevel )
         put(KEY_LOWER_BRIGHTNESS, lowerBrightness)
         toString()
+    }
+
+    override operator fun compareTo(other: Profile): Int {
+        return compareValuesBy(this, other) { Color.alpha(it.filterColor) }
     }
 
     val filterColor: Int
@@ -93,15 +91,6 @@ data class Profile(
     }
 
     companion object {
-        private const val MIN_DIM_LEVEL = 0
-        private const val MIN_INTENSITY = 0
-
-        private val NAME_CUSTOM = getString(R.string.filter_name_custom)
-
-        const val DEFAULT_DIM_LEVEL = MIN_DIM_LEVEL
-        const val DEFAULT_INTENSITY = MIN_INTENSITY
-        const val DEFAULT_COLOR     = 10
-
         const val DIM_MAX_ALPHA = 0.9f
         private const val INTENSITY_MAX_ALPHA  = 0.75f
         private const val ALPHA_ADD_MULTIPLIER = 0.75f
@@ -110,12 +99,11 @@ data class Profile(
         private fun floatToColorBits(color: Float): Int = (color * 255.0f).toInt()
 
         internal fun parse(entry: String): Profile = JSONObject(entry).run {
-            val name      = optString(KEY_NAME)
             val color     = optInt(KEY_COLOR)
             val intensity = optInt(KEY_INTENSITY)
             val dim       = optInt(KEY_DIM_LEVEL)
             val lowerBrightness = optBoolean(KEY_LOWER_BRIGHTNESS)
-            Profile(name, color, intensity, dim, lowerBrightness)
+            Profile(color, intensity, dim, lowerBrightness)
         }
 
         fun getColorTemperature(color: Int): Int = 500 + color * 30

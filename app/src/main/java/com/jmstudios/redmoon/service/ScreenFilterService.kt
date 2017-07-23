@@ -60,6 +60,7 @@ import com.jmstudios.redmoon.manager.CurrentAppMonitor
 import com.jmstudios.redmoon.manager.ScreenManager
 import com.jmstudios.redmoon.manager.WindowViewManager
 import com.jmstudios.redmoon.model.Config
+import com.jmstudios.redmoon.model.profiles.name
 import com.jmstudios.redmoon.presenter.ScreenFilterPresenter
 import com.jmstudios.redmoon.receiver.NextProfileCommandReceiver
 import com.jmstudios.redmoon.receiver.OrientationChangeReceiver

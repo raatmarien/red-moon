@@ -47,7 +47,7 @@ import com.jmstudios.redmoon.R
 import com.jmstudios.redmoon.event.*
 import com.jmstudios.redmoon.fragment.FilterFragment
 import com.jmstudios.redmoon.model.Config
-import com.jmstudios.redmoon.model.ProfilesModel
+import com.jmstudios.redmoon.model.profiles.restoreDefaultProfiles
 import com.jmstudios.redmoon.service.ScreenFilterService
 import com.jmstudios.redmoon.helper.EventBus
 import com.jmstudios.redmoon.helper.Logger
@@ -143,8 +143,7 @@ class MainActivity : ThemedAppCompatActivity() {
                 recreate()
             }
             R.id.menu_restore_default_filters -> {
-                Config.amountProfiles = ProfilesModel.reset()
-                Config.profile = 1
+                restoreDefaultProfiles()
             }
             else -> return super.onOptionsItemSelected(item)
         }

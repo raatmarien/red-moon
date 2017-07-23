@@ -40,12 +40,13 @@ package com.jmstudios.redmoon.manager
 import android.content.Context
 import android.provider.Settings
 import com.jmstudios.redmoon.event.changeBrightnessDenied
-import com.jmstudios.redmoon.event.lowerBrightnessChanged
 import com.jmstudios.redmoon.helper.EventBus
+import com.jmstudios.redmoon.helper.Profile
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.helper.Logger
 import com.jmstudios.redmoon.helper.Permission
 import com.jmstudios.redmoon.util.*
+
 import org.greenrobot.eventbus.Subscribe
 
 class BrightnessManager(private val mContext: Context) {
@@ -54,14 +55,15 @@ class BrightnessManager(private val mContext: Context) {
     val hasPermission
         get() = Permission.WriteSettings.isGranted
 
-    @Subscribe fun onLowerBrightnessChanged(event: lowerBrightnessChanged) {
-        if (Config.lowerBrightness) lower() else restore()
+    @Subscribe fun onProfileChanged(profile: Profile) {
+        Log.i("Recieved profile change: $profile")
+        if (profile.lowerBrightness) lower() else restore()
     }
 
     fun lower() =  when {
-        !filterIsOn      -> Log.w("Can't lower brightness; filter is off!")
+        !filterIsOn -> Log.w("Can't lower brightness; filter is off!")
         Config.brightnessLowered -> Log.w("Brightness is already lowered!")
-        !Config.lowerBrightness  -> Log.w("Lower brightness not enabled!")
+        !activeProfile.lowerBrightness -> Log.w("Lower brightness not enabled!")
         !hasPermission -> {
             EventBus.post(changeBrightnessDenied())
             Log.i("Permission not granted!")

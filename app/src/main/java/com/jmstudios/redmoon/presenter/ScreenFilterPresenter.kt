@@ -42,6 +42,7 @@ import com.jmstudios.redmoon.event.*
 import com.jmstudios.redmoon.helper.EventBus
 import com.jmstudios.redmoon.helper.Logger
 import com.jmstudios.redmoon.helper.Permission
+import com.jmstudios.redmoon.helper.Profile
 import com.jmstudios.redmoon.service.ServiceController
 import com.jmstudios.redmoon.service.ScreenFilterService.Command
 
@@ -71,7 +72,7 @@ class ScreenFilterPresenter(private val mController: ServiceController) {
     fun handleCommand(command: Command) = mCurrentState.handleCommand(command)
 
     private abstract inner class State {
-        @Subscribe open fun onProfileChanged(event: profileChanged) {}
+        @Subscribe open fun onProfileChanged(profile: Profile) {}
         abstract fun onActivation(prevState: State)
 
         open internal fun nextState(command: Command): State = when (command) {
@@ -105,7 +106,7 @@ class ScreenFilterPresenter(private val mController: ServiceController) {
 
     private open inner class OnState : State() {
         override fun onActivation(prevState: State) = mController.start(DURATION_LONG)
-        override fun onProfileChanged(event: profileChanged) = mController.start(DURATION_SHORT)
+        override fun onProfileChanged(profile: Profile) = mController.start(DURATION_SHORT)
         override fun nextState(command: Command): State {
             return if (command == Command.TOGGLE) mOffState else super.nextState(command)
         }
@@ -172,9 +173,7 @@ class ScreenFilterPresenter(private val mController: ServiceController) {
             }
         }
 
-        @Subscribe fun newColor    (event: colorChanged    ) = mController.start(DURATION_INSTANT)
-        @Subscribe fun newIntensity(event: intensityChanged) = mController.start(DURATION_INSTANT)
-        @Subscribe fun NewDim      (event: dimLevelChanged ) = mController.start(DURATION_INSTANT)
+        override fun onProfileChanged(profile: Profile) = mController.start(DURATION_INSTANT)
     }
 
     /* This state is used when the filter is suspended temporarily,

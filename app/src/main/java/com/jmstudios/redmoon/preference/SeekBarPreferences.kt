@@ -19,6 +19,7 @@ package com.jmstudios.redmoon.preference
 
 import android.content.Context
 import android.content.res.TypedArray
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
@@ -44,7 +45,7 @@ abstract class SeekBarPreference(context: Context, attrs: AttributeSet) : Prefer
     protected var mProgress: Int = 0
     lateinit protected var mView: View
 
-    abstract val DEFAULT_VALUE: Int
+    open val DEFAULT_VALUE: Int = 20
     abstract val color: Int
     abstract val progress: Int
     abstract val suffix: String
@@ -78,17 +79,15 @@ abstract class SeekBarPreference(context: Context, attrs: AttributeSet) : Prefer
         mSeekBar = view.findViewById(R.id.seekbar) as SeekBar
         setProgress(mProgress)
         mSeekBar.setOnSeekBarChangeListener(this)
-        updateMoonIcon()
-        updateProgressText()
+        updateView()
     }
 
     //region OnSeekBarChangedListener
     override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-        Log.i("onSeekbarProgressChanged, storing value")
+        Log.i("onSeekbarProgressChanged, $title to $progress")
         mProgress = progress
         persistInt(mProgress)
-        updateMoonIcon()
-        updateProgressText()
+        updateView()
     }
 
     override fun onStartTrackingTouch(seekBar: SeekBar) {
@@ -102,23 +101,19 @@ abstract class SeekBarPreference(context: Context, attrs: AttributeSet) : Prefer
     }
     //end region
 
-    private fun updateMoonIcon() {
+    private fun updateView() {
         if (isEnabled) {
             val moonIcon = mView.findViewById(R.id.moon_icon) as ImageView
             moonIcon.colorFilter = colorFilter
         }
-    }
 
-    private fun updateProgressText() {
         val progressView = mView.findViewById(R.id.seekbar_value) as TextView
         progressView.text = "$progress$suffix"
     }
 }
 
 class ColorSeekBarPreference(context: Context, attrs: AttributeSet) : SeekBarPreference(context, attrs) {
-    companion object : Logger()
 
-    override val DEFAULT_VALUE = Profile.DEFAULT_COLOR
     override val suffix = "K"
         
     override val color: Int
@@ -129,9 +124,7 @@ class ColorSeekBarPreference(context: Context, attrs: AttributeSet) : SeekBarPre
 }
 
 class IntensitySeekBarPreference(context: Context, attrs: AttributeSet) : SeekBarPreference(context, attrs) {
-    companion object : Logger()
 
-    override val DEFAULT_VALUE = Profile.DEFAULT_INTENSITY
     override val suffix = "%"
 
     override val color: Int
@@ -155,9 +148,7 @@ class IntensitySeekBarPreference(context: Context, attrs: AttributeSet) : SeekBa
 }
 
 class DimSeekBarPreference(context: Context, attrs: AttributeSet) : SeekBarPreference(context, attrs) {
-    companion object : Logger()
 
-    override val DEFAULT_VALUE = Profile.DEFAULT_DIM_LEVEL
     override val suffix = "%"
 
     override val color: Int

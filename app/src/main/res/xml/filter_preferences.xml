@@ -40,7 +40,7 @@
   <PreferenceCategory android:title="@string/pref_category_filter">
     <com.jmstudios.redmoon.preference.ProfileSelectorPreference
         android:key="@string/pref_key_profile_spinner"
-        android:defaultValue="1"/>
+        android:persistent="false"/>
 
     <com.jmstudios.redmoon.preference.ColorSeekBarPreference
         android:title="@string/pref_title_color_temp"

@@ -19,7 +19,6 @@ package com.jmstudios.redmoon.preference
 
 import android.app.AlertDialog
 import android.content.Context
-import android.content.res.TypedArray
 import android.preference.Preference
 import android.text.InputType
 import android.util.AttributeSet
@@ -35,80 +34,70 @@ import com.jmstudios.redmoon.R
 
 import com.jmstudios.redmoon.event.*
 import com.jmstudios.redmoon.helper.Logger
-import com.jmstudios.redmoon.model.ProfilesModel
+import com.jmstudios.redmoon.helper.Profile
 import com.jmstudios.redmoon.model.Config
+import com.jmstudios.redmoon.model.profiles.*
 import com.jmstudios.redmoon.util.*
 
 import org.greenrobot.eventbus.Subscribe
-
-private const val DEFAULT_VALUE = 1
 
 class ProfileSelectorPreference(ctx: Context, attrs: AttributeSet) : Preference(ctx, attrs),
                                                                      OnItemSelectedListener {
     lateinit private var mProfileSpinner: Spinner
     lateinit private var mProfileActionButton: Button
-    lateinit private var mView: View
     lateinit internal var mArrayAdapter: ArrayAdapter<CharSequence>
+    private var customShown: Boolean = false
 
     init {
         layoutResource = R.layout.preference_profile_selector
-    }
-
-    override fun onGetDefaultValue(a: TypedArray, index: Int): Any {
-        return a.getInteger(index, DEFAULT_VALUE)
-    }
-
-    override fun onSetInitialValue(restorePersistedValue: Boolean, defaultValue: Any?) {
-        Config.profile = if (restorePersistedValue) {
-            getPersistedInt(DEFAULT_VALUE)
-        } else {
-            (defaultValue as Int?) ?: DEFAULT_VALUE
-        }
     }
 
     override fun onBindView(view: View) {
         Log.i("onBindView")
         super.onBindView(view)
 
-        mView = view
         mProfileSpinner = view.findViewById(R.id.profile_spinner) as Spinner
         mProfileActionButton = view.findViewById(R.id.profile_action_button) as Button
 
         initLayout()
-        updateButtonSetup()
     }
 
     private fun initLayout() {
         Log.i("Starting initLayout")
+        customShown = false
         mArrayAdapter = ArrayAdapter(context, android.R.layout.simple_spinner_item)
         mArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-        for (i in 0..Config.amountProfiles-1) {
-            mArrayAdapter.add(ProfilesModel.getProfileName(i))
+        Profiles.forEach { mArrayAdapter.add(it.name) }
+        updateLayout()
+    }
+
+    private fun updateLayout() {
+        activeProfile.let {
+            Log.i("Updating spinner. Active: $it; Custom: ${Config.custom}")
+            if (it.isSaved) {
+                Log.i("Setting remove button")
+                mProfileActionButton.text = getString(R.string.button_remove_filter)
+                mProfileActionButton.setOnClickListener { openRemoveProfileDialog() }
+            } else {
+                Log.i("Setting add button")
+                mProfileActionButton.text = getString(R.string.button_add_filter)
+                mProfileActionButton.setOnClickListener { openAddNewProfileDialog() }
+            }
+            showCustom(!Config.custom.isSaved)
+            mProfileSpinner.adapter = mArrayAdapter
+            mProfileSpinner.setSelection(mArrayAdapter.getPosition(it.name))
+            mProfileSpinner.onItemSelectedListener = this
         }
-
-        mProfileSpinner.adapter = mArrayAdapter
-        mProfileSpinner.setSelection(Config.profile)
-        mProfileSpinner.onItemSelectedListener = this
     }
 
-    private fun updateButtonSetup() = if (Config.profile == 0) {
-        Log.i("Setting add button")
-        mProfileActionButton.text = getString(R.string.button_add_filter)
-        mProfileActionButton.setOnClickListener { openAddNewProfileDialog() }
-    } else {
-        Log.i("Setting remove button")
-        mProfileActionButton.text = getString(R.string.button_remove_filter)
-        mProfileActionButton.setOnClickListener { openRemoveProfileDialog() }
+    private fun showCustom(show: Boolean) {
+        if (show != customShown) mArrayAdapter.run {
+            val custom = getString(R.string.filter_name_custom)
+            if (show) insert(custom, 0) else remove(custom)
+            customShown = show
+        }
     }
-
-    override fun onItemSelected(parent: AdapterView<*>, view: View,
-                                pos: Int, id: Long) {
-        Log.i("Item $pos selected")
-        persistInt(pos)
-    }
-
-    override fun onNothingSelected(parent: AdapterView<*>) { }
 
     private fun openRemoveProfileDialog() {
         val builder = AlertDialog.Builder(context).apply {
@@ -119,12 +108,7 @@ class ProfileSelectorPreference(ctx: Context, attrs: AttributeSet) : Preference(
 
             setNegativeButton(cancelString) { dialog, _ -> dialog.cancel() }
             setPositiveButton(okString) { _, _ ->
-                try {
-                    Config.amountProfiles = ProfilesModel.removeProfile(Config.profile)
-                    persistInt(0)
-                } catch (e: IndexOutOfBoundsException) {
-                    Log.e("Tried to remove a profile that didn't exist!")
-                }
+                activeProfile.delete()
             }
         }
         builder.show()
@@ -146,11 +130,11 @@ class ProfileSelectorPreference(ctx: Context, attrs: AttributeSet) : Preference(
             setNegativeButton(cancelString) { dialog, _ -> dialog.cancel() }
             setPositiveButton(okString) { dialog, _ ->
                 nameInput.text.toString().run {
+                    // TODO: Also fail if the name is not unique
                     if (trim { it <= ' ' } != "") {
-                        val (size, index) = ProfilesModel.addProfile(this)
-                        Config.amountProfiles = size
-                        persistInt(index)
+                        activeProfile.saveAs(this)
                     } else {
+                        // TODO: Toast, "Please enter a name"
                         dialog.cancel()
                     }
                 }
@@ -159,40 +143,31 @@ class ProfileSelectorPreference(ctx: Context, attrs: AttributeSet) : Preference(
         builder.show()
     }
 
-    private fun setCustom() {
-        ProfilesModel.setCustom()
-        persistInt(0)
+    //region onItemSelectedListener
+    override fun onItemSelected(parent: AdapterView<*>, view: View?,
+                                pos: Int, id: Long) {
+        Log.i("Item $pos selected")
+        if (customShown) {
+            if (pos == 0) {
+                activeProfile = Config.custom
+            } else {
+                activeProfile = Profiles[pos - 1]
+            }
+        } else {
+            activeProfile = Profiles[pos]
+        }
     }
 
-    //region presenter
-    @Subscribe fun onProfileChanged(event: profileChanged) {
-        Log.i("onProfileChanged")
-        mProfileSpinner.setSelection(Config.profile)
-        updateButtonSetup()
-    }
-
-    @Subscribe fun onAmountProfilesChanged(event: amountProfilesChanged) = initLayout()
-
-    @Subscribe fun onDimLevelChanged(event: dimLevelChanged) {
-        Log.i("onDimChanged")
-        if (Config.dimLevel != activeProfile.dimLevel) { setCustom() }
-    }
-
-    @Subscribe fun onIntensityChanged(event: intensityChanged) {
-        Log.i("onIntensityChanged")
-        if (Config.intensity != activeProfile.intensity) { setCustom() }
-    }
-
-    @Subscribe fun onColorChanged(event: colorChanged) {
-        Log.i("onColorChanged")
-        if (Config.color != activeProfile.color) { setCustom() }
-    }
-
-    @Subscribe fun onLowerBrightnessChanged(event: lowerBrightnessChanged) {
-        Log.i("onLowerBrightnessChanged")
-        if (Config.lowerBrightness != activeProfile.lowerBrightness) { setCustom() }
-    }
+    override fun onNothingSelected(parent: AdapterView<*>) { }
     //endregion
+
+    @Subscribe fun onProfileChanged(profile: Profile) {
+        updateLayout()
+    }
+
+    @Subscribe fun onProfilesChanged(event: profilesUpdated) {
+        initLayout()
+    }
 
     companion object : Logger()
 }

@@ -80,36 +80,35 @@ object Config : Preferences(appContext) {
         EventBus.post(filterIsOnChanged())
     }
     
-    var amountProfiles by IntPreference(R.string.pref_key_num_profiles, 3) {
-        EventBus.post(amountProfilesChanged())
+    var color by IntPreference(R.string.pref_key_color, 10) {
+        activeProfile.run { if (it != color) activateProfile(copy(color = it)) }
     }
 
-    var profile by IntPreference(R.string.pref_key_profile_spinner, 1) { new ->
-        ProfilesModel.getProfile(new).let {
-            Log.i("New Profile: $it")
-            color     = it.color
-            intensity = it.intensity
-            dimLevel  = it.dimLevel
-            lowerBrightness = it.lowerBrightness
-        }
-        EventBus.post(profileChanged())
-    }
-    
-    var color by IntPreference(R.string.pref_key_color, Profile.DEFAULT_COLOR) {
-        EventBus.post(colorChanged())
+    var intensity by IntPreference(R.string.pref_key_intensity, 30) {
+        activeProfile.run { if (it != intensity) activateProfile(copy(intensity = it)) }
     }
 
-    var intensity by IntPreference(R.string.pref_key_intensity, Profile.DEFAULT_INTENSITY) {
-        EventBus.post(intensityChanged())
-    }
-
-    var dimLevel by IntPreference(R.string.pref_key_dim, Profile.DEFAULT_DIM_LEVEL) {
-        EventBus.post(dimLevelChanged())
+    var dimLevel by IntPreference(R.string.pref_key_dim, 40) {
+        activeProfile.run { if (it != dimLevel) activateProfile(copy(dimLevel = it)) }
     }
 
     var lowerBrightness by BooleanPreference(R.string.pref_key_lower_brightness, false) {
-        EventBus.post(lowerBrightnessChanged())
+        activeProfile.run { if (it != lowerBrightness) activateProfile(copy(lowerBrightness = it)) }
     }
+
+    private fun activateProfile(profile: Profile) {
+        Log.i("Activating profile: $profile")
+        custom = profile
+        activeProfile = profile
+    }
+
+    private var _custom by StringOrNullPreference(R.string.pref_key_custom_profile)
+    var custom: Profile
+        get() = _custom?.let { Profile.parse(it) } ?: activeProfile
+        set(value) {
+            Log.i("custom set to $value")
+            _custom = value.toString()
+        }
 
     val secureSuspend by BooleanPreference(R.string.pref_key_secure_suspend, false) {
         EventBus.post(secureSuspendChanged())
@@ -222,6 +221,6 @@ object Config : Preferences(appContext) {
     //endregion
 
     //region application
-    var fromVersionCode by IntPreference(R.string.pref_key_from_version_code, BuildConfig.VERSION_CODE)
+    var fromVersionCode by IntPreference(R.string.pref_key_from_version_code, -1)
     //endregion
 }

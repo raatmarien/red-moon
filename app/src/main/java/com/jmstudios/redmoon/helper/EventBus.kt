@@ -35,5 +35,5 @@ object EventBus {
     fun postSticky  (event: Event) = bus.postSticky       (event)
     fun removeSticky(event: Event) = bus.removeStickyEvent(event)
 
-    fun <T: Event>getSticky(eventClass: KClass<T>) = bus.getStickyEvent(eventClass.java)
+    fun <T: Event>getSticky(eventClass: KClass<T>): T? = bus.getStickyEvent(eventClass.java)
 }

@@ -27,7 +27,7 @@ import com.jmstudios.redmoon.helper.Profile
 class ScreenFilterView(context: Context) : View(context) {
     companion object: Logger()
 
-    var profile: Profile = Profile()
+    var profile: Profile = Profile(100, 0, 0, false)
         set(value) {
             field = value
             invalidate()
