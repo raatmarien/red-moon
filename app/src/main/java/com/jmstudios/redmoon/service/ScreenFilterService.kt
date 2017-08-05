@@ -38,49 +38,85 @@
 
 package com.jmstudios.redmoon.service
 
+import android.app.Notification
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.app.Service
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.IBinder
+import android.support.v4.app.NotificationCompat
+import android.support.v4.content.ContextCompat
 import android.view.WindowManager
+import com.jmstudios.redmoon.R
+import com.jmstudios.redmoon.activity.MainActivity
 
+import com.jmstudios.redmoon.helper.EventBus
 import com.jmstudios.redmoon.helper.Logger
 import com.jmstudios.redmoon.manager.BrightnessManager
 import com.jmstudios.redmoon.manager.CurrentAppMonitor
 import com.jmstudios.redmoon.manager.ScreenManager
 import com.jmstudios.redmoon.manager.WindowViewManager
+import com.jmstudios.redmoon.model.Config
+import com.jmstudios.redmoon.model.profiles.name
 import com.jmstudios.redmoon.presenter.ScreenFilterPresenter
+import com.jmstudios.redmoon.receiver.NextProfileCommandReceiver
 import com.jmstudios.redmoon.receiver.OrientationChangeReceiver
 import com.jmstudios.redmoon.util.*
 import com.jmstudios.redmoon.view.ScreenFilterView
 
-class ScreenFilterService : Service(), ServiceLifeCycleController {
+private const val BUNDLE_KEY_COMMAND = "jmstudios.bundle.key.COMMAND"
+private const val COMMAND_MISSING = -1
+private const val NOTIFICATION_ID = 1
+
+private const val REQUEST_CODE_ACTION_SETTINGS = 1000
+private const val REQUEST_CODE_ACTION_TOGGLE   = 3000
+private const val REQUEST_CODE_NEXT_PROFILE    = 4000
+private const val REQUEST_CODE_ACTION_STOP     = 5000
+
+interface ServiceController {
+    fun start(time: Int? = null)
+    fun pause(time: Int? = null)
+    fun stop (time: Int? = null)
+}
+
+class ScreenFilterService : Service(), ServiceController {
     enum class Command {
-        ON, OFF, TOGGLE, PAUSE,
-        FADE_ON, FADE_OFF,
-        SHOW_PREVIEW, HIDE_PREVIEW,
-        START_SUSPEND, STOP_SUSPEND
+        ON, OFF, TOGGLE, PAUSE, SUSPEND, RESUME,
+        FADE_ON, FADE_OFF, SHOW_PREVIEW, HIDE_PREVIEW
     }
+
+    val notificationManager: NotificationManager
+        get() = appContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
     private lateinit var mPresenter:           ScreenFilterPresenter
     private lateinit var mOrientationReceiver: OrientationChangeReceiver
 
+    private lateinit var mBrightnessManager: BrightnessManager
+    private lateinit var mCurrentAppMonitor: CurrentAppMonitor
+    private lateinit var mWindowViewManager: WindowViewManager
+
     override fun onCreate() {
         super.onCreate()
-
         Log.i("onCreate")
+        filterIsOn = false
 
         // If we ever support a root mode, pass a different view here
         val view = ScreenFilterView(this)
         val wMan = getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val sMan = ScreenManager(this, wMan)
-        val ctx  = this
 
-        mPresenter = ScreenFilterPresenter(ctx, this, WindowViewManager(view, sMan, wMan),
-                                           CurrentAppMonitor(this), BrightnessManager(this))
+        mCurrentAppMonitor   = CurrentAppMonitor(this)
+        mBrightnessManager   = BrightnessManager(this)
+        mPresenter           = ScreenFilterPresenter(this)
+        mWindowViewManager   = WindowViewManager(view, sMan, wMan)
+        mOrientationReceiver = OrientationChangeReceiver(mWindowViewManager)
 
-        mOrientationReceiver = OrientationChangeReceiver(mPresenter)
+        EventBus.register(mWindowViewManager)
+        EventBus.register(mBrightnessManager)
+        EventBus.register(mCurrentAppMonitor)
         registerReceiver(mOrientationReceiver, IntentFilter().apply {
             addAction(Intent.ACTION_CONFIGURATION_CHANGED)
         })
@@ -96,27 +132,123 @@ class ScreenFilterService : Service(), ServiceLifeCycleController {
         return Service.START_NOT_STICKY
     }
 
+    override fun start(time: Int?) {
+        Log.i("start(time = $time)")
+        startForeground(NOTIFICATION_ID, getNotification(true))
+        mWindowViewManager.open(time)
+        mBrightnessManager.lower()
+        mCurrentAppMonitor.start()
+    }
+
+    override fun pause(time: Int?) {
+        Log.i("pause(time = $time)")
+        notificationManager.notify(NOTIFICATION_ID, getNotification(false))
+        stopForeground(false)
+        mBrightnessManager.restore()
+        mWindowViewManager.close(time)
+    }
+
+    override fun stop(time: Int?) {
+        Log.i("stop(time = $time)")
+        mWindowViewManager.close(time) {
+            mBrightnessManager.restore()
+            mCurrentAppMonitor.stop()
+            stopForeground(true)
+            stopSelf()
+        }
+    }
+
     override fun onBind(intent: Intent): IBinder? = null // Prevent binding.
 
     override fun onDestroy() {
         Log.i("onDestroy")
+        EventBus.unregister(mWindowViewManager)
+        EventBus.unregister(mBrightnessManager)
+        EventBus.unregister(mCurrentAppMonitor)
         unregisterReceiver(mOrientationReceiver)
-        mPresenter.updateWidgets()
+        filterIsOn = false
         super.onDestroy()
     }
 
-    companion object : Logger() {
-        private const val BUNDLE_KEY_COMMAND = "jmstudios.bundle.key.COMMAND"
-        private const val COMMAND_MISSING = -1
+    private fun getNotification(filterIsOn: Boolean): Notification {
+        fun servicePI(code: Int, intent: Intent) = PendingIntent.getService(
+                 appContext, code, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
-        private val emptyIntent: Intent
-            get() = Intent(appContext, ScreenFilterService::class.java)
+        fun activityPI(code: Int, intent: Intent) = PendingIntent.getActivity(
+                   appContext, code, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
-        fun intent(c: Command): Intent = emptyIntent.putExtra(BUNDLE_KEY_COMMAND, c.ordinal)
+        fun broadcastPI(code: Int, intent: Intent) = PendingIntent.getBroadcast(
+                                                     appContext, code, intent, 0)
 
-        fun start()  { appContext.startService(emptyIntent) }
+        val nb = NotificationCompat.Builder(appContext).apply {
+            // Set notification appearance
+            setSmallIcon(R.drawable.notification_icon_half_moon)
+            color    = ContextCompat.getColor(appContext, R.color.color_primary)
+            priority = Notification.PRIORITY_MIN
 
-        fun toggle() { moveToState(Command.TOGGLE)  }
-        fun moveToState(c: Command) { appContext.startService(intent(c)) }
+            if (belowAPI(24)) { setContentTitle(getString(R.string.app_name)) }
+            setContentText(if (filterIsOn) {
+                activeProfile.name
+            } else {
+                getString(R.string.notification_status_paused)
+            })
+
+            // Open Red Moon when tapping notification body
+            val mainActivityIntent = Intent(appContext, MainActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+            }
+            setContentIntent(activityPI(REQUEST_CODE_ACTION_SETTINGS, mainActivityIntent))
+
+            // Turn off Red Moon when the notification is manually dismissed
+            setDeleteIntent(servicePI(REQUEST_CODE_ACTION_STOP, intent(Command.OFF)))
+
+            // Add toggle action
+            val (toggleIcon, toggleTextResId, togglePI) = if (filterIsOn) {
+                Triple(R.drawable.ic_stop_circle_outline_white_36dp,
+                       R.string.notification_action_turn_off,
+                       servicePI(REQUEST_CODE_ACTION_TOGGLE, intent(Command.PAUSE)))
+            } else {
+                Triple(R.drawable.ic_play,
+                       R.string.notification_action_turn_on,
+                       servicePI(REQUEST_CODE_ACTION_TOGGLE, intent(Command.ON)))
+            }
+
+            addAction(toggleIcon, getString(toggleTextResId), togglePI)
+
+            // Add profile switch action
+            val nextProfileText   = getString(R.string.notification_action_next_filter)
+            val nextProfileIntent = Intent(appContext, NextProfileCommandReceiver::class.java)
+            val nextProfilePI     = broadcastPI(REQUEST_CODE_NEXT_PROFILE, nextProfileIntent)
+            addAction(R.drawable.ic_skip_next_white_36dp, nextProfileText, nextProfilePI)
+        }
+        return nb.build()
     }
+
+    companion object : Logger() {
+        fun toggle(on: Boolean? = null) = moveToState(when (on) {
+            true  -> Command.ON
+            false -> Command.OFF
+            null  -> Command.TOGGLE
+        })
+
+        fun pause(on: Boolean = true) = moveToState(when(on) {
+            true  -> Command.PAUSE
+            false -> Command.RESUME
+        })
+
+        fun preview(on: Boolean = true) = moveToState(when(on) {
+            true  -> Command.SHOW_PREVIEW
+            false -> Command.HIDE_PREVIEW
+        })
+
+        fun fade(on: Boolean = true) = moveToState(when(on) {
+            true  -> Command.FADE_ON
+            false -> Command.FADE_OFF
+        })
+    }
+}
+
+private fun moveToState(c: ScreenFilterService.Command): ComponentName = appContext.startService(intent(c))
+private fun intent(c: ScreenFilterService.Command) = intent(ScreenFilterService::class).apply {
+    putExtra(BUNDLE_KEY_COMMAND, c.ordinal)
 }

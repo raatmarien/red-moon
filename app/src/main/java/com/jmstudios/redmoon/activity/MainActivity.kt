@@ -40,22 +40,28 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Switch
+import android.support.v7.widget.SwitchCompat
 
 import com.jmstudios.redmoon.R
 
 import com.jmstudios.redmoon.event.*
 import com.jmstudios.redmoon.fragment.FilterFragment
 import com.jmstudios.redmoon.model.Config
-import com.jmstudios.redmoon.model.ProfilesModel
+import com.jmstudios.redmoon.model.profiles.restoreDefaultProfiles
 import com.jmstudios.redmoon.service.ScreenFilterService
 import com.jmstudios.redmoon.helper.EventBus
 import com.jmstudios.redmoon.helper.Logger
 import com.jmstudios.redmoon.helper.Permission
 import com.jmstudios.redmoon.helper.upgrade
+import com.jmstudios.redmoon.helper.showRateDialog
+import com.jmstudios.redmoon.util.*
 
 import de.cketti.library.changelog.ChangeLog
 import org.greenrobot.eventbus.Subscribe
+import java.io.DataOutput
+import java.io.DataOutputStream
+import java.io.File
+import java.io.FileOutputStream
 
 class MainActivity : ThemedAppCompatActivity() {
 
@@ -68,39 +74,55 @@ class MainActivity : ThemedAppCompatActivity() {
     override val fragment = FilterFragment()
     override val tag = "jmstudios.fragment.tag.FILTER"
 
-    lateinit private var mSwitch : Switch
+    private var mSwitch : SwitchCompat? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         upgrade()
-        val intent = intent
-        Log.i("Got intent")
         val fromShortcut = intent.getBooleanExtra(EXTRA_FROM_SHORTCUT_BOOL, false)
+        Log.i("Got intent")
         if (fromShortcut) { toggleAndFinish() }
 
         super.onCreate(savedInstanceState)
-        if (!Config.introShown) { startIntro() }
+        if (!Config.introShown) { startActivity(intent(Intro::class)) }
         ChangeLog(this).run { if (isFirstRun) logDialog.show() }
-
-        // The preview will appear faster if we don't have to start the service
-        ScreenFilterService.start()
+        showRateDialog(this) // See fdroid and playstore product flavors
+        var root = true
+        if (root) {
+            // TODO: Move shell script to somewhere that makes sense
+            var f = File(filesDir.absolutePath+"/listen.sh")
+            if (!f.exists()) {
+                f.outputStream().use { out ->
+                    resources.assets.open("listen.sh").copyTo(out)
+                }
+            }
+            var sh = Runtime.getRuntime().exec("sh")
+            var shOut = DataOutputStream(sh.outputStream)
+            shOut?.writeBytes("mkfifo ${cacheDir.absolutePath}/pipe \n")
+            shOut?.flush()
+            var su = Runtime.getRuntime().exec("su")
+            var suOut = DataOutputStream(su.outputStream)
+            suOut?.writeBytes("bash ${filesDir.absolutePath}/listen.sh ${cacheDir.absolutePath}/pipe & \n")
+            suOut?.flush()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_activity_main, menu)
 
         menu.findItem(R.id.menu_dark_theme).isChecked = Config.darkThemeFlag
-
-        mSwitch = (menu.findItem(R.id.screen_filter_switch).actionView as Switch).apply {
-            isChecked = Config.filterIsOn
-            setOnClickListener {
-                val state = if (mSwitch.isChecked) { ScreenFilterService.Command.ON }
-                            else { ScreenFilterService.Command.OFF }
-                Log.i("Toggling $state via switch")
-                ScreenFilterService.moveToState(state)
-            }
+        mSwitch = (menu.findItem(R.id.screen_filter_switch).actionView as SwitchCompat).apply {
+            safeSetChecked(filterIsOn) // Side effect: sets listener
         }
 
         return true
+    }
+
+    fun SwitchCompat.safeSetChecked(checked: Boolean) {
+        setOnCheckedChangeListener { _, _ ->  }
+        isChecked = checked
+        setOnCheckedChangeListener { _, checked ->
+            ScreenFilterService.toggle(checked)
+        }
     }
 
     override fun onStart() {
@@ -109,27 +131,9 @@ class MainActivity : ThemedAppCompatActivity() {
     }
 
     override fun onResume() {
+        Log.i("onResume")
         super.onResume()
-        // The switch is null here, so we can't set its position directly.
-        invalidateOptionsMenu()
-
-        // Attempt to set the Switch correctly, because at least on my device, it doesn't have the
-        // correct state when:
-        // 1 Open Red Moon
-        // 2 Start the filter
-        // 3 Use the home button to exit Red Moon
-        // 4 Stop the filter through the notification
-        // 5 Reopen Red Moon through the launcher
-        // After these steps the switch in the activity is still on for me, although the filter is
-        // off.
-        try {
-            // Try to update the position of the switch, if it has already been created
-            mSwitch?.isChecked = Config.filterIsOn;
-        } catch (e: Exception) {
-            // Apparently the switch wasn't initialized yet, so it will be set correctly when it is
-            // initialized.
-        }
-
+        mSwitch?.safeSetChecked(filterIsOn)
         EventBus.register(this)
     }
 
@@ -144,38 +148,30 @@ class MainActivity : ThemedAppCompatActivity() {
     }
 
     override fun onNewIntent(intent: Intent) {
+        Log.i("onNewIntent")
         val fromShortcut = intent.getBooleanExtra(EXTRA_FROM_SHORTCUT_BOOL, false)
         if (fromShortcut) { toggleAndFinish() }
-        Log.i("onNewIntent")
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle item selection
         when (item.itemId) {
             R.id.menu_show_intro -> {
-                startIntro()
+                startActivity(intent(Intro::class))
             }
             R.id.menu_about -> {
-                val aboutIntent = Intent(this, AboutActivity::class.java)
-                startActivity(aboutIntent)
+                startActivity(intent(AboutActivity::class))
             }
             R.id.menu_dark_theme -> {
                 Config.darkThemeFlag = !Config.darkThemeFlag
                 recreate()
             }
             R.id.menu_restore_default_filters -> {
-                Config.amountProfiles = ProfilesModel.reset()
-                Config.profile = 1
+                restoreDefaultProfiles()
             }
             else -> return super.onOptionsItemSelected(item)
         }
         return true
-    }
-
-    private fun startIntro() {
-        val introIntent = Intent(this, Intro::class.java)
-        startActivity(introIntent)
-        Config.introShown = true
     }
 
     private fun toggleAndFinish() {
@@ -183,14 +179,13 @@ class MainActivity : ThemedAppCompatActivity() {
         finish()
     }
 
-    @Subscribe
-    fun onFilterIsOnChanged(event: filterIsOnChanged) {
-        mSwitch.isChecked = Config.filterIsOn
+    @Subscribe fun onFilterIsOnChanged(event: filterIsOnChanged) {
+        Log.i("FilterIsOnChanged")
+        mSwitch?.safeSetChecked(filterIsOn)
     }
 
-    @Subscribe
-    fun onOverlayPermissionDenied(event: overlayPermissionDenied) {
-        mSwitch.isChecked = false
+    @Subscribe fun onOverlayPermissionDenied(event: overlayPermissionDenied) {
+        mSwitch?.safeSetChecked(false)
         Permission.Overlay.request(this)
     }
 }

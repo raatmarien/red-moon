@@ -16,15 +16,15 @@
     <string name="dialog_button_cancel">取消</string>
 
     <string name="pref_category_filter">滤镜</string>
-    <string name="activity_timer">滤镜时间段</string>
-    <string name="pref_title_time_toggle">滤镜时间段</string>
+    <string name="activity_timer">定时</string>
+    <string name="pref_title_time_toggle">定时</string>
     <string name="pref_title_startup">启动</string>
     <string name="button_add_filter">添加</string>
     <string name="pref_title_dim_level">暗度</string>
-    <string name="pref_title_intensity">强度等级</string>
+    <string name="pref_title_intensity">强度</string>
     <string name="pref_title_color_temp">色温</string>
     <string name="pref_title_lower_brightness">降低亮度</string>
-    <string name="location_not_set">未设置</string>
+    <string name="location_not_set">未设置地址</string>
     <string name="dialog_title_remove_filter">是否删除配置？</string>
     <string name="snackbar_searching_location">正在搜索位置</string>
     <string name="pref_title_project_page">浏览官方网站</string>
@@ -60,4 +60,36 @@
     <string name="toast_warning_no_location">启用位置服务来更新位置</string>
     <string name="set_dialog">设置</string>
     <string name="notification_status_running">运行中……需要暂停来安装APK</string>
-</resources>
+<string name="activity_intro">简介</string>
+    <string name="activity_about">关于红月</string>
+    <string name="activity_secure_suspend">在安全应用处暂停</string>
+    <string name="menu_restore_default_filters">恢复默认滤镜</string>
+    <string name="menu_show_intro">重放简介</string>
+    <string name="menu_about">关于</string>
+
+    <string name="notification_status_running_no_warning">运行中</string>
+    <string name="notification_status_off">关闭</string>
+    <string name="notification_action_turn_on">开启</string>
+    <string name="notification_action_turn_off">关闭</string>
+    <string name="notification_action_next_filter">下一个滤镜</string>
+
+    <string name="pref_category_button_backlight_disclaimer">对某些设备不起作用</string>
+
+    <string name="pref_title_secure_suspend">在安全应用处暂停</string>
+    <string name="pref_title_button_backlight">硬件按钮背光</string>
+
+    <string name="pref_summary_location_off">基于时间（定时）</string>
+
+    <string name="pref_summary_secure_suspend">有些功能在红月运行时无法使用。例如，安装apk、获得权限或者使用SuperUser（在root后的手机上）等。
+\n当此设置开启时，红月会在这些功能开启时暂停。
+\n这个功能会稍微减少您设备电池的使用寿命。并非所有设备均支持此功能。
+\n红月通过在整个手机屏幕上覆盖一层红色图层达到效果。这些应用在其他应用覆盖的时候运行。这样，没有其他的应用能试图欺骗您点选不必要的选项，或者记录您的手指活动。</string>
+
+    <string name="text_switch_on">开启</string>
+    <string name="text_switch_off">关闭</string>
+
+    <string name="pref_title_version">版本号</string>
+
+    <string name="pref_title_integration">与其他应用的整合</string>
+    <string name="snackbar_location_updated">发现位置！</string>
+    </resources>

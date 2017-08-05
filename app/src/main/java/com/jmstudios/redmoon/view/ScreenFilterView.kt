@@ -22,17 +22,20 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.os.Process
 import android.view.View
+import com.jmstudios.redmoon.service.ScreenFilterService
 import com.jmstudios.redmoon.helper.Logger
 
 import com.jmstudios.redmoon.helper.Profile
 import java.io.DataInputStream
 import java.io.DataOutputStream
+import java.io.FileOutputStream
+import java.io.OutputStreamWriter
 
 
 class ScreenFilterView(context: Context) : View(context) {
     companion object: Logger()
 
-    var profile: Profile = Profile()
+    var profile: Profile = Profile(100, 0, 0, false)
         set(value) {
             field = value
 
@@ -51,25 +54,18 @@ class ScreenFilterView(context: Context) : View(context) {
 
     var i = 0
     fun rootTintScreen() {
-        // Loosely adapted from https://stackoverflow.com/questions/4905743/android-how-to-gain-root-access-in-an-android-application
-        if (suOut == null) {
-            val su = Runtime.getRuntime().exec("su")
-            suOut = DataOutputStream(su.outputStream)
-        }
-
-        val cmd = getSurfaceCommand()
-
-        suOut?.writeBytes(cmd + "\n")
-        suOut?.flush()
+        var sh = Runtime.getRuntime().exec("sh")
+        var shOut = DataOutputStream(sh.outputStream)
+        shOut?.writeBytes(getSurfaceMatrix() + " \n")
+        shOut?.flush()
     }
 
-    fun getSurfaceCommand() : String {
+    fun getSurfaceMatrix() : String {
         // See https://github.com/raatmarien/red-moon/issues/150
-        val base = "service call SurfaceFlinger 1015 i32 1 "
-        val matrix = "f %.9f f 0 f 0 f 0 f 0 f %.9f f 0 f 0 f 0 f 0 f %.9f f 0 f 0 f 0 f 0 f 1"
+        val matrix = "echo 1015 i32 1 f %.9f f 0 f 0 f 0 f 0 f %.9f f 0 f 0 f 0 f 0 f %.9f f 0 f 0 f 0 f 0 f 1 > ${context.cacheDir.canonicalPath}/pipe"
 
         Log.i("%d %d %d".format(Color.red(profile.multFilterColor), Color.green(profile.multFilterColor), Color.blue(profile.multFilterColor)))
-        return base + matrix.format(Color.red(profile.multFilterColor) / 255.0f,
+        return matrix.format(Color.red(profile.multFilterColor) / 255.0f,
                 Color.green(profile.multFilterColor) / 255.0f,
                 Color.blue(profile.multFilterColor) / 255.0f)
     }

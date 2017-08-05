@@ -21,10 +21,14 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.PowerManager
+import com.jmstudios.redmoon.event.secureSuspendChanged
+
+import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.receiver.ScreenStateReceiver
 import com.jmstudios.redmoon.thread.CurrentAppMonitoringThread
 import com.jmstudios.redmoon.helper.Logger
 import com.jmstudios.redmoon.util.atLeastAPI
+import org.greenrobot.eventbus.Subscribe
 
 class CurrentAppMonitor(private val mContext: Context) : ScreenStateReceiver.ScreenStateListener {
     companion object : Logger()
@@ -34,11 +38,9 @@ class CurrentAppMonitor(private val mContext: Context) : ScreenStateReceiver.Scr
     private val powerManager
         get() = mContext.getSystemService(Context.POWER_SERVICE) as PowerManager
 
-    private val screenOff: Boolean
-        get() = if (atLeastAPI(20)) {
-            !powerManager.isInteractive
-        } else @Suppress("DEPRECATION") {
-            !powerManager.isScreenOn
+    private val screenOn: Boolean
+        get() = powerManager.run {
+            if (atLeastAPI(20)) isInteractive else @Suppress("DEPRECATION") isScreenOn
         }
 
     private var isMonitoring = false
@@ -53,8 +55,14 @@ class CurrentAppMonitor(private val mContext: Context) : ScreenStateReceiver.Scr
         stopCamThread()
     }
 
-    fun start() {
-        if (!isMonitoring) {
+    @Subscribe fun onSecureSuspendChanged(event: secureSuspendChanged) {
+        if (Config.secureSuspend) start() else stop()
+    }
+
+    fun start() = when {
+        !Config.secureSuspend -> Log.i("Can't start; monitoring is disabled.")
+        isMonitoring -> Log.i("Monitoring is already started")
+        else -> {
             Log.i("Starting app monitoring")
             val filter = IntentFilter().apply {
                 addAction(Intent.ACTION_SCREEN_OFF)
@@ -66,31 +74,28 @@ class CurrentAppMonitor(private val mContext: Context) : ScreenStateReceiver.Scr
         }
     }
 
-    fun stop() {
-        if (isMonitoring) {
-            Log.i("Stopping app monitoring")
-            stopCamThread()
-            try {
-                mContext.unregisterReceiver(screenStateReceiver)
-            } catch (e: IllegalArgumentException) {
-                // Catch errors when receiver is unregistered more than
-                // once, it is not a problem, so we just ignore it.
-            }
-            isMonitoring = false
+    fun stop() = if (!isMonitoring) {
+        Log.i("Monitoring is already stopped")
+    } else {
+        Log.i("Stopping app monitoring")
+        stopCamThread()
+        try {
+            mContext.unregisterReceiver(screenStateReceiver)
+        } catch (e: IllegalArgumentException) {
+            // Catch errors when receiver is unregistered more than once.
+            // It is not a problem, so we just ignore it.
         }
+        isMonitoring = false
     }
 
     private fun startCamThread() {
-        if (mCamThread == null && !screenOff) {
-            mCamThread = CurrentAppMonitoringThread(mContext)
-            mCamThread!!.start()
+        if (mCamThread == null && screenOn) {
+            mCamThread = CurrentAppMonitoringThread(mContext).apply { start() }
         }
     }
 
-    private fun stopCamThread() {
-        if (mCamThread != null) {
-            if (!mCamThread!!.isInterrupted) { mCamThread!!.interrupt() }
-            mCamThread = null
-        }
+    private fun stopCamThread() = mCamThread?.run{
+        if (!isInterrupted) { interrupt() }
+        mCamThread = null
     }
 }

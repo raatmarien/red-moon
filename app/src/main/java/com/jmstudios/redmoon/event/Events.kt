@@ -20,15 +20,10 @@ package com.jmstudios.redmoon.event
 import com.jmstudios.redmoon.helper.EventBus.Event
 
 class filterIsOnChanged        : Event
-class dimLevelChanged          : Event
-class intensityChanged         : Event
-class colorChanged             : Event
 //class themeChanged             : Event
 class customTurnOnTimeChanged  : Event
 class customTurnOffTimeChanged : Event
-class lowerBrightnessChanged   : Event
-class profileChanged           : Event
-class amountProfilesChanged    : Event
+class profilesUpdated          : Event
 class timeToggleChanged        : Event
 class useLocationChanged       : Event
 class locationChanged          : Event

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2016 Marien Raat <marienraat@riseup.net>
- * Copyright (c) 2017  Stephen Michel <s@smichel.me>
+ * Copyright (c) 2017 Stephen Michel <s@smichel.me>
  *
  *  This file is free software: you may copy, redistribute and/or modify it
  *  under the terms of the GNU General Public License as published by the Free
@@ -17,15 +17,16 @@
  */
 package com.jmstudios.redmoon.helper
 
-import android.app.NotificationManager
-import android.content.Context
+import android.app.Activity
+import hotchemi.android.rate.AppRate
 
-import com.jmstudios.redmoon.presenter.ScreenFilterPresenter
+fun showRateDialog(activity: Activity) {
+    AppRate.with(activity)
+        .setInstallDays(7) // default 10, 0 means install day.
+        .setLaunchTimes(5) // default 10
+        .setRemindInterval(3) // default 1
+        .setShowLaterButton(true) // default true
+        .monitor()
 
-class DismissNotificationRunnable(internal var mContext: Context) : Runnable {
-    override fun run() {
-        val mNotificationManager = mContext.getSystemService(Context.NOTIFICATION_SERVICE)
-                                                                    as NotificationManager
-        mNotificationManager.cancel(ScreenFilterPresenter.NOTIFICATION_ID)
-    }
+    AppRate.showRateDialogIfMeetsConditions(activity)
 }

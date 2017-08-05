@@ -132,4 +132,7 @@ Rød måne vil bruke denne dataen bare til å bestemme hvorvidt du bruker et ann
 Rød Måne kringkaster en offentlig intensjon med handlingen `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Denne intensjonen inneholder en boolsk ekstra med nøkkelen `jmstudios.bundle.key.FILTER_IS_ON`, som indikerer hvorvidt Rød Måne veksler seg på eller av.</string>
     <string name="set_dialog">Sett</string>
     <string name="notification_status_running">Kjører. Sett på pause for å installere APK-er</string>
-</resources>
+<string name="menu_restore_default_filters">Gjenopprett forvalgte filter</string>
+    <string name="filter_name_dim_only">Bare demp</string>
+
+    </resources>

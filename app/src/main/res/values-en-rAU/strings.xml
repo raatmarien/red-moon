@@ -27,7 +27,7 @@
     <string name="pref_title_start_time">Resume at</string>
     <string name="pref_title_end_time">Pause at</string>
     <string name="pref_title_location">Location</string>
-    <string name="location_not_set">Not set</string>
+    <string name="location_not_set">Location not set</string>
     <string name="latitude_short">Lat</string>
     <string name="longitude_short">Long</string>
     <string name="snackbar_searching_location">Searching for location</string>
@@ -80,10 +80,65 @@
     <string name="add_new_profile_dialog_title">Enter profile name</string>
     <string name="add_new_profile_edit_hint">Profile name</string>
     <string name="remove_profile_dialog_title">Delete this profile?</string>
-    <string name="pref_title_appearance">Filter</string>
+    <string name="pref_title_appearance">Profile</string>
     <string name="searching_location">Searching for location</string>
     <string name="toast_warning_no_location">Enable location services to update location</string>
     <string name="set_dialog">Set</string>
     <string name="notification_status_running">Running. Pause to install apks</string>
 <string name="activity_about">About Red Moon</string>
+    <string name="activity_secure_suspend">Pause in secure apps</string>
+    <string name="menu_restore_default_filters">Restore default profiles</string>
+    <string name="menu_about">About</string>
+
+    <string name="notification_status_running_no_warning">Running</string>
+    <string name="notification_status_off">Off</string>
+    <string name="notification_action_turn_on">Turn on</string>
+    <string name="notification_action_turn_off">Turn off</string>
+    <string name="notification_action_next_filter">Next filter</string>
+
+    <string name="pref_category_button_backlight_disclaimer">No effect on some devices</string>
+
+    <string name="pref_title_secure_suspend">Pause in secure apps</string>
+    <string name="pref_title_button_backlight">Hardware button backlight</string>
+
+    <string name="pref_summary_location_off">Based on your location</string>
+
+    <string name="pref_summary_secure_suspend">Some features won\'t work when Red Moon is on*. For example, installing APKs, granting permissions, or using the SuperUser app (on rooted devices).
+\n
+\nWhen this setting is enabled, Red Moon will pause while one of these features is open.
+\n
+\nThis feature may slightly lower the battery life of your device. Furthermore this feature may not work on all devices.
+\n
+\n*Red Moon works by drawing a transparent red layer over the whole screen; these apps won\'t work if another app is drawing over them. That is so no other app can trick you into picking the option you didn\'t want, or watch your touches to figure out what you\'re doing.</string>
+
+    <string name="text_switch_on">On</string>
+    <string name="text_switch_off">Off</string>
+
+    <string name="pref_title_version">Version</string>
+
+    <string name="pref_title_integration">Integration with other apps</string>
+    <string name="pref_summary_integration">Some apps, like LibreTasks or Tasker, allow you to automate tasks when certain events happen. Red Moon sends a public notification when it turns on and off, so those apps can respond. If you don\'t use or develop one of those apps, you can ignore the next paragraph.
+\n
+\nRed Moon broadcasts a public intent with the action `com.jmstudios.redmoon.RED_MOON_TOGGLED`. The intent contains a boolean extra with the key `jmstudios.bundle.key.FILTER_IS_ON`, which indicates whether Red Moon is toggling on or off.</string>
+
+    <string name="snackbar_location_updated">Found location!</string>
+    <string name="dialog_title_permission_overlay">Drawing over other apps</string>
+    <string name="dialog_message_permission_overlay">Permit drawing over other apps in the next screen to allow Red Moon to turn on.</string>
+
+    <string name="dialog_title_permission_write_settings">Modifying system settings</string>
+    <string name="dialog_message_permission_write_settings">Permit modifying system settings in the next screen to allow Red Moon to change your brightness level.</string>
+
+    <string name="dialog_title_permission_usage_stats">Usage access</string>
+    <string name="dialog_message_permission_usage_stats">Permit usage access in the next screen to allow Red Moon to pause in secured apps.
+\n
+\nRed Moon will use this data only to determine whether you are using an app which will not work when Red Moon is on.</string>
+
+    <string name="filter_name_dim_only">Dim only</string>
+
+    <string name="pref_entry_button_backlight_system">System managed</string>
+    <string name="pref_entry_button_backlight_filter_dim_level">Use filter dim level</string>
+    <string name="pref_entry_button_backlight_turn_off">Turn off</string>
+
+    <string name="action_next_profile">Next profile</string>
+    <string name="location">Location</string>
     </resources>

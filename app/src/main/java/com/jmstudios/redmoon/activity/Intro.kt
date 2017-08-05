@@ -17,14 +17,20 @@
 package com.jmstudios.redmoon.activity
 
 import android.os.Bundle
+import android.support.v4.app.Fragment
 
-import com.github.paolorotolo.appintro.AppIntro
+import com.github.paolorotolo.appintro.AppIntro2
 import com.github.paolorotolo.appintro.AppIntroFragment
 
 import com.jmstudios.redmoon.R
+import com.jmstudios.redmoon.model.Config
 
-class Intro : AppIntro() {
-    override fun init(savedInstanceState: Bundle?) {
+class Intro : AppIntro2() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        showStatusBar(false)
+        showSkipButton(false)
+
         addSlide(AppIntroFragment.newInstance(getString(R.string.slide_title_welcome),
                 getString(R.string.slide_text_welcome),
                 R.drawable.intro_slide_1,
@@ -46,21 +52,19 @@ class Intro : AppIntro() {
                 0xFFFFB300.toInt()))
     }
 
-    override fun onSkipPressed() {
-        // Do something when users tap on Skip button.
+    override fun onSkipPressed(currentFragment: Fragment?) {
+        super.onSkipPressed(currentFragment)
+        saveAndFinish()
+    }
+
+    override fun onDonePressed(currentFragment: Fragment?) {
+        super.onDonePressed(currentFragment)
+        Config.introShown = true
+        saveAndFinish()
+    }
+
+    private fun saveAndFinish() {
+        Config.introShown = true
         finish()
-    }
-
-    override fun onDonePressed() {
-        // Do something when users tap on Done button.
-        finish()
-    }
-
-    override fun onSlideChanged() {
-        // Do something when the slide changes.
-    }
-
-    override fun onNextPressed() {
-        // Do something when users tap on Next button.
     }
 }

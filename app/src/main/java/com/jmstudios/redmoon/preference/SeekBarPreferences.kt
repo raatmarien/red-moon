@@ -19,6 +19,7 @@ package com.jmstudios.redmoon.preference
 
 import android.content.Context
 import android.content.res.TypedArray
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
@@ -44,19 +45,19 @@ abstract class SeekBarPreference(context: Context, attrs: AttributeSet) : Prefer
     protected var mProgress: Int = 0
     lateinit protected var mView: View
 
-    // Changes to DEFAULT_VALUE should be reflected in preferences.xml
-    abstract val DEFAULT_VALUE: Int
-    abstract val colorFilter: PorterDuffColorFilter
+    open val DEFAULT_VALUE: Int = 20
+    abstract val color: Int
     abstract val progress: Int
     abstract val suffix: String
+
+    val colorFilter: PorterDuffColorFilter
+        get() = PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY)
 
     init {
         layoutResource = R.layout.preference_seekbar
     }
 
-    fun setProgress(progress: Int) {
-        mSeekBar.progress = progress
-    }
+    fun setProgress(progress: Int) { mSeekBar.progress = progress }
 
     override fun onGetDefaultValue(a: TypedArray, index: Int): Any {
         return a.getInteger(index, DEFAULT_VALUE)
@@ -76,59 +77,47 @@ abstract class SeekBarPreference(context: Context, attrs: AttributeSet) : Prefer
         super.onBindView(view)
         mView = view
         mSeekBar = view.findViewById(R.id.seekbar) as SeekBar
-        mSeekBar.progress = mProgress
+        setProgress(mProgress)
         mSeekBar.setOnSeekBarChangeListener(this)
-        updateMoonIcon()
-        updateProgressText()
+        updateView()
     }
 
     //region OnSeekBarChangedListener
     override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-        Log.i("onSeekbarProgressChanged, storing value")
+        Log.i("onSeekbarProgressChanged, $title to $progress")
         mProgress = progress
         persistInt(mProgress)
-        updateMoonIcon()
-        updateProgressText()
+        updateView()
     }
 
     override fun onStartTrackingTouch(seekBar: SeekBar) {
         Log.d("Touch down on a seek bar")
-        ScreenFilterService.moveToState(ScreenFilterService.Command.SHOW_PREVIEW)
+        ScreenFilterService.preview(true)
     }
 
     override fun onStopTrackingTouch(seekBar: SeekBar) {
         Log.d("Released a seek bar")
-        ScreenFilterService.moveToState(ScreenFilterService.Command.HIDE_PREVIEW)
+        ScreenFilterService.preview(false)
     }
     //end region
 
-    fun updateMoonIcon() {
+    private fun updateView() {
         if (isEnabled) {
             val moonIcon = mView.findViewById(R.id.moon_icon) as ImageView
             moonIcon.colorFilter = colorFilter
         }
-    }
 
-    fun updateProgressText() {
         val progressView = mView.findViewById(R.id.seekbar_value) as TextView
-        progressView.text = String.format("%d%s", progress, suffix)
+        progressView.text = "$progress$suffix"
     }
 }
 
 class ColorSeekBarPreference(context: Context, attrs: AttributeSet) : SeekBarPreference(context, attrs) {
 
-    // TODO: Get the default value from the XML and handle it in the parent class
-    companion object : Logger()
-
-    // Changes to DEFAULT_VALUE should be reflected in preferences.xml
-    override val DEFAULT_VALUE = Profile.DEFAULT_COLOR
     override val suffix = "K"
         
-    override val colorFilter: PorterDuffColorFilter
-        get() {
-            val color = Profile.rgbFromColor(mProgress)
-            return PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY)
-        }
+    override val color: Int
+        get() = Profile.rgbFromColor(mProgress)
 
     override val progress: Int
         get() = Profile.getColorTemperature(mProgress)
@@ -136,18 +125,10 @@ class ColorSeekBarPreference(context: Context, attrs: AttributeSet) : SeekBarPre
 
 class IntensitySeekBarPreference(context: Context, attrs: AttributeSet) : SeekBarPreference(context, attrs) {
 
-    // TODO: Get the default value from the XML and handle it in the parent class
-    companion object : Logger()
-
-    // Changes to DEFAULT_VALUE should be reflected in preferences.xml
-    override val DEFAULT_VALUE = Profile.DEFAULT_INTENSITY
     override val suffix = "%"
 
-    override val colorFilter: PorterDuffColorFilter
-        get() {
-            val color = getIntensityColor(mProgress, Config.color)
-            return PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY)
-        }
+    override val color: Int
+        get() = getIntensityColor(mProgress, Config.color)
 
     override val progress: Int
         get() = mProgress
@@ -167,17 +148,13 @@ class IntensitySeekBarPreference(context: Context, attrs: AttributeSet) : SeekBa
 }
 
 class DimSeekBarPreference(context: Context, attrs: AttributeSet) : SeekBarPreference(context, attrs) {
-    companion object : Logger()
 
-    // Changes to DEFAULT_VALUE should be reflected in preferences.xml
-    override val DEFAULT_VALUE = Profile.DEFAULT_DIM_LEVEL
     override val suffix = "%"
 
-    override val colorFilter: PorterDuffColorFilter
+    override val color: Int
         get() {
             val lightness = 102 + ((100 - mProgress).toFloat() * (2.55f * 0.6f)).toInt()
-            val color = Color.rgb(lightness, lightness, lightness)
-            return PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY)
+            return Color.rgb(lightness, lightness, lightness)
         }
 
     override val progress: Int

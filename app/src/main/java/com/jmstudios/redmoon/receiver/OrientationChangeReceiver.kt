@@ -45,17 +45,11 @@ class OrientationChangeReceiver(private val mListener: OnOrientationChangeListen
 
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action == Intent.ACTION_CONFIGURATION_CHANGED) {
-            val r = appContext.resources
-            if (r.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
-                mListener.onPortraitOrientation()
-            } else {
-                mListener.onLandscapeOrientation()
-            }
+            mListener.onOrientationChanged()
         }
     }
 
     interface OnOrientationChangeListener {
-        fun onPortraitOrientation()
-        fun onLandscapeOrientation()
+        fun onOrientationChanged()
     }
 }

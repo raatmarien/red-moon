@@ -26,7 +26,6 @@ import android.content.ContextWrapper
 
 import com.jmstudios.redmoon.helper.Logger
 import com.jmstudios.redmoon.service.ScreenFilterService
-import com.jmstudios.redmoon.service.ScreenFilterService.Command
 import com.jmstudios.redmoon.util.atLeastAPI
 import com.jmstudios.redmoon.util.belowAPI
 
@@ -48,8 +47,7 @@ class CurrentAppMonitoringThread(private val mContext: Context) : Thread() {
                 Log.d("Current app is: $currentApp")
 
                 isAppSecured(currentApp)?.let {
-                    val state = if (it) Command.START_SUSPEND else Command.STOP_SUSPEND
-                    ScreenFilterService.moveToState(state)
+                    ScreenFilterService.pause(it)
                 }
 
                 Thread.sleep(1000)
@@ -68,7 +66,7 @@ class CurrentAppMonitoringThread(private val mContext: Context) : Thread() {
         "com.owncloud.android",
         "com.google.android.packageinstaller" -> true
         // Opening the notification causes red moon to appear as the active package -> we unpause.
-        // Closing the notification does not properly restore the previous package, so we don't
+        // Closing the notification does not properly restore the previous package, so we can't
         // re-pause when returning to a secured app. So, we need to avoid pausing to begin with.
         "com.jmstudios.redmoon", "com.jmstudios.redmoon.debug" -> null
         else -> false

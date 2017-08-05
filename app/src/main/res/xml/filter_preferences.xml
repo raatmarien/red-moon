@@ -40,7 +40,7 @@
   <PreferenceCategory android:title="@string/pref_category_filter">
     <com.jmstudios.redmoon.preference.ProfileSelectorPreference
         android:key="@string/pref_key_profile_spinner"
-        android:defaultValue="1"/>
+        android:persistent="false"/>
 
     <com.jmstudios.redmoon.preference.ColorSeekBarPreference
         android:title="@string/pref_title_color_temp"
@@ -67,17 +67,13 @@
     <Preference
         android:title="@string/pref_title_time_toggle"
         android:key="@string/pref_key_time_toggle_header">
-        <intent
-            android:targetPackage="@string/applicationId"
-            android:targetClass="com.jmstudios.redmoon.activity.TimeToggleActivity" />
+        <intent android:action=".activity.TimeToggleActivity" />
     </Preference>
 
     <Preference
         android:title="@string/pref_title_secure_suspend"
         android:key="@string/pref_key_secure_suspend_header">
-        <intent
-            android:targetPackage="@string/applicationId"
-            android:targetClass="com.jmstudios.redmoon.activity.SecureSuspendActivity"/>
+        <intent android:action=".activity.SecureSuspendActivity"/>
     </Preference>
 
   </PreferenceCategory>

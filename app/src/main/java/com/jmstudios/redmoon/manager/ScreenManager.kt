@@ -46,6 +46,9 @@ import android.view.WindowManager
 
 import com.jmstudios.redmoon.helper.Logger
 
+private const val DEFAULT_NAV_BAR_HEIGHT_DP = 48
+private const val DEFAULT_STATUS_BAR_HEIGHT_DP = 25
+
 class ScreenManager(context: Context, private val mWindowManager: WindowManager) {
 
     private val mResources: Resources = context.resources
@@ -75,14 +78,11 @@ class ScreenManager(context: Context, private val mWindowManager: WindowManager)
             val display = mWindowManager.defaultDisplay
             val dm = DisplayMetrics()
             display.getRealMetrics(dm)
-
-            var screenHeight = dm.heightPixels + statusBarHeightPx
-
-            if (inPortrait()) {
-                screenHeight += navigationBarHeightPx
+            return if (inPortrait) {
+                dm.heightPixels + statusBarHeightPx + navigationBarHeightPx
+            } else {
+                dm.heightPixels + statusBarHeightPx
             }
-
-            return screenHeight
         }
 
     val statusBarHeightPx: Int
@@ -94,7 +94,7 @@ class ScreenManager(context: Context, private val mWindowManager: WindowManager)
                     mStatusBarHeight = mResources.getDimensionPixelSize(statusBarHeightId)
                     Log.i("Found Status Bar Height: " + mStatusBarHeight)
                 } else {
-                    mStatusBarHeight = dpToPx(DEFAULT_STATUS_BAR_HEIGHT_DP.toFloat()).toInt()
+                    mStatusBarHeight = dpToPx(DEFAULT_STATUS_BAR_HEIGHT_DP)
                     Log.i("Using default Status Bar Height: " + mStatusBarHeight)
                 }
             }
@@ -111,7 +111,7 @@ class ScreenManager(context: Context, private val mWindowManager: WindowManager)
                     mNavigationBarHeight = mResources.getDimensionPixelSize(navBarHeightId)
                     Log.i("Found Navigation Bar Height: " + mNavigationBarHeight)
                 } else {
-                    mNavigationBarHeight = dpToPx(DEFAULT_NAV_BAR_HEIGHT_DP.toFloat()).toInt()
+                    mNavigationBarHeight = dpToPx(DEFAULT_NAV_BAR_HEIGHT_DP)
                     Log.i("Using default Navigation Bar Height: " + mNavigationBarHeight)
                 }
             }
@@ -119,16 +119,13 @@ class ScreenManager(context: Context, private val mWindowManager: WindowManager)
             return mNavigationBarHeight
         }
 
-    private fun dpToPx(dp: Float): Float {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, mResources.displayMetrics)
+    private fun dpToPx(dp: Int): Int {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                                         dp.toFloat(), mResources.displayMetrics).toInt()
     }
+    
+    private val inPortrait: Boolean
+        get() = mResources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
 
-    private fun inPortrait(): Boolean {
-        return mResources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
-    }
-
-    companion object : Logger() {
-        private const val DEFAULT_NAV_BAR_HEIGHT_DP = 48
-        private const val DEFAULT_STATUS_BAR_HEIGHT_DP = 25
-    }
+    companion object : Logger()
 }

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="app_name">Ruĝa luno</string>
+
+    <string name="activity_main">Ruĝa luno</string>
+    <string name="activity_intro">Enigo</string>
+    <string name="activity_about">Pri Ruĝa luno</string>
+    <string name="activity_secure_suspend">Paŭzi en sekuraplikaĵoj</string>
+    <string name="activity_timer">Tempumilo</string>
+
+    <string name="menu_dark_theme">Malhela etoso</string>
+    <string name="menu_restore_default_filters">Restarigi defaŭltajn filtrilojn</string>
+    <string name="menu_show_intro">Reenkonduki</string>
+    <string name="menu_about">Pri</string>
+
+    <string name="notification_status_running">Laboras. Elŝaltu por instali apojn</string>
+    <string name="notification_status_running_no_warning">Laboras</string>
+    <string name="notification_status_paused">Paŭzigita</string>
+    <string name="notification_status_off">Elŝalti</string>
+    <string name="notification_action_resume">Daŭrigi</string>
+    <string name="notification_action_pause">Paŭzi</string>
+    <string name="notification_action_turn_on">Ŝalti</string>
+    <string name="notification_action_turn_off">Elŝalti</string>
+    <string name="notification_action_next_filter">Sekva filtrilo</string>
+
+    <string name="pref_category_filter">Filtrilo</string>
+    <string name="pref_category_other">Alia</string>
+    <string name="pref_category_button_backlight_disclaimer">Ne laboras en ĉiu aparato</string>
+
+    <string name="pref_title_dim_level">Malhelignivelo</string>
+    <string name="pref_title_intensity">Intenseco</string>
+    <string name="pref_title_color_temp">Kolortemperaturo</string>
+    <string name="pref_title_lower_brightness">Etigi sisteman helecon</string>
+
+    <string name="pref_title_time_toggle">Tempumilo</string>
+    <string name="pref_title_secure_suspend">Paŭzi en sekuraj apoj</string>
+    <string name="activity_shortcut">Ŝanĝilo de Ruĝa luno</string>
+    <string name="pref_title_button_backlight">Fonlumado de aparatbutonoj</string>
+
+    <string name="pref_title_start_time">Ŝalti je</string>
+    <string name="pref_title_end_time">Malŝalti je</string>
+    <string name="pref_title_location">Tempo po suno</string>
+    <string name="pref_summary_location_off">Po via lokeco</string>
+
+    <string name="pref_summary_secure_suspend">Iuj aĵoj ne laboros dum Ruĝa luno funkcias*. Ekzemple vi ne povos instali apojn, permesigi aŭ uzi apon SuperUser (en superuzantigitaj aparatoj).
+\n
+\nKiam tiu ĉi agordaĵo ŝaltita, Ruĝa luno paŭziĝos dum unu de tiuj apoj laboras.
+\n
+\nTio iomete manĝos vian pilon de via aparato. Ankaŭ, tiu ĉi funkcio ne laboras en tiuj aparatoj.
+\n
+\nRuĝa luno pentras travideblan ruĝan tavolon super la ekrano; tiuj apoj ne laboros se alia aplikaĵo pentras super ili. Tiel, neniu malbona apo ne eblos fari nedezirataĵojn aŭ spionaĵon je via tajpado.</string>
+
+    <string name="button_add_filter">Aldoni</string>
+    <string name="button_remove_filter">Forigi</string>
+
+    <string name="text_switch_on">Ŝalti</string>
+    <string name="text_switch_off">Elŝalti</string>
+
+    <string name="location_not_set">Lokeco ne agordita</string>
+    <string name="latitude_short">Larĝeco</string>
+    <string name="longitude_short">Longeco</string>
+
+    <string name="pref_title_version">Versio</string>
+
+    <string name="pref_title_project_page">Vizitu la projektpaĝon</string>
+    </resources>

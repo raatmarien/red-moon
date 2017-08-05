@@ -50,6 +50,7 @@ import com.jmstudios.redmoon.R
 import com.jmstudios.redmoon.helper.Logger
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.service.ScreenFilterService
+import com.jmstudios.redmoon.util.*
 
 class SwitchAppWidgetProvider : AppWidgetProvider() {
 
@@ -67,7 +68,7 @@ class SwitchAppWidgetProvider : AppWidgetProvider() {
             views.setOnClickPendingIntent(R.id.widget_pause_play_button, togglePendingIntent)
 
             appWidgetManager.updateAppWidget(appWidgetId, views)
-            updateImage(context, Config.filterIsOn)
+            updateImage(context, filterIsOn)
         }
     }
 

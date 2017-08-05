@@ -20,7 +20,7 @@
     <SwitchPreference
         android:key="@string/pref_key_time_toggle"
         android:layout="@layout/switch_bar"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
     <com.jmstudios.redmoon.preference.TimePickerPreference
         android:key="@string/pref_key_custom_turn_on_time"

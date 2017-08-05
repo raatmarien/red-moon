@@ -1,11 +1,18 @@
-ext {
-    android_support_version = '25.2.0'
-    appId = "com.jmstudios.redmoon"
-}
-
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.ajoberstar:grgit:1.9.3'
+    }
+}
+
+ext {
+    android_support_version = '25.2.0'
+}
 
 if(rootProject.file("keystore.properties").exists()) {
     // From https://developer.android.com/studio/publish/app-signing.html
@@ -36,17 +43,16 @@ android {
     buildToolsVersion "25.0.2"
 
     defaultConfig {
-        applicationId appId
+        applicationId "com.jmstudios.redmoon"
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 29
-        versionName "3.0.0"
+        versionCode 30
+        versionName "${org.ajoberstar.grgit.Grgit.open().describe()}"
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [ eventBusIndex : 'com.jmstudios.redmoon.event.EventBusIndex' ]
             }
         }
-        resValue "string", "applicationId", appId
     }
     buildTypes {
         release {
@@ -56,8 +62,13 @@ android {
 
         debug {
             applicationIdSuffix '.debug'
-            versionNameSuffix '-DEBUG'
-            resValue "string", "applicationId", "$appId$applicationIdSuffix"
+            versionNameSuffix '_DEBUG'
+        }
+    }
+    productFlavors {
+        fdroid {
+        }
+        playstore {
         }
     }
     sourceSets {
@@ -77,6 +88,8 @@ dependencies {
     compile 'de.cketti.library.changelog:ckchangelog:1.2.2'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'me.smichel.android:kpreferences:0.7.0'
+    playstoreCompile 'com.github.hotchemi:android-rate:1.0.1'
     annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.0.1'
 }
 

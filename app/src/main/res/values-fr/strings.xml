@@ -115,7 +115,7 @@
     <string name="pref_title_version">Version</string>
 
     <string name="pref_title_integration">Integration avec d\'autres apps</string>
-    <string name="snackbar_location_updated">Localisation trouvée!</string>
+    <string name="snackbar_location_updated">Position trouvée !</string>
     <string name="dialog_title_permission_write_settings">En train de modifier les réglages du système</string>
     <string name="filter_name_dim_only">Faible uniquement</string>
 
@@ -123,4 +123,15 @@
 
     <string name="action_next_profile">Profil suivant</string>
     <string name="pref_title_location">Horaires du soleil</string>
+    <string name="pref_title_button_backlight">Rétro-éclairage des boutons physiques</string>
+
+    <string name="pref_summary_integration">Certaines applications, comme LibreTasks ou Tasker, vous permettent d’automatiser les tâches lorsque certains événements se produisent. Red Moon envoie une notification publique lorsqu’il s’allume et s’éteint, donc ces applications peuvent répondre. Si vous n\'utilisez ni développez pas une de ces applications, vous pouvez ignorer le paragraphe suivant.
+\n
+\nRed Moon diffuse une intention publique avec l’action « com.jmstudios.redmoon.RED_MOON_TOGGLED ». L’intention contient un valeur booléan supplémentaire avec la clé « jmstudios.bundle.key.FILTER_IS_ON », qui indique si Red Moon est basculant ou non.</string>
+
+    <string name="dialog_title_permission_overlay">Superposition sur autres applications</string>
+    <string name="dialog_message_permission_overlay">Autoriser la superposition sur autres applis pour permettre à Red Moon activer le filtre.</string>
+
+    <string name="dialog_message_permission_write_settings">Autorisez la modification des paramètres systèmes sur le prochain écran pour autoriser Red Moon à changer la luminosité.</string>
+
     </resources>

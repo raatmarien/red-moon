@@ -23,17 +23,12 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.os.Handler
 
-import com.jmstudios.redmoon.helper.DismissNotificationRunnable
 import com.jmstudios.redmoon.helper.Logger
 import com.jmstudios.redmoon.model.Config
-import com.jmstudios.redmoon.presenter.ScreenFilterPresenter
 import com.jmstudios.redmoon.service.LocationUpdateService
 import com.jmstudios.redmoon.service.ScreenFilterService
-import com.jmstudios.redmoon.service.ScreenFilterService.Command
-import com.jmstudios.redmoon.util.appContext
-import com.jmstudios.redmoon.util.atLeastAPI
+import com.jmstudios.redmoon.util.*
 
 import java.util.Calendar
 import java.util.GregorianCalendar
@@ -46,25 +41,13 @@ class TimeToggleChangeReceiver : BroadcastReceiver() {
 
         val turnOn = intent.data.toString() == "turnOnIntent"
 
-        val command = if (Config.useLocation) {
-            if (turnOn) Command.FADE_ON else Command.FADE_OFF
+        if (Config.useLocation) {
+            ScreenFilterService.fade(turnOn)
         } else {
-            if (turnOn) Command.ON else Command.OFF
+            ScreenFilterService.toggle(turnOn)
         }
-        ScreenFilterService.moveToState(command)
         cancelAlarm(turnOn)
         scheduleNextCommand(turnOn)
-
-        // We want to dismiss the notification if the filter is turned off
-        // automatically.
-        // However, the filter fades out and the notification is only
-        // refreshed when this animation has been completed.  To make sure
-        // that the new notification is removed we create a new runnable to
-        // be executed 100 ms after the filter has faded out.
-        val handler = Handler()
-
-        val runnable = DismissNotificationRunnable(context)
-        handler.postDelayed(runnable, (ScreenFilterPresenter.FADE_DURATION_LONG + 100).toLong())
 
         LocationUpdateService.update(foreground = false)
     }
@@ -77,15 +60,13 @@ class TimeToggleChangeReceiver : BroadcastReceiver() {
             get() = appContext.getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
         // Conveniences
-        fun scheduleNextOnCommand() = scheduleNextCommand(true)
+        fun scheduleNextOnCommand()  = scheduleNextCommand(true)
         fun scheduleNextOffCommand() = scheduleNextCommand(false)
-        fun rescheduleOnCommand() {
-            cancelAlarm(true)
-            scheduleNextCommand(true)
-        }
-        fun rescheduleOffCommand() {
-            cancelAlarm(false)
-            scheduleNextCommand(false)
+        fun rescheduleOnCommand()  = rescheduleCommand(true)
+        fun rescheduleOffCommand() = rescheduleCommand(false)
+        private fun rescheduleCommand(on: Boolean) {
+            cancelAlarm(on)
+            scheduleNextCommand(on)
         }
         fun cancelAlarms() {
             cancelAlarm(true)

@@ -36,14 +36,14 @@
     <string name="pref_title_email_developer">Пишите мне на marienraat@riseup.net</string>
     <string name="pref_summary_email_developer">Сообщить разработчику об ошибках или предложениях</string>
     <string name="pref_title_project_page">Посетить страницу проекта</string>
-    <string name="pref_summary_project_page">Смотреть детали, оставить отзыв и помочь с проектом</string>
+    <string name="pref_summary_project_page">Увидеть подробную информацию, оставить отзыв и помочь с проектом</string>
 
     <!-- Toasts -->
     <string name="toast_warning_install">Вы не сможете устанавливать приложения, пока Red Moon включено.</string>
     <string name="snackbar_warning_no_location">Включите службу определения местоположения для обновления местоположения</string>
 
     <!-- Snackbar -->
-    <string name="help_snackbar_text">Нажмите на переключатель, для включения Red Moon</string>
+    <string name="help_snackbar_text">Нажмите на переключатель, чтобы включить Red Moon</string>
 
     <!-- Dialog -->
     <string name="dialog_title_add_filter">Введите названия профиля</string>
@@ -76,19 +76,18 @@
     <string name="activity_secure_suspend">Приостанавливать в привилегированных приложениях</string>
 
     <string name="pref_title_secure_suspend">Приостанавливать в привилегированных приложениях</string>
-    <string name="pref_summary_secure_suspend">Некоторые функции могут не работать, когда приложение Red Moon запущено. Например, установка APK-файлов, предоставление разрешений [приложениям], или использование SuperUser-приложений (на рутованных устройствах).
-
-Если эта функция включена, Red Moon приостановит свою работу, когда одна из таких защищённых функций будет запущена.
-
-Эта функция может слегка снизить продолжительность работы устройства от аккумулятора. Эта функция может не работать на всех устройствах.
-
-*Red Moon works by drawing a transparent red layer over the whole screen; these apps won\'t work if another app is drawing over them. That way, so no other app can trick you into picking the option you didn\'t want, or watch your touches to figure out what you\'re doing.
-*Red Moon работает, создавая прозрачный слой красного поверх всего экрана; подобные приложения не могут работать, если другие приложения размещаются поверх них. Это сделано для того, чтобы избежать несанкционированного выбора нежелаемых действий, или перехвата прикосновений с целью слежки за пользователем.</string>
+    <string name="pref_summary_secure_suspend">Некоторые функции могут не работать, когда приложение Red Moon запущено*. Например, установка APK-файлов, предоставление разрешений приложениям или использование приложения SuperUser (на рутованных устройствах).
+\n
+\nЕсли эта настройка включена, Red Moon приостановит свою работу, когда одна из таких функций будет запущена.
+\n
+\nЭта функция может слегка снизить продолжительность работы устройства от аккумулятора. Эта функция может не работать на некоторых устройствах.
+\n
+\n*Red Moon создаёт прозрачный слой красного цвета поверх всего экрана; подобные приложения не могут работать, если другие приложения размещаются поверх них. Это сделано для того, чтобы избежать несанкционированного выбора нежелаемых действий, или перехвата прикосновений с целью слежки за пользователем.</string>
     <string name="text_switch_on">Вкл</string>
     <string name="text_switch_off">Выкл</string>
     <string name="dialog_message_permission_usage_stats">Разрешите Red Moon доступ к просмотру запущенных приложений в следующем окне, чтобы включить эту функцию.
-
-Red Moon будет использовать эти данные только чтобы определять, является-ли запущенное приложение привилегированным.</string>
+\n
+\nRed Moon будет использовать эти данные только чтобы определять, является ли запущенное приложение привилегированным.</string>
 
     <string name="slide_title_welcome">Добро пожаловать!</string>
     <string name="slide_text_welcome">Добро пожаловать в Red Moon!</string>
@@ -99,9 +98,9 @@ Red Moon будет использовать эти данные только ч
 
     <string name="slide_title_improve_sleep">Улучшение сна</string>
     <string name="slide_text_improve_sleep">Синий свет подавляет
-производство мелатонина - гормона, который помогает людям
-заснуть ночью. Red Moon убирает синий цвет с вашего экрана,
-чтобы Вы могли засыпать с легкостью.</string>
+\nпроизводство мелатонина — гормона, который помогает людям
+\nзаснуть ночью. Red Moon убирает синий цвет с вашего экрана,
+\nчтобы вы могли засыпать с лёгкостью.</string>
 
     <string name="slide_title_get_started">Начать!</string>
     <string name="slide_text_get_started">Включайте и выключайте Red Moon нажатием на кнопку
@@ -119,10 +118,10 @@ Red Moon будет использовать эти данные только ч
     <string name="menu_about">О приложении</string>
     <string name="activity_about">О Red Moon</string>
     <string name="dialog_title_permission_overlay">Поверх других приложений</string>
-    <string name="dialog_message_permission_overlay">Разрешите наложение поверх других приложений в следующем окне чтобы позволить Red Moon функционировать корректно.</string>
+    <string name="dialog_message_permission_overlay">Разрешите наложение поверх других приложений в следующем окне, чтобы позволить Red Moon функционировать корректно.</string>
 
     <string name="dialog_title_permission_write_settings">Меняю настройки системы</string>
-    <string name="dialog_message_permission_write_settings">Разрешите изменение настроек системы в следующем окне чтобы позволить Red Moon изменять уровень яркости.</string>
+    <string name="dialog_message_permission_write_settings">Разрешите изменение настроек системы в следующем окне, чтобы позволить Red Moon изменять уровень яркости.</string>
 
     <string name="notification_status_off">Выкл</string>
     <string name="notification_action_turn_on">Включить</string>
@@ -130,17 +129,17 @@ Red Moon будет использовать эти данные только ч
     <string name="notification_action_next_filter">Следующий фильтр</string>
 
     <string name="pref_category_button_backlight_disclaimer">Не работает на некоторых устройствах</string>
-    <string name="pref_title_button_backlight">Аппаратное управление подсветкой</string>
+    <string name="pref_title_button_backlight">Подсветка аппаратных кнопок</string>
 
     <string name="pref_title_location">Время по световому дню</string>
     <string name="pref_summary_location_off">Автоматически</string>
     <string name="pref_title_integration">Совместимость с другими приложениями</string>
-    <string name="pref_summary_integration">Некоторые приложения, вроде LibreTasks или Tasker, позволяют автоматизировать некоторый функционал, привязав его к определенным событиям. Red Moon шлет открытое уведомление при выключении/включении, дабы такие приложения могли среагировать. Если Вы не являетесь пользователем/разработчиком подобных приложений, следующий абзац опционален.
-
-Red Moon выполняет рассылку действия `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Рассылка также содержит переменную типа boolean с ключём `jmstudios.bundle.key.FILTER_IS_ON`, сообщаю о включении/выключении Red Moon.</string>
+    <string name="pref_summary_integration">Некоторые приложения, вроде LibreTasks или Tasker, позволяют автоматически выполнять некие задачи, когда происходят определённые события. Red Moon шлёт открытое уведомление при включении и включении, так что такие приложения могут реагировать на него. Если вы не пользуетесь и не разрабатываете подобные приложения, вы можете пропустить следующий абзац.
+\n
+\nRed Moon выполняет рассылку действия `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Рассылка также содержит переменную типа boolean с ключом `jmstudios.bundle.key.FILTER_IS_ON`, которая указывает о включении или выключении Red Moon.</string>
     <string name="pref_title_version">Версия</string>
 
-    <string name="snackbar_location_updated">Местоположения найдено!</string>
+    <string name="snackbar_location_updated">Местоположение найдено!</string>
     <string name="pref_entry_button_backlight_system">Системный</string>
     <string name="pref_entry_button_backlight_filter_dim_level">По фильтру затемнения</string>
     <string name="pref_entry_button_backlight_turn_off">Выключить</string>
@@ -149,4 +148,7 @@ Red Moon выполняет рассылку действия `com.jmstudios.red
     <string name="set_dialog">Задать</string>
     <string name="notification_status_running">Работаю. Остановите перед установкой новых приложений</string>
     <string name="notification_status_running_no_warning">Запущено</string>
-</resources>
+<string name="menu_restore_default_filters">Восстановить фильтры по умолчанию</string>
+    <string name="filter_name_dim_only">Только затемнение</string>
+
+    </resources>

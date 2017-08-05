@@ -36,18 +36,47 @@
  */
 package com.jmstudios.redmoon.util
 
+import android.content.Intent
 import android.support.v4.content.ContextCompat
 
 import com.jmstudios.redmoon.application.RedMoonApplication
+import com.jmstudios.redmoon.helper.EventBus
+import com.jmstudios.redmoon.helper.Profile
+import com.jmstudios.redmoon.helper.KLogging
 import com.jmstudios.redmoon.model.Config
-import com.jmstudios.redmoon.model.ProfilesModel
+
+import kotlin.reflect.KClass
+
+private val uLog = KLogging.logger("Util", true)
 
 val appContext = RedMoonApplication.app
-val activeProfile
-    get() = ProfilesModel.getProfile(Config.profile)
+
+var activeProfile: Profile
+    get() = EventBus.getSticky(Profile::class) ?: with (Config) {
+                Profile(color, intensity, dimLevel, lowerBrightness)
+            }
+    set(value) = value.let {
+        if (it != EventBus.getSticky(Profile::class)) with (Config) {
+            uLog.i("activeProfile set to $it")
+            EventBus.postSticky(it)
+            color = it.color
+            intensity = it.intensity
+            dimLevel = it.dimLevel
+            lowerBrightness = it.lowerBrightness
+        }
+    }
+
+var filterIsOn: Boolean = false
+    set(value) {
+        field = value
+        Config.filterIsOn = value
+    }
 
 fun getString(resId: Int): String = appContext.getString(resId)
 fun getColor (resId: Int): Int = ContextCompat.getColor(appContext, resId)
 
 fun atLeastAPI(api: Int): Boolean = android.os.Build.VERSION.SDK_INT >= api
 fun belowAPI  (api: Int): Boolean = android.os.Build.VERSION.SDK_INT <  api
+
+fun intent() = Intent()
+fun <T: Any>intent(kc: KClass<T>) = Intent(appContext, kc.java)

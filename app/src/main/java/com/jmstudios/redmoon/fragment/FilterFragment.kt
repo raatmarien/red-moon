@@ -45,6 +45,7 @@ import com.jmstudios.redmoon.R
 import com.jmstudios.redmoon.event.*
 import com.jmstudios.redmoon.helper.EventBus
 import com.jmstudios.redmoon.helper.Permission
+import com.jmstudios.redmoon.helper.Profile
 import com.jmstudios.redmoon.helper.Logger
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.preference.ProfileSelectorPreference
@@ -140,12 +141,11 @@ class FilterFragment : EventPreferenceFragment() {
     }
 
     //region presenter
-    @Subscribe
-    fun onProfileChanged(event: profileChanged) {
-        colorPref    .setProgress(Config.color    )
-        intensityPref.setProgress(Config.intensity)
-        dimLevelPref .setProgress(Config.dimLevel )
-        lowerBrightnessPref.isChecked = Config.lowerBrightness
+    @Subscribe fun onProfileChanged(profile: Profile) {
+        colorPref    .setProgress(profile.color    )
+        intensityPref.setProgress(profile.intensity)
+        dimLevelPref .setProgress(profile.dimLevel )
+        lowerBrightnessPref.isChecked = profile.lowerBrightness
     }
 
     @Subscribe

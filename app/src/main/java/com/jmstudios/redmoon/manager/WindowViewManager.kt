@@ -41,86 +41,92 @@ import android.animation.IntEvaluator
 import android.animation.TypeEvaluator
 import android.animation.ValueAnimator
 import android.view.WindowManager
+import com.jmstudios.redmoon.event.buttonBacklightChanged
 
 import com.jmstudios.redmoon.helper.AbstractAnimatorListener
 import com.jmstudios.redmoon.helper.Logger
 import com.jmstudios.redmoon.helper.Profile
 import com.jmstudios.redmoon.model.Config
+import com.jmstudios.redmoon.receiver.OrientationChangeReceiver
 import com.jmstudios.redmoon.util.*
 import com.jmstudios.redmoon.view.ScreenFilterView
 
+import org.greenrobot.eventbus.Subscribe
+
+private class ProfileEvaluator : TypeEvaluator<Profile> {
+    private val intEval  = IntEvaluator()
+    private val argbEval = ArgbEvaluator()
+
+    override fun evaluate(fraction: Float, start: Profile, end: Profile) = end.copy(
+        color    = argbEval.evaluate(fraction, start.color, end.color) as Int,
+        intensity = intEval.evaluate(fraction, start.intensity, end.intensity),
+        dimLevel  = intEval.evaluate(fraction, start.dimLevel,  end.dimLevel ))
+}
+
 class WindowViewManager(private val mView: ScreenFilterView,
                         private val mScreenManager: ScreenManager,
-                        private val mWindowManager: WindowManager) {
-    companion object : Logger()
+                        private val mWindowManager: WindowManager) :
+                    OrientationChangeReceiver.OnOrientationChangeListener {
 
-    private var mOpen = false
-    private val mAnimator = ValueAnimator.ofObject(ProfileEvaluator, mView.profile)
+    private val mAnimator = ValueAnimator.ofObject(ProfileEvaluator(), mView.profile).apply {
+        addUpdateListener { valueAnimator ->
+            mView.profile = valueAnimator.animatedValue as Profile
+            if (filterIsOn && Config.buttonBacklightFlag == "dim") { updateLayout() }
+        }
+    }
 
     private var mLayoutParams = mScreenManager.layoutParams
         get() = field.apply { buttonBrightness = Config.buttonBacklightLevel }
 
-    /**
-     * Creates and opens a new Window to display `mView`.
-     * *
-     * @param time duration over which to fade in `mView`, in milliseconds.
-     */
-    fun open(time: Int = 0) {
-        Log.i("open()")
+    fun open(time: Int?) {
         mAnimator.removeAllListeners()
         setProfile(time, activeProfile)
-        if (mOpen) {
+        if (filterIsOn) {
             Log.d("Screen filter is already open")
+            updateLayout()
         } else {
             mWindowManager.addView(mView, mLayoutParams)
-            mOpen = true
+            filterIsOn = true
         }
     }
 
-    // Triggers a screen measurement and layout pass
-    fun reLayout() {
-        mLayoutParams = mScreenManager.layoutParams
-        update()
-    }
-
-    // Closes the Window that is currently displaying `mView`.
-    fun close(time: Int = 0, onEnd: () -> Unit = {}) {
-        Log.i("close()")
+    fun close(time: Int?, onEnd: () -> Unit = {}) {
+        Log.i("close(time = $time, onEnd() = $onEnd)")
+        mAnimator.removeAllListeners()
         mAnimator.addListener(object : AbstractAnimatorListener {
-            override fun onAnimationEnd(animator: Animator) = if (mOpen) {
-                Log.i("Closing screen filter")
-                mWindowManager.removeView(mView)
-                mOpen = false
+            override fun onAnimationEnd(animator: Animator) {
+                if (filterIsOn) {
+                    Log.i("Closing screen filter")
+                    mWindowManager.removeView(mView)
+                    filterIsOn = false
+                } else {
+                    Log.w("Can't close Screen filter; it's already closed")
+                }
                 onEnd()
-            } else {
-                Log.w("Can't close Screen filter; it's already closed")
             }
         })
         setProfile(time, activeProfile.copy(intensity = 0, dimLevel = 0))
     }
 
-    private fun update() { if (mOpen) mWindowManager.updateViewLayout(mView, mLayoutParams) }
+    private fun updateLayout() = mWindowManager.updateViewLayout(mView, mLayoutParams)
 
-    private fun setProfile(time: Int, profile: Profile) = mAnimator.run {
-        if (isRunning) cancel()
+    private fun setProfile(time: Int?,  profile: Profile) = setProfile(time?.toLong(), profile)
+    private fun setProfile(time: Long?, profile: Profile) = mAnimator.run {
         setObjectValues(mView.profile, profile)
-        duration = time.toLong()
-        addUpdateListener { valueAnimator ->
-            mView.profile = valueAnimator.animatedValue as Profile
-            if (Config.buttonBacklightFlag == "dim") { update() }
-        }
-        Log.i("Setting screen filter to $profile. Duration: $time")
+        duration = time ?: if (isRunning) duration - currentPlayTime else 0
+        Log.i("Setting screen filter to $profile. Duration: $duration")
         start()
     }
 
-    private object ProfileEvaluator : TypeEvaluator<Profile> {
-        private val intEval  = IntEvaluator()
-        private val argbEval = ArgbEvaluator()
-
-        override fun evaluate(fraction: Float, start: Profile, end: Profile): Profile {
-            return end.copy(color    = argbEval.evaluate(fraction, start.color, end.color) as Int,
-                            intensity = intEval.evaluate(fraction, start.intensity, end.intensity),
-                            dimLevel  = intEval.evaluate(fraction, start.dimLevel,  end.dimLevel ))
-        }
+    // TODO: @Subscribe fun reLayout(event: orientationChanged) {
+    override fun onOrientationChanged() {
+        mLayoutParams = mScreenManager.layoutParams
+        if (filterIsOn) { updateLayout() }
     }
+
+    @Subscribe fun onButtonBacklightChanged(event: buttonBacklightChanged) {
+        if (filterIsOn) updateLayout()
+    }
+
+    companion object : Logger()
 }

@@ -67,6 +67,9 @@
                 <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES"/>
+            </intent-filter>
         </activity>
 
         <activity
@@ -107,11 +110,11 @@
         <activity
             android:name=".activity.TimeToggleActivity"
             android:label="@string/activity_timer"
-            android:parentActivityName="com.jmstudios.redmoon.activity.MainActivity"
+            android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme" >
 
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+                <action android:name=".activity.TimeToggleActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -119,11 +122,11 @@
         <activity
             android:name=".activity.SecureSuspendActivity"
             android:label="@string/activity_secure_suspend"
-            android:parentActivityName="com.jmstudios.redmoon.activity.MainActivity"
+            android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme" >
 
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+                <action android:name=".activity.SecureSuspendActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -131,7 +134,7 @@
         <activity
             android:name=".activity.AboutActivity"
             android:label="@string/activity_about"
-            android:parentActivityName="com.jmstudios.redmoon.activity.MainActivity"
+            android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme" />
 
         <service android:name="com.jmstudios.redmoon.service.LocationUpdateService" />

@@ -39,18 +39,35 @@ package com.jmstudios.redmoon.manager
 
 import android.content.Context
 import android.provider.Settings
+import com.jmstudios.redmoon.event.changeBrightnessDenied
+import com.jmstudios.redmoon.helper.EventBus
+import com.jmstudios.redmoon.helper.Profile
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.helper.Logger
 import com.jmstudios.redmoon.helper.Permission
+import com.jmstudios.redmoon.util.*
+
+import org.greenrobot.eventbus.Subscribe
 
 class BrightnessManager(private val mContext: Context) {
     companion object: Logger()
 
+    val hasPermission
+        get() = Permission.WriteSettings.isGranted
+
+    @Subscribe fun onProfileChanged(profile: Profile) {
+        Log.i("Recieved profile change: $profile")
+        if (profile.lowerBrightness) lower() else restore()
+    }
+
     fun lower() =  when {
-        !Config.filterIsOn       -> Log.w("Can't lower brightness; filter is off!")
+        !filterIsOn -> Log.w("Can't lower brightness; filter is off!")
         Config.brightnessLowered -> Log.w("Brightness is already lowered!")
-        !Config.lowerBrightness  -> Log.w("Lower brightness not enabled!")
-        !Permission.WriteSettings.isGranted -> Log.w("Permission not granted!")
+        !activeProfile.lowerBrightness -> Log.w("Lower brightness not enabled!")
+        !hasPermission -> {
+            EventBus.post(changeBrightnessDenied())
+            Log.i("Permission not granted!")
+        }
         else -> try {
             val resolver = mContext.contentResolver
             val oldLevel = Settings.System.getInt(resolver, Settings.System.SCREEN_BRIGHTNESS)
@@ -69,7 +86,7 @@ class BrightnessManager(private val mContext: Context) {
 
     fun restore() = when {
         !Config.brightnessLowered -> Log.w("Can't restore brightness; it's not lowered!")
-        !Permission.WriteSettings.isGranted -> Log.w("Permission not granted!")
+        !hasPermission -> Log.w("Permission not granted!")
         else -> {
             val resolver = mContext.contentResolver
             val automatic = if (Config.automaticBrightness) 1 else 0
