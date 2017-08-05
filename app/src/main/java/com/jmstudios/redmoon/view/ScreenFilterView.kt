@@ -50,7 +50,7 @@ class ScreenFilterView(context: Context) : View(context) {
 
     var suOut : DataOutputStream? = null
 
-    override fun onDraw(canvas: Canvas) = canvas.drawColor(profile.filterColor)
+    //override fun onDraw(canvas: Canvas) = canvas.drawColor(profile.filterColor)
 
     var i = 0
     fun rootTintScreen() {
