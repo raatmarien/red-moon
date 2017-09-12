@@ -82,7 +82,7 @@ class ScheduleReceiver : BroadcastReceiver() {
 
                 val pendingIntent = PendingIntent.getBroadcast(appContext, 0, command, 0)
 
-                AlarmManagerCompat.setExactAndAllowWhileIdle(alarmManager, AlarmManager.RTC,
+                AlarmManagerCompat.setExactAndAllowWhileIdle(alarmManager, AlarmManager.RTC_WAKEUP,
                                                         calendar.timeInMillis, pendingIntent)
             } else {
                 Log.i("Tried to schedule alarm, but schedule is disabled.")
