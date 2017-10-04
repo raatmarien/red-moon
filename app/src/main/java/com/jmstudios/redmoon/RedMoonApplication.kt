@@ -49,7 +49,6 @@ class RedMoonApplication: Application() {
             upgradeFrom(34)
         } 34 -> {
             upgradeFrom(35)
-        }
         } else -> {
             Log.e("Didn't catch upgrades from version $version")
             upgradeFrom(version+1)
