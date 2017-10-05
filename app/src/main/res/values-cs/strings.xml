@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+ * Copyright (c) 2016  Marien Raat <marienraat@riseup.net>
+ * Copyright (c) 2017  Stephen Michel <s@smichel.me>
+ * SPDX-License-Identifier: GPL3.0+
+ *
+ * This file incorporates work covered by the following copyright and
+ * permission notice:
+ *
+ *     Copyright (c) 2015 Chris Nguyen
+ *
+ *     Permission to use, copy, modify, and/or distribute this software
+ *     for any purpose with or without fee is hereby granted, provided
+ *     that the above copyright notice and this permission notice appear
+ *     in all copies.
+ *
+ *     THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ *     WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ *     WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ *     AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR
+ *     CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
+ *     OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+ *     NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+ *     CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">Red Moon</string>
+
+    <!-- Activities -->
+    <string name="activity_main">Red Moon</string>
+    <string name="activity_shortcut">Přepínač Red Moon</string>
+    <string name="activity_intro">Úvod</string>
+    <string name="activity_about">O Red Moon</string>
+    <string name="activity_secure_suspend">Zastavit pro vybrané aplikace</string>
+    <string name="activity_schedule">Plán</string>
+    <string name="activity_timer">Časovač</string>
+
+    <!-- Menu Items -->
+    <string name="menu_dark_theme">Tmavý vzhled</string>
+    <string name="menu_restore_default_filters">Obnovit výchozí filtry</string>
+    <string name="menu_show_intro">Úvodní informace</string>
+    <string name="menu_about">O programu</string>
+
+    <!-- Notification -->
+    <string name="notification_status_running">Spuštěno. Vypněte před instalací aplikací</string>
+    <string name="notification_status_running_no_warning">Spuštěno</string>
+    <string name="notification_status_paused">Pozastaveno</string>
+    <string name="notification_status_paused_with_info">Pozastaveno. Odstraněním oznámení zastavíte.</string>
+    <string name="notification_status_off">Vypnuto</string>
+    <string name="notification_action_resume">Obnovit</string>
+    <string name="notification_action_pause">Pozastavit</string>
+    <string name="notification_action_turn_on">Zapnout</string>
+    <string name="notification_action_turn_off">Vypnout</string>
+    <string name="notification_action_stop">Zastavit</string>
+    <string name="notification_action_whitelist_add">Vynechané aplikace</string>
+    <string name="notification_action_whitelist_remove">Filtrovat aplikace</string>
+    <string name="notification_action_next_filter">Další filtr</string>
+
+    <!-- Preferences -->
+    <string name="pref_category_filter">Filtr</string>
+    <string name="pref_category_other">Další</string>
+    <string name="pref_category_button_backlight_disclaimer">Nefunguje na všech zařízeních</string>
+
+    <string name="pref_title_dim_level">Úroveň ztlumení</string>
+    <string name="pref_title_intensity">Úroveň intenzity</string>
+    <string name="pref_title_color_temp">Teplota barev</string>
+    <string name="pref_title_lower_brightness">Snížení jasu</string>
+
+    <string name="pref_title_time_toggle">Časovač</string>
+    <string name="pref_title_schedule">Plán</string>
+    <!-- Start and stop times will be substituted for %on and %off -->
+    <string name="pref_summary_schedule_sun" formatted="false">Od západu slunce (%on) do východu slunce (%off)</string>
+    <!-- Start and stop times will be substituted for %on and %off -->
+    <string name="pref_summary_schedule_custom" formatted="false">Uživatelský (%on do %off)</string>
+    <string name="pref_summary_schedule_none">Nic</string>
+    <string name="pref_title_secure_suspend">Pozastavit ve vybraných aplikacích</string>
+    <string name="pref_title_button_backlight">Podsvícení kláves</string>
+
+    <string name="pref_title_turn_on">Zapnout v</string>
+    <string name="pref_title_turn_off">Vypnout v</string>
+    <string name="pref_title_start_time">Čas spuštění</string>
+    <string name="pref_title_stop_time">Čas vypnutí</string>
+    <string name="pref_title_location">V noci</string>
+    <string name="pref_summary_location_off">Nastavit podle polohy</string>
+
+    <string name="pref_summary_secure_suspend">Pokud je tato funkce zapnutá, aplikace Red Moon se automaticky zastaví po otevření určitých aplikací. Ve výchozím nastavení se jedná o aplikace, které nebudou fungovat, když je spuštěn Red Moon*, jako je instalace APK souborů. Toto chování můžete změnit pro aktuální obrazovku aplikace z oznámení. Můžete například přidat aplikace citlivá na barvy, například fotoaparát.\n\nTato funkce může mírně snížit výdrž baterie vašeho zařízení.\n\n* Některé aplikace jsou chráněny před překryvy, aby se zabránilo nechtěné instalaci aplikací, které nechcete. Nebudou reagovat na dotyky, když je Red Moon zapnutý, protože kreslí na obrazovce průhlednou červenou vrstvu.</string>
+
+    <!-- Short strings; might be used in multiple places -->
+    <string name="button_add_filter">Přidat</string>
+    <string name="button_remove_filter">Smazat</string>
+
+    <string name="text_switch_on">Zapnuto</string>
+    <string name="text_switch_off">Vypnuto</string>
+
+    <string name="location_not_set">Poloha není nastavena</string>
+    <string name="latitude_short">Zeměpisná šířka</string>
+    <string name="longitude_short">Zeměpisná délka</string>
+
+    <!-- About subscreen -->
+    <string name="pref_title_version">Verze</string>
+
+    <string name="pref_title_project_page">Navštívit stránku projektu</string>
+    <string name="pref_summary_project_page">Podrobné informace, zpětná vazba a příspěvky</string>
+
+    <string name="pref_title_email_developer">Poslat email vývojářům</string>
+    <string name="pref_summary_email_developer">Další možnost jak kontaktovat autory</string>
+    <string name="pref_title_translators">Překlad</string>
+    <!-- Add your name or handle here if you would like credit in the app -->
+    <string name="pref_summary_translators">petr.kle.cz</string>
+
+    <string name="pref_title_integration">Propojení s dalšími aplikacemi</string>
+		<string name="pref_summary_integration">Některé aplikace, jako například LibreTasks nebo Tasker, vám umožňují automatizovat úkoly, když nastane určitá událost. Red Moon pošle veřejné upozornění, když se zapne a vypne, takže tyto aplikace mohou reagovat. Pokud nepoužíváte nebo neprogramujete jednu z těchto aplikací, můžete ignorovat další odstavec.\n\nRed Moon vysílá veřejný signál s akcí `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Signál obsahuje klíčem `jmstudios.bundle.key.FILTER_IS_ON`, který označuje, zda se Red Moon zapíná nebo vypíná.</string>
+
+    <!-- Toasts -->
+    <string name="toast_warning_install">Nebudete moci instalovat soubory APK, pokud je aktivní Red Moon.</string>
+    <string name="toast_warning_secured">Některé funkce této aplikace nemusí pracovat při spuštění Red Moon.</string>
+
+    <!-- Snackbar -->
+    <string name="snackbar_warning_no_location">Povolte GPS pro určení polohy</string>
+    <string name="snackbar_searching_location">Vyhledávám polohu</string>
+    <string name="snackbar_location_updated">Poloha nalezena</string>
+    <string name="help_snackbar_text">Stiskněte přepínač pro povolení Red Moon</string>
+
+    <!-- Dialog -->
+    <string name="dialog_title_add_filter">Zadejte jméno filtru</string>
+    <string name="edit_hint_add_filter">Jméno filtru</string>
+    <string name="dialog_title_remove_filter">Smazat tento filtr?</string>
+
+    <string name="dialog_title_permission_overlay">Kreslení přes ostatní aplikace</string>
+    <string name="dialog_message_permission_overlay">Povolte na další obrazovce kreslení přes ostatní aplikace, aby mohl Red Moon filtrovat modré světlo.</string>
+
+    <string name="dialog_title_permission_write_settings">Upravit nastavení systému</string>
+    <string name="dialog_message_permission_write_settings">Povolte na další obrazovce úpravu nastavení systému, aby mohl Red Moon měnit jas displeje.</string>
+
+    <string name="dialog_title_permission_usage_stats">Načtení spuštěných aplikací</string>
+    <string name="dialog_message_permission_usage_stats">Povolte na další obrazovce přístup k načtení spuštěných aplikací, aby se mohl Red Moon automaticky vypínat při spuštění aplikací, které potřebují kreslit přes ostatní aplikace.</string>
+
+    <string name="dialog_button_ok">OK</string>
+    <string name="dialog_button_cancel">Zrušit</string>
+
+    <!-- Shortcuts -->
+    <string name="shortcut_title_toggle">Přepnout Red Moon</string>
+
+    <!-- Intro -->
+    <string name="slide_title_welcome">Vítejte</string>
+    <string name="slide_text_welcome">Vítejte v Red Moon</string>
+
+    <string name="slide_title_protect_eyes">Chraňte svoje oči</string>
+    <string name="slide_text_protect_eyes">Red Moon v noci sníži jas displeje
+        a šetří tak Vaše oči.</string>
+
+    <string name="slide_title_improve_sleep">Lepe se vyspíte</string>
+		<string name="slide_text_improve_sleep">Modré světlo potlačuje produkci 
+			melatoninu, hormonu, který Vám pomůže usnout v noci. Red Moon odstraňuje 
+			modré světlo z obrazovky, aby jste lépe spali.</string>
+
+    <string name="slide_title_get_started">Začínáme</string>
+		<string name="slide_text_get_started">Zapněte Red Moon přepínačem v pravém 
+			horním rohu.</string>
+
+    <!-- Profiles -->
+    <string name="filter_name_custom">Uživatelský</string>
+    <string name="filter_name_default">Výchozí</string>
+    <string name="filter_name_bed_reading">Čtení</string>
+    <string name="filter_name_dim_only">Pouze ztlumení</string>
+
+    <!-- button_backlight_entries -->
+    <string name="pref_entry_button_backlight_system">Systém Android</string>
+    <string name="pref_entry_button_backlight_filter_dim_level">Filtr Red Moon</string>
+    <string name="pref_entry_button_backlight_turn_off">Vypnuto</string>
+
+    <!-- Currently unused -->
+    <string name="action_next_profile">Další profil</string>
+    <string name="add_new_profile_dialog_title">Vložte jméno profilu</string>
+    <string name="add_new_profile_edit_hint">Jméno profilu</string>
+    <string name="remove_profile_dialog_title">Smazat tento profil?</string>
+    <string name="pref_title_appearance">Profil</string>
+    <string name="searching_location">Vyhledávám pozici</string>
+    <string name="toast_warning_no_location">Povolte GPS pro určování polohy</string>
+    <string name="set_dialog">Nastavit</string>
+    <string name="time_toggle_title">Automatické přepnutí</string>
+    <string name="location">Poloha</string>
+    <string name="pref_title_startup">Spuštění</string>
+
+    <!-- Timer options (unused) -->
+    <string name="time_toggle_options_array_0">Ručně</string>
+    <string name="time_toggle_options_array_1">Automaticky (podle slunce)</string>
+    <string name="time_toggle_options_array_2">Automaticky (podle uživatele)</string>
+</resources>
