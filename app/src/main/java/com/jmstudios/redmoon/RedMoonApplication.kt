@@ -38,17 +38,15 @@ class RedMoonApplication: Application() {
         } in 0..25 -> {
             upgradeToggleModePreferences()
             upgradeFrom(26)
-        } in 26..27 -> {
-            upgradeFrom(28)
-        } in 28..29 -> {
+        } in 26..29 -> {
             upgradeProfilesFrom(version)
             upgradeFrom(30)
         } in 30..33 -> {
             ScheduleReceiver.rescheduleOnCommand()
             ScheduleReceiver.rescheduleOffCommand()
             upgradeFrom(34)
-        } 34 -> {
-            upgradeFrom(35)
+        } in 34..35 -> {
+            upgradeFrom(36)
         } else -> {
             Log.e("Didn't catch upgrades from version $version")
             upgradeFrom(version+1)

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+    <release version="3.3.2" versioncode="36" >
+        <change>New translation: Czech (@petrkle)</change>
+        <change>Fix build (@petrkle)</change>
+    </release>
     <release version="3.3.1" versioncode="35" >
         <change>Update translations: Serbian, Japanese, Polish, Turkish, Romanian, Ukrainian, Korean</change>
     </release>
