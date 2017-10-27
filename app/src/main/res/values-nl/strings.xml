@@ -1,138 +1,186 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources>
+<!--
+ * Copyright (c) 2016  Marien Raat <marienraat@riseup.net>
+ * Copyright (c) 2017  Stephen Michel <s@smichel.me>
+ * SPDX-License-Identifier: GPL3.0+
+ *
+ * This file incorporates work covered by the following copyright and
+ * permission notice:
+ *
+ *     Copyright (c) 2015 Chris Nguyen
+ *
+ *     Permission to use, copy, modify, and/or distribute this software
+ *     for any purpose with or without fee is hereby granted, provided
+ *     that the above copyright notice and this permission notice appear
+ *     in all copies.
+ *
+ *     THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ *     WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ *     WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ *     AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR
+ *     CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
+ *     OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+ *     NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+ *     CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="app_name">Red Moon</string>
-    <string name="notification_status_paused">Gepauzeerd</string>
 
-    <string name="pref_category_filter">Profiel</string>
-    <string name="activity_timer">Filter tijden</string>
-    <string name="pref_title_time_toggle">Filter tijden</string>
-    <string name="pref_title_startup">Opstarten</string>
-    <string name="pref_category_other">Overig</string>
+    <!-- Activities -->
+    <string name="activity_main">Red Moon</string>
+    <string name="activity_shortcut">Red Moon Schakelaar</string>
+    <string name="activity_intro">Introductie</string>
+    <string name="activity_about">Over Red Moon</string>
+    <string name="activity_secure_suspend">In uitgesloten apps pauzeren</string>
+    <string name="activity_schedule">Schema</string>
+    <string name="activity_timer">Timer</string>
 
-    <string name="button_add_filter">Nieuw</string>
-    <string name="button_remove_filter">Verwijder</string>
-    <string name="pref_title_dim_level">Verduister niveau</string>
-    <string name="pref_title_intensity">Intensiteit niveau</string>
-    <string name="pref_title_color_temp">Kleur temperatuur</string>
-    <string name="pref_title_lower_brightness">Verminder helderheid</string>
-
-    <string name="time_toggle_title">Schakel mode</string>
-    <string name="pref_title_turn_on">Zet aan om</string>
-    <string name="pref_title_turn_off">Zet uit om</string>
-    <string name="pref_title_start_time">Start om</string>
-    <string name="pref_title_stop_time">Stop om</string>
-    <string name="pref_title_location">Tijden gebaseerd op de zon</string>
-    <string name="location_not_set">Locatie niet ingesteld</string>
-    <string name="latitude_short">Breedte</string>
-    <string name="longitude_short">Lengte</string>
-    <string name="snackbar_searching_location">Locatie aan het zoeken</string>
-
+    <!-- Menu Items -->
     <string name="menu_dark_theme">Donker thema</string>
+    <string name="menu_restore_default_filters">Standaardprofielen herstellen</string>
+    <string name="menu_show_intro">Introductie</string>
+    <string name="menu_about">Over Red Moon</string>
 
-    <string name="pref_title_email_developer">Email me op marienraat@riseup.net</string>
-    <string name="pref_summary_email_developer">Email me met bugs of suggesties</string>
-    <string name="pref_title_project_page">Bezoek de project pagina</string>
-    <string name="pref_summary_project_page">Vind informatie, geef feedback en help mee</string>
-    <string name="toast_warning_install">Je kan geen APKs installeren terwijl Red Moon aan is.</string>
-    <string name="snackbar_warning_no_location">Zet locatiediensten aan om de locatie te hernieuwen</string>
+    <!-- Notification -->
+    <string name="notification_status_running">Geactiveerd. Deactiveer om APK\'s te installeren.</string>
+    <string name="notification_status_running_no_warning">Geactiveerd</string>
+    <string name="notification_status_paused">Gepauzeerd</string>
+    <string name="notification_status_paused_with_info">Gepauzeerd. Sluit om Red Moon te stoppen.</string>
+    <string name="notification_status_off">Uit</string>
+    <string name="notification_action_resume">Hervatten</string>
+    <string name="notification_action_pause">Pauzeren</string>
+    <string name="notification_action_turn_on">Aanzetten</string>
+    <string name="notification_action_turn_off">Uitzetten</string>
+    <string name="notification_action_stop">Stoppen</string>
+    <string name="notification_action_whitelist_add">App uitsluiten</string>
+    <string name="notification_action_whitelist_remove">App filteren</string>
+    <string name="notification_action_next_filter">Volgende profiel</string>
 
-    <string name="help_snackbar_text">Druk de schakelaar om Red Moon in te schakelen</string>
+    <!-- Preferences -->
+    <string name="pref_category_filter">Profiel</string>
+    <string name="pref_category_other">Overig</string>
+    <string name="pref_category_button_backlight_disclaimer">Werkt op sommige toestellen niet</string>
 
-    <string name="dialog_title_add_filter">Voer de naam van het profiel in</string>
+    <string name="pref_title_dim_level">Verduistering</string>
+    <string name="pref_title_intensity">Intensiteit</string>
+    <string name="pref_title_color_temp">Kleurtemperatuur</string>
+    <string name="pref_title_lower_brightness">Helderheid aanpassen</string>
+
+    <string name="pref_title_time_toggle">Timer</string>
+    <string name="pref_title_schedule">Schema</string>
+    <!-- Start and stop times will be substituted for %on and %off -->
+    <string name="pref_summary_schedule_sun" formatted="false">Zonsondergang (%on) tot zonsopgang (%off)</string>
+    <!-- Start and stop times will be substituted for %on and %off -->
+    <string name="pref_summary_schedule_custom" formatted="false">Aangepast (%on tot %off)</string>
+    <string name="pref_summary_schedule_none">Geen</string>
+    <string name="pref_title_secure_suspend">In uitgesloten apps pauzeren</string>
+    <string name="pref_title_button_backlight">Achtergrondverlichting fysieke knoppen</string>
+
+    <string name="pref_title_turn_on">Aanzetten om</string>
+    <string name="pref_title_turn_off">Uitzetten om</string>
+    <string name="pref_title_start_time">Starttijd</string>
+    <string name="pref_title_stop_time">Stoptijd</string>
+    <string name="pref_title_location">Zonsondergang tot zonsopgang</string>
+    <string name="pref_summary_location_off">Tijden gebaseerd op locatie</string>
+
+    <string name="pref_summary_secure_suspend">Sommige functies van Android, zoals het installeren van APK\'s of het toekennen van permissies op Android 6.0+, zijn beschermd tegen filters over het scherm en zullen daarom niet werken als Red Moon is geactiveerd. Als deze functie aanstaat zal Red Moon automatisch pauzeren en nadien weer inschakelen. Voor andere apps (Camera, Gallerij) is deze functie per individueel scherm in te schakelen via de Red Moon notificatie.\n\nHet aanzetten van deze functie kan de batterijduur op sommige telefoons wat verkorten.\n\nOp sommige toestellen werkt deze functie helaas niet.</string>
+
+    <!-- Short strings; might be used in multiple places -->
+    <string name="button_add_filter">Toevoegen</string>
+    <string name="button_remove_filter">Verwijderen</string>
+
+    <string name="text_switch_on">Aan</string>
+    <string name="text_switch_off">Uit</string>
+
+    <string name="location_not_set">Locatie niet ingesteld</string>
+    <string name="latitude_short">Lat</string>
+    <string name="longitude_short">Long</string>
+
+    <!-- About subscreen -->
+    <string name="pref_title_version">Versie</string>
+
+    <string name="pref_title_project_page">Bezoek de Red Moon website</string>
+    <string name="pref_title_project_page">Bezoek de Red Moon website</string>
+    <string name="pref_summary_project_page">Meer informatie, suggesties of help mee</string>
+
+    <string name="pref_title_email_developer">E-mail naar ontwikkelaars</string>
+    <string name="pref_summary_email_developer">Een alternatieve manier om ons te bereiken</string>
+    <string name="pref_title_translators">Help met vertalen</string>
+    <!-- Add your name or handle here if you would like credit in the app -->
+    <string name="pref_summary_translators">Vertalers: smichel17, raatmarien</string>
+
+    <string name="pref_title_integration">Integratie met andere apps</string>
+    <string name="pref_summary_integration">Sommige apps, zoals LibreTasks of Tasker, automatiseren taken na specifieke gebeurtenissen. Red Moon stuurt een openbare notificatie wanneer het in- of uitgeschakeld wordt, zodat dit soort apps hierop kan reageren. Als je dit soort apps niet gebruikt, dan kun je de volgende paragraaf negeren.\n\nRed Moon verstuurt een publieke Intent met de actie `com.jmstudios.redmoon.RED_MOON_TOGGLED`. De Intent bevat een boolean extra met de key `jmstudios.bundle.key.FILTER_IS_ON`, die aangeeft of Red Moon is in- of uitgeschakeld.</string>
+
+    <!-- Toasts -->
+    <string name="toast_warning_install">Als Red Moon is ingeschakeld, is het niet mogelijk om APK\'s te installeren.</string>
+    <string name="toast_warning_secured">Zolang Red Moon is ingeschakeld, zouden sommige functies van deze app niet kunnen werken.</string>
+
+    <!-- Snackbar -->
+    <string name="snackbar_warning_no_location">Schakel Locatie-services in om de locatie te kunnen bijwerken</string>
+    <string name="snackbar_searching_location">Naar locatie zoeken</string>
+    <string name="snackbar_location_updated">Locatie gevonden</string>
+    <string name="help_snackbar_text">Druk op de schakelaar om Red Moon aan te zetten</string>
+
+    <!-- Dialog -->
+    <string name="dialog_title_add_filter">Voer profielnaam in</string>
     <string name="edit_hint_add_filter">Profielnaam</string>
-    <string name="dialog_title_remove_filter">Verwijder dit profiel?</string>
+    <string name="dialog_title_remove_filter">Dit profiel verwijderen?</string>
+
+    <string name="dialog_title_permission_overlay">Over andere apps tonen</string>
+    <string name="dialog_message_permission_overlay">Sta Red Moon in het volgende scherm toe om de filter over andere apps te tonen.</string>
+
+    <string name="dialog_title_permission_write_settings">Systeeminstellingen aanpassen</string>
+    <string name="dialog_message_permission_write_settings">Sta Red Moon in het volgende scherm toe om de systeeminstellingen te wijzigen, zodat het de helderheid van het scherm kan aanpassen.</string>
+
+    <string name="dialog_title_permission_usage_stats">Gebruikstoegang</string>
+    <string name="dialog_message_permission_usage_stats">Sta Red Moon in het volgende scherm toe voor gebruikstoegang, zodat de filter automatisch gepauzeerd kan worden in beveiligde apps.\n\nRed Moon zal deze gegevens alleen gebruiken om te bepalen wanneer je functies gebruikt die niet werken als Red Moon is ingeschakeld. Zo kan de filter automatisch gepauzeerd worden indien nodig.</string>
+
     <string name="dialog_button_ok">OK</string>
     <string name="dialog_button_cancel">Annuleren</string>
 
-    <string name="shortcut_title_toggle">Schakel Red Moon</string>
+    <!-- Shortcuts -->
+    <string name="shortcut_title_toggle">Red Moon in-/uitschakelen</string>
 
-    <string name="activity_shortcut">Red Moon schakelaar</string>
-
-    <string name="activity_main">Red Moon</string>
-    <string name="filter_name_custom">Aangepast</string>
-    <string name="filter_name_default">Standaard</string>
-    <string name="filter_name_bed_reading">Lezen</string>
-
-    <string name="time_toggle_options_array_0">Handmatig</string>
-    <string name="time_toggle_options_array_1">Automatisch (zon)</string>
-    <string name="time_toggle_options_array_2">Automatisch (aangepast)</string>
-
-    <string name="notification_action_resume">Hervat</string>
-    <string name="notification_action_pause">Pauzeer</string>
-
-    <string name="activity_intro">Intro</string>
-    <string name="menu_show_intro">Bekijk de intro opnieuw</string>
-
+    <!-- Intro -->
     <string name="slide_title_welcome">Welkom!</string>
     <string name="slide_text_welcome">Welkom in Red Moon!</string>
 
-    <string name="slide_title_protect_eyes">Uw ogen beschermen</string>
-    <string name="slide_text_protect_eyes">In de nacht, wanneer naar je telefoon kijken pijn doet aan je ogen, kan je Red Moon gebruiken om je scherm donkerder te maken.</string>
+    <string name="slide_title_protect_eyes">Je ogen beschermen</string>
+    <string name="slide_text_protect_eyes">\'s Nachts, wanneer het kijken naar je scherm pijn doet aan de ogen, kun je Red Moon gebruiken om het scherm donkerder te maken.</string>
 
-    <string name="slide_title_improve_sleep">Uw slaap verbeteren</string>
-    <string name="slide_text_improve_sleep">Blauw licht onderdrukt de productie van Melatonine, een hormoon dat helpt bij het in slaap vallen in de avond. Red Moon filtert het blauwe licht uit uw scherm, waardoor het makkelijker wordt om \'s avonds in slaap te vallen.</string>
+    <string name="slide_title_improve_sleep">Verbeter je slaap</string>
+    <string name="slide_text_improve_sleep">Blauw licht onderdrukt de productie van Melatonine, een hormoon dat helpt bij het in slaap vallen in de avond. Red Moon reduceert het blauwe licht van uw scherm, waardoor het makkelijker wordt om \'s avonds in slaap te vallen.</string>
 
     <string name="slide_title_get_started">Aan de slag!</string>
-    <string name="slide_text_get_started">Zet Red Moon aan en uit met de schakelaar in de rechterbovenhoek.</string>
+    <string name="slide_text_get_started">Schakel Red Moon in en uit met de schakelaar in de rechterbovenhoek.</string>
 
-    <string name="activity_secure_suspend">Pauzeer in beveiligde apps</string>
-
-    <string name="dialog_title_permission_overlay">Over andere apps tonen</string>
-    <string name="dialog_message_permission_overlay">Sta Red Moon toe om de filter over andere apps te tonen.</string>
-
-    <string name="dialog_title_permission_write_settings">Systeem instellingen aanpassen</string>
-    <string name="dialog_message_permission_write_settings">Sta Red Moon toe om uw systeem instellingen aan te passen, zodat het uw helderheid kan veranderen.</string>
-
-    <string name="notification_status_off">Uit</string>
-    <string name="notification_action_turn_on">Zet aan</string>
-    <string name="notification_action_turn_off">Zet uit</string>
-    <string name="notification_action_stop">Zet uit</string>
-
-    <string name="pref_summary_location_off">Tijden gebaseerd op locatie</string>
-    <string name="pref_title_secure_suspend">Pauzeer in beveiligde apps</string>
-    <string name="pref_summary_secure_suspend">Sommige functies van Android zijn beschermt tegen filters over het scherm en zullen daarom niet werken als Red Moon aanstaat, bijvoorbeeld het installeren van APK\'s of het toekennen van permissies op Android 6.0+.
-
-        Als deze functie aanstaat zal Red Moon automatisch pauzeren als u zo\'n functie van Android gebruikt en weer aan gaan zodra u klaar bent. Zo hoeft u zich geen zorgen maken over Red Moon handmatig aan en uit zetten.
-
-        Het aanzetten van deze functie kan uw batterijduur lichtelijk verminderen op sommige telefoons. Ook werkt deze functie helaas niet op sommige toestellen.</string>
-    <string name="text_switch_on">Aan</string>
-    <string name="text_switch_off">Uit</string>
-    <string name="dialog_title_permission_usage_stats">Gebruiksgegevens toegang</string>
-    <string name="dialog_message_permission_usage_stats">Sta Red Moon in het volgende scherm toe om uw gebruik te zien, zodat de filter automatisch gepauzeerd kan worden in beveiligde apps.
-
-        Red Moon zal deze data alleen gebruiken om te bepalen wanneer u beveiligde functies gebruikt, zodat de filter automatisch gepauzeerd kan worden.</string>
-
-    <string name="notification_action_next_filter">Volgende profiel</string>
-
-    <string name="menu_about">Over Red Moon</string>
-    <string name="activity_about">Over Red Moon</string>
-    <string name="pref_title_integration">Integratie met andere apps</string>
-    <string name="pref_summary_integration">"Sommige apps, zoals LibreTasks or Tasker, staan je toe om taken te automatiseren wanneer bepaalde dingen gebeuren. Red Moon verstuurd  een publiek signaal wanneer het aan of uit gaat, zodat zulke apps hierop kunnen reageren. Als je deze apps niet gebruikt of maakt, hoef je je geen zorgen te maken over deze uitleg.
-
-        Red Moon verstuurd een publieke Intent met the actie `com.jmstudios.redmoon.RED_MOON_TOGGLED` . Deze intent bevat een boolean extra waarde met de key `jmstudios.bundle.key.FILTER_IS_ON`, die aangeeft of Red Moon aan of uit aan het gaan is."</string>
-    <string name="pref_title_version">Versie</string>
-
-    <!-- Currently unused -->
-    <string name="add_new_profile_dialog_title">Voer de naam van het profiel in</string>
-    <string name="add_new_profile_edit_hint">Profielnaam</string>
-    <string name="remove_profile_dialog_title">Verwijder dit profiel?</string>
-    <string name="action_next_profile">Volgende profiel</string>
-    <string name="pref_title_appearance">Profiel</string>
-    <string name="pref_category_button_backlight_disclaimer">Geen effect op sommige toestellen</string>
-    <string name="pref_title_button_backlight">Achtergrondverlichting van hardware knoppen</string>
-
-    <string name="pref_entry_button_backlight_system">Door Android beheerd</string>
-    <string name="pref_entry_button_backlight_filter_dim_level">Gebruik het filter verduister niveau</string>
-    <string name="pref_entry_button_backlight_turn_off">Zet uit</string>
-
-    <string name="searching_location">Locatie aan het zoeken</string>
-    <string name="toast_warning_no_location">Zet locatiediensten aan om de locatie te hernieuwen</string>
-    <string name="snackbar_location_updated">Locatie gevonden!</string>
-    <string name="location">Locatie</string>
-    <string name="set_dialog">Stel in</string>
-    <string name="notification_status_running">Loopt. Zet uit om apks te installeren</string>
-    <string name="notification_status_running_no_warning">Loopt</string>
-<string name="menu_restore_default_filters">Herstel standaard filters</string>
+    <!-- Profiles -->
+    <string name="filter_name_custom">Aangepast</string>
+    <string name="filter_name_default">Standaard</string>
+    <string name="filter_name_bed_reading">Lezen</string>
     <string name="filter_name_dim_only">Alleen dimmen</string>
 
-    </resources>
+    <!-- button_backlight_entries -->
+    <string name="pref_entry_button_backlight_system">Door Android beheerd</string>
+    <string name="pref_entry_button_backlight_filter_dim_level">Dimmen volgens profiel</string>
+    <string name="pref_entry_button_backlight_turn_off">Uitschakelen</string>
+
+    <!-- Currently unused -->
+    <string name="action_next_profile">Volgend profiel</string>
+    <string name="add_new_profile_dialog_title">Voer profielnaam in</string>
+    <string name="add_new_profile_edit_hint">Profielnaam</string>
+    <string name="remove_profile_dialog_title">Dit profiel verwijderen?</string>
+    <string name="pref_title_appearance">Profiel</string>
+    <string name="searching_location">Naar locatie zoeken</string>
+    <string name="toast_warning_no_location">Schakel Locatie-services in om de locatie te kunnen bijwerken</string>
+    <string name="set_dialog">Instellen</string>
+    <string name="time_toggle_title">Automatisch schakelen</string>
+    <string name="location">Locatie</string>
+    <string name="pref_title_startup">Opstarten</string>
+
+    <!-- Timer options (unused) -->
+    <string name="time_toggle_options_array_0">Handmatig</string>
+    <string name="time_toggle_options_array_1">Automatisch (zon)</string>
+    <string name="time_toggle_options_array_2">Automatisch (aangepast)</string>
+</resources>
