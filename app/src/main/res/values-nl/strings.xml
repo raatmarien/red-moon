@@ -100,14 +100,13 @@
     <string name="pref_title_version">Versie</string>
 
     <string name="pref_title_project_page">Bezoek de Red Moon website</string>
-    <string name="pref_title_project_page">Bezoek de Red Moon website</string>
     <string name="pref_summary_project_page">Meer informatie, suggesties of help mee</string>
 
     <string name="pref_title_email_developer">E-mail naar ontwikkelaars</string>
     <string name="pref_summary_email_developer">Een alternatieve manier om ons te bereiken</string>
     <string name="pref_title_translators">Help met vertalen</string>
     <!-- Add your name or handle here if you would like credit in the app -->
-    <string name="pref_summary_translators">Vertalers: smichel17, raatmarien</string>
+    <string name="pref_summary_translators">Vertalers: smichel17, raatmarien, ltGuillaume</string>
 
     <string name="pref_title_integration">Integratie met andere apps</string>
     <string name="pref_summary_integration">Sommige apps, zoals LibreTasks of Tasker, automatiseren taken na specifieke gebeurtenissen. Red Moon stuurt een openbare notificatie wanneer het in- of uitgeschakeld wordt, zodat dit soort apps hierop kan reageren. Als je dit soort apps niet gebruikt, dan kun je de volgende paragraaf negeren.\n\nRed Moon verstuurt een publieke Intent met de actie `com.jmstudios.redmoon.RED_MOON_TOGGLED`. De Intent bevat een boolean extra met de key `jmstudios.bundle.key.FILTER_IS_ON`, die aangeeft of Red Moon is in- of uitgeschakeld.</string>
@@ -134,7 +133,7 @@
     <string name="dialog_message_permission_write_settings">Sta Red Moon in het volgende scherm toe om de systeeminstellingen te wijzigen, zodat het de helderheid van het scherm kan aanpassen.</string>
 
     <string name="dialog_title_permission_usage_stats">Gebruikstoegang</string>
-    <string name="dialog_message_permission_usage_stats">Sta Red Moon in het volgende scherm toe voor gebruikstoegang, zodat de filter automatisch gepauzeerd kan worden in beveiligde apps.\n\nRed Moon zal deze gegevens alleen gebruiken om te bepalen wanneer je functies gebruikt die niet werken als Red Moon is ingeschakeld. Zo kan de filter automatisch gepauzeerd worden indien nodig.</string>
+    <string name="dialog_message_permission_usage_stats">Selecteer Red Moon in het volgende scherm voor gebruikstoegang, zodat de filter automatisch gepauzeerd kan worden in beveiligde apps.\n\nRed Moon zal deze gegevens alleen gebruiken om te bepalen wanneer je functies gebruikt die niet werken als Red Moon is ingeschakeld. Zo kan de filter automatisch gepauzeerd worden indien nodig.</string>
 
     <string name="dialog_button_ok">OK</string>
     <string name="dialog_button_cancel">Annuleren</string>
@@ -147,13 +146,13 @@
     <string name="slide_text_welcome">Welkom in Red Moon!</string>
 
     <string name="slide_title_protect_eyes">Je ogen beschermen</string>
-    <string name="slide_text_protect_eyes">\'s Nachts, wanneer het kijken naar je scherm pijn doet aan de ogen, kun je Red Moon gebruiken om het scherm donkerder te maken.</string>
+    <string name="slide_text_protect_eyes">\'s Avonds, wanneer het kijken naar je scherm pijn doet aan de ogen, kun je Red Moon gebruiken om het scherm donkerder te maken.</string>
 
     <string name="slide_title_improve_sleep">Verbeter je slaap</string>
-    <string name="slide_text_improve_sleep">Blauw licht onderdrukt de productie van Melatonine, een hormoon dat helpt bij het in slaap vallen in de avond. Red Moon reduceert het blauwe licht van uw scherm, waardoor het makkelijker wordt om \'s avonds in slaap te vallen.</string>
+    <string name="slide_text_improve_sleep">Blauw licht onderdrukt de productie van Melatonine, een hormoon dat helpt bij het in slaap vallen in de avond. Red Moon reduceert het blauwe licht van je scherm, waardoor het makkelijker wordt om \'s avonds in slaap te vallen.</string>
 
     <string name="slide_title_get_started">Aan de slag!</string>
-    <string name="slide_text_get_started">Schakel Red Moon in en uit met de schakelaar in de rechterbovenhoek.</string>
+    <string name="slide_text_get_started">Schakel Red Moon in met de schakelaar in de rechterbovenhoek.</string>
 
     <!-- Profiles -->
     <string name="filter_name_custom">Aangepast</string>
