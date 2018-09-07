@@ -15,8 +15,10 @@
 ** SOFTWARE.
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
     android:layout_height="match_parent">
+
     <ImageButton
         android:id="@+id/widget_pause_play_button"
         android:layout_width="0dp"
@@ -24,4 +26,5 @@
         android:layout_weight="1"
         android:padding="12dp"
         android:src="@drawable/ic_pause"/>
+
 </LinearLayout>

@@ -26,21 +26,21 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
   <PreferenceCategory android:title="@string/pref_category_filter">
-    <com.jmstudios.redmoon.ui.preference.ProfileSelectorPreference
+      <com.jmstudios.redmoon.preference.ProfileSelectorPreference
         android:key="@string/pref_key_profile_spinner"
         android:persistent="false"/>
 
-    <com.jmstudios.redmoon.ui.preference.ColorSeekBarPreference
+      <com.jmstudios.redmoon.preference.ColorSeekBarPreference
         android:title="@string/pref_title_color_temp"
         android:key="@string/pref_key_color"
         android:defaultValue="10" />
 
-    <com.jmstudios.redmoon.ui.preference.IntensitySeekBarPreference
+      <com.jmstudios.redmoon.preference.IntensitySeekBarPreference
         android:title="@string/pref_title_intensity"
         android:key="@string/pref_key_intensity"
         android:defaultValue="50" />
 
-    <com.jmstudios.redmoon.ui.preference.DimSeekBarPreference
+      <com.jmstudios.redmoon.preference.DimSeekBarPreference
         android:title="@string/pref_title_dim_level"
         android:key="@string/pref_key_dim"
         android:defaultValue="50" />

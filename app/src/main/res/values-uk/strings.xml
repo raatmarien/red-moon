@@ -30,7 +30,7 @@
 
     <string name="pref_title_dim_level">Рівень затемнення</string>
     <string name="pref_title_intensity">Рівень інтенсивності</string>
-    <string name="pref_title_color_temp">Кольорова температура</string>
+    <string name="pref_title_color_temp">Колір</string>
     <string name="pref_title_lower_brightness">Зменшення яскравості</string>
 
     <string name="pref_title_time_toggle">Таймер</string>

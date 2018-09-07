@@ -4,16 +4,17 @@
  * Copyright (c) 2017 Stephen Michel <s@smichel.me>
  * SPDX-License-Identifier: GPL3.0+
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="?android:attr/actionBarSize"
     android:gravity="center_vertical"
     android:background="@color/switch_bar_background">
+
     <android.support.v7.widget.AppCompatTextView
         android:id="@android:id/title"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_gravity="start|center_vertical"
         android:paddingStart="60dp"
         android:layout_weight="1"
@@ -23,11 +24,14 @@
         android:textColor="@color/color_white"
         android:textAlignment="viewStart" />
     <!-- Preference should place its actual preference widget here. -->
-    <LinearLayout android:id="@android:id/widget_frame"
+
+    <LinearLayout
+        android:id="@android:id/widget_frame"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
         android:paddingStart="6dp"
         android:paddingEnd="10dp" />
+
 </LinearLayout>

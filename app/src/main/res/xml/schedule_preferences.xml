@@ -26,4 +26,5 @@
         android:key="@string/pref_key_stop_time"
         android:title="@string/pref_title_stop_time"
         android:defaultValue="06:00" />
+
 </PreferenceScreen>

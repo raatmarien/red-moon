@@ -16,17 +16,17 @@
     android:paddingStart="?android:attr/listPreferredItemPaddingStart"
     android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
     android:background="?android:attr/activatedBackgroundIndicator"
-    android:clipToPadding="false"
-    >
+    android:clipToPadding="false">
+
     <TextView
         android:id="@android:id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?attr/textAppearanceListItem"
-        android:ellipsize="marquee"
-        />
+        android:ellipsize="marquee" />
     <!-- When we stop supporting API<21, swap this in:
          android:textAppearance="?android:attr/textAppearanceListItemSecondary" -->
+
     <TextView
         android:id="@android:id/summary"
         android:layout_width="wrap_content"
@@ -34,6 +34,6 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="?android:attr/textColorSecondary"
         android:maxLines="100"
-        android:ellipsize="end"
-        />
+        android:ellipsize="end" />
+
 </LinearLayout>

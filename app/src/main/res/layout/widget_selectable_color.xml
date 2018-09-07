@@ -15,7 +15,7 @@
 ** SOFTWARE.
 -->
 <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-           android:layout_width="@dimen/colored_circle_size"
-           android:layout_height="@dimen/colored_circle_size"
-           android:padding="@dimen/colored_circle_padding"
-           android:background="@drawable/background_selectable_color" />
+    android:layout_width="@dimen/colored_circle_size"
+    android:layout_height="@dimen/colored_circle_size"
+    android:background="@drawable/background_selectable_color"
+    android:padding="@dimen/colored_circle_padding" />

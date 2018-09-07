@@ -11,18 +11,18 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal" >
 
-  <android.support.v7.widget.AppCompatSpinner
-      android:id="@+id/profile_spinner"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_weight="1" />
+    <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/profile_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
 
-  <Button
-      android:id="@+id/profile_action_button"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="@string/button_add_filter"
-      android:textColor="@color/button"
-      style="?attr/borderlessButtonStyle" />
+    <Button
+        android:id="@+id/profile_action_button"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_add_filter"
+        android:textColor="@color/button" />
 
 </LinearLayout>
