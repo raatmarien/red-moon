@@ -23,8 +23,8 @@ private const val REQ_CODE_SETTINGS = 3333
 
 abstract class PermissionHelper : EventBus.Event {
     abstract val isGranted: Boolean
-    abstract protected val requestCode: Int
-    abstract protected fun send(activity: Activity)
+    protected abstract val requestCode: Int
+    protected abstract fun send(activity: Activity)
     fun request(activity: Activity): Boolean {
         if (!isGranted) send(activity)
         return isGranted
@@ -37,8 +37,8 @@ object Permission {
                           REQ_CODE_OVERLAY -> Overlay
                           REQ_CODE_LOCATION -> Location
                           REQ_CODE_SETTINGS -> WriteSettings
-                          else -> return@onRequestResult
-                      })
+            else -> return
+        })
     }
 
     object Location : PermissionHelper() {
@@ -68,7 +68,8 @@ object Permission {
         override val granted: Boolean
             get() = Settings.canDrawOverlays(appContext)
 
-        override @TargetApi(23) fun send(activity: Activity) {
+        @TargetApi(23)
+        override fun send(activity: Activity) {
             val intent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                                 Uri.parse("package:" + activity.packageName))
             AlertDialog.Builder(activity).run {
@@ -88,7 +89,8 @@ object Permission {
         override val granted: Boolean
             get() = if (atLeastAPI(23)) Settings.System.canWrite(appContext) else true
 
-        override @TargetApi(23) fun send(activity: Activity) {
+        @TargetApi(23)
+        override fun send(activity: Activity) {
             val intent = Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS,
                                 Uri.parse("package:" + activity.packageName))
             AlertDialog.Builder(activity).run {

@@ -8,10 +8,10 @@ package com.jmstudios.redmoon.widget
 import android.annotation.TargetApi
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
-
 import com.jmstudios.redmoon.filter.Command
-import com.jmstudios.redmoon.util.*
-
+import com.jmstudios.redmoon.util.EventBus
+import com.jmstudios.redmoon.util.FilterIsOnChanged
+import com.jmstudios.redmoon.util.filterIsOn
 import org.greenrobot.eventbus.Subscribe
 
 @TargetApi(24)
@@ -31,7 +31,8 @@ class TileReceiver : TileService() {
         EventBus.unregister(this)
     }
 
-    @Subscribe fun onFilterIsOnChanged(event: filterIsOnChanged) {
+	@Subscribe
+	fun onFilterIsOnChanged(event: FilterIsOnChanged) {
         updateState()
     }
 

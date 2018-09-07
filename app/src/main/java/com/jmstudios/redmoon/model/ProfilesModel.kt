@@ -60,7 +60,7 @@ object ProfilesModel : Logger() {
         if (!profile.isSaved || model.containsValue(name)) {
             prefs.edit().putString(profile.toString(), name).apply()
             modelOutdated = true
-            EventBus.post(profilesUpdated())
+			EventBus.post(ProfilesUpdated())
         }
     }
 
@@ -71,7 +71,7 @@ object ProfilesModel : Logger() {
                 Config.custom = it
                 prefs.edit().remove(it.toString()).apply()
                 modelOutdated = true
-                EventBus.post(profilesUpdated())
+				EventBus.post(ProfilesUpdated())
             }
         }
     }
@@ -83,6 +83,6 @@ object ProfilesModel : Logger() {
         }
         editor.apply()
         modelOutdated = true
-        EventBus.post(profilesUpdated())
+		EventBus.post(ProfilesUpdated())
     }
 }

@@ -29,16 +29,13 @@ import android.animation.ValueAnimator
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
-
 import com.jmstudios.redmoon.filter.overlay.Overlay
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.model.Profile
 import com.jmstudios.redmoon.securesuspend.CurrentAppMonitor
 import com.jmstudios.redmoon.util.*
-
-import java.util.concurrent.Executors
-
 import org.greenrobot.eventbus.Subscribe
+import java.util.concurrent.Executors
 
 class FilterService : Service() {
 
@@ -77,7 +74,7 @@ class FilterService : Service() {
             }
         } else {
             Log.i("Overlay permission denied.")
-            EventBus.post(overlayPermissionDenied())
+            EventBus.post(OverlayPermissionDenied())
             stopForeground(false)
         }
 
@@ -111,7 +108,8 @@ class FilterService : Service() {
         mFilter.profile = profile
     }
 
-    @Subscribe fun onSecureSuspendChanged(event: secureSuspendChanged) {
+    @Subscribe
+    fun onSecureSuspendChanged(event: SecureSuspendChanged) {
         mCurrentAppMonitor.monitoring = Config.secureSuspend
     }
 

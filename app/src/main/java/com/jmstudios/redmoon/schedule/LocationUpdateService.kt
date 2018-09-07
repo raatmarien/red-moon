@@ -136,7 +136,7 @@ class LocationUpdateService: Service(), LocationListener {
         Log.i("onStartCommand($intent, $flags, $startId)")
         if (mIsForeground != null) {
             val searching = mNetworkProvider.searching || mGpsProvider.searching
-            EventBus.getDefault().post(locationService(searching))
+            EventBus.getDefault().post(LocationService(searching))
         }
         val fg = intent.getBooleanExtra(BUNDLE_KEY_FOREGROUND, false)
         mIsForeground = fg || isForeground
@@ -185,7 +185,7 @@ class LocationUpdateService: Service(), LocationListener {
             }
         }
         super.onDestroy()
-        EventBus.getDefault().post(locationService(false, isRunning = false))
+        EventBus.getDefault().post(LocationService(false, isRunning = false))
     }
 
     // Filters duplicates
@@ -193,7 +193,7 @@ class LocationUpdateService: Service(), LocationListener {
         if (mIsSearching != searching) {
             Log.i("posting: $searching")
             mIsSearching = searching
-            EventBus.getDefault().post(locationService(searching))
+            EventBus.getDefault().post(LocationService(searching))
         }
     }
 
@@ -206,7 +206,7 @@ class LocationUpdateService: Service(), LocationListener {
         fun update(foreground: Boolean = true) {
             Log.i("Received request")
             if (!Permission.Location.isGranted) {
-                EventBus.getDefault().post(locationAccessDenied())
+                EventBus.getDefault().post(LocationAccessDenied())
             } else if (Config.scheduleOn && Config.useLocation) {
                 val i = intent.putExtra(BUNDLE_KEY_FOREGROUND, foreground)
                 appContext.startService(i)

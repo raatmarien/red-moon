@@ -27,17 +27,12 @@
 package com.jmstudios.redmoon.model
 
 import com.jmstudios.redmoon.R
-
 import com.jmstudios.redmoon.schedule.ScheduleReceiver
-import com.jmstudios.redmoon.widget.SwitchAppWidgetProvider
 import com.jmstudios.redmoon.util.*
-
+import com.jmstudios.redmoon.widget.SwitchAppWidgetProvider
 import com.luckycatlabs.sunrisesunset.SunriseSunsetCalculator
-
-import java.util.Calendar
-import java.util.TimeZone
-
 import me.smichel.android.KPreferences.Preferences
+import java.util.*
 
 private const val BROADCAST_ACTION = "com.jmstudios.redmoon.RED_MOON_TOGGLED"
 private const val BROADCAST_FIELD  = "jmstudios.bundle.key.FILTER_IS_ON"
@@ -63,7 +58,7 @@ object Config : Preferences(appContext) {
             action = BROADCAST_ACTION
             putExtra(BROADCAST_FIELD, it)
         })
-        EventBus.post(filterIsOnChanged())
+        EventBus.post(FilterIsOnChanged())
     }
     
     var color by IntPreference(R.string.pref_key_color, 10) {
@@ -97,11 +92,11 @@ object Config : Preferences(appContext) {
         }
 
     val secureSuspend by BooleanPreference(R.string.pref_key_secure_suspend, false) {
-        EventBus.post(secureSuspendChanged())
+        EventBus.post(SecureSuspendChanged())
     }
 
     val buttonBacklightFlag by StringPreference(R.string.pref_key_button_backlight, "off") {
-        EventBus.post(buttonBacklightChanged())
+        EventBus.post(ButtonBacklightChanged())
     }
     
     var darkThemeFlag by BooleanPreference(R.string.pref_key_dark_theme, false)
@@ -115,21 +110,21 @@ object Config : Preferences(appContext) {
             Log.i("Schedule disabled")
             ScheduleReceiver.cancelAlarms()
         }
-        EventBus.post(scheduleChanged())
+        EventBus.post(ScheduleChanged())
     }
 
     val customStartTime by StringPreference(R.string.pref_key_start_time, "22:00") {
         ScheduleReceiver.rescheduleOnCommand()
-        EventBus.post(scheduleChanged())
+        EventBus.post(ScheduleChanged())
     }
 
     val customStopTime by StringPreference(R.string.pref_key_stop_time, "06:00") {
         ScheduleReceiver.rescheduleOffCommand()
-        EventBus.post(scheduleChanged())
+        EventBus.post(ScheduleChanged())
     }
 
     var useLocation by BooleanPreference(R.string.pref_key_use_location, false) {
-        EventBus.post(useLocationChanged())
+        EventBus.post(UseLocationChanged())
     }
     //endregion
 
@@ -139,7 +134,7 @@ object Config : Preferences(appContext) {
 
     val buttonBacklightLevel: Float
         get() = when (buttonBacklightFlag) {
-                    "system" -> -1.toFloat()
+            "system" -> (-1).toFloat()
                     "dim" -> 1 - (dimLevel.toFloat() / 100)
                     else -> 0.toFloat()
                 }
@@ -153,7 +148,7 @@ object Config : Preferences(appContext) {
     private var _location by StringPreference(R.string.pref_key_location, "0,0") {
         ScheduleReceiver.rescheduleOffCommand()
         ScheduleReceiver.rescheduleOnCommand()
-        EventBus.post(locationChanged())
+        EventBus.post(LocationChanged())
     }
 
     const val NOT_SET: Long = -1

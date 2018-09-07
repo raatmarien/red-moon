@@ -28,14 +28,10 @@ import android.os.Bundle
 import android.preference.Preference
 import android.preference.PreferenceFragment
 import android.preference.TwoStatePreference
-
-import com.jmstudios.redmoon.R
-
-import com.jmstudios.redmoon.model.Profile
 import com.jmstudios.redmoon.model.Config
-import com.jmstudios.redmoon.ui.preference.SeekBarPreference
+import com.jmstudios.redmoon.model.Profile
+import com.jmstudios.redmoon.preference.SeekBarPreference
 import com.jmstudios.redmoon.util.*
-
 import org.greenrobot.eventbus.Subscribe
 
 class FilterFragment : PreferenceFragment() {
@@ -145,7 +141,7 @@ class FilterFragment : PreferenceFragment() {
     }
 
     @Subscribe
-    fun onButtonBacklightChanged(event: buttonBacklightChanged) {
+    fun onButtonBacklightChanged(event: ButtonBacklightChanged) {
         updateBacklightPrefSummary()
     }
     //endregion

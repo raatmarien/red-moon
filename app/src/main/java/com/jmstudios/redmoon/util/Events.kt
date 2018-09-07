@@ -7,17 +7,18 @@ package com.jmstudios.redmoon.util
 
 import com.jmstudios.redmoon.util.EventBus.Event
 
-class filterIsOnChanged        : Event
-//class themeChanged             : Event
-class profilesUpdated          : Event
-class scheduleChanged          : Event
-class useLocationChanged       : Event
-class locationChanged          : Event
-class secureSuspendChanged     : Event
-class buttonBacklightChanged   : Event
+class FilterIsOnChanged : Event
+//class ThemeChanged             : Event
+class ProfilesUpdated : Event
 
-class overlayPermissionDenied  : Event
-class locationAccessDenied     : Event
-class changeBrightnessDenied   : Event
+class ScheduleChanged : Event
+class UseLocationChanged : Event
+class LocationChanged : Event
+class SecureSuspendChanged : Event
+class ButtonBacklightChanged : Event
 
-data class locationService(val isSearching: Boolean, val isRunning: Boolean = true) : Event
+class OverlayPermissionDenied : Event
+class LocationAccessDenied : Event
+class ChangeBrightnessDenied : Event
+
+data class LocationService(val isSearching: Boolean, val isRunning: Boolean = true) : Event

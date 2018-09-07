@@ -26,18 +26,14 @@ package com.jmstudios.redmoon
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.widget.SwitchCompat
 import android.view.Menu
 import android.view.MenuItem
-import android.support.v7.widget.SwitchCompat
-
-import com.jmstudios.redmoon.R
 import com.jmstudios.redmoon.filter.Command
-
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.model.ProfilesModel
 import com.jmstudios.redmoon.ui.showRateDialog
 import com.jmstudios.redmoon.util.*
-
 import de.cketti.library.changelog.ChangeLog
 import org.greenrobot.eventbus.Subscribe
 
@@ -138,12 +134,14 @@ class MainActivity : ThemedAppCompatActivity() {
         finish()
     }
 
-    @Subscribe fun onFilterIsOnChanged(event: filterIsOnChanged) {
+    @Subscribe
+    fun onFilterIsOnChanged(event: FilterIsOnChanged) {
         Log.i("FilterIsOnChanged")
         mSwitch?.safeSetChecked(filterIsOn)
     }
 
-    @Subscribe fun onOverlayPermissionDenied(event: overlayPermissionDenied) {
+    @Subscribe
+    fun onOverlayPermissionDenied(event: OverlayPermissionDenied) {
         mSwitch?.safeSetChecked(false)
         Permission.Overlay.request(this)
     }

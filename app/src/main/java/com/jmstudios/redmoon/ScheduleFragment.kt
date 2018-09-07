@@ -11,13 +11,10 @@ import android.preference.SwitchPreference
 import android.support.design.widget.Snackbar
 import android.view.ViewGroup
 import android.widget.TextView
-
-import com.jmstudios.redmoon.R
-
 import com.jmstudios.redmoon.model.Config
-import com.jmstudios.redmoon.schedule.*
+import com.jmstudios.redmoon.schedule.LocationUpdateService
+import com.jmstudios.redmoon.schedule.TimePickerPreference
 import com.jmstudios.redmoon.util.*
-
 import org.greenrobot.eventbus.Subscribe
 
 class ScheduleFragment : PreferenceFragment() {
@@ -114,19 +111,19 @@ class ScheduleFragment : PreferenceFragment() {
 
     //region presenter
     @Subscribe
-    fun onScheduleChanged(event: scheduleChanged) {
+	fun onScheduleChanged(event: ScheduleChanged) {
         LocationUpdateService.update()
         updatePrefs()
     }
 
     @Subscribe
-    fun onUseLocationChanged(event: useLocationChanged) {
+	fun onUseLocationChanged(event: UseLocationChanged) {
         LocationUpdateService.update()
         updateTimePrefs()
     }
 
     @Subscribe
-    fun onLocationServiceEvent(service: locationService) {
+	fun onLocationServiceEvent(service: LocationService) {
         Log.i("onLocationEvent: ${service.isSearching}")
         if (!service.isRunning) {
             dismissSnackBar()
@@ -137,13 +134,14 @@ class ScheduleFragment : PreferenceFragment() {
         }
     }
 
-    @Subscribe fun onLocationChanged(event: locationChanged) {
+	@Subscribe
+	fun onLocationChanged(event: LocationChanged) {
         showSnackbar(R.string.snackbar_location_updated, Snackbar.LENGTH_SHORT)
         updatePrefs()
     }
 
     @Subscribe
-    fun onLocationAccessDenied(event: locationAccessDenied) {
+	fun onLocationAccessDenied(event: LocationAccessDenied) {
         if (Config.scheduleOn && Config.useLocation) {
             Permission.Location.request(activity)
         }
@@ -157,6 +155,5 @@ class ScheduleFragment : PreferenceFragment() {
         LocationUpdateService.update()
     }
     //endregion
-
     companion object : Logger()
 }

@@ -28,15 +28,15 @@ import android.content.Context
 import android.graphics.Canvas
 import android.view.View
 import android.view.WindowManager
-
-import com.jmstudios.redmoon.filter.manager.ScreenManager
 import com.jmstudios.redmoon.filter.Filter
+import com.jmstudios.redmoon.filter.manager.ScreenManager
 import com.jmstudios.redmoon.model.Config
-import com.jmstudios.redmoon.util.*
-
-import kotlin.properties.Delegates
-
+import com.jmstudios.redmoon.util.ButtonBacklightChanged
+import com.jmstudios.redmoon.util.EventBus
+import com.jmstudios.redmoon.util.Logger
+import com.jmstudios.redmoon.util.activeProfile
 import org.greenrobot.eventbus.Subscribe
+import kotlin.properties.Delegates
 
 class Overlay(context: Context) : View(context), Filter,
         OrientationChangeReceiver.OnOrientationChangeListener {
@@ -109,7 +109,8 @@ class Overlay(context: Context) : View(context), Filter,
         reLayout()
     }
 
-    @Subscribe fun onButtonBacklightChanged(event: buttonBacklightChanged) {
+	@Subscribe
+	fun onButtonBacklightChanged(event: ButtonBacklightChanged) {
         reLayout()
     }
 

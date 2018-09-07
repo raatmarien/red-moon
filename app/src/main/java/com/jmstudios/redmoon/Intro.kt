@@ -6,11 +6,8 @@ package com.jmstudios.redmoon
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-
 import com.github.paolorotolo.appintro.AppIntro2
 import com.github.paolorotolo.appintro.AppIntroFragment
-
-import com.jmstudios.redmoon.R
 import com.jmstudios.redmoon.model.Config
 
 class Intro : AppIntro2() {

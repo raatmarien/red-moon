@@ -13,16 +13,13 @@ import android.content.Context
 import android.content.Intent
 import android.support.v4.app.NotificationCompat
 import android.support.v4.content.ContextCompat
-
-import com.jmstudios.redmoon.R
 import com.jmstudios.redmoon.MainActivity
+import com.jmstudios.redmoon.R
 import com.jmstudios.redmoon.securesuspend.CurrentAppMonitor
 import com.jmstudios.redmoon.securesuspend.WhitelistChangeReceiver
 import com.jmstudios.redmoon.util.*
 
-class Notification(
-        private val context: Context,
-        private val appMonitor: CurrentAppMonitor) {
+class Notification(private val context: Context, private val appMonitor: CurrentAppMonitor) {
 
     private val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE)
             as NotificationManager
@@ -54,8 +51,7 @@ class Notification(
             }
             setContentIntent(activityPI(ACTION_SETTINGS, mainIntent))
 
-            addAction(R.drawable.ic_stop, R.string.notification_action_stop,
-                      servicePI(ACTION_STOP, Command.OFF.intent))
+			addAction(R.drawable.ic_stop, R.string.notification_action_stop, servicePI(ACTION_STOP, Command.OFF.intent))
 
             if (isOn) {
                 setContentText(getString(R.string.notification_status_running))

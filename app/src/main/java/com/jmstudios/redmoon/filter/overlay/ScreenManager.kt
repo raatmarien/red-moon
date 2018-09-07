@@ -80,10 +80,10 @@ class ScreenManager(context: Context, private val mWindowManager: WindowManager)
 
                 if (statusBarHeightId > 0) {
                     mStatusBarHeight = mResources.getDimensionPixelSize(statusBarHeightId)
-                    Log.i("Found Status Bar Height: " + mStatusBarHeight)
+					Log.i("Found Status Bar Height: $mStatusBarHeight")
                 } else {
                     mStatusBarHeight = dpToPx(DEFAULT_STATUS_BAR_HEIGHT_DP)
-                    Log.i("Using default Status Bar Height: " + mStatusBarHeight)
+					Log.i("Using default Status Bar Height: $mStatusBarHeight")
                 }
             }
 
@@ -97,10 +97,10 @@ class ScreenManager(context: Context, private val mWindowManager: WindowManager)
 
                 if (navBarHeightId > 0) {
                     mNavigationBarHeight = mResources.getDimensionPixelSize(navBarHeightId)
-                    Log.i("Found Navigation Bar Height: " + mNavigationBarHeight)
+					Log.i("Found Navigation Bar Height: $mNavigationBarHeight")
                 } else {
                     mNavigationBarHeight = dpToPx(DEFAULT_NAV_BAR_HEIGHT_DP)
-                    Log.i("Using default Navigation Bar Height: " + mNavigationBarHeight)
+					Log.i("Using default Navigation Bar Height: $mNavigationBarHeight")
                 }
             }
 
@@ -108,8 +108,7 @@ class ScreenManager(context: Context, private val mWindowManager: WindowManager)
         }
 
     private fun dpToPx(dp: Int): Int {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                                         dp.toFloat(), mResources.displayMetrics).toInt()
+		return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp.toFloat(), mResources.displayMetrics).toInt()
     }
     
     private val inPortrait: Boolean

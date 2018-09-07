@@ -9,16 +9,14 @@ import android.os.Bundle
 import android.preference.PreferenceFragment
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
-
-import com.jmstudios.redmoon.R
-
 import com.jmstudios.redmoon.model.Config
-import com.jmstudios.redmoon.util.*
+import com.jmstudios.redmoon.util.Logger
+import com.jmstudios.redmoon.util.Permission
 
 abstract class ThemedAppCompatActivity : AppCompatActivity() {
 
-    abstract protected val fragment: PreferenceFragment
-    abstract protected val tag: String
+	protected abstract val fragment: PreferenceFragment
+	protected abstract val tag: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(Config.activeTheme)

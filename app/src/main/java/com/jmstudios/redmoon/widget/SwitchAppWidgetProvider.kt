@@ -32,11 +32,10 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
-
 import com.jmstudios.redmoon.R
-
 import com.jmstudios.redmoon.filter.Command
-import com.jmstudios.redmoon.util.*
+import com.jmstudios.redmoon.util.Logger
+import com.jmstudios.redmoon.util.filterIsOn
 
 class SwitchAppWidgetProvider : AppWidgetProvider() {
 
@@ -59,12 +58,10 @@ class SwitchAppWidgetProvider : AppWidgetProvider() {
     }
 
     override fun onReceive(ctx: Context, intent: Intent) {
-        if (intent.action == ACTION_TOGGLE) {
-            Command.toggle(!filterIsOn)
-        } else if (intent.action == ACTION_UPDATE) {
-            updateImage(ctx, intent.getBooleanExtra(EXTRA_POWER, false))
-        } else {
-            super.onReceive(ctx, intent)
+		when {
+			intent.action == ACTION_TOGGLE -> Command.toggle(!filterIsOn)
+			intent.action == ACTION_UPDATE -> updateImage(ctx, intent.getBooleanExtra(EXTRA_POWER, false))
+			else -> super.onReceive(ctx, intent)
         }
     }
 

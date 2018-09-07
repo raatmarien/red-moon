@@ -15,10 +15,24 @@
 */
 package com.jmstudios.redmoon
 
-import android.app.Application
-import android.test.ApplicationTestCase
+import android.support.test.InstrumentationRegistry
+import android.support.test.runner.AndroidJUnit4
+import org.junit.Assert.assertEquals
+import org.junit.Test
+import org.junit.runner.RunWith
 
 /**
- * [Testing Fundamentals](http://d.android.com/tools/testing/testing_android.html)
+ * Instrumented test, which will execute on an Android device.
+ *
+ * @see [Testing documentation](http://d.android.com/tools/testing)
  */
-class ApplicationTest : ApplicationTestCase<Application>(Application::class.java)
+@RunWith(AndroidJUnit4::class)
+class ApplicationTest {
+	@Test
+	fun useAppContext() {
+		// Context of the app under test.
+		val appContext = InstrumentationRegistry.getTargetContext()
+
+		assertEquals("com.jmstudios.redmoon", appContext.packageName)
+	}
+}

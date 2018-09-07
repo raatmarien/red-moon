@@ -3,7 +3,7 @@
  * Copyright (c) 2017  Stephen Michel <s@smichel.me>
  * SPDX-License-Identifier: GPL-3.0+
  */
-package com.jmstudios.redmoon.ui.preference
+package com.jmstudios.redmoon.preference
 
 import android.app.AlertDialog
 import android.content.Context
@@ -11,28 +11,24 @@ import android.preference.Preference
 import android.text.InputType
 import android.util.AttributeSet
 import android.view.View
-import android.widget.AdapterView
+import android.widget.*
 import android.widget.AdapterView.OnItemSelectedListener
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
-
 import com.jmstudios.redmoon.R
-
-import com.jmstudios.redmoon.model.Profile
 import com.jmstudios.redmoon.model.Config
+import com.jmstudios.redmoon.model.Profile
 import com.jmstudios.redmoon.model.ProfilesModel
 import com.jmstudios.redmoon.model.ProfilesModel.isSaved
-import com.jmstudios.redmoon.util.*
-
+import com.jmstudios.redmoon.util.Logger
+import com.jmstudios.redmoon.util.ProfilesUpdated
+import com.jmstudios.redmoon.util.activeProfile
+import com.jmstudios.redmoon.util.getString
 import org.greenrobot.eventbus.Subscribe
 
 class ProfileSelectorPreference(ctx: Context, attrs: AttributeSet) : Preference(ctx, attrs),
                                                                      OnItemSelectedListener {
-    lateinit private var mProfileSpinner: Spinner
-    lateinit private var mProfileActionButton: Button
-    lateinit private var mArrayAdapter: ArrayAdapter<CharSequence>
+	private lateinit var mProfileSpinner: Spinner
+	private lateinit var mProfileActionButton: Button
+	private lateinit var mArrayAdapter: ArrayAdapter<CharSequence>
     private var customShown: Boolean = false
 
     init {
@@ -60,7 +56,7 @@ class ProfileSelectorPreference(ctx: Context, attrs: AttributeSet) : Preference(
     }
 
     private fun updateLayout() {
-        activeProfile.let {
+		activeProfile.let { it ->
             Log.i("Updating spinner. Active: $it; Custom: ${Config.custom}")
             if (it.isSaved) {
                 Log.i("Setting remove button")
@@ -148,7 +144,8 @@ class ProfileSelectorPreference(ctx: Context, attrs: AttributeSet) : Preference(
         updateLayout()
     }
 
-    @Subscribe fun onProfilesChanged(event: profilesUpdated) {
+	@Subscribe
+	fun onProfilesChanged(event: ProfilesUpdated) {
         initLayout()
     }
 
