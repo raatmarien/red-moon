@@ -8,8 +8,7 @@ package com.jmstudios.redmoon
 import android.os.Bundle
 import android.preference.Preference
 import android.preference.PreferenceFragment
-import com.jmstudios.redmoon.util.Logger
-import com.jmstudios.redmoon.util.pref
+import com.jmstudios.redmoon.util.*
 import de.cketti.library.changelog.ChangeLog
 
 class AboutFragment : PreferenceFragment() {
