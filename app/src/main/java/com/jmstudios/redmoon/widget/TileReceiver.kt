@@ -9,9 +9,7 @@ import android.annotation.TargetApi
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import com.jmstudios.redmoon.filter.Command
-import com.jmstudios.redmoon.util.EventBus
-import com.jmstudios.redmoon.util.FilterIsOnChanged
-import com.jmstudios.redmoon.util.filterIsOn
+import com.jmstudios.redmoon.util.*
 import org.greenrobot.eventbus.Subscribe
 
 @TargetApi(24)

@@ -31,10 +31,7 @@ import android.view.WindowManager
 import com.jmstudios.redmoon.filter.Filter
 import com.jmstudios.redmoon.filter.manager.ScreenManager
 import com.jmstudios.redmoon.model.Config
-import com.jmstudios.redmoon.util.ButtonBacklightChanged
-import com.jmstudios.redmoon.util.EventBus
-import com.jmstudios.redmoon.util.Logger
-import com.jmstudios.redmoon.util.activeProfile
+import com.jmstudios.redmoon.util.*
 import org.greenrobot.eventbus.Subscribe
 import kotlin.properties.Delegates
 

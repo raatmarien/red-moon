@@ -11,17 +11,18 @@ import android.preference.Preference
 import android.text.InputType
 import android.util.AttributeSet
 import android.view.View
-import android.widget.*
+import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Spinner
 import com.jmstudios.redmoon.R
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.model.Profile
 import com.jmstudios.redmoon.model.ProfilesModel
 import com.jmstudios.redmoon.model.ProfilesModel.isSaved
-import com.jmstudios.redmoon.util.Logger
-import com.jmstudios.redmoon.util.ProfilesUpdated
-import com.jmstudios.redmoon.util.activeProfile
-import com.jmstudios.redmoon.util.getString
+import com.jmstudios.redmoon.util.*
 import org.greenrobot.eventbus.Subscribe
 
 class ProfileSelectorPreference(ctx: Context, attrs: AttributeSet) : Preference(ctx, attrs),
@@ -56,7 +57,7 @@ class ProfileSelectorPreference(ctx: Context, attrs: AttributeSet) : Preference(
     }
 
     private fun updateLayout() {
-		activeProfile.let { it ->
+		activeProfile.let {
             Log.i("Updating spinner. Active: $it; Custom: ${Config.custom}")
             if (it.isSaved) {
                 Log.i("Setting remove button")

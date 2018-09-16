@@ -34,9 +34,9 @@ abstract class PermissionHelper : EventBus.Event {
 object Permission {
     fun onRequestResult(requestCode: Int) {
         EventBus.post(when (requestCode) {
-                          REQ_CODE_OVERLAY -> Overlay
-                          REQ_CODE_LOCATION -> Location
-                          REQ_CODE_SETTINGS -> WriteSettings
+            REQ_CODE_OVERLAY -> Overlay
+            REQ_CODE_LOCATION -> Location
+            REQ_CODE_SETTINGS -> WriteSettings
             else -> return
         })
     }

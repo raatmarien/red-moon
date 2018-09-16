@@ -11,7 +11,6 @@ import me.smichel.android.KPreferences.Preferences
 
 private const val WHITELIST_PREF: String = "com.jmstudios.redmoon.WHITELIST"
 
-@SuppressLint("StaticFieldLeak")
 object Whitelist : Preferences(appContext, WHITELIST_PREF) {
 
 	private val _model: Map<String, Set<String>>

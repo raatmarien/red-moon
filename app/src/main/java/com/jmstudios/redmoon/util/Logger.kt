@@ -30,7 +30,7 @@ package com.jmstudios.redmoon.util
 import android.util.Log
 import java.lang.reflect.Modifier
 
-/*
+/**
  * Normally you should pass the logger tag to the [Log] methods, such as [Log.d] or [Log.e].
  * This can be inconvenient because you should store the tag somewhere or hardcode it,
  *   which is considered to be a bad practice.
@@ -379,11 +379,12 @@ private inline fun makeLog(noinline func: () -> Unit, enabled: Boolean): KLog =
  */
 private inline fun resolveName(noinline func: () -> Unit): String {
     val name = func.javaClass.simpleName
-	return when {
-		name.contains("Kt$") -> name.substringBefore("Kt$")
-		name.contains("$") -> name.substringBefore("$")
-		else -> name
-	}
+    val slicedName = when {
+        name.contains("Kt$") -> name.substringBefore("Kt$")
+        name.contains("$") -> name.substringBefore("$")
+        else -> name
+    }
+    return slicedName
 }
 
 /**
