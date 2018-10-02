@@ -28,10 +28,10 @@
     <string name="pref_category_other">Інше</string>
     <string name="pref_category_button_backlight_disclaimer">Ніякого ефекту на деяких пристроях</string>
 
-    <string name="pref_title_dim_level">Рівень затемнення</string>
-    <string name="pref_title_intensity">Рівень інтенсивності</string>
+    <string name="pref_title_dim_level">Затемнення</string>
+    <string name="pref_title_intensity">Непрозорість</string>
     <string name="pref_title_color_temp">Колір</string>
-    <string name="pref_title_lower_brightness">Зменшення яскравості</string>
+    <string name="pref_title_lower_brightness">Нижня яскравість системи</string>
 
     <string name="pref_title_time_toggle">Таймер</string>
     <string name="pref_title_secure_suspend">Пауза в виключених застосунках</string>
@@ -149,4 +149,6 @@
 
     <string name="notification_action_whitelist_add">Виключити застосунок</string>
     <string name="notification_action_whitelist_remove">Фільтр застосунку</string>
-    </resources>
+    <string name="notification_channel_overlay_name">Контроль накладення</string>
+    <string name="notification_channel_overlay_description">Постійне сповіщення про накладання</string>
+</resources>

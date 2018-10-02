@@ -7,10 +7,10 @@
 -->
 <resources>
     <string name="notification_status_paused">Angehalten</string>
-    <string name="pref_title_color_temp">Farbtemperatur</string>
+    <string name="pref_title_color_temp">Farbe</string>
     <string name="pref_category_filter">Filter</string>
-    <string name="pref_title_dim_level">Grad der Abdunklung</string>
-    <string name="pref_title_intensity">Grad der Intensität</string>
+    <string name="pref_title_dim_level">Abdunklung</string>
+    <string name="pref_title_intensity">Deckkraft</string>
     <string name="pref_title_startup">Beim Start</string>
     <string name="toast_warning_install">Sie können keine APKs installieren, während Red Moon ausgeführt wird.</string>
     <string name="dialog_title_add_filter">Filtername eingeben</string>
@@ -19,11 +19,11 @@
     <string name="button_add_filter">Hinzufügen</string>
     <string name="button_remove_filter">Löschen</string>
     <string name="dialog_button_cancel">Abbrechen</string>
-    <string name="pref_title_lower_brightness">Helligkeit reduzieren</string>
+    <string name="pref_title_lower_brightness">Systemhelligkeit reduzieren</string>
     <string name="pref_title_turn_off">Ausschaltzeit</string>
     <string name="pref_title_turn_on">Einschaltzeit</string>
     <string name="menu_dark_theme">Dunkles Thema</string>
-    <string name="pref_summary_email_developer">Eine weitere Kontaktmöglichkeit</string>
+    <string name="pref_summary_email_developer">Eine zweite Kontaktmöglichkeit</string>
     <string name="pref_title_email_developer">E-Mail an die Entwickler</string>
     <string name="dialog_button_ok">OK</string>
     <string name="activity_timer">Automatischer Filter</string>
@@ -80,7 +80,11 @@
 
     <string name="pref_title_secure_suspend">In ausgeschlossenen Apps anhalten</string>
     <string name="dialog_title_permission_usage_stats">Zugriff auf Nutzungsstatistik erlauben</string>
-    <string name="pref_summary_secure_suspend">Einige Android-Funktionen sind gegen Bildschirm-Überlagerungen geschützt. Zum Beispiel \"Installation von Apps\", oder \"Erteilen von Berechtigungen\" auf Android 6.0+. Diese funktionieren nicht, wenn Red Moon gestartet ist. Aktiviere diese Einstellung, damit Red Moon diese Funktionen erkennt, den Filter automatisch pausiert und wieder anstartet, sobald die Funktion beendet wurde. Auf diese Weise muss du nicht manuell eingreifen. Diese Einstellung kann die Akkulaufzeit des Geräts verkürzen. Außerdem funktioniert es möglicherweise nicht auf allen Geräten.</string>
+    <string name="pref_summary_secure_suspend">Falls diese Funkion aktiviert ist, wird Red Moon automatisch pausieren wenn bestimmte Apps laufen. Per Standardeinstellung betrifft dies Apps die nicht funktionieren wenn Red Moon gestartet ist*, wie etwa das Installieren von apks. In der Notifikation kanns Du diese Verhalten für den derzeitigen Bildschirm der derzeitigen App ändern. Beispielsweise möchtest Du eventuell farbsensible Apps hinzufügen, wie die Kamera.
+\n
+\nDiese Einstellung kann die Akkulaufzeit deines Gerätes verkürzen.
+\n
+\n*Einige Apps sind gegen Bildschirm-Overlays geschützt um gegen Beeinflussung zu schützen, z.B. Dich zum Installieren einer App zu verleiten die Du nicht willst. Diese werden nicht reagieren wenn Red Moon gestartet ist, weil es eine transparente, rote Ebene über den Bildschirm zeichnet.</string>
     <string name="dialog_message_permission_usage_stats">Erlauben Sie den Zugriff auf die Nutzung im nächsten Bildschirm, damit Red Moon in geschützten Anwendungen pausieren kann.
 \n
 \nRed Moon benötigt den Zugriff auf die Daten, um festzustellen, welche App Sie gerade nutzten, um so ggf. automatisch den Filter anhalten zu können.</string>
@@ -127,12 +131,12 @@
 
     <string name="pref_entry_button_backlight_system">Systemverwaltet</string>
     <string name="location">Standort</string>
-    <string name="pref_summary_integration">Manche Apps wie LibreTasks oder Tasker ermöglichen es Ihnen, Aufgaben zu automatisieren, wenn bestimmte Ereignisse eintreten. Red Moon sendet eine öffentliche Benachrichtigung, wenn es sich ein- und ausschaltet, so dass diese Apps darauf reagieren können. Wenn Sie keine dieser Apps benutzen oder entwickeln, dann können Sie den nächsten Absatz ignorieren.
-\n
+    <string name="pref_summary_integration">Manche Apps wie LibreTasks oder Tasker ermöglichen es Ihnen, Aufgaben zu automatisieren, wenn bestimmte Ereignisse eintreten. Red Moon sendet eine öffentliche Notifikation, wenn es sich ein- und ausschaltet, so dass diese Apps darauf reagieren können. Wenn Sie keine dieser Apps benutzen oder entwickeln, dann können Sie den nächsten Absatz ignorieren. 
+\n 
 \nRed Moon sendet einen Public Intent mit der Aktion `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Der Intent enthält einen Booleschen Wert mit dem Schlüssel `jmstudios.bundle.key.FILTER_IS_ON`, der angibt, ob Red Moon an- oder ausgeschaltet wird.</string>
 
     <string name="activity_schedule">Zeitplan</string>
-    <string name="notification_status_paused_with_info">Angehalten. Verwerfen Sie die Benachrichtigung, um zu beenden.</string>
+    <string name="notification_status_paused_with_info">Angehalten. Verwerfen Sie die Notifikation um zu beenden.</string>
     <string name="notification_action_whitelist_add">App ausschließen</string>
     <string name="notification_action_whitelist_remove">App filtern</string>
     <string name="pref_title_schedule">Zeitplan</string>
@@ -144,6 +148,8 @@
     <string name="pref_title_translators">Beim Übersetzen helfen</string>
     <string name="pref_summary_translators">Übersetzer: smichel17, elumbella</string>
 
-    <string name="toast_warning_secured">Einige Funktionen dieser Anwendung funktionieren möglicherweise nicht, während Red Moon ausgeführt wird.</string>
+    <string name="toast_warning_secured">Einige Features dieser App funktionieren womöglich nicht während Red Moon läuft.</string>
 
-    </resources>
+    <string name="notification_channel_overlay_name">Overlaykontrolle</string>
+    <string name="notification_channel_overlay_description">Die ständige Notifikation der Overlaykontrolle</string>
+</resources>

@@ -78,11 +78,12 @@
     <string name="activity_secure_suspend">Pausar en aplicaciones excluidas</string>
 
     <string name="pref_title_secure_suspend">Pausar en aplicaciones excluidas</string>
-    <string name="pref_summary_secure_suspend">Algunas características de Android están protegidas contra superposiciones de pantalla y no funcionan debajo de filtros como Red Moon. No podrás confirmar al instalar APKs o conceder permisos en Android 6.0+.
-
-        Al utilizar esta opción Red Moon se pausa momentáneamente si detecta este tipo de actividad y reanuda el filtro al terminar. Así puedes despreocuparte de tener que quitar el filtro de forma manual para tocar botones.
-
-        Puede que esta función gaste un poco más de batería y que no funcione del todo bien en algunos dispositivos.</string>
+    <string name="pref_summary_secure_suspend">Cuando esta característica está habilitada, Red Moon se pausará automáticamente cuando se abran determinadas aplicaciones. De manera predeterminada, esto incluye aplicaciones que no funcionarían si Red Moon está funcionando*, como los instaladores. Puede cambiar este comportamiento para la pantalla actual de la aplicación actual desde la notificación. Por ejemplo, puede querer agregar aplicaciones que son sensibles al color, como la cámara.
+\n
+\n
+\nEsta característica puede reducir ligeramente la vida de la batería de su dispositivo.
+\n
+\n* Algunas aplicaciones están protegidas contra superposiciones para protegerse de interferencias, como instalar una aplicación que realmente no desea. No responderán a toques cuando Red Moon está funcionando, ya que Red Moon dibuja una capa de rojo transparente sobre la pantalla.</string>
     <string name="text_switch_on">Activado</string>
     <string name="text_switch_off">Desactivado</string>
     <string name="dialog_title_permission_usage_stats">Permitir recopilar aplicaciones en ejecución</string>
@@ -94,7 +95,7 @@
     <string name="notification_status_off">No</string>
     <string name="pref_summary_location_off">Desfase horario desde ubicación</string>
     <string name="notification_action_turn_on">Reanudar</string>
-    <string name="notification_action_turn_off">Pausar</string>
+    <string name="notification_action_turn_off">Detener</string>
     <string name="notification_action_stop">Detener</string>
 
     <string name="dialog_message_permission_overlay">Activa las superposiciones en la siguiente pantalla para que Red Moon pueda activar el filtro.</string>
@@ -121,7 +122,7 @@
     <string name="searching_location">Buscando ubicación</string>
     <string name="toast_warning_no_location">Activa los servicios de ubicación para actualizar tu posición</string>
     <string name="pref_category_button_backlight_disclaimer">Inútil en ciertos dispositivos</string>
-    <string name="snackbar_location_updated">¡Ubicación encontrada!</string>
+    <string name="snackbar_location_updated">¡Se encontró la ubicación!</string>
     <string name="pref_entry_button_backlight_system">Gestionado por el sistema</string>
     <string name="pref_entry_button_backlight_turn_off">Apagar</string>
 
@@ -149,4 +150,7 @@
 
     <string name="toast_warning_secured">Algunas características de esta aplicación pueden no funcionar mientras Red Moon este en ejecución.</string>
 
+    <string name="notification_channel_overlay_name">Control de superposición</string>
+    <string name="notification_channel_overlay_description">La notificación persistente de control de superposición</string>
+<string name="pref_summary_schedule_sun" formatted="false">Del anochecer (%on) al amanecer (%off)</string>
     </resources>
