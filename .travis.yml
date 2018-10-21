@@ -9,8 +9,12 @@ android:
     - platform-tools
     - build-tools-28.03
     - android-28
-
     - extra-android-m2repository
+
+  licenses:
+    - android-sdk-license-.+
+    - android-sdk-preview-license-.+
+    -.+
 
 notifications:
   email:
