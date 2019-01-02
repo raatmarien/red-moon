@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Red Moon</string>
     <string name="activity_intro">Introducción</string>
@@ -146,7 +146,7 @@
     <string name="pref_title_start_time">Hora de inicio</string>
     <string name="pref_title_stop_time">Hora de finalización</string>
     <string name="pref_title_translators">Ayuda a traducir</string>
-    <string name="pref_summary_translators">Traductores: smichel17, raatmarien</string>
+    <string name="pref_summary_translators">Traductores: smichel17, raatmarien, Mostafa Ahangarha</string>
 
     <string name="toast_warning_secured">Algunas características de esta aplicación pueden no funcionar mientras Red Moon este en ejecución.</string>
 
