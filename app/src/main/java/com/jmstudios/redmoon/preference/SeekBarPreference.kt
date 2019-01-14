@@ -31,6 +31,7 @@ abstract class SeekBarPreference(context: Context, attrs: AttributeSet) : Prefer
     abstract val color: Int
     abstract val progress: Int
     abstract val suffix: String
+    abstract val max: Int
 
     private val colorFilter: PorterDuffColorFilter
         get() = PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY)
@@ -60,6 +61,7 @@ abstract class SeekBarPreference(context: Context, attrs: AttributeSet) : Prefer
         mView = view
         mSeekBar = view.findViewById(R.id.seekbar)
         setProgress(mProgress)
+        mSeekBar.setMax(max)
         mSeekBar.setOnSeekBarChangeListener(this)
         updateView()
     }

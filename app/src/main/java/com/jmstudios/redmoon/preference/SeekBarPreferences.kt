@@ -15,6 +15,8 @@ import com.jmstudios.redmoon.model.Config
 class ColorSeekBarPreference(context: Context, attrs: AttributeSet) : SeekBarPreference(context, attrs) {
 
     override val suffix = "K"
+
+    override val max =  100
         
     override val color: Int
         get() = Profile.rgbFromColor(mProgress)
@@ -26,6 +28,8 @@ class ColorSeekBarPreference(context: Context, attrs: AttributeSet) : SeekBarPre
 class IntensitySeekBarPreference(context: Context, attrs: AttributeSet) : SeekBarPreference(context, attrs) {
 
     override val suffix = "%"
+
+    override val max =  100
 
     override val color: Int
         get() = getIntensityColor(mProgress, Config.color)
@@ -48,8 +52,9 @@ class IntensitySeekBarPreference(context: Context, attrs: AttributeSet) : SeekBa
 }
 
 class DimSeekBarPreference(context: Context, attrs: AttributeSet) : SeekBarPreference(context, attrs) {
-
     override val suffix = "%"
+
+    override val max = 90
 
     override val color: Int
         get() {
@@ -58,5 +63,5 @@ class DimSeekBarPreference(context: Context, attrs: AttributeSet) : SeekBarPrefe
         }
 
     override val progress: Int
-        get() = (mProgress.toFloat() * Profile.DIM_MAX_ALPHA).toInt()
+        get() = mProgress
 }
