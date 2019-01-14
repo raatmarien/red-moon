@@ -109,6 +109,7 @@ class FilterService : Service() {
 
     @Subscribe fun onProfileUpdated(profile: Profile) {
         mFilter.profile = profile
+        startForeground(NOTIFICATION_ID, mNotification.build(true))
     }
 
     @Subscribe fun onSecureSuspendChanged(event: secureSuspendChanged) {
