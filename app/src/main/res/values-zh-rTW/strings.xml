@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">紅月</string>
     <string name="activity_main">紅月</string>
@@ -9,7 +9,7 @@
     <string name="pref_category_other">其他</string>
 
     <string name="button_remove_filter">刪除</string>
-    <string name="pref_title_location">日出至日落</string>
+    <string name="pref_title_location">日落至日出</string>
     <string name="latitude_short">緯度</string>
     <string name="longitude_short">經度</string>
     <string name="dialog_button_ok">確定</string>
@@ -20,10 +20,10 @@
     <string name="pref_title_time_toggle">定時</string>
     <string name="pref_title_startup">啟動</string>
     <string name="button_add_filter">添加</string>
-    <string name="pref_title_dim_level">光暗</string>
-    <string name="pref_title_intensity">強弱</string>
-    <string name="pref_title_color_temp">色溫</string>
-    <string name="pref_title_lower_brightness">降低亮度</string>
+    <string name="pref_title_dim_level">黑暗</string>
+    <string name="pref_title_intensity">不透明度</string>
+    <string name="pref_title_color_temp">顏色</string>
+    <string name="pref_title_lower_brightness">降低系統亮度</string>
     <string name="location_not_set">未設定位置</string>
     <string name="set_dialog">設定</string>
     <string name="dialog_title_remove_filter">確定要刪除此濾鏡？</string>
@@ -145,4 +145,6 @@
     <string name="pref_entry_button_backlight_system">系統管理</string>
     <string name="pref_entry_button_backlight_filter_dim_level">使用濾鏡的亮度降低級別</string>
     <string name="action_next_profile">下一個濾鏡</string>
-    </resources>
+    <string name="notification_channel_overlay_name">疊加控制</string>
+    <string name="notification_channel_overlay_description">持久性疊加控制通知</string>
+</resources>
