@@ -42,15 +42,17 @@ class BootReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         Log.i("Boot broadcast received!")
 
-        // If the filter was on when the device was powered down and the
-        // automatic brightness setting is on, then it still uses the
-        // dimmed brightness and we need to restore the saved brightness.
-        BrightnessManager(context).brightnessLowered = false
+        if (intent.action == Intent.ACTION_BOOT_COMPLETED) {
+            // If the filter was on when the device was powered down and the
+            // automatic brightness setting is on, then it still uses the
+            // dimmed brightness and we need to restore the saved brightness.
+            BrightnessManager(context).brightnessLowered = false
 
-        ScheduleReceiver.scheduleNextOnCommand()
-        ScheduleReceiver.scheduleNextOffCommand()
+            ScheduleReceiver.scheduleNextOnCommand()
+            ScheduleReceiver.scheduleNextOffCommand()
 
-        Command.toggle(filterIsOnPrediction(Log))
+            Command.toggle(filterIsOnPrediction(Log))
+        }
     }
 
     companion object : Logger()
@@ -60,10 +62,11 @@ class TimeZoneChangeReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         Log.i("System time zone change broadcast received!")
 
-        ScheduleReceiver.rescheduleOnCommand()
-        ScheduleReceiver.rescheduleOffCommand()
-
-        Command.toggle(filterIsOnPrediction(Log))
+        if (intent.action == Intent.ACTION_TIMEZONE_CHANGED) {
+            ScheduleReceiver.rescheduleOnCommand()
+            ScheduleReceiver.rescheduleOffCommand()
+            Command.toggle(filterIsOnPrediction(Log))
+        }
     }
 
     companion object : Logger()
