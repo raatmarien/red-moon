@@ -83,7 +83,7 @@
     <string name="pref_title_location">Sunset to Sunrise</string>
     <string name="pref_summary_location_off">Based on your location</string>
 
-    <string name="pref_summary_secure_suspend">When this feature is enabled, Red Moon will automatically pause when certain apps are open. By default, this includes apps that won\'t work when Red Moon is running*, like installing apks. You can change this behavior for the current screen of the current app from the notification. For example, you might want to add color-sensitive apps, like the camera.\n\nThis feature may slightly lower the battery life of your device.\n\n*Some apps are secured against overlays to protect themselves from interference, like tricking you into installing an app you don\'t want. They won\'t respond to touches when Red Moon is on, since it works by drawing transparent red layer over the screen.</string>
+    <string name="pref_summary_secure_suspend">When this feature is enabled, Red Moon will automatically pause when certain apps are open. By default, this includes apps that won\'t work when Red Moon is running*, like installing apks. You can change this behavior for the current screen of the current app from the notification. For example, you might want to add color-sensitive apps, like the camera.\n\nThis feature may slightly lower the battery life of your device.\n\n*Some apps are secured against overlays to protect themselves from interference, like tricking you into installing an app you don\'t want. They won\'t respond to touches when Red Moon is on, since it works by drawing a transparent red layer over the screen.</string>
 
     <!-- Short strings; might be used in multiple places -->
     <string name="button_add_filter">Add</string>
@@ -100,7 +100,7 @@
     <string name="pref_title_version">Version</string>
 
     <string name="pref_title_project_page">Visit the project page</string>
-    <string name="pref_summary_project_page">Find more info, leave feedback and contribute</string>
+    <string name="pref_summary_project_page">Find more info, leave feedback, and contribute</string>
 
     <string name="pref_title_email_developer">Email the developers</string>
     <string name="pref_summary_email_developer">A secondary way to contact us</string>
