@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Red Moon</string>
     <string name="activity_main">Red Moon</string>
@@ -18,15 +18,15 @@
 
     <string name="button_add_filter">Aggiungi</string>
     <string name="button_remove_filter">Elimina</string>
-    <string name="pref_title_dim_level">Livello di oscuramento</string>
-    <string name="pref_title_intensity">Livello di intensità</string>
-    <string name="pref_title_color_temp">Temperatura del colore</string>
-    <string name="pref_title_lower_brightness">Riduci luminosià</string>
+    <string name="pref_title_dim_level">Oscurità</string>
+    <string name="pref_title_intensity">Opacità</string>
+    <string name="pref_title_color_temp">Colore</string>
+    <string name="pref_title_lower_brightness">Riduci luminosià di sistema</string>
 
     <string name="time_toggle_title">Modalità di attivazione</string>
     <string name="pref_title_turn_on">Riprendi alle</string>
     <string name="pref_title_turn_off">Ferma alle</string>
-    <string name="pref_title_location">Dall\'alba al tramonto</string>
+    <string name="pref_title_location">Dal tramonto all\'alba</string>
     <string name="location_not_set">Posizione non impostata</string>
     <string name="latitude_short">Latitudine</string>
     <string name="longitude_short">Longitudine</string>
@@ -99,11 +99,11 @@
 
     <string name="pref_summary_location_off">In base alla tua posizione</string>
 
-    <string name="pref_summary_secure_suspend">Quando questa funzione è attiva, Red Moon andrà automaticamente in pausa all\'apertura di certe app. Di base, questo include app che non funzionano quando Red Moon è attivo*, ad esempio installando apk. Dalle notifiche puoi cambiare il comportamento per lo schermo attuale dell\'app attuale. Per esempio, potresti voler aggiungere app sensibili al colore, come la fotocamera.
-\n
-\nQuesta funzione potrebbe diminuire la durata della batteria del tuo dispositivo.
-\n
-\n*Alcune app sono protette contro la sovrapposizione in modo da prevenire interferenze, come per esempio ingannarti ad installare applicazioni che non vuoi. Non risponderanno al tatto ogni volta che Red Moon è attivo, poichè quest\'ultimo sovrappone uno strato rosso sullo schermo.</string>
+    <string name="pref_summary_secure_suspend">Quando questa funzione è attiva, Red Moon andrà automaticamente in pausa all\'apertura di certe app. Di base, questo include app che non funzionano quando Red Moon è attivo*, ad esempio installando apk. Dalle notifiche puoi cambiare il comportamento per lo schermo attuale dell\'app attuale. Per esempio, potresti voler aggiungere app sensibili al colore, come la fotocamera. 
+\n 
+\nQuesta funzione potrebbe diminuire la durata della batteria del tuo dispositivo. 
+\n 
+\n*Alcune app sono protette contro la sovrapposizione in modo da prevenire interferenze, come per esempio ingannarti ad installare applicazioni che non vuoi. Non risponderanno al tatto ogni volta che Red Moon è attivo, poiché quest\'ultimo applica uno strato rosso trasparente sullo schermo.</string>
 
     <string name="text_switch_on">Acceso</string>
     <string name="text_switch_off">Spento</string>
@@ -146,8 +146,9 @@ Red Moon userà questi dati solo per determinare che tu stia usando un\\\'app ch
     <string name="pref_title_start_time">Ora di inizio</string>
     <string name="pref_title_stop_time">Ora di termine</string>
     <string name="pref_title_translators">Aiuta a tradurre</string>
-    <string name="pref_summary_translators">Translators: smichel17, raatmarien, random</string>
+    <string name="pref_summary_translators">Translators: smichel17, raatmarien, matteocoder</string>
 
     <string name="toast_warning_secured">Alcune funzioni di questa app potrebbero non funzionare mentre Red Moon è attivo.</string>
-
-    </resources>
+    <string name="notification_channel_overlay_name">Controllo Sovraimpressione</string>
+    <string name="notification_channel_overlay_description">La notifica persitente per il controllo della sovraimpressione</string>
+</resources>
