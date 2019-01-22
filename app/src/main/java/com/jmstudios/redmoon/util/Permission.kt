@@ -23,10 +23,12 @@ private const val REQ_CODE_SETTINGS = 3333
 
 abstract class PermissionHelper : EventBus.Event {
     abstract val isGranted: Boolean
-    abstract protected val requestCode: Int
-    abstract protected fun send(activity: Activity)
+    protected abstract val requestCode: Int
+    protected abstract fun send(activity: Activity)
     fun request(activity: Activity): Boolean {
-        if (!isGranted) send(activity)
+        if (!isGranted) {
+            send(activity)
+        }
         return isGranted
     }
 }
@@ -34,11 +36,11 @@ abstract class PermissionHelper : EventBus.Event {
 object Permission {
     fun onRequestResult(requestCode: Int) {
         EventBus.post(when (requestCode) {
-                          REQ_CODE_OVERLAY -> Overlay
-                          REQ_CODE_LOCATION -> Location
-                          REQ_CODE_SETTINGS -> WriteSettings
-                          else -> return@onRequestResult
-                      })
+            REQ_CODE_OVERLAY  -> Overlay
+            REQ_CODE_LOCATION -> Location
+            REQ_CODE_SETTINGS -> WriteSettings
+            else -> return
+        })
     }
 
     object Location : PermissionHelper() {

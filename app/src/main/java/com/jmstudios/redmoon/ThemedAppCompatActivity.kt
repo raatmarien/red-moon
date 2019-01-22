@@ -17,8 +17,8 @@ import com.jmstudios.redmoon.util.*
 
 abstract class ThemedAppCompatActivity : AppCompatActivity() {
 
-    abstract protected val fragment: PreferenceFragment
-    abstract protected val tag: String
+    protected abstract val fragment: PreferenceFragment
+    protected abstract val tag: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(Config.activeTheme)

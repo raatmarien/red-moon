@@ -139,7 +139,7 @@ object Config : Preferences(appContext) {
 
     val buttonBacklightLevel: Float
         get() = when (buttonBacklightFlag) {
-                    "system" -> -1.toFloat()
+                    "system" -> (-1).toFloat()
                     "dim" -> 1 - (dimLevel.toFloat() / 100)
                     else -> 0.toFloat()
                 }

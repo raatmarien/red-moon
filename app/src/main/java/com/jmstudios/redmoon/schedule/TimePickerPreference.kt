@@ -17,7 +17,7 @@ import com.jmstudios.redmoon.util.atLeastAPI
 
 open class TimePickerPreference(context: Context, attrs: AttributeSet) : DialogPreference(context, attrs) {
 
-    lateinit private var mTimePicker: TimePicker
+    private lateinit var mTimePicker: TimePicker
     protected var mTime: String = DEFAULT_VALUE
 
     @Suppress("DEPRECATION") // Need deprecated 'currentMinute' for API<23

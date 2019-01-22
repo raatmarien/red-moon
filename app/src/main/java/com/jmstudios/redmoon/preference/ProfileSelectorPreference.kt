@@ -30,9 +30,9 @@ import org.greenrobot.eventbus.Subscribe
 
 class ProfileSelectorPreference(ctx: Context, attrs: AttributeSet) : Preference(ctx, attrs),
                                                                      OnItemSelectedListener {
-    lateinit private var mProfileSpinner: Spinner
-    lateinit private var mProfileActionButton: Button
-    lateinit private var mArrayAdapter: ArrayAdapter<CharSequence>
+    private lateinit var mProfileSpinner: Spinner
+    private lateinit var mProfileActionButton: Button
+    private lateinit var mArrayAdapter: ArrayAdapter<CharSequence>
     private var customShown: Boolean = false
 
     init {

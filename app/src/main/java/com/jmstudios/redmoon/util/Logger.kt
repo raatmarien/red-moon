@@ -63,7 +63,7 @@ import java.lang.reflect.Modifier
  *
  */
 const val DEBUG = true
-abstract class Logger(inline private val enabled: Boolean = DEBUG, TAG: String? = null) {
+abstract class Logger(private inline val enabled: Boolean = DEBUG, TAG: String? = null) {
 
     /**
      * The member that performs the actual logging
@@ -349,7 +349,7 @@ private inline fun log(
 /**
  * get logger by explicit name
  */
-inline private fun makeLog(tag: String, enabled: Boolean): KLog = object : KLog() {
+private inline fun makeLog(tag: String, enabled: Boolean): KLog = object : KLog() {
     override val logEnabled = enabled
     override val logTag =
             if (tag.length <= 23) {
@@ -362,13 +362,13 @@ inline private fun makeLog(tag: String, enabled: Boolean): KLog = object : KLog(
 /**
  * get logger for the class
  */
-inline private fun makeLog(logger: Logger, enabled: Boolean): KLog =
+private inline fun makeLog(logger: Logger, enabled: Boolean): KLog =
         makeLog(resolveName(logger.javaClass), enabled)
 
 /**
  * get logger for the method, assuming it was declared at the logger file/class
  */
-inline private fun makeLog(noinline func: () -> Unit, enabled: Boolean): KLog =
+private inline fun makeLog(noinline func: () -> Unit, enabled: Boolean): KLog =
         makeLog(resolveName(func), enabled)
 
 // get logger by the object. Not sure if we will need this.
@@ -378,7 +378,7 @@ inline private fun makeLog(noinline func: () -> Unit, enabled: Boolean): KLog =
 /**
  * get class name for function by the package of the function
  */
-inline private fun resolveName(noinline func: () -> Unit): String {
+private inline fun resolveName(noinline func: () -> Unit): String {
     val name = func.javaClass.simpleName
     val slicedName = when {
         name.contains("Kt$") -> name.substringBefore("Kt$")
@@ -391,14 +391,14 @@ inline private fun resolveName(noinline func: () -> Unit): String {
 /**
  * get class name for java class (that usually represents kotlin class)
  */
-inline private fun <T : Any> resolveName(forClass: Class<T>): String =
+private inline fun <T : Any> resolveName(forClass: Class<T>): String =
         unwrapCompanionClass(forClass).simpleName
 
 
 /**
  * unwrap companion class to enclosing class given a Java Class
  */
-inline private fun <T : Any> unwrapCompanionClass(clazz: Class<T>): Class<*> {
+private inline fun <T : Any> unwrapCompanionClass(clazz: Class<T>): Class<*> {
     if (clazz.enclosingClass != null) {
         try {
             val field = clazz.enclosingClass.getField(clazz.simpleName)
