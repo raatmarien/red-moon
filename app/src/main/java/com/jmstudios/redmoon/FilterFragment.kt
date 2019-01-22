@@ -33,7 +33,7 @@ import com.jmstudios.redmoon.R
 
 import com.jmstudios.redmoon.model.Profile
 import com.jmstudios.redmoon.model.Config
-import com.jmstudios.redmoon.ui.preference.SeekBarPreference
+import com.jmstudios.redmoon.preference.SeekBarPreference
 import com.jmstudios.redmoon.util.*
 
 import org.greenrobot.eventbus.Subscribe
