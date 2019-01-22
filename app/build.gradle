@@ -1,14 +1,7 @@
+import org.ajoberstar.grgit.Grgit
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'org.ajoberstar:grgit:1.9.3'
-    }
-}
 
 ext {
     android_support_version = '26.1.0'
@@ -57,7 +50,7 @@ android {
 
         debug {
             applicationIdSuffix '.debug'
-            def repo = org.ajoberstar.grgit.Grgit.open()
+            def repo = Grgit.open()
             def commitId = "${repo.log().get(0).getAbbreviatedId()}"
             if (repo.status().isClean()) {
                 versionNameSuffix "-$commitId"
