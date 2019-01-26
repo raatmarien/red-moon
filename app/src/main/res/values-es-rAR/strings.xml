@@ -1,2 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources><string name="activity_intro">Introducción</string>
+    <string name="activity_timer">Temporizador</string>
+    <string name="notification_status_running">Ejecuntando. Apagar para instalar apks</string>
+    <string name="notification_status_paused">Pausado</string>
+    <string name="notification_action_resume">Resumir</string>
+    <string name="notification_action_turn_on">Encender</string>
+    <string name="notification_action_turn_off">Apagar</string>
+    <string name="notification_action_stop">Detener</string>
+    <string name="notification_action_next_filter">Siguiente filtro</string>
+    <string name="pref_category_filter">Filtro</string>
+    <string name="pref_category_other">Otro</string>
+    <string name="pref_title_intensity">Opacidad</string>
+    <string name="pref_title_color_temp">Color</string>
+    <string name="pref_title_lower_brightness">Menor brillo del sistema</string>
+    <string name="pref_title_time_toggle">Temporizador</string>
+    <string name="pref_summary_schedule_none">Nada</string>
+    <string name="pref_title_turn_on">Apagar en</string>
+    <string name="pref_title_turn_off">Apagar en</string>
+    <string name="pref_title_start_time">Hora de inicio</string>
+    <string name="pref_title_stop_time">Tiempo de parada</string>
+    <string name="pref_summary_location_off">Basado en su ubicación</string>
+    <string name="pref_summary_secure_suspend">Cuando esta característica está habilitada, Red Moon se detendrá automáticamente cuando ciertas aplicaciones están abiertas. Por defecto, esto incluye aplicaciones que no funcionan cuando Red Moon se está ejecutando*, como la instalación de apks. Puede cambiar este comportamiento para la pantalla actual de la aplicación actual a partir de la notificación. Por ejemplo, es posible que desee agregar aplicaciones sensibles al color, como la cámara.
+\n
+\nEsta característica puede reducir ligeramente a la vida útil de la batería de su dispositivo.
+\n
+\n*Algunas aplicaciones están protegidos contra superposiciones para protegerse de interferencia, como engañar a usted en la instalación de una aplicación que no desea. Que no responde a los toques cuando Red Moon está encendida, ya que funciona mediante el dibujo rojo transparente de la capa de encima de la pantalla.</string>
+    <string name="button_add_filter">Agregar</string>
+    <string name="button_remove_filter">Eliminar</string>
+    <string name="text_switch_off">Apagado</string>
+    <string name="longitude_short">Largo</string>
+    <string name="pref_title_version">Versión</string>
+    <string name="pref_title_project_page">Visite la página del proyecto</string>
+    <string name="pref_summary_project_page">Encuentre más información, deje sus comentarios y contribuya</string>
+    <string name="pref_title_email_developer">Envíe un correo electrónico a los desarrolladores</string>
+    <string name="pref_summary_email_developer">Otra manera de contactarnos</string>
+    <string name="pref_title_translators">Ayudar en la traducción</string>
+    <string name="pref_title_integration">Integración con otras aplicaciones</string>
+    <string name="toast_warning_install">No podrá instalar APKs mientras Red Moon esté encendida.</string>
+    <string name="toast_warning_secured">Es posible que algunas de las funciones de esta aplicación no funcionen mientras Red Moon esté funcionando.</string>
+    <string name="snackbar_warning_no_location">Habilitar los servicios de ubicación para actualizar la ubicación</string>
+    <string name="snackbar_searching_location">Búsqueda de ubicación</string>
+    <string name="snackbar_location_updated">¡Ubicación encontrada!</string>
+    <string name="help_snackbar_text">Pulse el interruptor para activar Red Moon</string>
+    <string name="dialog_title_add_filter">Introduzca el nombre del filtro</string>
+    <string name="edit_hint_add_filter">Nombre del filtro</string>
+    <string name="dialog_title_remove_filter">¿Borrar este filtro\?</string>
+</resources>
