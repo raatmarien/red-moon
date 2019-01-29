@@ -60,6 +60,7 @@
   <string name="pref_key_brightness_lowered" translatable="false">pref_key_brightness_lowered</string>
   <string name="pref_key_version" translatable="false">pref_key_version</string>
   <string name="pref_key_from_version_code" translatable="false">pref_key_from_version_code</string>
+  <string name="pref_key_last_changelog_shown" translatable="false">pref_key_last_changelog_shown</string>
 
   <!-- button_backlight_entries -->
   <string name="pref_value_button_backlight_system" translatable="false">system</string>

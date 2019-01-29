@@ -13,8 +13,6 @@ import com.jmstudios.redmoon.BuildConfig
 import com.jmstudios.redmoon.R
 import com.jmstudios.redmoon.util.*
 
-import de.cketti.library.changelog.ChangeLog
-
 class AboutFragment : PreferenceFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.i("onCreate()")
@@ -23,7 +21,7 @@ class AboutFragment : PreferenceFragment() {
         pref(R.string.pref_key_version).apply{
             summary = BuildConfig.VERSION_NAME
             onPreferenceClickListener = Preference.OnPreferenceClickListener {
-                ChangeLog(activity).fullLogDialog.show()
+                showChangelog(activity)
                 true
             }
         }

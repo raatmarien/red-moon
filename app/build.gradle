@@ -83,7 +83,6 @@ dependencies {
     implementation "com.android.support:design:$android_support_version"
     implementation 'com.luckycatlabs:SunriseSunsetCalculator:1.2'
     implementation 'com.github.paolorotolo:appintro:4.1.0'
-    implementation 'de.cketti.library.changelog:ckchangelog:1.2.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'org.greenrobot:eventbus:3.1.1'
     implementation 'me.smichel.android:kpreferences:0.7.0'

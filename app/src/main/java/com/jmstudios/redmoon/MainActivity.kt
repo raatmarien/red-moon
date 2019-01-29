@@ -38,7 +38,6 @@ import com.jmstudios.redmoon.model.ProfilesModel
 import com.jmstudios.redmoon.ui.showRateDialog
 import com.jmstudios.redmoon.util.*
 
-import de.cketti.library.changelog.ChangeLog
 import org.greenrobot.eventbus.Subscribe
 
 class MainActivity : ThemedAppCompatActivity() {
@@ -61,7 +60,9 @@ class MainActivity : ThemedAppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         if (!Config.introShown) { startActivity(intent(Intro::class)) }
-        ChangeLog(this).run { if (isFirstRun) logDialog.show() }
+        if (Config.lastChangelogShown < BuildConfig.VERSION_CODE) {
+            showChangelog(this)
+        }
         showRateDialog(this) // Implemented in product flavors
     }
 

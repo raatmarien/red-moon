@@ -208,5 +208,7 @@ object Config : Preferences(appContext) {
 
     //region application
     var fromVersionCode by IntPreference(R.string.pref_key_from_version_code, -1)
+
+    var lastChangelogShown by IntPreference(R.string.pref_key_last_changelog_shown, 0)
     //endregion
 }
