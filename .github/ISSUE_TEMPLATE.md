@@ -1,6 +1,6 @@
 <!--
     Hi there, before you create a new issue, please check if one already exists.
-    https://github.com/raatmarien/red-moon/issues?q=is%3Aissue
+    https://github.com/LibreShift/red-moon/issues?q=is%3Aissue
 
     If you're reporting a bug or crash, please include the steps you took, and
     your Red Moon version, Android version, and device model. For bugs, please
