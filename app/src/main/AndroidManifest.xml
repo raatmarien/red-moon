@@ -86,6 +86,12 @@
             </intent-filter>
         </receiver>
 
+        <receiver android:name="com.jmstudios.redmoon.TimeZoneChangeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
         <receiver android:name="com.jmstudios.redmoon.widget.SwitchAppWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
