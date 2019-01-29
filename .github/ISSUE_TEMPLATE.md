@@ -10,5 +10,5 @@
     it's important or useful.
 
     This part is commented out and won't appear in the issue, so you can leave
-    it or delete it, whichever you prefer.
+    it or delete it, whichever you prefer. Thank you for your time!
 -->
