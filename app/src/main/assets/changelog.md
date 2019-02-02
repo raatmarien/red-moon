@@ -4,6 +4,44 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.4.0] — 2019-02-02
+### Added
+- Preliminary support for devices running Android Oreo (8.0) and newer — @AdamNiederer
+- Support for devices running Android versions going back to Ice Cream Sandwitch (4.0). Previous minimum was Jelly Bean (4.2.x).
+- Added Spanish (American) translation — @mvelizbravo
+- Added Spanish (Argentina) translation — @Andy-thor
+- Added Telagu translation — @veeven
+
+### Changed
+- More intuitive behavior when saving filters with the same name — @david-hil
+- Updated slider labels
+- New changelog format
+- Updated Arabic translation — Ammar
+- Updated Basque translation Dabid — Martinez
+- Updated Chinese (Simplified) translation — @gensitu, @Therhokar
+- Updated Chinese (Traditional) translation — @gensitu, @louies0623
+- Updated Dutch translation — @ltGuillaume, @wb9688
+- Updated French translation — @dmaulat, @wellinkstein
+- Updated German translation — Andreas Kleinert, @Atalanttore, @elumbella, @JoKeyser
+- Updated Greek translation — @AndLydakis
+- Updated Hungarian translation — @notramo
+- Updated Italian translation — random r
+- Updated Japanese translation — librada, @naofum
+- Updated Lithuanian translation — @mobtechpd, @welaq
+- Updated Norwegian translation Bokmål — @comradekingu
+- Updated Persian translation — @ahangarha
+- Updated Polish translation — @verdulo
+- Updated Portuguese (Brazil) translation — @elchevive, @mv-santos
+- Updated Russian translation — @mesnevi
+- Updated Spanish translation — Alberto, ChemaBautista, @larjona, @mvelizbravo, @wakutiteo
+- Updated Turkish translation — @emintufan, @monolifed
+- Updated Ukrainian translation — Володимир Бриняк
+
+### Fixed
+- Schedule now updates correctly when changing time zones — @SeonD
+- Notification no longer can become out of date while filter is paused — @david-hil
+- Changelog works with the dark theme
+
 ## [3.3.2] — 2017-10-09
 ### Changed
 - Updated Czech translation — @petrkle
@@ -157,6 +195,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove the floating button (since the top switch does this now)
 
 
+[3.4.0]: https://github.com/LibreShift/red-moon/compare/v3.3.2...v3.4.0
 [3.3.2]: https://github.com/LibreShift/red-moon/compare/v3.3.1...v3.3.2
 [3.3.1]: https://github.com/LibreShift/red-moon/compare/v3.3.0...v3.3.1
 [3.3.0]: https://github.com/LibreShift/red-moon/compare/v3.2.0...v3.3.0

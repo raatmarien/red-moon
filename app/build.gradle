@@ -39,8 +39,8 @@ android {
         applicationId "com.jmstudios.redmoon"
         minSdkVersion 14
         targetSdkVersion 25
-        versionCode 36
-        versionName "3.3.2"
+        versionCode 37
+        versionName "3.4.0"
     }
     buildTypes {
         release {

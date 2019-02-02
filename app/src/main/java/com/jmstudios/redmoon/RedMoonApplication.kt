@@ -45,8 +45,8 @@ class RedMoonApplication: Application() {
             ScheduleReceiver.rescheduleOnCommand()
             ScheduleReceiver.rescheduleOffCommand()
             upgradeFrom(34)
-        } in 34..35 -> {
-            upgradeFrom(36)
+        } in 34..36 -> {
+            upgradeFrom(37)
         } else -> {
             Log.e("Didn't catch upgrades from version $version")
             upgradeFrom(version+1)
