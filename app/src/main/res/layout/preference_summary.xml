@@ -14,7 +14,9 @@
     android:paddingTop="16dp"
     android:paddingBottom="16dp"
     android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+    android:paddingLeft="?android:attr/listPreferredItemPaddingLeft"
     android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+    android:paddingRight="?android:attr/listPreferredItemPaddingRight"
     android:background="?android:attr/activatedBackgroundIndicator"
     android:clipToPadding="false"
     >

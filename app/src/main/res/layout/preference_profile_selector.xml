@@ -6,7 +6,9 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:paddingStart="@dimen/preference_padding_start"
+    android:paddingLeft="@dimen/preference_padding_start"
     android:paddingEnd="@dimen/preference_padding_end"
+    android:paddingRight="@dimen/preference_padding_end"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal" >
