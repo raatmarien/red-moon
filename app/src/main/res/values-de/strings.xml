@@ -1,11 +1,10 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
  * Copyright (c) 2016  twckr <https://github.com/twckr>
  * Copyright (c) 2016  Marien Raat <marienraat@riseup.net>
  * Copyright (c) 2017  Stephen Michel <s@smichel.me>
  * SPDX-License-Identifier: GPL3.0+
--->
-<resources>
+--><resources>
     <string name="notification_status_paused">Angehalten</string>
     <string name="pref_title_color_temp">Farbe</string>
     <string name="pref_category_filter">Filter</string>
@@ -28,7 +27,7 @@
     <string name="dialog_button_ok">OK</string>
     <string name="activity_timer">Automatischer Filter</string>
     <string name="pref_title_time_toggle">Automatischer Filter</string>
-    <string name="pref_summary_project_page">Mehr Informationen, Feedback und wirke mit</string>
+    <string name="pref_summary_project_page">Finde mehr Informationen, hinterlasse Feedback, und wirke mit</string>
     <string name="pref_title_project_page">Homepage des Projektes</string>
     <string name="dialog_title_remove_filter">Diesen Filter löschen?</string>
     <string name="snackbar_warning_no_location">Ortungsdiensten zur Aktualisierung des Standorts aktivieren</string>
