@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
  * Copyright (c) 2016  Marien Raat <marienraat@riseup.net>
  * Copyright (c) 2017  Stephen Michel <s@smichel.me>
@@ -22,10 +22,8 @@
  *     OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
  *     NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  *     CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
--->
-<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+--><resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="app_name">Red Moon</string>
-
     <!-- Activities -->
     <string name="activity_main">Red Moon</string>
     <string name="activity_shortcut">Red Moon\'u Aç/Kapa</string>
@@ -34,13 +32,11 @@
     <string name="activity_secure_suspend">Dışlanan uygulamalarda duraklat</string>
     <string name="activity_schedule">Zamanlama</string>
     <string name="activity_timer">Zamanlayıcı</string>
-
     <!-- Menu Items -->
     <string name="menu_dark_theme">Koyu tema</string>
     <string name="menu_restore_default_filters">Öntanımlı süzgeçleri geri yükle</string>
     <string name="menu_show_intro">Tanıtımı yeniden oynat</string>
     <string name="menu_about">Hakkında</string>
-
     <!-- Notification -->
     <string name="notification_status_running">Çalışıyor. Uygulama kurmak için kapatın</string>
     <string name="notification_status_running_no_warning">Çalışıyor</string>
@@ -53,17 +49,14 @@
     <string name="notification_action_turn_off">Kapat</string>
     <string name="notification_action_stop">Kapat</string>
     <string name="notification_action_next_filter">Sonraki süzgeç</string>
-
     <!-- Preferences -->
     <string name="pref_category_filter">Süzgeç</string>
     <string name="pref_category_other">Diğer</string>
     <string name="pref_category_button_backlight_disclaimer">Bazı aygıtlarda çalışmaz</string>
-
     <string name="pref_title_dim_level">Karanlık</string>
     <string name="pref_title_intensity">Donukluk</string>
     <string name="pref_title_color_temp">Renk</string>
     <string name="pref_title_lower_brightness">Sistem parlaklığını azalt</string>
-
     <string name="pref_title_time_toggle">Zamanlayıcı</string>
     <string name="pref_title_schedule">Zamanlama</string>
     <!-- Start and stop times will be substituted for %on and %off -->
@@ -73,104 +66,80 @@
     <string name="pref_summary_schedule_none">Yok</string>
     <string name="pref_title_secure_suspend">Dışlanan uygulamalarda duraklat</string>
     <string name="pref_title_button_backlight">Donanımsal düğme arka ışığı</string>
-
     <string name="pref_title_turn_on">Açma zamanı</string>
     <string name="pref_title_turn_off">Kapatma zamanı</string>
     <string name="pref_title_start_time">Başlangıç zamanı</string>
     <string name="pref_title_stop_time">Bitiş zamanı</string>
     <string name="pref_title_location">Gün Batımından Gün Doğumuna</string>
     <string name="pref_summary_location_off">Konumunuza göre</string>
-
-    <string name="pref_summary_secure_suspend">Bu ayar etkinleştirildiğinde Red Moon belli uygulamalar açıkken kendiliğinden duraklayacaktır. Öntanımlı olarak bu, apk yükleme gibi Red Moon çalışıyorken* çalışmayacak uygulamaları içerir. Bildirimden geçerli uygulamanın geçerli ekranı için bu davranışı değiştirebilirsiniz. Örneğin, kamera gibi renge duyarlı uygulamaları eklemek isteyebilirsiniz. 
-\n 
-\nBu özellik aygıtınızın ömrünü biraz düşürebilir. 
-\n 
-\n*Bazı uygulamalar kendilerini etkilemelerden korumak için örten tabakalara karşı korumalıdır, örneğin istemediğiniz bir uygulamayı yüklemek için kandırılmanız gibi. Ekran üzerine saydam kırmızı katman çizerek çalışan Red Moon açıkken, o uygulamalar dokunmaları yanıtlamayacaktır.</string>
-
+    <string name="pref_summary_secure_suspend">Bu özellik etkinleştirildiğinde, bazı uygulamalar açık olduğunda Red Moon otomatik olarak duraklatılır. Varsayılan olarak, bu, Red Moon çalışırken* çalışmayacak uygulamaları içerir (apk yükleme gibi). Geçerli davranışın mevcut ekranı için bu davranışı bildirimden değiştirebilirsiniz. Örneğin, kamera gibi renge duyarlı uygulamalar eklemek isteyebilirsiniz.
+\n
+\nBu özellik cihazınızın pil ömrünü biraz düşürebilir.
+\n
+\n*Bazı uygulamalar, istemediğiniz bir uygulamayı yüklemenizi sağlamak gibi kendilerini parazitlerden korumak için kaplamalara karşı güvendedir. Red Moon açıkken dokunuşlara cevap vermeyecekler, çünkü ekran üzerine şeffaf kırmızı bir tabaka çizerek çalışıyor.</string>
     <!-- Short strings; might be used in multiple places -->
     <string name="button_add_filter">Ekle</string>
     <string name="button_remove_filter">Sil</string>
-
     <string name="text_switch_on">Açık</string>
     <string name="text_switch_off">Kapalı</string>
-
     <string name="location_not_set">Konum ayarlı değil</string>
     <string name="latitude_short">Enlem</string>
     <string name="longitude_short">Boylam</string>
-
     <!-- About subscreen -->
     <string name="pref_title_version">Sürüm</string>
-
     <string name="pref_title_project_page">Proje sayfasını ziyaret et</string>
-    <string name="pref_summary_project_page">Daha çok bilgi bulun, geri bildirim gönderin ve katkıda bulunun</string>
-
+    <string name="pref_summary_project_page">Daha fazla bilgi bul, geri bildirim yap ve katkıda bulun</string>
     <string name="pref_title_email_developer">Geliştiricilere e-mail gönder</string>
     <string name="pref_summary_email_developer">Bize ulaşmak için başka bir yol</string>
     <string name="pref_title_translators">Çevirmeye yardımcı olun</string>
     <!-- Add your name or handle here if you would like credit in the app -->
     <string name="pref_summary_translators">Çevirmenler: mission712, oguz-ismail, onuricen, emintufan</string>
-
     <string name="pref_title_integration">Diğer uygulamalarla entegrasyon</string>
     <string name="pref_summary_integration">LibreTasks veya Tasker gibi bazı uygulamalar, belirli etkinlikler gerçekleştiğinde görevleri kendiliğinden gerçekleştirmenize izin verir. Red Moon, açılıp kapandığıda herkese açık bir bildirim gönderir, böylece bu uygulamalar karşılık verebilir. Bu uygulamalardan birini geliştirmiyor veya kullanmıyorsanız, sonraki paragrafi yok sayabilirsiniz.\n
  \n
  Red Moon, `com.jmstudios.redmoon.RED_MOON_TOGGLED` eylemiyle açık bir \"intent\" yayımlar. Bu \"intent\", Red Moon\'un açılıp kapatıldığını belirten `jmstudios.bundle.key.FILTER_IS_ON` anahtarıyla bir \"boolean extra\" içerir.</string>
-
     <!-- Toasts -->
     <string name="toast_warning_install">Red Moon çalışırken APK yükleyemezsiniz.</string>
     <string name="toast_warning_secured">Bu uygulamanın bazı özellikleri Red Moon aktifken çalışmayabilir.</string>
-
     <!-- Snackbar -->
     <string name="snackbar_warning_no_location">Konumu güncellemek için konum hizmetlerini aç</string>
     <string name="snackbar_searching_location">Konum aranıyor</string>
     <string name="snackbar_location_updated">Konum bulundu!</string>
     <string name="help_snackbar_text">Red Moon\'u etkinleştirmek için düğmeye bas</string>
-
     <!-- Dialog -->
     <string name="dialog_title_add_filter">Süzgeç adı girin</string>
     <string name="edit_hint_add_filter">Süzgeç adı</string>
     <string name="dialog_title_remove_filter">Bu süzgeç silinsin mi?</string>
-
     <string name="dialog_title_permission_overlay">Diğer uygulamalar üzerine çizim</string>
     <string name="dialog_message_permission_overlay">Red Moon\'un açılması için sonraki ekranda diğer uygulamar üzerine çizime izin verin.</string>
-
     <string name="dialog_title_permission_write_settings">Sistem ayarlarını değiştirme</string>
     <string name="dialog_message_permission_write_settings">Sonraki ekranda Red Moon\'a parlaklık düzeyinizi değiştirme izni vermek için sistem ayarlarını değiştirmeye izin verin.</string>
-
     <string name="dialog_title_permission_usage_stats">Kullanım erişimi</string>
     <string name="dialog_message_permission_usage_stats">Bu özelliği etkinleştirmek için sonraki ekranda Red Moon\'un uygulama kullanım bilgilerine erişmesine izin verin.\n
  \n
  Red Moon bu izni sadece hangi uygulamanın içinde olduğunuzu görmek ve güvenli uygulamalarda süzgeci askıya almak için kullanır.</string>
-
     <string name="dialog_button_ok">Tamam</string>
     <string name="dialog_button_cancel">İptal</string>
-
     <!-- Shortcuts -->
     <string name="shortcut_title_toggle">Red Moon\'u Aç/Kapa</string>
-
     <!-- Intro -->
     <string name="slide_title_welcome">Hoş geldiniz!</string>
     <string name="slide_text_welcome">Red Moon\'a hoş geldiniz!</string>
-
     <string name="slide_title_protect_eyes">Gözlerinizi korur</string>
     <string name="slide_text_protect_eyes">Geceleri telefonunuza bakmak gözlerinizi rahatsız ettiğinde, ekranınızı karartmak için Red Moon\'u kullanabilirsiniz.</string>
-
     <string name="slide_title_improve_sleep">Uykunuzu iyileştirir</string>
     <string name="slide_text_improve_sleep">Mavi ışık geceleri uyumanızı  sağlayan Melatonin hormonu üretimini baskılar.  Red Moon daha kolay uyumanız için ekranınızdaki  mavi ışığı kaldırır.</string>
-
     <string name="slide_title_get_started">Başlayın!</string>
     <string name="slide_text_get_started">Red Moon\'u sağ üst köşedeki düğmeyle açıp kapatabilirsiniz.</string>
-
     <!-- Profiles -->
     <string name="filter_name_custom">Özel</string>
     <string name="filter_name_default">Öntanımlı</string>
     <string name="filter_name_bed_reading">Okuma</string>
     <string name="filter_name_dim_only">Yalnızca karart</string>
-
     <!-- button_backlight_entries -->
     <string name="pref_entry_button_backlight_system">Sistem yönetimli</string>
     <string name="pref_entry_button_backlight_filter_dim_level">Süzgeç karartma düzeyini kullan</string>
     <string name="pref_entry_button_backlight_turn_off">Kapat</string>
-
     <!-- Currently unused -->
     <string name="action_next_profile">Sonraki profil</string>
     <string name="add_new_profile_dialog_title">Profil adı girin</string>
@@ -183,12 +152,11 @@
     <string name="time_toggle_title">Kendiliğinden aç/kapa</string>
     <string name="location">Konum</string>
     <string name="pref_title_startup">Başlangıç</string>
-
     <!-- Timer options (unused) -->
     <string name="time_toggle_options_array_0">Elle</string>
     <string name="time_toggle_options_array_1">Kendiliğinden (güneş)</string>
     <string name="time_toggle_options_array_2">Kendiliğinden (özel)</string>
-<string name="notification_action_whitelist_add">Uygulamayı dışla</string>
+    <string name="notification_action_whitelist_add">Uygulamayı dışla</string>
     <string name="notification_action_whitelist_remove">Uygulamayı süz</string>
     <string name="notification_channel_overlay_name">Örten Tabaka Denetimi</string>
     <string name="notification_channel_overlay_description">Kalıcı örten tabaka denetim bildirimi</string>
