@@ -1,5 +1,86 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">Candra Merah</string>
-
-    <string name="activity_main">Bulan Merah</string>
-    </resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Red Moon</string>
+    <string name="activity_main">Red Moon</string>
+    <string name="activity_intro">Intro</string>
+    <string name="activity_about">Tentang Red Moon</string>
+    <string name="activity_schedule">Jadwal</string>
+    <string name="activity_timer">Timer</string>
+    <string name="menu_dark_theme">Tema Gelap</string>
+    <string name="menu_restore_default_filters">Kembalikan filter bawaan</string>
+    <string name="menu_show_intro">Ulangi intro</string>
+    <string name="menu_about">Tentang</string>
+    <string name="notification_status_running">Berjalan. Matikan untuk memasang apk</string>
+    <string name="notification_status_running_no_warning">Berjalan</string>
+    <string name="notification_status_paused">Dijeda</string>
+    <string name="notification_status_off">Mati</string>
+    <string name="notification_action_resume">Lanjutkan</string>
+    <string name="notification_action_pause">Jeda</string>
+    <string name="notification_action_turn_on">Nyalakan</string>
+    <string name="notification_action_turn_off">Matikan</string>
+    <string name="notification_action_stop">Berhenti</string>
+    <string name="notification_action_whitelist_remove">Filter app</string>
+    <string name="notification_action_next_filter">Filter selanjutnya</string>
+    <string name="pref_category_filter">Filter</string>
+    <string name="pref_category_other">Lainnya</string>
+    <string name="pref_category_button_backlight_disclaimer">Tidak berefek pada beberapa perangkat</string>
+    <string name="pref_title_dim_level">Kegelapan</string>
+    <string name="pref_title_color_temp">Warna</string>
+    <string name="pref_title_time_toggle">Timer</string>
+    <string name="pref_title_schedule">Jadwal</string>
+    <string name="pref_summary_schedule_sun" formatted="false">Matahari terbit (%on) ke matahari terbenam (%off)</string>
+    <string name="pref_summary_schedule_custom" formatted="false">Kustom (%on ke %off)</string>
+    <string name="pref_summary_schedule_none">Tidak ada</string>
+    <string name="pref_title_start_time">Nyalakan waktu</string>
+    <string name="pref_title_stop_time">Matikan waktu</string>
+    <string name="pref_title_location">Matahari terbit ke terbenam</string>
+    <string name="pref_summary_location_off">Berdasarkan lokasi Anda</string>
+    <string name="button_add_filter">Tambahkan</string>
+    <string name="button_remove_filter">Hapus</string>
+    <string name="text_switch_on">Nyalakan</string>
+    <string name="text_switch_off">Matikan</string>
+    <string name="location_not_set">Lokasi tidak ditentukan</string>
+    <string name="pref_title_version">Versi</string>
+    <string name="pref_title_project_page">Kunjungi halaman proyek</string>
+    <string name="pref_summary_project_page">Cari info lainnya, tinggalkan pesan, dan berkontribusi</string>
+    <string name="pref_title_email_developer">Surel ke developer</string>
+    <string name="pref_summary_email_developer">Cara kedua untuk menghubungi kami</string>
+    <string name="pref_title_translators">Bantu menterjemahkan</string>
+    <string name="pref_summary_translators">Penerjemah: smichel17, raatmarien, Mostafa Ahangarha, Dito Kurnia P</string>
+    <string name="pref_title_integration">Integrasi dengan app lainnya</string>
+    <string name="toast_warning_install">Anda tidak bisa memasang apk saat Red Moon menyala.</string>
+    <string name="toast_warning_secured">Beberapa fitur dari app ini mungkin tidak bekerja saat Red Moon berjalan.</string>
+    <string name="snackbar_warning_no_location">Nyalakan layanan lokasi untuk memperbarui lokasi</string>
+    <string name="snackbar_searching_location">Mencari lokasi</string>
+    <string name="snackbar_location_updated">Lokasi ditemukan!</string>
+    <string name="dialog_title_add_filter">Masukkan nama filter</string>
+    <string name="edit_hint_add_filter">Nama filter</string>
+    <string name="dialog_title_remove_filter">Hapus filter ini\?</string>
+    <string name="dialog_title_permission_write_settings">Memodifikasi pengaturan sistem</string>
+    <string name="dialog_title_permission_usage_stats">Akses penggunaan</string>
+    <string name="dialog_button_ok">OKE</string>
+    <string name="dialog_button_cancel">Batal</string>
+    <string name="slide_title_welcome">Selamat datang!</string>
+    <string name="slide_text_welcome">Selamat datang di Red Moon!</string>
+    <string name="slide_title_protect_eyes">Melindungi mata Anda</string>
+    <string name="slide_text_protect_eyes">Saat malam, ketika melihat ponsel Anda membuat sakit mata, Anda dapat menggunakan Red Moon untuk menggelapkan layar ponsel Anda.</string>
+    <string name="slide_title_get_started">Mulai!</string>
+    <string name="filter_name_custom">Kustom</string>
+    <string name="filter_name_default">Bawaan</string>
+    <string name="filter_name_bed_reading">Membaca</string>
+    <string name="filter_name_dim_only">Hanya gelapkan</string>
+    <string name="pref_entry_button_backlight_turn_off">Matikan</string>
+    <string name="action_next_profile">Profil selanjutnya</string>
+    <string name="add_new_profile_dialog_title">Masukkan nama profil</string>
+    <string name="add_new_profile_edit_hint">Nama profil</string>
+    <string name="remove_profile_dialog_title">Hapus profil ini\?</string>
+    <string name="pref_title_appearance">Profil</string>
+    <string name="searching_location">Mencari lokasi</string>
+    <string name="toast_warning_no_location">Nyalakan layanan lokasi untuk memperbarui lokasi</string>
+    <string name="set_dialog">Atur</string>
+    <string name="location">Lokasi</string>
+    <string name="time_toggle_options_array_0">Manual</string>
+    <string name="time_toggle_options_array_1">Otomatis (matahari)</string>
+    <string name="time_toggle_options_array_2">Otomatis (kustom)</string>
+    <string name="notification_channel_overlay_name">Kontrol Overlay</string>
+</resources>
