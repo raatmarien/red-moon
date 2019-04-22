@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Röd måne</string>
-    <string name="activity_main">Aktiviteter</string>
+    <string name="activity_main">Röd måne</string>
     <string name="activity_intro">Intro</string>
     <string name="activity_about">Om Röd måne</string>
     <string name="activity_schedule">Schema</string>
