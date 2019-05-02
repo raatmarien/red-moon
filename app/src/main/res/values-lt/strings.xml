@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
  * Copyright (c) 2016  Marien Raat <marienraat@riseup.net>
  * SPDX-License-Identifier: GPL3.0+
@@ -21,91 +21,77 @@
  *     OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
  *     NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  *     CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
- -->
-<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-     <!-- App Name and Activity Labels -->
-     <string name="app_name">Red Moon</string>
-     <string name="activity_shortcut">Red Moon perjungti</string>
-
-     <!-- Notification -->
-     <string name="notification_status_paused">Pristabdyta</string>
-
-     <!-- Preference -->
-     <string name="pref_category_filter">Filtras</string>
-     <string name="activity_timer">Laikmatis</string>
-     <string name="pref_title_time_toggle">Laikmatis</string>
-     <string name="pref_title_startup">Paleistis</string>
-     <string name="pref_category_other">Kita</string>
-
-     <string name="button_add_filter">Pridėti</string>
-     <string name="button_remove_filter">Ištrinti</string>
-     <string name="pref_title_dim_level">Pritemdymo lygis</string>
-     <string name="pref_title_intensity">Intensyvumo lygis</string>
-     <string name="pref_title_color_temp">Spalvų temperatūra</string>
-     <string name="pref_title_lower_brightness">Sumažinti ryškumą</string>
-
-     <string name="time_toggle_title">Automatiškai įjungti filtrą</string>
-     <string name="pref_title_turn_on">Įjungti ties</string>
-     <string name="pref_title_turn_off">Išjungti ties</string>
-     <string name="pref_title_location">Nuo saulėtekio iki saulėlydžio</string>
-     <string name="location_not_set">Vieta nenustatyta</string>
-     <string name="latitude_short">Platuma</string>
-     <string name="longitude_short">Ilguma</string>
-     <string name="snackbar_searching_location">Ieškoma vieta</string>
-
-     <string name="menu_dark_theme">Tamsi tema</string>
-
-     <string name="pref_title_email_developer">Rašyti el. paštu kūrėjams</string>
-     <string name="pref_summary_email_developer">Antrinis būdas kaip su mumis susisiekti</string>
-     <string name="pref_title_project_page">Apsilankyti projekto svetainėje</string>
-     <string name="pref_summary_project_page">Rasti daugiau informacijos, palikti atsiliepimą ir/arba prisidėti prie projekto</string>
-
-     <!-- Toasts -->
-     <string name="toast_warning_install">Kol Red Moon yra įjungta, negalėsite diegti programėlių.</string>
-     <string name="snackbar_warning_no_location">Vietos nustatymo paslauga neįjungta, bus naudojamas pritaikytas laikas. Prašome įjungti vietos nustatymo paslaugą, kad nustatyti saulėtekio ir saulėlydžio laiką</string>
-
-     <!-- Snackbar -->
-     <string name="help_snackbar_text">Paslinkite įjungimo slinktuką, kad įgalintumėte Red Moon</string>
-
-     <!-- Dialog -->
-     <string name="dialog_title_add_filter">Įvesti profilio pavadinimo</string>
-     <string name="edit_hint_add_filter">Profilio pavadinimas</string>
-     <string name="dialog_title_remove_filter">Ištrinti šį profilį?</string>
-     <string name="dialog_button_ok">Gerai</string>
-     <string name="dialog_button_cancel">Atšaukti</string>
-
-     <!-- Shortcuts -->
-     <string name="shortcut_title_toggle">Pasirinkti</string>
-
-     <!-- Profiles -->
-     <!-- standard_profiles_array -->
-     <string name="filter_name_custom">Pritaikytas</string>
-     <string name="filter_name_default">Numatytasis</string>
-     <string name="filter_name_bed_reading">Skaitymui</string>
-
-     <!-- Automatic filter -->
-     <!-- time_toggle_options_array -->
-     <string name="time_toggle_options_array_0">Niekada</string>
-     <string name="time_toggle_options_array_1">Saulė</string>
-     <string name="time_toggle_options_array_2">Pritaikytas laikas</string>
-     <string name="activity_main">Red Moon</string>
-     <!-- Currently unused -->
-     <string name="add_new_profile_dialog_title">Įvesti profilio pavadinimo</string>
-     <string name="add_new_profile_edit_hint">Profilio pavadinimas</string>
-     <string name="remove_profile_dialog_title">Ištrinti šį profilį?</string>
-     <string name="pref_title_appearance">Filtras</string>
-     <string name="searching_location">Ieškoma vieta</string>
-     <string name="toast_warning_no_location">Vietos nustatymo paslauga neįjungta, bus naudojamas pritaikytas laikas. Prašome įjungti vietos nustatymo paslaugą, kad nustatyti saulėtekio ir saulėlydžio laiką</string>
-     <string name="set_dialog">Nustatyti</string>
-     <string name="notification_status_running">Veikia. Išjunkite, norėdami diegti programėles</string>
- <string name="activity_intro">Įžanga</string>
+ --><resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!-- App Name and Activity Labels -->
+    <string name="app_name">Red Moon</string>
+    <string name="activity_shortcut">Red Moon perjungti</string>
+    <!-- Notification -->
+    <string name="notification_status_paused">Pristabdyta</string>
+    <!-- Preference -->
+    <string name="pref_category_filter">Filtras</string>
+    <string name="activity_timer">Laikmatis</string>
+    <string name="pref_title_time_toggle">Laikmatis</string>
+    <string name="pref_title_startup">Paleistis</string>
+    <string name="pref_category_other">Kita</string>
+    <string name="button_add_filter">Pridėti</string>
+    <string name="button_remove_filter">Ištrinti</string>
+    <string name="pref_title_dim_level">Pritemdymo lygis</string>
+    <string name="pref_title_intensity">Intensyvumo lygis</string>
+    <string name="pref_title_color_temp">Spalva</string>
+    <string name="pref_title_lower_brightness">Sumažinti ryškumą</string>
+    <string name="time_toggle_title">Automatiškai įjungti filtrą</string>
+    <string name="pref_title_turn_on">Įjungti ties</string>
+    <string name="pref_title_turn_off">Išjungti ties</string>
+    <string name="pref_title_location">Nuo saulėlydžio iki saulėtekio</string>
+    <string name="location_not_set">Vieta nenustatyta</string>
+    <string name="latitude_short">Platuma</string>
+    <string name="longitude_short">Ilguma</string>
+    <string name="snackbar_searching_location">Ieškoma vieta</string>
+    <string name="menu_dark_theme">Tamsi tema</string>
+    <string name="pref_title_email_developer">Rašyti el. paštu kūrėjams</string>
+    <string name="pref_summary_email_developer">Antrinis būdas kaip su mumis susisiekti</string>
+    <string name="pref_title_project_page">Apsilankyti projekto svetainėje</string>
+    <string name="pref_summary_project_page">Rasti daugiau informacijos, palikti atsiliepimą ir/arba prisidėti prie projekto</string>
+    <!-- Toasts -->
+    <string name="toast_warning_install">Kol Red Moon yra įjungta, negalėsite diegti programėlių.</string>
+    <string name="snackbar_warning_no_location">Vietos nustatymo paslauga neįjungta, bus naudojamas pritaikytas laikas. Prašome įjungti vietos nustatymo paslaugą, kad nustatyti saulėtekio ir saulėlydžio laiką</string>
+    <!-- Snackbar -->
+    <string name="help_snackbar_text">Paslinkite įjungimo slinktuką, kad įgalintumėte Red Moon</string>
+    <!-- Dialog -->
+    <string name="dialog_title_add_filter">Įvesti profilio pavadinimo</string>
+    <string name="edit_hint_add_filter">Profilio pavadinimas</string>
+    <string name="dialog_title_remove_filter">Ištrinti šį profilį?</string>
+    <string name="dialog_button_ok">Gerai</string>
+    <string name="dialog_button_cancel">Atšaukti</string>
+    <!-- Shortcuts -->
+    <string name="shortcut_title_toggle">Pasirinkti</string>
+    <!-- Profiles -->
+    <!-- standard_profiles_array -->
+    <string name="filter_name_custom">Pritaikytas</string>
+    <string name="filter_name_default">Numatytasis</string>
+    <string name="filter_name_bed_reading">Skaitymui</string>
+    <!-- Automatic filter -->
+    <!-- time_toggle_options_array -->
+    <string name="time_toggle_options_array_0">Niekada</string>
+    <string name="time_toggle_options_array_1">Saulė</string>
+    <string name="time_toggle_options_array_2">Pritaikytas laikas</string>
+    <string name="activity_main">Red Moon</string>
+    <!-- Currently unused -->
+    <string name="add_new_profile_dialog_title">Įvesti profilio pavadinimo</string>
+    <string name="add_new_profile_edit_hint">Profilio pavadinimas</string>
+    <string name="remove_profile_dialog_title">Ištrinti šį profilį?</string>
+    <string name="pref_title_appearance">Filtras</string>
+    <string name="searching_location">Ieškoma vieta</string>
+    <string name="toast_warning_no_location">Vietos nustatymo paslauga neįjungta, bus naudojamas pritaikytas laikas. Prašome įjungti vietos nustatymo paslaugą, kad nustatyti saulėtekio ir saulėlydžio laiką</string>
+    <string name="set_dialog">Nustatyti</string>
+    <string name="notification_status_running">Veikia. Išjunkite, norėdami diegti programėles</string>
+    <string name="activity_intro">Įžanga</string>
     <string name="activity_about">Apie Red Moon</string>
     <string name="activity_secure_suspend">Pristabdyti išskirtose programėlėse</string>
     <string name="activity_schedule">Tvarkaraštis</string>
     <string name="menu_restore_default_filters">Atstatyti numatytuosius filtrus</string>
     <string name="menu_show_intro">Iš naujo paleisti įžangą</string>
     <string name="menu_about">Apie</string>
-
     <string name="notification_status_running_no_warning">Veikia</string>
     <string name="notification_status_paused_with_info">Pristabdyta. Atmeskite pranešimą, norėdami sustabdyti.</string>
     <string name="notification_status_off">Išjungta</string>
@@ -117,27 +103,20 @@
     <string name="notification_action_whitelist_add">Išskirti programėlę</string>
     <string name="notification_action_whitelist_remove">Filtruoti programėlę</string>
     <string name="notification_action_next_filter">Kitas filtras</string>
-
     <string name="pref_category_button_backlight_disclaimer">Kai kuriuose įrenginiuose neveikia</string>
-
     <string name="pref_title_schedule">Tvarkaraštis</string>
     <string name="pref_summary_schedule_sun" formatted="false">Nuo saulėlydžio (%on) iki saulėtekio (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Tinkintas (nuo %on iki %off)</string>
     <string name="pref_summary_schedule_none">Nėra</string>
     <string name="pref_title_secure_suspend">Pristabdyti išskirtose programėlėse</string>
     <string name="pref_title_button_backlight">Aparatinis mygtuko apšvietimas</string>
-
     <string name="pref_title_start_time">Paleidimo laikas</string>
     <string name="pref_title_stop_time">Sustabdymo laikas</string>
     <string name="pref_summary_location_off">Paremta jūsų buvimo vieta</string>
-
     <string name="text_switch_on">Įjungta</string>
     <string name="text_switch_off">Išjungta</string>
-
     <string name="pref_title_version">Versija</string>
-
     <string name="pref_title_translators">Padėti versti</string>
     <string name="pref_summary_translators">Vertėjai: Kompiuterių meistras +37060040, Moo</string>
-
     <string name="pref_title_integration">Integracija su kitomis programėlėmis</string>
-    </resources>
+</resources>
