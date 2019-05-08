@@ -80,7 +80,7 @@
     <string name="add_new_profile_dialog_title">Įvesti profilio pavadinimo</string>
     <string name="add_new_profile_edit_hint">Profilio pavadinimas</string>
     <string name="remove_profile_dialog_title">Ištrinti šį profilį?</string>
-    <string name="pref_title_appearance">Filtras</string>
+    <string name="pref_title_appearance">Profilis</string>
     <string name="searching_location">Ieškoma vieta</string>
     <string name="toast_warning_no_location">Vietos nustatymo paslauga neįjungta, bus naudojamas pritaikytas laikas. Prašome įjungti vietos nustatymo paslaugą, kad nustatyti saulėtekio ir saulėlydžio laiką</string>
     <string name="set_dialog">Nustatyti</string>
@@ -119,4 +119,14 @@
     <string name="pref_title_translators">Padėti versti</string>
     <string name="pref_summary_translators">Vertėjai: Kompiuterių meistras +37060040, Moo</string>
     <string name="pref_title_integration">Integracija su kitomis programėlėmis</string>
+    <string name="slide_text_welcome">Sveiki atvykę į Red Moon!</string>
+    <string name="slide_title_protect_eyes">Apsauga jūsų akims</string>
+    <string name="slide_text_protect_eyes">Naktį, kai žiūrint į telefoną skauda akis, galite naudoti Red Moon, kad pritemdytumėte ekraną.</string>
+    <string name="slide_title_improve_sleep">Geresnis miegas</string>
+    <string name="slide_text_improve_sleep">Mėlyna šviesa slopina melatonino, hormono, kuris padeda jums naktį užmigti, gaminimą. Red Moon pašalina mėlyną šviesą iš jūsų ekrano ir taip užtikrina, kad lengvai užmigtumėte.</string>
+    <string name="slide_title_get_started">Pradėkite!</string>
+    <string name="slide_text_get_started">Įjunkite ar išjunkite Red Moon, naudodami viršutiniame dešiniajame kampe esantį perjungiklį.</string>
+    <string name="filter_name_dim_only">Tik pritemdyti</string>
+    <string name="pref_entry_button_backlight_turn_off">Išjungti</string>
+    <string name="action_next_profile">Kitas profilis</string>
 </resources>
