@@ -3,77 +3,59 @@
     <string name="app_name">Rød Måne</string>
     <string name="activity_main">Rød Måne</string>
     <string name="activity_shortcut">Veksle Rød Måne</string>
-
     <string name="notification_status_paused">Satt på pause</string>
-
     <string name="pref_category_filter">Filter</string>
     <string name="activity_timer">Filtreringstider</string>
     <string name="pref_title_time_toggle">Filtreringstider</string>
     <string name="pref_title_startup">Oppstart</string>
     <string name="pref_category_other">Annet</string>
-
     <string name="button_add_filter">Legg til</string>
     <string name="button_remove_filter">Slett</string>
     <string name="pref_title_dim_level">Mørkhet</string>
     <string name="pref_title_intensity">Dekkevne</string>
     <string name="pref_title_color_temp">Farge</string>
     <string name="pref_title_lower_brightness">Lavere systemlysstyrke</string>
-
     <string name="time_toggle_title">Veksle modus</string>
     <string name="pref_title_turn_on">Gjennoppta om</string>
     <string name="pref_title_turn_off">Pause om</string>
     <string name="location">Plassering</string>
     <string name="location_not_set">Sted ikke fastsatt</string>
     <string name="snackbar_searching_location">Søker etter plassering</string>
-
     <string name="menu_dark_theme">Mørkt tema</string>
-
     <string name="pref_title_email_developer">Send e-post til utviklerne</string>
     <string name="pref_summary_email_developer">Et sekundær måte å kontakte oss</string>
     <string name="pref_title_project_page">Besøk prosjektsiden</string>
     <string name="pref_summary_project_page">Finn mer info, gi tilbakemelding, og bidra</string>
     <string name="toast_warning_install">Du vil ikke kunne installere APK-er mens Red Moon er aktivert.</string>
     <string name="snackbar_warning_no_location">Skru på lokasjonstjenester for å bestemme plassering</string>
-
     <string name="help_snackbar_text">Trykk på bryteren for å skru på Rød Måne</string>
-
     <string name="dialog_title_add_filter">Skriv inn profilnavn</string>
     <string name="edit_hint_add_filter">Profilnavn</string>
     <string name="dialog_title_remove_filter">Slett denne profilen?</string>
     <string name="dialog_button_ok">OK</string>
     <string name="dialog_button_cancel">Avbryt</string>
-
     <string name="shortcut_title_toggle">Veksle</string>
-
     <string name="filter_name_custom">Egendefinert</string>
     <string name="filter_name_default">Original verdi</string>
     <string name="filter_name_bed_reading">Leser</string>
-
     <string name="time_toggle_options_array_0">Manuell</string>
     <string name="time_toggle_options_array_1">Automatisk (sola)</string>
     <string name="time_toggle_options_array_2">Automatisk (egendefinert)</string>
-
     <string name="latitude_short">Breddegrad</string>
     <string name="longitude_short">Lengdegrad</string>
     <string name="notification_action_resume">Gjenoppta</string>
     <string name="notification_action_pause">Sett på pause</string>
-
     <string name="activity_intro">Introduksjon</string>
     <string name="menu_show_intro">Vis introduksjon</string>
-
     <string name="slide_title_welcome">Velkommen!</string>
     <string name="slide_text_welcome">Velkommen til Rød Måne!</string>
-
     <string name="slide_title_protect_eyes">Beskytter øynene dine</string>
     <string name="slide_text_protect_eyes">Om kvelden, når du får vondt i øynene av å se på mobilskjermen, 
 \nkan du bruke Rød Måne for å gjøre skjermen mer behagelig å se på.</string>
-
     <string name="slide_title_improve_sleep">Forbedrer søvnen din</string>
     <string name="slide_text_improve_sleep">Blått lys reduserer produksjonen av melatonin, et hormon som påvirker innsovningen din. Rød Måne fjerner det blå lyset fra skjermen, noe som gjør at du enklere sovner.</string>
-
     <string name="slide_title_get_started">Kom i gang!</string>
     <string name="slide_text_get_started">Trykk på knappen øverst i høyre hjørne for å aktivere Rød Måne.</string>
-
     <!-- Currently unused -->
     <string name="add_new_profile_dialog_title">Skriv inn profilnavn</string>
     <string name="add_new_profile_edit_hint">Profilnavn</string>
@@ -84,26 +66,21 @@
     <string name="menu_about">Om</string>
     <string name="activity_about">Om Rød Måne</string>
     <string name="activity_secure_suspend">Sett på pause i ekskluderte programmer</string>
-
     <string name="dialog_title_permission_overlay">Tegning over andre programmer</string>
     <string name="dialog_message_permission_overlay">Tillat tegning over andre programmer i den neste skjermen for å la Rød Måne skru seg på.</string>
-
     <string name="dialog_title_permission_write_settings">Modifisering av systeminnstillinger</string>
     <string name="dialog_message_permission_write_settings">Tillat endring av system-
 innstillinger i den neste skjermen for å la Rød Måne endre ditt
 lysstyrkenivå.</string>
-
     <string name="notification_status_running_no_warning">Kjører</string>
     <string name="notification_status_off">Avslått</string>
     <string name="notification_action_turn_on">Skru på</string>
     <string name="notification_action_turn_off">Skru av</string>
     <string name="notification_action_stop">Skru av</string>
     <string name="notification_action_next_filter">Neste filter</string>
-
     <string name="pref_category_button_backlight_disclaimer">Har ingen effekt på noen enheter</string>
     <string name="pref_title_button_backlight">Maskinvareknapp for bakgrunnsbelysning</string>
-
-    <string name="pref_title_location">Soloppgang til solnedgang</string>
+    <string name="pref_title_location">Solnedgang til soloppgang</string>
     <string name="pref_summary_location_off">Basert på din plassering</string>
     <string name="pref_title_secure_suspend">Sett på pause i ekskluderte programmer</string>
     <string name="text_switch_on">På</string>
@@ -111,12 +88,10 @@ lysstyrkenivå.</string>
     <string name="dialog_title_permission_usage_stats">Brukstilgang</string>
     <string name="pref_title_integration">Integrering med andre programmer</string>
     <string name="pref_title_version">Versjon</string>
-
     <string name="snackbar_location_updated">Fant plassering!</string>
     <string name="pref_entry_button_backlight_system">Systemadministrert</string>
     <string name="pref_entry_button_backlight_filter_dim_level">Benytt filtreringsdimmenivå</string>
     <string name="pref_entry_button_backlight_turn_off">Skru av</string>
-
     <string name="action_next_profile">Neste profil</string>
     <string name="pref_summary_secure_suspend">Når denne innstillingen er påslått vil Rød Måne bli satt på pause når en av disse funksjonene åpnes. Denne funksjonen kan ha en liten innvirkning på batteritiden på din enhet. Dette inkluderer som forvalg programmer som ikke fungerer når Rød Måne kjører*, som installasjon av APK-er. Du kan endre dette for gjeldende skjerm tilhørende nåværende program fra merknaden. For eksempel, kan det hende du ønsker å legge til fargesensitive programmer, som kameraet.
 \n
@@ -126,24 +101,20 @@ lysstyrkenivå.</string>
     <string name="dialog_message_permission_usage_stats">"Tillat brukstilgang i den neste skjermen for å tillate at Rød Måne blir satt på pause i sikkerhetsprogrammer.
 
 Rød måne vil bruke denne dataen bare til å bestemme hvorvidt du bruker et annet program som ikke vil fungere når Rød  Måne er påslått."</string>
-
     <string name="pref_summary_integration">Noen programmer, som LibreTasks eller Tasker, lar deg automatisere oppgaver når bestemte hendelser inntreffer. Rød Måne sender en offentlig merknad når det skrur seg på og av, slik at de andre programmene kan svare. Hvis du ikke bruker eller utvikler en av disse programmene, kan du hoppe over neste avsnitt.
 
 Rød Måne kringkaster en offentlig intensjon med handlingen `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Denne intensjonen inneholder en boolsk ekstra med nøkkelen `jmstudios.bundle.key.FILTER_IS_ON`, som indikerer hvorvidt Rød Måne veksler seg på eller av.</string>
     <string name="set_dialog">Sett</string>
     <string name="notification_status_running">Kjører. Sett på pause for å installere APK-er</string>
-<string name="menu_restore_default_filters">Gjenopprett forvalgte filter</string>
+    <string name="menu_restore_default_filters">Gjenopprett forvalgte filter</string>
     <string name="filter_name_dim_only">Bare demp</string>
-
     <string name="activity_schedule">Tidsplan</string>
     <string name="pref_summary_schedule_none">Ingen</string>
     <string name="pref_title_start_time">Starttid</string>
     <string name="pref_title_stop_time">Sluttid</string>
     <string name="pref_title_translators">Hjelp til med oversettelsen</string>
     <string name="pref_summary_translators">Oversetter: Allan Nordhøy</string>
-
     <string name="toast_warning_secured">Noen funksjoner i dette programmet virker kanskje ikke mens Rød Måne kjører.</string>
-
     <string name="notification_status_paused_with_info">Pauset. Forkast merknad for å stoppe.</string>
     <string name="notification_action_whitelist_add">Ekskluderprogram</string>
     <string name="notification_action_whitelist_remove">Filtreringsprogram</string>
