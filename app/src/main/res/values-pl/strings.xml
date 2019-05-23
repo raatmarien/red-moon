@@ -1,24 +1,20 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Red Moon</string>
     <string name="activity_main">Red Moon</string>
     <string name="activity_shortcut">Włącznik Red Moon</string>
-
     <string name="notification_status_paused">Wstrzymano</string>
-
     <string name="pref_category_filter">Profil</string>
     <string name="activity_timer">Czas filtrowania</string>
     <string name="pref_title_time_toggle">Czas filtrowania</string>
     <string name="pref_title_startup">Uruchamianie</string>
     <string name="pref_category_other">Inne</string>
-
     <string name="button_add_filter">Dodaj</string>
     <string name="button_remove_filter">Usuń</string>
     <string name="pref_title_dim_level">Ciemność</string>
     <string name="pref_title_intensity">Przezroczystość</string>
     <string name="pref_title_color_temp">Barwa</string>
     <string name="pref_title_lower_brightness">Zmniejsz jasność systemu</string>
-
     <string name="time_toggle_title">Automatyczne przełączanie</string>
     <string name="pref_title_turn_on">Wznawiaj o</string>
     <string name="pref_title_turn_off">Zatrzymuj o</string>
@@ -27,45 +23,34 @@
     <string name="latitude_short">Szer.</string>
     <string name="longitude_short">Dł.</string>
     <string name="snackbar_searching_location">Szukanie lokalizacji</string>
-
     <string name="menu_dark_theme">Ciemny motyw</string>
-
     <string name="pref_title_email_developer">Wyślij el-wiadomość do programisty (marienraat@riseup.net)</string>
     <string name="pref_summary_email_developer">Gdy znajdziesz błąd lub z sugestią</string>
     <string name="pref_title_project_page">Odwiedź stronę projektu</string>
     <string name="pref_summary_project_page">Znajdź więcej informacji, zostaw opinię i wspomóż rozwój</string>
     <string name="toast_warning_install">Nie będziesz mógł instalować plików APK podczas działania programu Red Moon.</string>
     <string name="snackbar_warning_no_location">Włącz usługi lokalizacyjne by znaleźć lokalizację</string>
-
     <string name="help_snackbar_text">Naciśnij przełącznik by włączyć Red Moon</string>
-
     <string name="edit_hint_add_filter">Nazwa profilu</string>
     <string name="dialog_title_remove_filter">Usunąć profil?</string>
     <string name="dialog_button_ok">Potwierdź</string>
     <string name="dialog_button_cancel">Anuluj</string>
-
     <string name="shortcut_title_toggle">Włącznik Red Moon</string>
-
     <string name="filter_name_custom">Własny</string>
     <string name="filter_name_default">Domyślny</string>
     <string name="filter_name_bed_reading">Czytanie</string>
-
     <string name="time_toggle_options_array_0">Ręczny</string>
     <string name="time_toggle_options_array_1">Automatyczny (słońce)</string>
     <string name="time_toggle_options_array_2">Automatyczny (własny)</string>
-
     <string name="activity_intro">Wprowadzenie</string>
     <string name="menu_show_intro">Powtórz wprowadzenie</string>
     <string name="activity_secure_suspend">Wstrzymuj w wykluczanych aplikacjach</string>
-
     <string name="notification_action_resume">Wznów</string>
     <string name="notification_action_pause">Wstrzymaj</string>
-
     <string name="pref_title_secure_suspend">Wstrzymuj filtr w wykluczanych aplikacjach</string>
     <string name="dialog_message_permission_usage_stats">W następnym oknie zezwól aplikacji Red Moon na dostęp do użytkowania, aby włączyć tą funkcję.
 
         Red Moon potrzebuje dostępu do użytkowania, żeby zobaczyć czy używasz aplikacji, która nie będzie współpracować z filtrem.</string>
-
     <string name="dialog_title_permission_usage_stats">Dostęp do użytkowania</string>
     <string name="text_switch_on">Włączone</string>
     <string name="text_switch_off">Wyłączone</string>
@@ -76,34 +61,27 @@
 \n*Red Moon działa rysując przezroczystą czerwoną warstwę nad całym ekranem; te aplikacje nie będą działać kiedy jakaś inna aplikacja po nich rysuje. W ten sposób, inne aplikacje nie mogą podstępem skłonić Cię do wybrania opcji, której nie chcesz lub podglądać co wystukujesz na ekranie.</string>
     <string name="slide_title_welcome">Witaj!</string>
     <string name="slide_text_welcome">Witaj w Red Moon!</string>
-
     <string name="slide_title_protect_eyes">Ochrona Twoich oczu</string>
     <string name="slide_text_protect_eyes">W nocy, gdy używasz telefonu,
         ekran niszczy Twój wzrok.
         Możesz użyć Red Moon, żeby przyciemnić swój ekran.</string>
-
     <string name="slide_title_improve_sleep">Polepszanie Twojego snu</string>
     <string name="slide_text_improve_sleep">Niebieskie światło blokuje
         produkcję melaniny, hormonu pomagającego Ci zasnąć w nocy.
         Red Moon usuwa niebieskie światło z Twojego ekranu,
         zapewniając Ci łatwiejsze zaśnięcie.</string>
-
     <string name="slide_title_get_started">Rozpocznij!</string>
     <string name="slide_text_get_started">Możesz włączyć lub wyłączyć Red Moona przełącznikiem
         w prawym górnym rogu.</string>
-
     <string name="dialog_title_permission_overlay">Wyświetlanie nad innymi aplikacjami</string>
     <string name="dialog_message_permission_overlay">Zezwól na wyświetlanie nad innymi aplikacjami, aby Red Moon mógł zacząć działać.</string>
-
     <string name="dialog_title_permission_write_settings">Modyfikowanie ustawień systemu</string>
     <string name="dialog_message_permission_write_settings">Zezwól na modyfikowanie ustawień systemu w następnym oknie, aby zezwolić aplikacji Red Moon zmienić jasność ekranu.</string>
-
     <string name="notification_status_off">Wyłączony</string>
     <string name="notification_action_turn_on">Włącz</string>
     <string name="notification_action_turn_off">Wyłącz</string>
     <string name="notification_action_stop">Wyłącz</string>
     <string name="notification_action_next_filter">Następny profil</string>
-
     <string name="pref_summary_location_off">Czas z lokalizacji</string>
     <string name="menu_about">O programie</string>
     <string name="activity_about">O Red Moon</string>
@@ -112,7 +90,6 @@
 
         Red Moon rozsyła publiczny zamiar (intent) \'com.jmstudios.redmoon.RED_MOON_TOGGLED\'. Ten zamiar zawiera dodatkową wartość logiczną z kluczem \'jmstudios.bundle.key.FILTER_IS_ON\', która wskazuje czy Red Moon jest włączany, czy wyłączany.</string>
     <string name="pref_title_version">Wersja</string>
-
     <!-- Currently unused -->
     <string name="add_new_profile_dialog_title">Wpisz nazwę profilu</string>
     <string name="add_new_profile_edit_hint">Nazwa profilu</string>
@@ -121,11 +98,9 @@
     <string name="pref_title_appearance">Profil</string>
     <string name="pref_category_button_backlight_disclaimer">Brak efektu na niektórych urządzeniach</string>
     <string name="pref_title_button_backlight">Podświetlenie przycisków sprzętowych</string>
-
     <string name="pref_entry_button_backlight_system">Zarządzane przez system</string>
     <string name="pref_entry_button_backlight_filter_dim_level">Użyj poziomu filtra przygaszania</string>
     <string name="pref_entry_button_backlight_turn_off">Wyłącz</string>
-
     <string name="searching_location">Szukanie lokalizacji</string>
     <string name="toast_warning_no_location">Włącz usługi lokalizacyjne by znaleźć lokalizację</string>
     <string name="snackbar_location_updated">Ustalono lokalizację!</string>
@@ -133,10 +108,9 @@
     <string name="location">Lokalizacja</string>
     <string name="notification_status_running">Uruchomiono. Zatrzymaj aby instalować aplikacje</string>
     <string name="notification_status_running_no_warning">Uruchomiono</string>
-<string name="menu_restore_default_filters">Przywróć domyślne filtry</string>
+    <string name="menu_restore_default_filters">Przywróć domyślne filtry</string>
     <string name="dialog_title_add_filter">Wprowadź nazwę filtra</string>
     <string name="filter_name_dim_only">Tylko przyciemniaj</string>
-
     <string name="activity_schedule">Harmonogram</string>
     <string name="notification_status_paused_with_info">Wstrzymano. Odrzuć powiadomienie, aby zatrzymać.</string>
     <string name="pref_title_schedule">Harmonogram</string>
@@ -146,10 +120,8 @@
     <string name="pref_title_start_time">Czas rozpoczęcia</string>
     <string name="pref_title_stop_time">Czas zatrzymania</string>
     <string name="pref_title_translators">Pomóż tłumaczyć</string>
-    <string name="pref_summary_translators">Tłumacze: smichel17, raatmarien, Verdulo</string>
-
+    <string name="pref_summary_translators">Tłumacze: smichel17, raatmarien, Mostafa Ahangarha</string>
     <string name="toast_warning_secured">Niektóre funkcje tej aplikacji mogą nie działać, gdy Red Moon jest uruchomiony.</string>
-
     <string name="notification_action_whitelist_add">Wyklucz aplikację</string>
     <string name="notification_action_whitelist_remove">Filtruj aplikację</string>
     <string name="notification_channel_overlay_name">Kontrola nakładki</string>
