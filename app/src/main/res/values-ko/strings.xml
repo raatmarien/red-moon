@@ -5,46 +5,35 @@
     <string name="menu_show_intro">소개 다시보기</string>
     <string name="notification_status_paused">일시 정지됨</string>
     <string name="notification_action_pause">일시 정지</string>
-
-    <string name="pref_summary_secure_suspend">일부 기능은 Red Moon이 켜저 있을 때 작동하지 않습니다*. 예를 들어, APK 설치, 권한 부여, (루팅된 장치에서) 슈퍼유저 앱을 사용할 때 입니다.
-\n
-\n이 설정이 활성화되면, Red Moon은 이런 기능 등을 사용할 때 일시정지됩니다.
-\n
-\n이 기능은 기기의 배터리 사용시간을 약간 낮출 수 있습니다. 또, 이 기능은 모든 기기에서 동작하지 않을 수 있습니다.
-\n
-\n*Red Moon은 화면 위에 빨간 층을 그리는 방식으로 작동합니다. 이런 앱은 다른 앱이 그리고 있을 때 작동하지 않습니다. 즉, 다른 앱이 원치 않는 옵션을 선택하도록 속일 수 없고, 무엇을 하는지 알려고 터치 입력을 확인할 수도 없습니다.</string>
+    <string name="pref_summary_secure_suspend">이 기능을 키면, Red Moon은 이미 켜져있는 다른 앱을 중지시킵니다. 기본적으로 Red Moon과 동시에 실행되지 않는 앱(예: 앱 설치)들이 해당됩니다. 카메라와 같이 색에 민감한 앱 같은 경우, 설정을 통해 앱이 실행되기 전에 Red Moon에서 알림을 나타내도록 하실수 있습니다.
+\n 
+\n이 기능은 기기의 배터리 사용시간을 약간 낮출 수 있습니다. 또한, 이 기능은 모든 기기에서 동작하지 않을 수 있습니다. 
+\n 
+\n*Red Moon은 오버레이를 하는 앱이다보니, 은행앱과 같은 보안에 민감한 앱의 경우 자체적으로 터치를 무시하거나, 악성앱으로 취급할 수도 있습니다.</string>
     <string name="pref_category_filter">필터</string>
     <string name="button_add_filter">추가</string>
     <string name="pref_title_appearance">프로파일</string>
     <string name="notification_status_running">실행 중. APK를 설치하려면 끄세요</string>
     <string name="notification_status_running_no_warning">실행 중</string>
-<string name="activity_main">Red Moon</string>
+    <string name="activity_main">Red Moon</string>
     <string name="app_name">Red Moon</string>
-
     <string name="activity_about">Red Moon에 대해서</string>
     <string name="pref_category_other">기타</string>
     <string name="pref_category_button_backlight_disclaimer">몇몇 기기에는 효과가 없을 수 있음</string>
-
     <string name="pref_title_dim_level">어두운 정도</string>
     <string name="pref_title_color_temp">색 온도</string>
     <string name="pref_title_lower_brightness">시스템 밝기 낮추기</string>
-
     <string name="button_remove_filter">제거</string>
-
     <string name="text_switch_on">사용</string>
     <string name="text_switch_off">사용 안함</string>
-
     <string name="pref_title_version">버전</string>
-
     <string name="activity_shortcut">Red Moon 토글</string>
     <string name="activity_secure_suspend">제외된 앱에서 일시정지</string>
     <string name="activity_schedule">일정</string>
     <string name="activity_timer">타이머</string>
-
     <string name="menu_dark_theme">어두운 테마</string>
     <string name="menu_restore_default_filters">기본 필터 되돌리기</string>
     <string name="menu_about">대해서</string>
-
     <string name="notification_status_paused_with_info">일시 정지됨. 정지하여 알림 닫기.</string>
     <string name="notification_status_off">꺼짐</string>
     <string name="notification_action_resume">다시 시작</string>
@@ -54,7 +43,6 @@
     <string name="notification_action_whitelist_add">이 앱 제외하기</string>
     <string name="notification_action_whitelist_remove">이 앱 포함하기</string>
     <string name="notification_action_next_filter">다음 필터</string>
-
     <string name="pref_title_intensity">투명도</string>
     <string name="pref_title_time_toggle">타이머</string>
     <string name="pref_title_schedule">일정</string>
@@ -63,79 +51,59 @@
     <string name="pref_summary_schedule_none">없음</string>
     <string name="pref_title_secure_suspend">제외된 앱에서 일시정지</string>
     <string name="pref_title_button_backlight">하드웨어 버튼 백라이트</string>
-
     <string name="pref_title_turn_on">시작 시간</string>
     <string name="pref_title_turn_off">종료 시간</string>
     <string name="pref_title_start_time">시작 시간</string>
     <string name="pref_title_stop_time">종료 시간</string>
-    <string name="pref_title_location">일출에서 일몰까지</string>
+    <string name="pref_title_location">일몰에서 일출까지</string>
     <string name="pref_summary_location_off">현 위치를 기반으로 하기</string>
-
     <string name="location_not_set">위치가 설정되지 않음</string>
     <string name="latitude_short">위도</string>
     <string name="longitude_short">경도</string>
-
     <string name="pref_title_project_page">프로젝트 페이지 방문</string>
     <string name="pref_summary_project_page">더 많은 정보를 보거나, 피드백을 남기고 기여할 수 있습니다</string>
-
     <string name="pref_title_email_developer">개발자에게 이메일 보내기</string>
     <string name="pref_summary_email_developer">개발자에게 연락하는 두 번째 방법</string>
     <string name="pref_title_translators">변역 돕기</string>
-    <string name="pref_summary_translators">변역한 사람들: kjy00302, Kimjio</string>
-
+    <string name="pref_summary_translators">변역한 사람들: kjy00302, Kimjio, ccppoo</string>
     <string name="pref_title_integration">다른 앱과 통합</string>
     <string name="pref_summary_integration">LibreTasks나 Tasker 같은 몇몇 앱은 어떤 일이 일어났을 때 작업을 자동화할 수 있도록 합니다. 그런 앱들이 반응할 수 있도록 Red Moon이 켜지거나 꺼질 때, 공용 알림을 보냅니다. 만약 그런 종류의 앱을 사용하거나 개발하지 않는다면, 다음 문단은 무시하셔도 됩니다.
 \n
 \nRed Moon은 `com.jmstudios.redmoon.RED_MOON_TOGGLED` 작업이 있는 공용 인텐트를 브로드캐스트합니다. 인텐트에는 Red Moon이 켜졌는지 꺼졌는지를 나타내는 `jmstudios.bundle.key.FILTER_IS_ON` 키를 가진 boolean 엑스트라를 지닙니다.</string>
-
     <string name="toast_warning_secured">이 앱의 일부 기능은 Red Moon이 작동 중일 때 작동하지 않을 수 있습니다.</string>
-
     <string name="snackbar_warning_no_location">위치를 갱신하려면 위치 서비스를 활성화 하세요</string>
     <string name="snackbar_searching_location">위치를 찾고 있습니다</string>
     <string name="snackbar_location_updated">위치를 찾았습니다!</string>
     <string name="help_snackbar_text">스위치를 눌러 Red Moon 활성화</string>
-
     <string name="dialog_title_add_filter">필터 이름 입력</string>
     <string name="edit_hint_add_filter">필터 이름</string>
     <string name="dialog_title_remove_filter">이 필터를 삭제할까요?</string>
-
     <string name="dialog_title_permission_overlay">다른 앱 위에 그리기</string>
     <string name="dialog_message_permission_overlay">Red Moon이 작동할 수 있도록 다음 화면에서 다른 앱 위에 그리기를 허용하세요.</string>
-
     <string name="dialog_title_permission_write_settings">시스템 설정 수정</string>
     <string name="dialog_message_permission_write_settings">Red Moon이 밝기를 바꿀 수 있도록 다음 화면에서 시스템 설정 수정을 허용하세요.</string>
-
     <string name="dialog_title_permission_usage_stats">사용 기록에 액세스</string>
     <string name="dialog_message_permission_usage_stats">Red Moon이 보호된 앱에서 잠시 멈출 수 있도록 다음 화면에서 사용 기록에 액세스를 허용하세요.
 \n
 \nRed Moon은 이 정보를 Red Moon이 켜졌을 때 작동하지 않는 앱을 사용하는지 확인하는 용도로만 사용합니다.</string>
-
     <string name="dialog_button_ok">확인</string>
     <string name="dialog_button_cancel">취소</string>
-
     <string name="shortcut_title_toggle">Red Moon 토글</string>
-
     <string name="slide_title_welcome">환영합니다!</string>
     <string name="slide_text_welcome">Red Moon에 오신 걸 환영합니다!</string>
-
     <string name="slide_title_protect_eyes">눈을 보호합니다</string>
     <string name="slide_text_protect_eyes">밤에 휴대폰을 보는 것은 눈을 나쁘게 할 수 있습니다. Red Moon으로 화면을 어둡게 할 수 있습니다.</string>
-
     <string name="slide_title_improve_sleep">잠자리를 개선합니다</string>
     <string name="slide_text_improve_sleep">청색광은 밤에 잠들게 하는 호르몬인 멜라토닌의 분비를 감소합니다. Red Moon은 화면의 청색광을 제거해, 쉽게 잠들도록 합니다.</string>
-
     <string name="slide_title_get_started">시작하세요!</string>
     <string name="slide_text_get_started">왼쪽 위 모서리에 있는 스위치로 Red Moon을 켜거나 끌 수 있습니다.</string>
-
     <string name="filter_name_custom">사용자 지정</string>
     <string name="filter_name_default">기본</string>
     <string name="filter_name_bed_reading">읽기</string>
     <string name="filter_name_dim_only">어둡게</string>
-
     <string name="pref_entry_button_backlight_system">시스템에서 관리</string>
     <string name="pref_entry_button_backlight_filter_dim_level">필터의 어두운 정도 사용</string>
     <string name="pref_entry_button_backlight_turn_off">꺼짐</string>
-
     <string name="action_next_profile">다음 프로파일</string>
     <string name="add_new_profile_dialog_title">프로파일 이름 입력</string>
     <string name="add_new_profile_edit_hint">프로파일 이름</string>
@@ -146,8 +114,9 @@
     <string name="time_toggle_title">자동 토글</string>
     <string name="location">위치</string>
     <string name="pref_title_startup">시작</string>
-
     <string name="time_toggle_options_array_0">수동</string>
     <string name="time_toggle_options_array_1">자동 (일광)</string>
     <string name="time_toggle_options_array_2">자동 (사용자 지정)</string>
+    <string name="notification_channel_overlay_name">오버레이 조정</string>
+    <string name="notification_channel_overlay_description">지속적인 오버레이 감지 알림</string>
 </resources>
