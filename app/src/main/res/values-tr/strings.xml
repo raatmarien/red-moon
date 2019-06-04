@@ -72,11 +72,11 @@
     <string name="pref_title_stop_time">Bitiş zamanı</string>
     <string name="pref_title_location">Gün Batımından Gün Doğumuna</string>
     <string name="pref_summary_location_off">Konumunuza göre</string>
-    <string name="pref_summary_secure_suspend">Bu özellik etkinleştirildiğinde, bazı uygulamalar açık olduğunda Red Moon otomatik olarak duraklatılır. Varsayılan olarak, bu, Red Moon çalışırken* çalışmayacak uygulamaları içerir (apk yükleme gibi). Geçerli davranışın mevcut ekranı için bu davranışı bildirimden değiştirebilirsiniz. Örneğin, kamera gibi renge duyarlı uygulamalar eklemek isteyebilirsiniz.
-\n
-\nBu özellik cihazınızın pil ömrünü biraz düşürebilir.
-\n
-\n*Bazı uygulamalar, istemediğiniz bir uygulamayı yüklemenizi sağlamak gibi kendilerini parazitlerden korumak için kaplamalara karşı güvendedir. Red Moon açıkken dokunuşlara cevap vermeyecekler, çünkü ekran üzerine şeffaf kırmızı bir tabaka çizerek çalışıyor.</string>
+    <string name="pref_summary_secure_suspend">Bu ayar etkinleştirildiğinde Red Moon belli uygulamalar açıkken kendiliğinden duraklayacaktır. Öntanımlı olarak bu, apk yükleme gibi Red Moon çalışıyorken* çalışmayacak uygulamaları içerir. Bildirimden geçerli uygulamanın geçerli ekranı için bu davranışı değiştirebilirsiniz. Örneğin, kamera gibi renge duyarlı uygulamaları eklemek isteyebilirsiniz. 
+\n 
+\nBu özellik aygıtınızın pil ömrünü biraz düşürebilir. 
+\n 
+\n*Bazı uygulamalar kendilerini etkilemelerden korumak için örten tabakalara karşı korumalıdır, örneğin istemediğiniz bir uygulamayı yüklemek için kandırılmanız gibi. Ekran üzerine saydam kırmızı katman çizerek çalışan Red Moon açıkken, o uygulamalar dokunmaları yanıtlamayacaktır.</string>
     <!-- Short strings; might be used in multiple places -->
     <string name="button_add_filter">Ekle</string>
     <string name="button_remove_filter">Sil</string>
@@ -88,7 +88,7 @@
     <!-- About subscreen -->
     <string name="pref_title_version">Sürüm</string>
     <string name="pref_title_project_page">Proje sayfasını ziyaret et</string>
-    <string name="pref_summary_project_page">Daha fazla bilgi bul, geri bildirim yap ve katkıda bulun</string>
+    <string name="pref_summary_project_page">Daha çok bilgi bulun, geri bildirim gönderin ve katkıda bulunun</string>
     <string name="pref_title_email_developer">Geliştiricilere e-mail gönder</string>
     <string name="pref_summary_email_developer">Bize ulaşmak için başka bir yol</string>
     <string name="pref_title_translators">Çevirmeye yardımcı olun</string>
