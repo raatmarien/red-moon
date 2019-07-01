@@ -1,20 +1,16 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">红月</string>
     <string name="activity_main">红月</string>
     <string name="activity_shortcut">切换红月</string>
-
     <string name="notification_status_paused">已暂停</string>
-
     <string name="pref_category_other">其他</string>
-
     <string name="button_remove_filter">删除</string>
-    <string name="pref_title_location">日出到日落</string>
+    <string name="pref_title_location">日落到日出</string>
     <string name="latitude_short">纬度</string>
     <string name="longitude_short">经度</string>
     <string name="dialog_button_ok">确定</string>
     <string name="dialog_button_cancel">取消</string>
-
     <string name="pref_category_filter">滤镜</string>
     <string name="activity_timer">定时</string>
     <string name="pref_title_time_toggle">定时</string>
@@ -22,7 +18,7 @@
     <string name="button_add_filter">添加</string>
     <string name="pref_title_dim_level">光暗</string>
     <string name="pref_title_intensity">强弱</string>
-    <string name="pref_title_color_temp">色温</string>
+    <string name="pref_title_color_temp">颜色</string>
     <string name="pref_title_lower_brightness">降低亮度</string>
     <string name="location_not_set">未设置位置</string>
     <string name="dialog_title_remove_filter">确定要删除此滤镜？</string>
@@ -47,10 +43,8 @@
     <string name="pref_summary_project_page">查看更多信息、提交反馈和贡献</string>
     <string name="snackbar_warning_no_location">启用位置服务来更新位置</string>
     <string name="toast_warning_install">滤镜开启时，您将无法安装APK。</string>
-
     <string name="notification_action_resume">恢复</string>
     <string name="notification_action_pause">暂停</string>
-
     <!-- Currently unused -->
     <string name="remove_profile_dialog_title">是否删除配置？</string>
     <string name="add_new_profile_edit_hint">滤镜名称</string>
@@ -60,73 +54,55 @@
     <string name="toast_warning_no_location">启用位置服务来更新位置</string>
     <string name="set_dialog">设置</string>
     <string name="notification_status_running">运行中……须要安装APK时会暂停</string>
-<string name="activity_intro">简介</string>
+    <string name="activity_intro">简介</string>
     <string name="activity_about">关于红月</string>
     <string name="activity_secure_suspend">被排除的应用在运行时，暂停红月</string>
     <string name="menu_restore_default_filters">恢复默认滤镜</string>
     <string name="menu_show_intro">重播简介</string>
     <string name="menu_about">关于</string>
-
     <string name="notification_status_running_no_warning">运行中</string>
     <string name="notification_status_off">关闭</string>
     <string name="notification_action_turn_on">开启</string>
     <string name="notification_action_turn_off">关闭</string>
     <string name="notification_action_stop">停止</string>
     <string name="notification_action_next_filter">下一个滤镜</string>
-
     <string name="pref_category_button_backlight_disclaimer">对某些设备不起作用</string>
-
     <string name="pref_title_secure_suspend">被排除应用运行时暂停红月</string>
     <string name="pref_title_button_backlight">硬件按钮背光</string>
-
     <string name="pref_summary_location_off">基于您的位置</string>
-
     <string name="pref_summary_secure_suspend">本功能启用时，红月将会在特定应用开启时暂停。一般来说，这包括了那些在红月运行时无法工作的应用*，如应用安装器。您可以在通知中改变对当前占据屏幕的应用的应对方式。比如说，您也许希望添加会被颜色变化所影响的应用，如相机应用。
 \n
 \n该特性会稍微减少您设备的电池寿命。
 \n
 \n*一些应用被保护在覆盖层之外，以防它们受到干扰，如欺骗您安装您不打算安装的应用。它们在红月生效时不会回应触碰操作，因为红月正是通过绘制一红色透明覆盖层来工作的。</string>
-
     <string name="text_switch_on">开启</string>
     <string name="text_switch_off">关闭</string>
-
     <string name="pref_title_version">版本</string>
-
     <string name="pref_title_integration">与其他应用的整合</string>
     <string name="snackbar_location_updated">找到位置！</string>
     <string name="pref_summary_integration">某些应用（如 LibreTasks、Tasker）使您能创建特定事件发生时自动运行的任务。红月会在开启或关闭时发送一条公开通知以使这些应用回应。如果您没有使用或开发这类应用，您可以不理会下一段。 
 \n 
 \n红月会通过操作“com.jmstudios.redmoon.RED_MOON_TOGGLED”广播一个 Intent。该 Intent 包含一个键值为“jmstudios.bundle.key.FILTER_IS_ON”的布尔 extra，用于指示红月的开关状态。</string>
-
     <string name="dialog_title_permission_overlay">在其他应用上出现</string>
     <string name="dialog_message_permission_overlay">请在下一个窗口授权红月出现在其他应用上。</string>
-
     <string name="dialog_title_permission_write_settings">修改系统设置</string>
     <string name="dialog_message_permission_write_settings">请在下一个窗口授权红月修改系统设置。</string>
-
     <string name="dialog_title_permission_usage_stats">使用情况访问权限</string>
     <string name="dialog_message_permission_usage_stats">在下一个窗口中给予红月使用情况访问权限，以便在安全应用中暂停。
 \n
 \n红月仅将相关数据用于判断你是否在使用红月运行时无法运作的应用。</string>
-
     <string name="slide_title_welcome">欢迎！</string>
     <string name="slide_text_welcome">欢迎使用红月！</string>
-
     <string name="slide_title_protect_eyes">保护您的眼睛</string>
     <string name="slide_text_protect_eyes">当你在晚上看著手机，眼睛感到不适时，您可以用红月来调低屏幕光暗。</string>
-
     <string name="slide_title_improve_sleep">改善您的睡眠</string>
     <string name="slide_text_improve_sleep">蓝光会抑制褪黑激素的分泌，使您难以入眠。红月消除您屏幕上的蓝光，保证您能轻松入睡。</string>
-
     <string name="slide_title_get_started">开始吧！</string>
     <string name="slide_text_get_started">用右上角的开关启用或停用红月。</string>
-
     <string name="filter_name_dim_only">仅降低光暗</string>
-
     <string name="pref_entry_button_backlight_system">系统管理</string>
     <string name="pref_entry_button_backlight_filter_dim_level">使用滤镜的亮度降低级别</string>
     <string name="pref_entry_button_backlight_turn_off">关闭</string>
-
     <string name="location">位置</string>
     <string name="activity_schedule">时间表</string>
     <string name="notification_status_paused_with_info">已暂停。要恢复运行，请关闭通知。</string>
@@ -139,9 +115,7 @@
     <string name="pref_title_start_time">开始时间</string>
     <string name="pref_title_stop_time">停止时间</string>
     <string name="pref_title_translators">帮助翻译</string>
-    <string name="pref_summary_translators">翻译者：smichel17、raatmarien</string>
-
+    <string name="pref_summary_translators">翻译者：smichel17、raatmarien、Mostafa Ahangarha</string>
     <string name="toast_warning_secured">红月运行时，此应用的某些功能可能会失效。</string>
-
     <string name="action_next_profile">下一个滤镜</string>
-    </resources>
+</resources>
