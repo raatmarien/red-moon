@@ -6,73 +6,51 @@
 package com.jmstudios.redmoon.schedule
 
 import android.content.Context
-import android.content.res.TypedArray
-import android.preference.DialogPreference
-import android.text.format.DateFormat
+import androidx.preference.DialogPreference
 import android.util.AttributeSet
-import android.view.View
+import android.util.Log
 import android.widget.TimePicker
-
 import com.jmstudios.redmoon.util.atLeastAPI
+
+data class Time(val hour: Int = 0, val minute: Int = 0) {
+    companion object {
+        fun fromTimePicker(picker: TimePicker): Time {
+            return Time(
+                if (atLeastAPI(23)) picker.hour else picker.currentHour,
+                if (atLeastAPI(23)) picker.minute else picker.currentMinute
+            )
+        }
+
+        fun fromString(str: String): Time {
+            return Time(
+                Integer.parseInt(str.substring(0..1)),
+                Integer.parseInt(str.substring(3..4))
+            )
+        }
+    }
+
+    override fun toString(): String {
+        return String.format("%02d", hour) + ":" + String.format("%02d", minute)
+    }
+}
 
 open class TimePickerPreference(context: Context, attrs: AttributeSet) : DialogPreference(context, attrs) {
 
-    private lateinit var mTimePicker: TimePicker
-    protected var mTime: String = DEFAULT_VALUE
-
-    @Suppress("DEPRECATION") // Need deprecated 'currentMinute' for API<23
-    private var currentMinute: Int
-        get() = if (atLeastAPI(23)) mTimePicker.minute
-                else mTimePicker.currentMinute
-        set(m) = if (atLeastAPI(23)) mTimePicker.minute = m
-                 else mTimePicker.currentMinute = m
-
-    @Suppress("DEPRECATION") // Need deprecated 'currentHour' for API<23
-    private var currentHour: Int
-        get() = if (atLeastAPI(23)) mTimePicker.hour
-                else mTimePicker.currentHour
-        set(h) = if (atLeastAPI(23)) mTimePicker.hour = h
-                 else mTimePicker.currentHour = h
-
-    override fun onGetDefaultValue(a: TypedArray, index: Int): Any {
-        return a.getString(index)
-    }
+    private var time: Time? = null
 
     override fun onSetInitialValue(restorePersistedValue: Boolean, defaultValue: Any?) {
         if (restorePersistedValue) {
-            mTime = getPersistedString(DEFAULT_VALUE)
+            time = Time.fromString(getPersistedString(Time().toString()))
         } else {
-            mTime = (defaultValue as String?)?: DEFAULT_VALUE
-            persistString(mTime)
+            time = Time.fromString((defaultValue as String?)?: Time().toString())
+            persistString(time.toString())
         }
-        summary = mTime
+        summary = time.toString()
     }
 
-    override fun onCreateDialogView(): View {
-        mTimePicker = TimePicker(context)
-        mTimePicker.setIs24HourView(DateFormat.is24HourFormat(context))
-        return mTimePicker
-    }
-
-    override fun onBindDialogView(v: View) {
-        super.onBindDialogView(v)
-        currentHour = mTime.substringBefore(':').toInt()
-        currentMinute = mTime.substringAfter(":").toInt()
-    }
-
-    override fun onDialogClosed(positiveResult: Boolean) {
-        super.onDialogClosed(positiveResult)
-
-        val hour = currentHour
-        val minute = currentMinute
-        mTime = (if (hour < 10) "0" else "") + Integer.toString(hour) + ":" +
-                (if (minute < 10) "0" else "") + Integer.toString(minute)
-
-        persistString(mTime)
-        summary = mTime
-    }
-
-    companion object {
-        const val DEFAULT_VALUE = "00:00"
+    override fun callChangeListener(newValue: Any?): Boolean {
+        time = newValue as Time?
+        persistString(time.toString())
+        return super.callChangeListener(newValue)
     }
 }

@@ -10,7 +10,7 @@ import com.jmstudios.redmoon.util.Logger
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.model.Profile

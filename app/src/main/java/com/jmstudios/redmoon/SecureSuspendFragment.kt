@@ -8,9 +8,9 @@ package com.jmstudios.redmoon
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
-import android.preference.Preference
-import android.preference.SwitchPreference
 import android.provider.Settings
+import androidx.preference.Preference
+import androidx.preference.SwitchPreference
 import androidx.preference.PreferenceFragmentCompat
 
 import com.jmstudios.redmoon.securesuspend.CurrentAppChecker

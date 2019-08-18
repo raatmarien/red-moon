@@ -5,11 +5,13 @@
  */
 package com.jmstudios.redmoon
 
+import android.app.TimePickerDialog
 import android.os.Bundle
 import androidx.preference.SwitchPreference
 import com.google.android.material.snackbar.Snackbar
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 
 import com.jmstudios.redmoon.model.Config
@@ -34,7 +36,6 @@ class ScheduleFragment : PreferenceFragmentCompat() {
     private var mSnackbar: Snackbar? = null
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        super.onCreate(savedInstanceState)
         setPreferencesFromResource(R.xml.schedule_preferences, rootKey)
     }
 
@@ -54,6 +55,12 @@ class ScheduleFragment : PreferenceFragmentCompat() {
         updateSwitchBarTitle()
         updateTimePrefs()
         updateLocationPref()
+    }
+
+    override fun onDisplayPreferenceDialog(preference: Preference?) {
+        TimePickerDialog(context, { _, h, m ->
+            preference?.callChangeListener(Time(h, m))
+        },0, 0, false).show()
     }
 
     private fun updateSwitchBarTitle() {
