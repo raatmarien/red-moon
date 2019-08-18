@@ -38,7 +38,7 @@ android {
     defaultConfig {
         applicationId "com.jmstudios.redmoon"
         minSdkVersion 14
-        targetSdkVersion 25
+        targetSdkVersion 28
         versionCode 37
         versionName "3.4.0"
     }
@@ -78,9 +78,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "com.android.support:support-compat:$android_support_version"
-    implementation "com.android.support:appcompat-v7:$android_support_version"
-    implementation "com.android.support:design:$android_support_version"
+    implementation 'androidx.core:core:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.luckycatlabs:SunriseSunsetCalculator:1.2'
     implementation 'com.github.paolorotolo:appintro:4.1.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

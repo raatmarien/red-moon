@@ -8,11 +8,9 @@ package com.jmstudios.redmoon
 import android.os.Bundle
 import android.preference.PreferenceFragment
 import android.preference.SwitchPreference
-import android.support.design.widget.Snackbar
+import com.google.android.material.snackbar.Snackbar
 import android.view.ViewGroup
 import android.widget.TextView
-
-import com.jmstudios.redmoon.R
 
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.schedule.*
@@ -97,10 +95,8 @@ class ScheduleFragment : PreferenceFragment() {
             if (Config.darkThemeFlag) {
                 val group = this.view as ViewGroup
                 group.setBackgroundColor(getColor(R.color.snackbar_color_dark_theme))
-
-                val snackbarTextId = android.support.design.R.id.snackbar_text
-                val textView = group.findViewById<TextView>(snackbarTextId)
-                textView.setTextColor(getColor(R.color.text_color_dark_theme))
+                group.findViewById<TextView>(R.id.snackbar_text)
+                    .setTextColor(getColor(R.color.text_color_dark_theme))
             }
         }
         mSnackbar?.show()

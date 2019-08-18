@@ -27,7 +27,7 @@ package com.jmstudios.redmoon.util
 import android.content.Intent
 import android.preference.Preference
 import android.preference.PreferenceFragment
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 
 import com.jmstudios.redmoon.RedMoonApplication
 import com.jmstudios.redmoon.model.Profile

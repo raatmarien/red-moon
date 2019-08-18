@@ -11,7 +11,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.support.v4.app.AlarmManagerCompat
+import androidx.core.app.AlarmManagerCompat
 
 import com.jmstudios.redmoon.filter.Command
 import com.jmstudios.redmoon.model.Config
