@@ -88,6 +88,9 @@ dependencies {
     implementation 'me.smichel.android:kpreferences:0.7.0'
     playstoreImplementation 'com.github.hotchemi:android-rate:1.0.1'
     // annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.0.1'
+
+    implementation "androidx.preference:preference:1.1.0-rc01"
+    implementation "androidx.preference:preference-ktx:1.1.0-rc01"
 }
 
 repositories {

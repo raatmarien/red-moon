@@ -6,24 +6,20 @@
 package com.jmstudios.redmoon
 
 import android.os.Bundle
-import android.preference.Preference
-import android.preference.PreferenceFragment
+import androidx.preference.Preference
+import androidx.preference.PreferenceFragmentCompat
 
-import com.jmstudios.redmoon.BuildConfig
-import com.jmstudios.redmoon.R
 import com.jmstudios.redmoon.util.*
 
-class AboutFragment : PreferenceFragment() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        Log.i("onCreate()")
-        super.onCreate(savedInstanceState)
-        addPreferencesFromResource(R.xml.about)
-        pref(R.string.pref_key_version).apply{
+class AboutFragment : PreferenceFragmentCompat() {
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        setPreferencesFromResource(R.xml.about, rootKey)
+        pref(R.string.pref_key_version)?.apply{
             summary = BuildConfig.VERSION_NAME
-            onPreferenceClickListener = Preference.OnPreferenceClickListener {
-                showChangelog(activity)
+            Preference.OnPreferenceClickListener {
+                activity?.let { showChangelog(it) }
                 true
-            }
+            }?.let { onPreferenceClickListener = it }
         }
     }
     companion object : Logger()

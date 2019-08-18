@@ -7,7 +7,6 @@ package com.jmstudios.redmoon.preference
 
 import android.app.AlertDialog
 import android.content.Context
-import android.preference.Preference
 import android.text.InputType
 import android.util.AttributeSet
 import android.view.View
@@ -17,6 +16,8 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
+import androidx.preference.Preference
+import androidx.preference.PreferenceViewHolder
 
 import com.jmstudios.redmoon.R
 
@@ -39,12 +40,10 @@ class ProfileSelectorPreference(ctx: Context, attrs: AttributeSet) : Preference(
         layoutResource = R.layout.preference_profile_selector
     }
 
-    override fun onBindView(view: View) {
-        Log.i("onBindView")
-        super.onBindView(view)
-
-        mProfileSpinner = view.findViewById(R.id.profile_spinner)
-        mProfileActionButton = view.findViewById(R.id.profile_action_button)
+    override fun onBindViewHolder(holder: PreferenceViewHolder?) {
+        super.onBindViewHolder(holder)
+        mProfileSpinner = holder?.findViewById(R.id.profile_spinner) as Spinner
+        mProfileActionButton = holder?.findViewById(R.id.profile_action_button) as Button
 
         initLayout()
     }

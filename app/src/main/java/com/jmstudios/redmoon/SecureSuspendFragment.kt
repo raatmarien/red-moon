@@ -6,29 +6,24 @@
 package com.jmstudios.redmoon
 
 import android.app.AlertDialog
-import android.preference.PreferenceFragment
 import android.content.Intent
 import android.os.Bundle
 import android.preference.Preference
 import android.preference.SwitchPreference
 import android.provider.Settings
+import androidx.preference.PreferenceFragmentCompat
 
 import com.jmstudios.redmoon.securesuspend.CurrentAppChecker
-import com.jmstudios.redmoon.R
 import com.jmstudios.redmoon.util.*
 
-class SecureSuspendFragment : PreferenceFragment() {
+class SecureSuspendFragment : PreferenceFragmentCompat() {
 
     private val mSwitchBarPreference: SwitchPreference
         get() = pref(R.string.pref_key_secure_suspend) as SwitchPreference
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        Log.i("onCreate()")
-        super.onCreate(savedInstanceState)
-
-        addPreferencesFromResource(R.xml.secure_suspend_preferences)
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        setPreferencesFromResource(R.xml.secure_suspend_preferences, rootKey)
         setSwitchBarTitle(mSwitchBarPreference.isChecked)
-
         mSwitchBarPreference.onPreferenceChangeListener =
             Preference.OnPreferenceChangeListener { _, newValue ->
                 val on = newValue as Boolean

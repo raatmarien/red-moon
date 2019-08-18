@@ -9,12 +9,13 @@ import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
-import android.preference.Preference
 import android.util.AttributeSet
 import android.view.View
 import android.widget.ImageView
 import android.widget.SeekBar
 import android.widget.TextView
+import androidx.preference.PreferenceViewHolder
+import androidx.preference.Preference
 
 import com.jmstudios.redmoon.R
 
@@ -55,11 +56,11 @@ abstract class SeekBarPreference(context: Context, attrs: AttributeSet) : Prefer
         }
     }
 
-    override fun onBindView(view: View) {
+    override fun onBindViewHolder(holder: PreferenceViewHolder) {
         Log.i("onBindView")
-        super.onBindView(view)
-        mView = view
-        mSeekBar = view.findViewById(R.id.seekbar)
+        super.onBindViewHolder(holder)
+        mView = holder.itemView
+        mSeekBar = holder.findViewById(R.id.seekbar) as SeekBar
         setProgress(mProgress)
         mSeekBar.setMax(max)
         mSeekBar.setOnSeekBarChangeListener(this)
