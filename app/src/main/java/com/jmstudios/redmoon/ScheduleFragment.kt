@@ -6,11 +6,11 @@
 package com.jmstudios.redmoon
 
 import android.os.Bundle
-import android.preference.PreferenceFragment
-import android.preference.SwitchPreference
+import androidx.preference.SwitchPreference
 import com.google.android.material.snackbar.Snackbar
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.preference.PreferenceFragmentCompat
 
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.schedule.*
@@ -18,9 +18,7 @@ import com.jmstudios.redmoon.util.*
 
 import org.greenrobot.eventbus.Subscribe
 
-class ScheduleFragment : PreferenceFragment() {
-
-    // Preferences
+class ScheduleFragment : PreferenceFragmentCompat() {
     private val schedulePref: SwitchPreference
         get() = pref(R.string.pref_key_schedule) as SwitchPreference
 
@@ -35,9 +33,9 @@ class ScheduleFragment : PreferenceFragment() {
 
     private var mSnackbar: Snackbar? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         super.onCreate(savedInstanceState)
-        addPreferencesFromResource(R.xml.schedule_preferences)
+        setPreferencesFromResource(R.xml.schedule_preferences, rootKey)
     }
 
     override fun onStart() {
@@ -91,12 +89,12 @@ class ScheduleFragment : PreferenceFragment() {
     }
 
     private fun showSnackbar(resId: Int, duration: Int = Snackbar.LENGTH_INDEFINITE) {
-        mSnackbar = Snackbar.make(view, getString(resId), duration).apply {
+        mSnackbar = Snackbar.make(requireView(), getString(resId), duration).apply {
             if (Config.darkThemeFlag) {
                 val group = this.view as ViewGroup
                 group.setBackgroundColor(getColor(R.color.snackbar_color_dark_theme))
                 group.findViewById<TextView>(R.id.snackbar_text)
-                    .setTextColor(getColor(R.color.text_color_dark_theme))
+                        .setTextColor(getColor(R.color.text_color_dark_theme))
             }
         }
         mSnackbar?.show()
@@ -141,7 +139,7 @@ class ScheduleFragment : PreferenceFragment() {
     @Subscribe
     fun onLocationAccessDenied(event: locationAccessDenied) {
         if (Config.scheduleOn && Config.useLocation) {
-            Permission.Location.request(activity)
+            Permission.Location.request(requireActivity())
         }
     }
 

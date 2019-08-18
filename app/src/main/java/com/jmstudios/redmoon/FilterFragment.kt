@@ -25,9 +25,9 @@
 package com.jmstudios.redmoon
 
 import android.os.Bundle
-import android.preference.Preference
-import android.preference.PreferenceFragment
-import android.preference.TwoStatePreference
+import androidx.preference.TwoStatePreference
+import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.Preference
 
 import com.jmstudios.redmoon.R
 
@@ -38,13 +38,13 @@ import com.jmstudios.redmoon.util.*
 
 import org.greenrobot.eventbus.Subscribe
 
-class FilterFragment : PreferenceFragment() {
+class FilterFragment : PreferenceFragmentCompat() {
     //private var hasShownWarningToast = false
     companion object : Logger()
 
     // Preferences
     private val profileSelectorPref: Preference
-        get() = pref(R.string.pref_key_profile_spinner)
+        get() = pref(R.string.pref_key_profile_spinner)!!
 
     private val colorPref: SeekBarPreference
         get() = pref(R.string.pref_key_color) as SeekBarPreference
@@ -59,17 +59,16 @@ class FilterFragment : PreferenceFragment() {
         get() = pref(R.string.pref_key_lower_brightness) as TwoStatePreference
 
     private val schedulePref: Preference
-        get() = pref(R.string.pref_key_schedule_header)
+        get() = pref(R.string.pref_key_schedule_header)!!
 
     private val secureSuspendPref: Preference
-        get() = pref(R.string.pref_key_secure_suspend_header)
+        get() = pref(R.string.pref_key_secure_suspend_header)!!
 
     private val buttonBacklightPref: Preference
-        get() = pref(R.string.pref_key_button_backlight)
+        get() = pref(R.string.pref_key_button_backlight)!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        addPreferencesFromResource(R.xml.filter_preferences)
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        setPreferencesFromResource(R.xml.filter_preferences, rootKey)
 
         updateSecureSuspendSummary()
         updateScheduleSummary()
@@ -82,7 +81,7 @@ class FilterFragment : PreferenceFragment() {
         lowerBrightnessPref.onPreferenceChangeListener =
                 Preference.OnPreferenceChangeListener { _, newValue ->
                     val checked = newValue as Boolean
-                    if (checked) Permission.WriteSettings.request(activity) else true
+                    if (checked) Permission.WriteSettings.request(requireActivity()) else true
                 }
 
         schedulePref.intent = intent(ScheduleActivity::class)
