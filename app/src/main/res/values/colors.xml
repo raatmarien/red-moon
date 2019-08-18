@@ -27,6 +27,7 @@
     <color name="color_primary">#FFF44336</color>
     <color name="color_primary_dark">#D32F2F</color>
     <color name="color_white">#FFFFFFFF</color>
+    <color name="color_accent">#008577</color>
     <color name="fab_color">#FFF44336</color>
     <color name="text_disabled">#909090</color>
     <color name="snackbar_color_dark_theme">#FAFAFA</color>
