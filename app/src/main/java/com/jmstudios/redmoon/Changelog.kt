@@ -8,7 +8,7 @@ package com.jmstudios.redmoon
 
 import android.app.Activity
 import android.app.Dialog
-import android.support.v7.app.AlertDialog
+import androidx.appcompat.app.AlertDialog
 
 import com.jmstudios.redmoon.model.Config
 

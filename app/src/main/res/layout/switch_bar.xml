@@ -10,7 +10,7 @@
     android:minHeight="?android:attr/actionBarSize"
     android:gravity="center_vertical"
     android:background="@color/switch_bar_background">
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@android:id/title"
         android:layout_height="wrap_content"
         android:layout_width="0dp"
