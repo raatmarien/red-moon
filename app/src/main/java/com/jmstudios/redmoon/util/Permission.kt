@@ -70,16 +70,23 @@ object Permission {
         override val granted: Boolean
             get() = Settings.canDrawOverlays(appContext)
 
+        var alertExists = false;
+
         override @TargetApi(23) fun send(activity: Activity) {
             val intent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                                 Uri.parse("package:" + activity.packageName))
-            AlertDialog.Builder(activity).run {
-                setMessage(R.string.dialog_message_permission_overlay)
-                setTitle(R.string.dialog_title_permission_overlay)
-                setPositiveButton(R.string.dialog_button_ok) { _, _ ->
-                    activity.startActivityForResult(intent, requestCode)
+            if (!alertExists) {
+                // Ensure only one alert will exist at a time
+                alertExists = true;
+                AlertDialog.Builder(activity).run {
+                    setMessage(R.string.dialog_message_permission_overlay)
+                    setTitle(R.string.dialog_title_permission_overlay)
+                    setPositiveButton(R.string.dialog_button_ok) { _, _ ->
+                        activity.startActivityForResult(intent, requestCode)
+                    }
+                    setOnDismissListener { alertExists = false; }
+                    show()
                 }
-                show()
             }
         }
     }
@@ -89,17 +96,25 @@ object Permission {
 
         override val granted: Boolean
             get() = if (atLeastAPI(23)) Settings.System.canWrite(appContext) else true
+        var alertExists = false;
 
         override @TargetApi(23) fun send(activity: Activity) {
+
             val intent = Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS,
                                 Uri.parse("package:" + activity.packageName))
-            AlertDialog.Builder(activity).run {
-                setMessage(R.string.dialog_message_permission_write_settings)
-                setTitle(R.string.dialog_title_permission_write_settings)
-                setPositiveButton(R.string.dialog_button_ok) { _, _ ->
-                    activity.startActivityForResult(intent, requestCode)
+
+            if (!alertExists) {
+                // Ensure only one alert will exist at a time
+                alertExists = true;
+                AlertDialog.Builder(activity).run {
+                    setMessage(R.string.dialog_message_permission_write_settings)
+                    setTitle(R.string.dialog_title_permission_write_settings)
+                    setPositiveButton(R.string.dialog_button_ok) { _, _ ->
+                        activity.startActivityForResult(intent, requestCode)
+                    }
+                    setOnDismissListener { alertExists = false; }
+                    show()
                 }
-                show()
             }
         }
     }
