@@ -3,12 +3,11 @@
     android:id="@android:id/title"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textStyle="bold"
     android:paddingTop="16dp"
     android:paddingBottom="16dp"
     android:paddingStart="?android:attr/listPreferredItemPaddingStart"
     android:paddingLeft="?android:attr/listPreferredItemPaddingLeft"
     android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
     android:paddingRight="?android:attr/listPreferredItemPaddingRight"
-    android:textColor="?android:attr/colorAccent"
-    />
+    android:textColor="@color/color_accent"
+    android:textStyle="bold" />
