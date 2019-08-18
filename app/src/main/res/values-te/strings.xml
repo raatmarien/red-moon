@@ -1,28 +1,46 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">రెడ్ మూన్</string>
-
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">రెడ్ మూన్</string>
     <string name="activity_main">రెడ్ మూన్</string>
     <string name="activity_intro">పరిచయం</string>
     <string name="activity_about">రెడ్ మూన్ గురించి</string>
     <string name="menu_about">గురించి</string>
-
     <string name="pref_category_other">ఇతర</string>
     <string name="pref_title_intensity">అకిరణ్యత</string>
     <string name="pref_title_color_temp">రంగు</string>
     <string name="pref_summary_schedule_none">ఏమీలేదు</string>
     <string name="button_add_filter">చేర్చు</string>
     <string name="button_remove_filter">తొలగించు</string>
-
     <string name="dialog_title_remove_filter">ఈ ఫిల్టరును తొలగించాలా?</string>
-
     <string name="dialog_button_ok">సరే</string>
     <string name="dialog_button_cancel">రద్దుచేయి</string>
-
     <string name="slide_title_welcome">స్వాగతం!</string>
     <string name="slide_text_welcome">రెడ్ మూన్‌కి స్వాగతం!</string>
-
     <string name="slide_title_get_started">మొదలు పెట్టండి!</string>
     <string name="filter_name_custom">అభిమతం</string>
     <string name="filter_name_default">అప్రమేయం</string>
     <string name="location">స్థానం</string>
-    </resources>
+    <string name="pref_title_dim_level">చీకటి</string>
+    <string name="pref_summary_location_off">మీ స్థానం ఆధారంగా</string>
+    <string name="location_not_set">స్థానం సెట్ చేయబడలేదు</string>
+    <string name="longitude_short">దీర్ఘ</string>
+    <string name="pref_summary_email_developer">మమ్మల్ని సంప్రదించడానికి ద్వితీయ మార్గం</string>
+    <string name="toast_warning_secured"></string>
+    <string name="snackbar_searching_location">స్థానం కోసం శోధిస్తోంది</string>
+    <string name="snackbar_location_updated">స్థానం కనుగొనబడింది</string>
+    <string name="dialog_title_permission_usage_stats">వినియోగ ప్రాప్యత</string>
+    <string name="slide_title_protect_eyes">మీ కళ్ళను రక్షించడం</string>
+    <string name="slide_title_improve_sleep">మీ నిద్రను మెరుగుపరుస్తుంది</string>
+    <string name="filter_name_bed_reading">పఠనం</string>
+    <string name="filter_name_dim_only">మసక మాత్రమే</string>
+    <string name="pref_entry_button_backlight_system">సిస్టమ్ నిర్వహించబడింది</string>
+    <string name="pref_entry_button_backlight_turn_off">ఆపివేయండి</string>
+    <string name="action_next_profile">తదుపరి ప్రొఫైల్</string>
+    <string name="remove_profile_dialog_title">ఈ ప్రొఫైల్‌ను తొలగించండి</string>
+    <string name="pref_title_appearance">ప్రొఫైల్</string>
+    <string name="searching_location">స్థానం కోసం శోధిస్తోంది</string>
+    <string name="set_dialog">సెట్</string>
+    <string name="pref_title_startup">మొదలుపెట్టు</string>
+    <string name="time_toggle_options_array_0">మాన్యువల్</string>
+    <string name="notification_channel_overlay_name">అతివ్యాప్తి నియంత్రణ</string>
+</resources>
