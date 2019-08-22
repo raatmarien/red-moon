@@ -1,81 +1,65 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Red Moon</string>
     <string name="activity_main">Red Moon</string>
     <string name="activity_shortcut">Red Moon Toggle</string>
     <string name="activity_intro">Intro</string>
     <string name="menu_show_intro">Show intro</string>
-
     <string name="notification_status_paused">Paused</string>
     <string name="notification_action_resume">Resume</string>
     <string name="notification_action_pause">Pause</string>
-
     <string name="pref_category_filter">Filter</string>
     <string name="activity_timer">Filter times</string>
     <string name="pref_title_time_toggle">Filter times</string>
     <string name="pref_title_startup">Startup</string>
     <string name="pref_category_other">Other</string>
-
     <string name="button_add_filter">Add</string>
     <string name="button_remove_filter">Delete</string>
-    <string name="pref_title_dim_level">Dim level</string>
-    <string name="pref_title_intensity">Intensity level</string>
-    <string name="pref_title_color_temp">Colour temperature</string>
-    <string name="pref_title_lower_brightness">Lower brightness</string>
-
+    <string name="pref_title_dim_level">Darkness</string>
+    <string name="pref_title_intensity">Opacity</string>
+    <string name="pref_title_color_temp">Colour</string>
+    <string name="pref_title_lower_brightness">Lower system brightness</string>
     <string name="time_toggle_title">Toggle mode</string>
     <string name="pref_title_turn_on">Resume at</string>
     <string name="pref_title_turn_off">Pause at</string>
-    <string name="pref_title_location">Location</string>
+    <string name="pref_title_location">Sunset to sunrise</string>
     <string name="location_not_set">Location not set</string>
     <string name="latitude_short">Lat</string>
     <string name="longitude_short">Long</string>
     <string name="snackbar_searching_location">Searching for location</string>
-
     <string name="menu_dark_theme">Dark theme</string>
-
-    <string name="pref_title_email_developer">Email me at marienraat@riseup.net</string>
-    <string name="pref_summary_email_developer">Email me with bugs or suggestions</string>
+    <string name="pref_title_email_developer">Email the developers</string>
+    <string name="pref_summary_email_developer">A secondary way to contact us</string>
     <string name="pref_title_project_page">Visit the project page</string>
     <string name="pref_summary_project_page">Find more info, leave feedback and contribute</string>
     <string name="toast_warning_install">You won\'t be able to install APKs while the filter is running.</string>
     <string name="snackbar_warning_no_location">Enable location services to update location</string>
-
     <string name="help_snackbar_text">Press the switch to enable Red Moon</string>
-
     <string name="dialog_title_add_filter">Enter profile name</string>
     <string name="edit_hint_add_filter">Profile name</string>
     <string name="dialog_title_remove_filter">Delete this profile?</string>
     <string name="dialog_button_ok">OK</string>
     <string name="dialog_button_cancel">Cancel</string>
-
     <string name="shortcut_title_toggle">Toggle Filter</string>
-
     <string name="slide_title_welcome">Welcome!</string>
     <string name="slide_text_welcome">Welcome to Red Moon!</string>
-
     <string name="slide_title_protect_eyes">Protecting your eyes</string>
     <string name="slide_text_protect_eyes">At night, when looking at your
         phone hurts your eyes, you can use Red Moon to dim your screen.</string>
-
     <string name="slide_title_improve_sleep">Improving your sleep</string>
     <string name="slide_text_improve_sleep">Blue light suppresses the
         production of Melatonin, a hormone that helps you fall asleep at
         night. Red Moon removes the blue light from your screen, ensuring
         you can fall asleep easily.</string>
-
     <string name="slide_title_get_started">Get started!</string>
     <string name="slide_text_get_started">To enable Red Moon, press the
         switch in the top right corner.</string>
-
     <string name="filter_name_custom">Custom</string>
     <string name="filter_name_default">Default</string>
     <string name="filter_name_bed_reading">Reading</string>
-
     <string name="time_toggle_options_array_0">Manual</string>
     <string name="time_toggle_options_array_1">Automatic (sun)</string>
     <string name="time_toggle_options_array_2">Automatic (custom)</string>
-
     <!-- Currently unused -->
     <string name="add_new_profile_dialog_title">Enter profile name</string>
     <string name="add_new_profile_edit_hint">Profile name</string>
@@ -85,61 +69,60 @@
     <string name="toast_warning_no_location">Enable location services to update location</string>
     <string name="set_dialog">Set</string>
     <string name="notification_status_running">Running. Pause to install apks</string>
-<string name="activity_about">About Red Moon</string>
-    <string name="activity_secure_suspend">Pause in secure apps</string>
+    <string name="activity_about">About Red Moon</string>
+    <string name="activity_secure_suspend">Pause in excluded apps</string>
     <string name="menu_restore_default_filters">Restore default profiles</string>
     <string name="menu_about">About</string>
-
     <string name="notification_status_running_no_warning">Running</string>
     <string name="notification_status_off">Off</string>
     <string name="notification_action_turn_on">Turn on</string>
     <string name="notification_action_turn_off">Turn off</string>
     <string name="notification_action_stop">Turn off</string>
     <string name="notification_action_next_filter">Next filter</string>
-
     <string name="pref_category_button_backlight_disclaimer">No effect on some devices</string>
-
-    <string name="pref_title_secure_suspend">Pause in secure apps</string>
+    <string name="pref_title_secure_suspend">Pause in excluded apps</string>
     <string name="pref_title_button_backlight">Hardware button backlight</string>
-
     <string name="pref_summary_location_off">Based on your location</string>
-
-    <string name="pref_summary_secure_suspend">Some features won\'t work when Red Moon is on*. For example, installing APKs, granting permissions, or using the SuperUser app (on rooted devices).
+    <string name="pref_summary_secure_suspend">When this feature is enabled, Red Moon will automatically pause when certain apps are open. By default, this includes apps that won\'t work when Red Moon is running*, like installing apks. You can change this behaviour for the current screen of the current app from the notification. For example, you might want to add colour-sensitive apps, like the camera.
 \n
-\nWhen this setting is enabled, Red Moon will pause while one of these features is open.
+\nThis feature may slightly lower the battery life of your device.
 \n
-\nThis feature may slightly lower the battery life of your device. Furthermore this feature may not work on all devices.
-\n
-\n*Red Moon works by drawing a transparent red layer over the whole screen; these apps won\'t work if another app is drawing over them. That is so no other app can trick you into picking the option you didn\'t want, or watch your touches to figure out what you\'re doing.</string>
-
+\n*Some apps are secured against overlays to protect themselves from interference, like tricking you into installing an app you don\'t want. They won\'t respond to touches when Red Moon is on, since it works by drawing a transparent red layer over the screen.</string>
     <string name="text_switch_on">On</string>
     <string name="text_switch_off">Off</string>
-
     <string name="pref_title_version">Version</string>
-
     <string name="pref_title_integration">Integration with other apps</string>
     <string name="pref_summary_integration">Some apps, like LibreTasks or Tasker, allow you to automate tasks when certain events happen. Red Moon sends a public notification when it turns on and off, so those apps can respond. If you don\'t use or develop one of those apps, you can ignore the next paragraph.
 \n
 \nRed Moon broadcasts a public intent with the action `com.jmstudios.redmoon.RED_MOON_TOGGLED`. The intent contains a boolean extra with the key `jmstudios.bundle.key.FILTER_IS_ON`, which indicates whether Red Moon is toggling on or off.</string>
-
     <string name="snackbar_location_updated">Found location!</string>
     <string name="dialog_title_permission_overlay">Drawing over other apps</string>
     <string name="dialog_message_permission_overlay">Permit drawing over other apps in the next screen to allow Red Moon to turn on.</string>
-
     <string name="dialog_title_permission_write_settings">Modifying system settings</string>
     <string name="dialog_message_permission_write_settings">Permit modifying system settings in the next screen to allow Red Moon to change your brightness level.</string>
-
     <string name="dialog_title_permission_usage_stats">Usage access</string>
     <string name="dialog_message_permission_usage_stats">Permit usage access in the next screen to allow Red Moon to pause in secured apps.
 \n
 \nRed Moon will use this data only to determine whether you are using an app which will not work when Red Moon is on.</string>
-
     <string name="filter_name_dim_only">Dim only</string>
-
     <string name="pref_entry_button_backlight_system">System managed</string>
     <string name="pref_entry_button_backlight_filter_dim_level">Use filter dim level</string>
     <string name="pref_entry_button_backlight_turn_off">Turn off</string>
-
     <string name="action_next_profile">Next profile</string>
     <string name="location">Location</string>
-    </resources>
+    <string name="pref_title_start_time">Start time</string>
+    <string name="activity_schedule">Schedule</string>
+    <string name="notification_status_paused_with_info">Paused. Dismiss notification to stop.</string>
+    <string name="pref_title_schedule">Schedule</string>
+    <string name="pref_summary_schedule_sun" formatted="false">Sunset (%on) to sunrise (%off)</string>
+    <string name="pref_summary_schedule_custom" formatted="false">Custom (%on to %off)</string>
+    <string name="pref_summary_schedule_none">None</string>
+    <string name="pref_title_stop_time">Stop time</string>
+    <string name="pref_title_translators">Help translate</string>
+    <string name="pref_summary_translators">Translators: smichel17, raatmarien, Mostafa Ahangarha</string>
+    <string name="toast_warning_secured">Some features of this app might not work while Red Moon is running.</string>
+    <string name="notification_action_whitelist_add">Exclude app</string>
+    <string name="notification_action_whitelist_remove">Filter app</string>
+    <string name="notification_channel_overlay_name">Overlay Control</string>
+    <string name="notification_channel_overlay_description">The persistent overlay control notification</string>
+</resources>
