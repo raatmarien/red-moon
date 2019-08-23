@@ -34,13 +34,11 @@
     <string name="shortcut_title_toggle">Red Moon
         ein-/ausschalten</string>
     <string name="activity_shortcut">Umschalter für Red Moon</string>
-
     <!-- Profiles -->
     <!-- standard_profiles_array -->
     <string name="filter_name_custom">Benutzerdefiniert</string>
     <string name="filter_name_default">Standard</string>
     <string name="filter_name_bed_reading">Lesen</string>
-
     <!-- Automatic filter -->
     <!-- time_toggle_options_array -->
     <string name="time_toggle_options_array_0">Manuell</string>
@@ -57,26 +55,19 @@
     <string name="snackbar_searching_location">Standortsuche</string>
     <string name="activity_intro">Einführung</string>
     <string name="menu_show_intro">Einführung erneut anzeigen</string>
-
     <string name="notification_action_resume">Fortsetzen</string>
     <string name="notification_action_pause">Anhalten</string>
-
     <string name="slide_title_welcome">Willkommen!</string>
     <string name="slide_text_welcome">Willkommen bei Red Moon!</string>
-
     <string name="slide_title_protect_eyes">Schützten Sie Ihre Augen</string>
     <string name="slide_text_protect_eyes">Nachts, wenn der Blick auf Ihr Handy Ihre Augen schmerzen lässt, können Sie Red Moon verwenden, um Ihren Bildschirm abzudunkeln.</string>
-
     <string name="slide_title_improve_sleep">Verbessert Ihren Schlaf</string>
     <string name="slide_text_improve_sleep">Blaues Licht unterdrückt die Produktion von Melatonin, einem Hormon, das Ihnen hilft, nachts einzuschlafen. Red Moon entfernt das blaue Licht von Ihrem Bildschirm und sorgt dafür, dass Sie mühelos einschlafen können.</string>
-
     <string name="slide_title_get_started">Beginnen!</string>
     <string name="slide_text_get_started">Um Red Moon zu aktivieren, drücken Sie den Schalter oben rechts.</string>
-
     <string name="text_switch_on">An</string>
     <string name="text_switch_off">Aus</string>
     <string name="activity_secure_suspend">In ausgeschlossenen Apps pausieren</string>
-
     <string name="pref_title_secure_suspend">In ausgeschlossenen Apps anhalten</string>
     <string name="dialog_title_permission_usage_stats">Zugriff auf Nutzungsstatistik erlauben</string>
     <string name="pref_summary_secure_suspend">Falls diese Funkion aktiviert ist, wird Red Moon automatisch pausieren wenn bestimmte Apps laufen. Per Standardeinstellung betrifft dies Apps die nicht funktionieren wenn Red Moon gestartet ist*, wie etwa das Installieren von apks. In der Notifikation kanns Du diese Verhalten für den derzeitigen Bildschirm der derzeitigen App ändern. Beispielsweise möchtest Du eventuell farbsensible Apps hinzufügen, wie die Kamera.
@@ -87,7 +78,6 @@
     <string name="dialog_message_permission_usage_stats">Erlauben Sie den Zugriff auf die Nutzung im nächsten Bildschirm, damit Red Moon in geschützten Anwendungen pausieren kann.
 \n
 \nRed Moon benötigt den Zugriff auf die Daten, um festzustellen, welche App Sie gerade nutzten, um so ggf. automatisch den Filter anhalten zu können.</string>
-
     <string name="add_new_profile_dialog_title">Name für das Profil eingeben</string>
     <string name="add_new_profile_edit_hint">Profilname</string>
     <string name="remove_profile_dialog_title">Dieses Profil löschen?</string>
@@ -99,41 +89,32 @@
     <string name="notification_action_turn_off">Ausschalten</string>
     <string name="notification_action_stop">Beenden</string>
     <string name="notification_action_next_filter">Nächster Filter</string>
-
     <string name="pref_category_button_backlight_disclaimer">Kein Effekt auf manchen Geräten</string>
     <string name="pref_summary_location_off">Basierend auf Ihrem Aufenthaltsort</string>
     <string name="pref_title_integration">Integration mit anderen Apps</string>
     <string name="pref_title_version">Version</string>
-
-    <string name="pref_entry_button_backlight_filter_dim_level">Filter „Grad der Abdunklung” verwenden</string>
+    <string name="pref_entry_button_backlight_filter_dim_level">Filter „Grad der Abdunklung“ verwenden</string>
     <string name="pref_entry_button_backlight_turn_off">Ausschalten</string>
-
     <!-- Currently unused -->
     <string name="action_next_profile">Nächstes Profil</string>
     <string name="searching_location">Standortsuche</string>
     <string name="toast_warning_no_location">Ortungsdiensten zur Aktualisierung des Standorts aktivieren</string>
-
     <string name="set_dialog">Festlegen</string>
     <string name="notification_status_running">Red Moon läuft. Red Moon anhalten, um APKs installieren zu können</string>
     <string name="notification_status_running_no_warning">Wird ausgeführt</string>
-<string name="menu_restore_default_filters">Standardfilter wiederherstellen</string>
+    <string name="menu_restore_default_filters">Standardfilter wiederherstellen</string>
     <string name="pref_title_button_backlight">Hintergrundlicht der Hardwaretaste</string>
-
     <string name="snackbar_location_updated">Standort gefunden!</string>
     <string name="dialog_title_permission_overlay">Über andere Apps zeichnen</string>
     <string name="dialog_message_permission_overlay">Erlaube das Einblenden über andere Apps auf dem nächsten Bildschirm, damit Red Moon eingeschaltet werden kann.</string>
-
     <string name="dialog_title_permission_write_settings">Systemeinstellungen ändern</string>
     <string name="dialog_message_permission_write_settings">Erlauben Sie die Änderung der Systemeinstellungen im nächsten Bildschirm, damit Red Moon Ihre Helligkeitsstufe ändern kann.</string>
-
     <string name="filter_name_dim_only">Nur abdunkeln</string>
-
     <string name="pref_entry_button_backlight_system">Systemverwaltet</string>
     <string name="location">Standort</string>
     <string name="pref_summary_integration">Manche Apps wie LibreTasks oder Tasker ermöglichen es Ihnen, Aufgaben zu automatisieren, wenn bestimmte Ereignisse eintreten. Red Moon sendet eine öffentliche Notifikation, wenn es sich ein- und ausschaltet, so dass diese Apps darauf reagieren können. Wenn Sie keine dieser Apps benutzen oder entwickeln, dann können Sie den nächsten Absatz ignorieren. 
 \n 
 \nRed Moon sendet einen Public Intent mit der Aktion `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Der Intent enthält einen Booleschen Wert mit dem Schlüssel `jmstudios.bundle.key.FILTER_IS_ON`, der angibt, ob Red Moon an- oder ausgeschaltet wird.</string>
-
     <string name="activity_schedule">Zeitplan</string>
     <string name="notification_status_paused_with_info">Angehalten. Verwerfen Sie die Notifikation um zu beenden.</string>
     <string name="notification_action_whitelist_add">App ausschließen</string>
@@ -146,9 +127,7 @@
     <string name="pref_title_stop_time">Ende</string>
     <string name="pref_title_translators">Beim Übersetzen helfen</string>
     <string name="pref_summary_translators">Übersetzer: smichel17, raatmarien, Mostafa Ahangarha</string>
-
     <string name="toast_warning_secured">Einige Features dieser App funktionieren womöglich nicht während Red Moon läuft.</string>
-
     <string name="notification_channel_overlay_name">Overlaykontrolle</string>
     <string name="notification_channel_overlay_description">Die ständige Notifikation der Overlaykontrolle</string>
 </resources>
