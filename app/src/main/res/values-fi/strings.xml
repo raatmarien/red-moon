@@ -1,2 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="notification_status_off">Pois päältä</string>
+    <string name="slide_text_welcome">Tervetuloa Red Mooniin!</string>
+    <string name="menu_dark_theme">Tumma teema</string>
+    <string name="dialog_title_remove_filter">Poistetaanko tämä suodatin\?</string>
+    <string name="pref_entry_button_backlight_filter_dim_level">Käytä suodattimen himmennystasoa</string>
+    <string name="activity_shortcut">Red Moon -painike</string>
+    <string name="filter_name_dim_only">Himmennä vain</string>
+    <string name="slide_title_welcome">Tervetuloa!</string>
+    <string name="activity_about">Tietoja Red Moonista</string>
+    <string name="notification_action_next_filter">Seuraava suodatin</string>
+    <string name="remove_profile_dialog_title">Poistetaanko tämä profiili\?</string>
+    <string name="text_switch_on">Päällä</string>
+    <string name="pref_summary_schedule_none">Ei mikään</string>
+    <string name="notification_status_running">Käynnissä. Sammuta asentaaksesi APK-tiedostoita</string>
+    <string name="pref_title_color_temp">Väri</string>
+    <string name="snackbar_searching_location">Etsitään sijaintia</string>
+    <string name="pref_summary_schedule_sun" formatted="false">Auringonlasku (% on) auringonnousuun (%off)</string>
+    <string name="pref_title_turn_off">Sammuta kello</string>
+    <string name="snackbar_warning_no_location">Mahdollista sijaintipalvelut päivittääksesi sijainti</string>
+    <string name="notification_channel_overlay_name">Päällekkäisohjaus</string>
+    <string name="time_toggle_title">Automaattinen vaihto</string>
+    <string name="pref_title_stop_time">Pysäytysaika</string>
+    <string name="time_toggle_options_array_1">Automaattinen (aurinko)</string>
+    <string name="time_toggle_options_array_0">Opas</string>
+    <string name="toast_warning_secured">Jotkin tämän sovelluksen ominaisuudet eivät ehkä toimi, kun Red Moon on käynnissä.</string>
+    <string name="filter_name_custom">Mukautettu</string>
+    <string name="notification_action_whitelist_remove">Suodata sovellus</string>
+    <string name="pref_title_time_toggle">Ajastin</string>
+    <string name="pref_title_startup">Käynnistys</string>
+    <string name="button_add_filter">Lisää</string>
+    <string name="shortcut_title_toggle">Vaihda Red Moon</string>
+    <string name="notification_channel_overlay_description">Pysyvä päällekkäisohjausilmoitus</string>
+    <string name="pref_summary_integration">Jotkin sovellukset, kuten LibreTasks tai Tasker, sallivat sinun automatisoida tehtäviä tiettyjen tapahtumien tapahtuessa. Red Moon lähettää julkisen ilmoituksen, kun se käynnistyy ja sammuu, joten kyseiset sovellukset voivat vastata. Jollet käytä tai kehitä jotakin näistä sovelluksista, voit ohittaa seuraavan kappaleen.
+\n
+\nRed Moon lähettää yleisen aikomuksen toimeen ”com. jmstudios.redmoon.RED _MOON_TOGGLED”. Tarkoitus sisältää totuus arvo Extra avain ”jmstudios.bundle.key.FILTER_IS_ON”, joka ilmaisee, onko Red Moon on päällä tai pois päältä.</string>
+    <string name="activity_schedule">Aikataulu</string>
+    <string name="pref_summary_translators">Kääntäjät: smichel17, raatmarien, Mostafa Ahangarha, Swann</string>
+    <string name="pref_title_lower_brightness">Alenna järjestelmän kirkkaus</string>
+    <string name="pref_title_project_page">Siirry projektin sivulle</string>
+    <string name="notification_action_turn_off">Sammuta</string>
+    <string name="dialog_message_permission_overlay">Salli piirustus muihin sovelluksiin seuraavassa näytössä, jotta Red Moon voi ottaa käyttöön.</string>
+    <string name="dialog_button_ok">Vahvista</string>
+    <string name="slide_text_protect_eyes">Yöllä, kun sinun puhelimesi katsominen sattuu silmäsi, voit käyttää Red Moonia himmentääksesi näytön.</string>
+    <string name="menu_show_intro">Toista esittely</string>
+    <string name="latitude_short">Leveys</string>
+    <string name="add_new_profile_dialog_title">Syötä profiilin nimi</string>
+    <string name="pref_summary_secure_suspend">Kun tämä toiminto on käytössä, Red Moon keskeyttää automaattisesti, kun tietyt sovellukset ovat auki. Oletusarvoisesti tämä sisältää sovelluksia, jotka eivät toimi, kun Red Moon on käynnissä*, kuten APK:jen asentaminen. Voit muuttaa nykyisen sovelluksen nykyisen näytön toimintaa ilmoituksesta. Haluat ehkä esimerkiksi lisätä värikarkoiset sovellukset, kuten kameran.
+\n
+\nTämä toiminto saattaa hieman pienentää laitteesi akun kestoa.
+\n
+\n*Jotkin sovellukset on suojattu peitto kuvia vastaan suojautu maan häiriöiltä, kuten huijaaminen sinua asentamaan sovellus, jota et halua. He eivät reagoi kosketukseen, kun punainen kuu on päällä, koska se toimii piirtämällä läpinäkyvän punaisen kerroksen näytön päälle.</string>
+    <string name="dialog_title_permission_usage_stats">Käyttöoikeus</string>
+    <string name="pref_entry_button_backlight_system">Järjestelmän hallitsema</string>
+    <string name="pref_category_other">Muu</string>
+    <string name="pref_summary_project_page">Löydä lisätietoja, jätä palautetta ja osallistu</string>
+    <string name="help_snackbar_text">Ota Red Moon käyttöön painamalla kytkintä</string>
+    <string name="set_dialog">Aseta</string>
+    <string name="filter_name_default">Oletus</string>
+    <string name="pref_title_integration">Integrointi muihin sovelluksiin</string>
+    <string name="dialog_message_permission_write_settings">Salli järjestelmäasetusten muokkaaminen seuraavassa näytössä, jotta Red Moon voi muuttaa kirkkaustasoa.</string>
+    <string name="menu_about">Tietoja sovelluksesta</string>
+    <string name="activity_timer">Ajastin</string>
+    <string name="pref_title_version">Versio</string>
+    <string name="action_next_profile">Seuraava profiili</string>
+    <string name="pref_category_filter">Suodatin</string>
+    <string name="toast_warning_install">Et voi asentaa APK:ita Red Moonin ollessa päällä.</string>
+    <string name="pref_title_translators">Auta kääntämään</string>
+    <string name="notification_action_stop">Pysäytä</string>
+    <string name="location">Sijainti</string>
+    <string name="pref_title_secure_suspend">Keskeytä poissuljetuissa sovelluksissa</string>
+    <string name="pref_title_intensity">Läpinäkymättömyys</string>
+    <string name="slide_text_get_started">Käännä Red Moon päälle ja pois kytkimellä oikeassa yläkulmassa.</string>
+    <string name="location_not_set">Sijaintia ei ole määritetty</string>
+    <string name="pref_summary_location_off">Sijaintisi perusteella</string>
+    <string name="pref_title_dim_level">Pimeys</string>
+    <string name="slide_title_protect_eyes">Suojaa silmiäsi</string>
+    <string name="pref_title_schedule">Aikataulu</string>
+    <string name="activity_secure_suspend">Keskeytä poissuljetuissa sovelluksissa</string>
+    <string name="pref_title_start_time">Aloitusaika</string>
+    <string name="searching_location">Etsitään sijaintia</string>
+    <string name="pref_title_button_backlight">Laitepainikkeen taustavalo</string>
+    <string name="menu_restore_default_filters">Palauta oletussuodattimet</string>
+    <string name="longitude_short">Pituus</string>
+    <string name="notification_status_running_no_warning">Käynnissä</string>
+    <string name="notification_status_paused_with_info">Keskeytetty. Hylkää ilmoitus pysäyttämään.</string>
+    <string name="pref_title_appearance">Profiili</string>
+    <string name="notification_action_turn_on">Ota käyttöön</string>
+    <string name="notification_action_whitelist_add">Sulje sovellus pois</string>
+    <string name="pref_summary_email_developer">Toissijainen tapa ottaaksesi yhteyttä meihin</string>
+    <string name="activity_intro">Esittely</string>
+    <string name="dialog_message_permission_usage_stats">Salli käyttöoikeus seuraavassa näytössä, jotta Red Moon voi keskeyttää suojatut sovellukset.
+\n
+\nRed Moon käyttää näitä tietoja vain määrittääkseen, onko käytät sovellusta, joka ei toimi, kun Red Moon on päällä.</string>
+    <string name="edit_hint_add_filter">Suodattimen nimi</string>
+    <string name="text_switch_off">Pois päältä</string>
+    <string name="notification_action_pause">Pysäytä</string>
+    <string name="dialog_title_add_filter">Syötä suodattimen nimi</string>
+    <string name="time_toggle_options_array_2">Automaattinen (mukautettu)</string>
+    <string name="notification_status_paused">Keskeytetty</string>
+    <string name="notification_action_resume">Jatka</string>
+    <string name="dialog_title_permission_write_settings">Järjestelmäasetusten muuttaminen</string>
+    <string name="dialog_title_permission_overlay">Piirrä muihin sovelluksiin</string>
+    <string name="slide_text_improve_sleep">Sininen valo tukahduttaa melatoniinin tuotantoa, hormoni, joka auttaa nukahtaa yöllä. Red Moon poistaa sinisen valon näytöltä, varmistaen, että voit nukahtaa helposti.</string>
+    <string name="toast_warning_no_location">Mahdollista sijaintipalvelut päivittääksesi sijainti</string>
+    <string name="pref_entry_button_backlight_turn_off">Sammuta</string>
+    <string name="filter_name_bed_reading">Lukeminen</string>
+    <string name="slide_title_get_started">Aloita!</string>
+    <string name="button_remove_filter">Poista</string>
+    <string name="app_name">Red Moon</string>
+    <string name="pref_title_turn_on">Ota käyttöön kello</string>
+    <string name="activity_main">Red Moon</string>
+    <string name="pref_category_button_backlight_disclaimer">Ei vaikutusta joihinkin laitteisiin</string>
+    <string name="add_new_profile_edit_hint">Profiilin nimi</string>
+    <string name="pref_title_location">Auringonlaskusta auringonnousuun</string>
+    <string name="pref_summary_schedule_custom" formatted="false">Mukauta (%on → %off)</string>
+    <string name="pref_title_email_developer">Lähetä sähköpostia kehittäjille</string>
+    <string name="slide_title_improve_sleep">Paranta unesi</string>
+    <string name="dialog_button_cancel">Peruuta</string>
+    <string name="snackbar_location_updated">Löydetty sijainti!</string>
+</resources>
