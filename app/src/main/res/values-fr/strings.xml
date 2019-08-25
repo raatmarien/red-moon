@@ -111,7 +111,7 @@
     <string name="notification_action_whitelist_remove">Filtrer l\'application</string>
     <string name="pref_title_schedule">Planification</string>
     <string name="pref_summary_schedule_sun" formatted="false">Du coucher (%on) au lever du soleil (%off)</string>
-    <string name="pref_summary_schedule_custom" formatted="false">Personnalisée (%on to %off)</string>
+    <string name="pref_summary_schedule_custom" formatted="false">Personnalisée (%on à %off)</string>
     <string name="pref_summary_schedule_none">Aucune</string>
     <string name="pref_title_start_time">Début</string>
     <string name="pref_title_stop_time">Fin</string>
