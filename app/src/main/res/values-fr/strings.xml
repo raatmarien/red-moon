@@ -48,7 +48,7 @@
     <string name="notification_action_resume">Reprendre</string>
     <string name="notification_action_pause">Mettre en pause</string>
     <string name="activity_intro">Introduction</string>
-    <string name="menu_show_intro">Rejouer l\'intro</string>
+    <string name="menu_show_intro">Rejouer la présentation</string>
     <string name="slide_title_welcome">Bienvenue !</string>
     <string name="slide_text_welcome">Bienvenue dans Red Moon !</string>
     <string name="slide_title_protect_eyes">Protéger vos yeux</string>
@@ -80,8 +80,8 @@
     <string name="searching_location">Recherche de localisation</string>
     <string name="toast_warning_no_location">Activer les services de localisation pour actualiser la position</string>
     <string name="set_dialog">OK</string>
-    <string name="notification_status_running">En exécution. Suspendre pour installer des APK</string>
-    <string name="notification_status_running_no_warning">Actif</string>
+    <string name="notification_status_running">En exécution. Éteindre pour installer des APK</string>
+    <string name="notification_status_running_no_warning">En exécution</string>
     <string name="menu_restore_default_filters">Restaurer les filtres par défaut</string>
     <string name="notification_status_off">Éteint</string>
     <string name="notification_action_turn_on">Allumer</string>
