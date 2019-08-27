@@ -68,7 +68,7 @@
     <string name="text_switch_on">An</string>
     <string name="text_switch_off">Aus</string>
     <string name="activity_secure_suspend">In ausgeschlossenen Apps pausieren</string>
-    <string name="pref_title_secure_suspend">In ausgeschlossenen Apps anhalten</string>
+    <string name="pref_title_secure_suspend">Filter für bestimmte Apps automatisch pausieren</string>
     <string name="dialog_title_permission_usage_stats">Zugriff auf Nutzungsstatistik erlauben</string>
     <string name="pref_summary_secure_suspend">Falls diese Funkion aktiviert ist, wird Red Moon automatisch pausieren wenn bestimmte Apps laufen. Per Standardeinstellung betrifft dies Apps die nicht funktionieren wenn Red Moon gestartet ist*, wie etwa das Installieren von apks. In der Notifikation kanns Du diese Verhalten für den derzeitigen Bildschirm der derzeitigen App ändern. Beispielsweise möchtest Du eventuell farbsensible Apps hinzufügen, wie die Kamera.
 \n
@@ -116,15 +116,15 @@
 \n 
 \nRed Moon sendet einen Public Intent mit der Aktion `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Der Intent enthält einen Booleschen Wert mit dem Schlüssel `jmstudios.bundle.key.FILTER_IS_ON`, der angibt, ob Red Moon an- oder ausgeschaltet wird.</string>
     <string name="activity_schedule">Zeitplan</string>
-    <string name="notification_status_paused_with_info">Paused. Dismiss notification to stop.</string>
-    <string name="notification_action_whitelist_add">App ausschließen</string>
+    <string name="notification_status_paused_with_info">Pausiert. Zum Beenden Benachrichtigung ausblenden.</string>
+    <string name="notification_action_whitelist_add">App ausnehmen</string>
     <string name="notification_action_whitelist_remove">App filtern</string>
     <string name="pref_title_schedule">Zeitplan</string>
     <string name="pref_summary_schedule_sun" formatted="false">Sonnenuntergang (%on) bis Sonnenaufgang (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Benutzerdefiniert (%on bis %off)</string>
-    <string name="pref_summary_schedule_none">Keine</string>
-    <string name="pref_title_start_time">Beginn</string>
-    <string name="pref_title_stop_time">Ende</string>
+    <string name="pref_summary_schedule_none">Keiner</string>
+    <string name="pref_title_start_time">Anfangszeit</string>
+    <string name="pref_title_stop_time">Endzeit</string>
     <string name="pref_title_translators">Beim Übersetzen helfen</string>
     <string name="pref_summary_translators">Übersetzer: smichel17, raatmarien, Mostafa Ahangarha</string>
     <string name="toast_warning_secured">Einige Features dieser App funktionieren womöglich nicht während Red Moon läuft.</string>
