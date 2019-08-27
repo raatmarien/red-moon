@@ -13,7 +13,7 @@
     <string name="remove_profile_dialog_title">Supprimer ce profil\?</string>
     <string name="text_switch_on">Allumé</string>
     <string name="pref_summary_schedule_none">Aucun</string>
-    <string name="notification_status_running">Activé. Éteindre pour installer des APK</string>
+    <string name="notification_status_running">En exécution. Éteindre pour installer des APK</string>
     <string name="pref_title_color_temp">Couleur</string>
     <string name="snackbar_searching_location">Recherche de l\'emplacement</string>
     <string name="pref_summary_schedule_sun" formatted="false">De l\'aube (%on) au crépuscule (%off)</string>
@@ -77,14 +77,14 @@
     <string name="pref_title_dim_level">Obscurité</string>
     <string name="slide_title_protect_eyes">Protéger vos yeux</string>
     <string name="pref_title_schedule">Horaires</string>
-    <string name="activity_secure_suspend">Mettre en pause dans les applis exclues</string>
+    <string name="activity_secure_suspend">Suspendre dans les applis exclues</string>
     <string name="pref_title_start_time">Heure de début</string>
     <string name="searching_location">Recherche de l\'emplacement</string>
-    <string name="pref_title_button_backlight">Rétroéclairage du bouton physique</string>
+    <string name="pref_title_button_backlight">Rétroéclairage des boutons physiques</string>
     <string name="menu_restore_default_filters">Restaurer les filtres par défaut</string>
     <string name="longitude_short">Longitude</string>
-    <string name="notification_status_running_no_warning">Activé</string>
-    <string name="notification_status_paused_with_info">En pause. Supprimer la notification pour arrêter.</string>
+    <string name="notification_status_running_no_warning">En exécution</string>
+    <string name="notification_status_paused_with_info">En pause. Enlever la notification pour arrêter.</string>
     <string name="pref_title_appearance">Profil</string>
     <string name="notification_action_turn_on">Allumer</string>
     <string name="notification_action_whitelist_add">Exclure l\'appli</string>
