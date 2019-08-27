@@ -45,7 +45,7 @@
     <string name="time_toggle_options_array_1">Sonnenstand</string>
     <string name="time_toggle_options_array_2">Benutzerdefinierte Zeiten</string>
     <string name="location_not_set">Standort nicht festgelegt</string>
-    <string name="pref_title_location">Sonnenuntergang bis Sonnenaufgang</string>
+    <string name="pref_title_location">Sonnenunter- bis Sonnenaufgang</string>
     <string name="latitude_short">Breitengrad</string>
     <string name="longitude_short">Längengrad</string>
     <string name="pref_category_other">Weitere</string>
