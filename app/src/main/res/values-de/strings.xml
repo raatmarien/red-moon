@@ -116,7 +116,7 @@
 \n 
 \nRed Moon sendet einen Public Intent mit der Aktion `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Der Intent enthält einen Booleschen Wert mit dem Schlüssel `jmstudios.bundle.key.FILTER_IS_ON`, der angibt, ob Red Moon an- oder ausgeschaltet wird.</string>
     <string name="activity_schedule">Zeitplan</string>
-    <string name="notification_status_paused_with_info">Angehalten. Verwerfen Sie die Notifikation um zu beenden.</string>
+    <string name="notification_status_paused_with_info">Paused. Dismiss notification to stop.</string>
     <string name="notification_action_whitelist_add">App ausschließen</string>
     <string name="notification_action_whitelist_remove">App filtern</string>
     <string name="pref_title_schedule">Zeitplan</string>
