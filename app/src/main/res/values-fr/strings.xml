@@ -47,7 +47,7 @@
     <string name="time_toggle_options_array_2">Automatique (personnalisé)</string>
     <string name="notification_action_resume">Reprendre</string>
     <string name="notification_action_pause">Mettre en pause</string>
-    <string name="activity_intro">Introduction</string>
+    <string name="activity_intro">Présentation</string>
     <string name="menu_show_intro">Rejouer la présentation</string>
     <string name="slide_title_welcome">Bienvenue !</string>
     <string name="slide_text_welcome">Bienvenue dans Red Moon !</string>
