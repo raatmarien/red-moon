@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">रेड मून</string>
+    <string name="activity_main">रेड मून</string>
+    <string name="activity_shortcut">रेड मून टॉगल</string>
+    <string name="activity_intro">परिचय</string>
+    <string name="activity_about">रेड मून के बारे में</string>
+    <string name="activity_secure_suspend">बहिष्कृत एप्लिकेशन में रोकें</string>
+    <string name="activity_schedule">अनुसूची</string>
+    <string name="activity_timer">समयबिंदु</string>
+    <string name="menu_dark_theme">डार्क थीम</string>
+    <string name="menu_restore_default_filters">डिफ़ॉल्ट फ़िल्टर पुनर्स्थापित करें</string>
+    <string name="menu_show_intro">परिचय पुनः चलाये</string>
+    <string name="menu_about">के बारे में</string>
+</resources>
