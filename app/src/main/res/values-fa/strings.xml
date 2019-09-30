@@ -1,32 +1,27 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
  * Copyright (c) 2016 Danial Behzadi <dani.behzi@ubuntu.com>
  * Copyright (c) 2016 Marien Raat <marienraat@riseup.net>
  * SPDX-License-Identifier: GPL3.0+
--->
-<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+--><resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- App Name and Activity Labels -->
     <string name="app_name">رد مون</string>
     <string name="activity_main">رد مون</string>
     <string name="activity_shortcut">تغییر حالت رد مون</string>
-
     <!-- Notification -->
     <string name="notification_status_paused">مکث شده</string>
-
     <!-- Preference -->
     <string name="pref_category_filter">پالایه</string>
     <string name="activity_timer">زمان‌های پالایه</string>
     <string name="pref_title_time_toggle">زمان‌های پالایه</string>
     <string name="pref_title_startup">روشن شدن</string>
     <string name="pref_category_other">دیگر</string>
-
     <string name="button_add_filter">افزودن</string>
     <string name="button_remove_filter">حذف</string>
     <string name="pref_title_dim_level">تیرگی</string>
     <string name="pref_title_intensity">وضوح</string>
     <string name="pref_title_color_temp">رنگ</string>
     <string name="pref_title_lower_brightness">روشنایی سیستمی کم‌تر</string>
-
     <string name="time_toggle_title">روش تغییر حالت</string>
     <string name="pref_title_turn_on">از سر گیری در</string>
     <string name="pref_title_turn_off">مکث در</string>
@@ -35,37 +30,29 @@
     <string name="latitude_short">عرض جغرافیایی</string>
     <string name="longitude_short">طول جغرافیایی</string>
     <string name="snackbar_searching_location">در حال جست‌وجو برای موقعیّت</string>
-
     <string name="menu_dark_theme">زمینهٔ تیره</string>
-
     <string name="pref_title_email_developer">فرستادن رایانامه به توسعه‌دهندگان</string>
     <string name="pref_summary_email_developer">راه دوم برای تماس با ما</string>
     <string name="pref_title_project_page">از صفحهٔ پروژه بازدید کنید</string>
     <string name="pref_summary_project_page">اطّلاعات بیش‌تری بگیرید، بازخورد دهید و مشارکت کنید</string>
-
     <!-- Toasts -->
     <string name="toast_warning_install">هنگام روشن بودن Red Moon، نخواهید توانست بسته APK نصب کنید.</string>
     <string name="snackbar_warning_no_location">برای به‌روز رسانی موقعیّت، خدمات موقعیّت را فعّال کنید</string>
-
     <!-- Snackbar -->
     <string name="help_snackbar_text">برای فعّال سازی رد مون، دستگیره را فشار دهید</string>
-
     <!-- Dialog -->
     <string name="dialog_title_add_filter">ورود نام نمایه</string>
     <string name="edit_hint_add_filter">نام نمایه</string>
     <string name="dialog_title_remove_filter">حذف این نمایه؟</string>
     <string name="dialog_button_ok">قبول</string>
     <string name="dialog_button_cancel">لغو</string>
-
     <!-- Shortcuts -->
     <string name="shortcut_title_toggle">تغییر حالت</string>
-
     <!-- Profiles -->
     <!-- standard_profiles_array -->
     <string name="filter_name_custom">شخصی</string>
     <string name="filter_name_default">پیش‌گزیده</string>
     <string name="filter_name_bed_reading">مطالعه</string>
-
     <!-- Automatic filter -->
     <!-- time_toggle_options_array -->
     <string name="time_toggle_options_array_0">دستی</string>
@@ -80,14 +67,13 @@
     <string name="toast_warning_no_location">برای به‌روز رسانی موقعیّت، خدمات موقعیّت را فعّال کنید</string>
     <string name="set_dialog">تنظیم</string>
     <string name="notification_status_running">در حال اجرا. برای نصب بسته‌ها مکث کنید</string>
-<string name="activity_intro">معرفی</string>
+    <string name="activity_intro">معرفی</string>
     <string name="activity_about">درباره Red Moon</string>
     <string name="activity_secure_suspend">توقف در برنامه‌های استثنا شده</string>
     <string name="activity_schedule">زمان‌بندی</string>
     <string name="menu_restore_default_filters">بازنشانی فیبترهای پیش‌فرض</string>
     <string name="menu_show_intro">بازپخش معرفی</string>
     <string name="menu_about">درباره</string>
-
     <string name="notification_status_running_no_warning">درحال اجرا</string>
     <string name="notification_status_off">خاموش</string>
     <string name="notification_action_resume">ادامه</string>
@@ -98,70 +84,55 @@
     <string name="notification_action_whitelist_add">استثنا کردن برنامه</string>
     <string name="notification_action_whitelist_remove">فیلتر کردن برنامه</string>
     <string name="notification_action_next_filter">فیلتر بعدی</string>
-
     <string name="pref_category_button_backlight_disclaimer">فاقد تاثیر در برخی دستگاه‌ها</string>
-
     <string name="pref_title_schedule">زمان‌بندی</string>
     <string name="pref_summary_schedule_sun" formatted="false">غروب (%on) تا طلوع (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">سفارشی (%on تا %off)</string>
     <string name="pref_summary_schedule_none">هیچ‌کدام</string>
     <string name="pref_title_secure_suspend">توقف در برنامه‌های استثنا شده</string>
     <string name="pref_title_button_backlight">نور پس‌زمینه دکمه سخت‌افزاری</string>
-
     <string name="pref_title_start_time">زمان آغاز</string>
     <string name="pref_title_stop_time">زمان توقف</string>
     <string name="pref_summary_location_off">بر اساس مکان شما</string>
-
     <string name="pref_summary_secure_suspend">"در صورت فعال بودن این ویژگی، Red Moon به طور خودکار و زمانی که برنامه‌های خاصی باز باشند  خواهد شد. به طور پیش فرض، این ویژگی شامل برنامه‌هایی می‌شود که هم‌زمان با Red Moon نمی‌توانند کار کنند*، مانند نصب کردن apkها. می‌توانید از بخش اعلان‌ها، این رفتار را برای صفحه فعلی برنامه جاری تغییر دهید. به عنوان مثال، شما ممکن است بخواهید برنامه های حساس به رنگ مانند دوربین را اضافه کنید.
 \n
 \nاین قابلیت ممکن است بر مصرف باتری دستگاه شما تاثیر منفی بگذارد.
 \n
 \n*برخی برنامه‌ها به منظور محافظت از خود در مقابل دخالت دیگر برنامه (مانند زمانی که فریب دادن شما برای نصب برنامه‌ای که نخواهید نصب کنید) نسبت به هم‌پوشانی ایمن‌سازی شده‌اند. از آنجا که Red Moon یک لایه شفاف قرمز بر روی صفحه نمایش قرار می‌دهد، چنین برنامه‌هایی به دستورات شما واکنشی نشان نخواهند داد."</string>
-
     <string name="text_switch_on">روشن</string>
     <string name="text_switch_off">خاموش</string>
-
     <string name="pref_title_version">نسخه</string>
-
     <string name="pref_title_translators">به ترجمه کمک کنید</string>
     <string name="pref_summary_translators">مترجمان: smichel17, raatmarien, Mostafa Ahangarha</string>
-
     <string name="pref_title_integration">ادغام با دیگر برنامه‌ها</string>
     <string name="pref_summary_integration">برخی از برنامه ها مثل LibreTasks یا Tasker، به شما اجازه می‌دهند که با وقوع رویدادهایی، برخی کارها به طور خودکار انجام شوند. هنگامی که Red Moon روشن یا خاموش می‌شود، اعلانی عمومی می‌فرستد که این برنامه‌ها می‌توانند به آن واکنش نشان دهند. اگر شما کاربر یا توسعه‌دهنده یکی از این برنامه‌ها نیستید می‌توانید پاراگراف بعدی را نادیده بگیرید.
 \n
 \nRed Moon با کنش \'com.jmstudios.redmoon.RED_MOON_TOGGLED\' قصد خود را اعلام عمومی می‌کند. این قصد، حاوی یک مقدار بولی اضافی با کلید \'jmstudios.bundle.key.FILTER_IS_ON\' است که نشان می‌دهد Red Moon روشن یا خاموش شده است.</string>
-
     <string name="toast_warning_secured">برخی ویژگی‌های این برنامه ممکن است هم زمان با فعال بودن Red Moon کار نکنند.</string>
-
     <string name="snackbar_location_updated">مکان پیدا شد!</string>
     <string name="dialog_title_permission_overlay">نمایش داده شدن روی دیگر برنامه‌ها</string>
     <string name="dialog_message_permission_overlay">برای روشن کردن Red Moon، در صفحه بعد، اجازه رسم این برنامه را روی دیگر بنامه بدهید.</string>
-
     <string name="dialog_title_permission_write_settings">تغییر تنظیمات سیستم</string>
     <string name="dialog_message_permission_write_settings">برای اینکه Red Moon بتواند سطح روشنایی را تغییر دهد، در صفحه بعد، اجازه تغییر در تنظیمات سیستمی را بدهید.</string>
-
     <string name="dialog_title_permission_usage_stats">اجازه دسترسی</string>
     <string name="dialog_message_permission_usage_stats">برای اینکه ردمون بتواند در برنامه‌های ایمن شده متوقف شود، در صفحه بعد به آن اجازه دسترسی بدهید.
 \n
 \nردمون از این داده‌ها صرفا برای تشخیص ناسازگاری اجرای ردمون با برنامه‌های دیگر استفاده می‌کند.</string>
-
     <string name="slide_title_welcome">خوش‌آمدید!</string>
     <string name="slide_text_welcome">به ردمون خوش‌آمدید!</string>
-
     <string name="slide_title_protect_eyes">هوای چشمان‌تان را داشته باشید</string>
     <string name="slide_text_protect_eyes">"در هنگام شب که نگاه کردن به صفحه گوشی  به چشمان شما آسیب وارد می‌کند می‌توانید با کمک ردمون، روشنایی صفحه را کاهش دهید."</string>
-
     <string name="slide_title_improve_sleep">بهتر بخوابید</string>
     <string name="slide_text_improve_sleep">نور آبی باعث اختلال در تولید هورمون ملاتونین که برای خوابیدن در شب به ما کمک می‌کند می‌شود. ردمون با حذف رنگ آبی از صفحه نمایش، خواب بهتری را برای شما به ارمغان می‌آورد.</string>
-
     <string name="slide_title_get_started">شروع کنید!</string>
     <string name="slide_text_get_started">با کلید بالا سمت چپ می‌توانید ردمون را روشن یا خاموش کنید.</string>
-
     <string name="filter_name_dim_only">صرفا تغییر روشنایی</string>
-
     <string name="pref_entry_button_backlight_turn_off">خاموش کردن</string>
-
     <string name="action_next_profile">نمایه بعدی</string>
     <string name="location">مکان</string>
     <string name="notification_channel_overlay_name">کنترل هم‌پوشانی</string>
-    </resources>
+    <string name="pref_entry_button_backlight_system">مدیریت توسط سیستم</string>
+    <string name="pref_entry_button_backlight_filter_dim_level">استفاده از سطح کم‌نور صافی</string>
+    <string name="notification_status_paused_with_info">مکث شده. اعلان را رد کنید تا متوقف شود.</string>
+    <string name="notification_channel_overlay_description">اعلان کنترل پوششی مداوم</string>
+</resources>
