@@ -6,4 +6,5 @@
     <string name="activity_intro">அறிமுகம்</string>
     <string name="activity_about">Red Moon பற்றி</string>
     <string name="activity_secure_suspend">விலக்கப்பட்ட பயன்பாடுகளில் நிறுத்து</string>
+    <string name="menu_about">பற்றி</string>
 </resources>
