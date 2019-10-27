@@ -50,6 +50,7 @@
         android:name="android.permission.PACKAGE_USAGE_STATS"
         xmlns:tools="http://schemas.android.com/tools"
         tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
