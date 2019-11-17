@@ -118,4 +118,6 @@
     <string name="pref_summary_translators">翻译者：smichel17、raatmarien、Mostafa Ahangarha</string>
     <string name="toast_warning_secured">红月运行时，此应用的某些功能可能会失效。</string>
     <string name="action_next_profile">下一个滤镜</string>
+    <string name="notification_channel_overlay_name">屏幕叠加层控制</string>
+    <string name="notification_channel_overlay_description">屏幕叠加层控制的持久通知</string>
 </resources>
