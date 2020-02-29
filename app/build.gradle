@@ -60,14 +60,6 @@ android {
         }
     }
     flavorDimensions "dist"
-    productFlavors {
-        fdroid {
-            dimension "dist"
-        }
-        playstore {
-            dimension "dist"
-        }
-    }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -86,7 +78,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'org.greenrobot:eventbus:3.1.1'
     implementation 'me.smichel.android:kpreferences:0.7.0'
-    playstoreImplementation 'com.github.hotchemi:android-rate:1.0.1'
     // annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.0.1'
 
     implementation "androidx.preference:preference:1.1.0-rc01"

@@ -35,7 +35,6 @@ import com.jmstudios.redmoon.filter.Command
 
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.model.ProfilesModel
-import com.jmstudios.redmoon.ui.showRateDialog
 import com.jmstudios.redmoon.util.*
 
 import org.greenrobot.eventbus.Subscribe
@@ -63,7 +62,6 @@ class MainActivity : ThemedAppCompatActivity() {
         if (Config.lastChangelogShown < BuildConfig.VERSION_CODE) {
             showChangelog(this)
         }
-        showRateDialog(this) // Implemented in product flavors
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
