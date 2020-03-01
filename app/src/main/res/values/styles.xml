@@ -40,4 +40,9 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
+    <style name="MasterSwitchText" parent="@style/TextAppearance.AppCompat.Body2">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
 </resources>
