@@ -32,10 +32,9 @@ import com.jmstudios.redmoon.filter.Command
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.filter.overlay.BrightnessManager
 import com.jmstudios.redmoon.schedule.ScheduleReceiver
+import com.jmstudios.redmoon.util.inActivePeriod
 import com.jmstudios.redmoon.util.KLog
 import com.jmstudios.redmoon.util.Logger
-
-import java.util.Calendar
 
 class BootReceiver : BroadcastReceiver() {
 
@@ -72,40 +71,7 @@ class TimeZoneChangeReceiver : BroadcastReceiver() {
     companion object : Logger()
 }
 
-// Originally nested in BootReceiver, taken out to be shared with TimeZoneChangeReceiver
-// Will be moved into a common lib, if there's any other place wants to use this
-fun filterIsOnPrediction(Log: KLog): Boolean = if (Config.scheduleOn) {
-    val now = Calendar.getInstance()
-
-    val onTime = Config.scheduledStartTime
-    val onHour = onTime.substringBefore(':').toInt()
-    val onMinute = onTime.substringAfter(':').toInt()
-    val on = Calendar.getInstance().apply {
-        set(Calendar.HOUR_OF_DAY, onHour)
-        set(Calendar.MINUTE, onMinute)
-        if (after(now)) {
-            add(Calendar.DATE, -1)
-        }
-    }
-
-    val offTime = Config.scheduledStopTime
-    val offHour = offTime.substringBefore(':').toInt()
-    val offMinute = offTime.substringAfter(':').toInt()
-    val off = Calendar.getInstance().apply {
-        set(Calendar.HOUR_OF_DAY, offHour)
-        set(Calendar.MINUTE, offMinute)
-        while (before(on)) {
-            add(Calendar.DATE, 1)
-        }
-    }
-
-    Log.d("Start: $onTime, stop: $offTime")
-    Log.d("On DAY_OF_MONTH: ${on.get(Calendar.DAY_OF_MONTH)}")
-    Log.d("Off DAY_OF_MONTH: ${off.get(Calendar.DAY_OF_MONTH)}")
-
-    now.after(on) && now.before(off)
-} else {
-    // Here we want the config value and not the actual state of the filter
-    // since we're interested in what it was before reboot
-    Config.filterIsOn
+fun filterIsOnPrediction(Log: KLog): Boolean {
+    // If schedule is not enabled, restore the previous state before shutdown
+    return if (Config.scheduleOn) inActivePeriod(Log) else Config.filterIsOn
 }

@@ -33,6 +33,8 @@ import com.jmstudios.redmoon.RedMoonApplication
 import com.jmstudios.redmoon.model.Profile
 import com.jmstudios.redmoon.model.Config
 
+import java.util.Calendar
+
 import kotlin.reflect.KClass
 
 val appContext = RedMoonApplication.app
@@ -58,6 +60,38 @@ var filterIsOn: Boolean = false
         field = value
         Config.filterIsOn = value
     }
+
+fun inActivePeriod(Log: KLog? = null): Boolean {
+    val now = Calendar.getInstance()
+
+    val onTime = Config.scheduledStartTime
+    val onHour = onTime.substringBefore(':').toInt()
+    val onMinute = onTime.substringAfter(':').toInt()
+    val on = Calendar.getInstance().apply {
+        set(Calendar.HOUR_OF_DAY, onHour)
+        set(Calendar.MINUTE, onMinute)
+        if (after(now)) {
+            add(Calendar.DATE, -1)
+        }
+    }
+
+    val offTime = Config.scheduledStopTime
+    val offHour = offTime.substringBefore(':').toInt()
+    val offMinute = offTime.substringAfter(':').toInt()
+    val off = Calendar.getInstance().apply {
+        set(Calendar.HOUR_OF_DAY, offHour)
+        set(Calendar.MINUTE, offMinute)
+        while (before(on)) {
+            add(Calendar.DATE, 1)
+        }
+    }
+
+    Log?.d("Start: $onTime, stop: $offTime")
+    Log?.d("On DAY_OF_MONTH: ${on.get(Calendar.DAY_OF_MONTH)}")
+    Log?.d("Off DAY_OF_MONTH: ${off.get(Calendar.DAY_OF_MONTH)}")
+
+    return now.after(on) && now.before(off)
+}
 
 fun getString(resId: Int): String = appContext.getString(resId)
 fun getColor (resId: Int): Int = ContextCompat.getColor(appContext, resId)

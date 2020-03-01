@@ -14,6 +14,7 @@ import android.widget.TextView
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 
+import com.jmstudios.redmoon.filter.Command
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.schedule.*
 import com.jmstudios.redmoon.util.*
@@ -118,12 +119,14 @@ class ScheduleFragment : PreferenceFragmentCompat() {
     fun onScheduleChanged(event: scheduleChanged) {
         LocationUpdateService.update()
         updatePrefs()
+        Command.toggle(Config.scheduleOn && inActivePeriod())
     }
 
     @Subscribe
     fun onUseLocationChanged(event: useLocationChanged) {
         LocationUpdateService.update()
         updateTimePrefs()
+        Command.toggle(Config.scheduleOn && inActivePeriod())
     }
 
     @Subscribe
@@ -141,6 +144,7 @@ class ScheduleFragment : PreferenceFragmentCompat() {
     @Subscribe fun onLocationChanged(event: locationChanged) {
         showSnackbar(R.string.snackbar_location_updated, Snackbar.LENGTH_SHORT)
         updatePrefs()
+        Command.toggle(Config.scheduleOn && inActivePeriod())
     }
 
     @Subscribe
