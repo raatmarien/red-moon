@@ -68,7 +68,7 @@ enum class Command(val time: Float) {
     val intent: Intent
         get() = intent(FilterService::class).putExtra(EXTRA_COMMAND, name)
 
-    fun send(): ComponentName = appContext.startService(intent)
+    fun send(): ComponentName? = appContext.startService(intent)
 
     abstract val turnOn: Boolean
 

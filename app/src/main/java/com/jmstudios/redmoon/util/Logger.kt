@@ -399,13 +399,13 @@ private inline fun <T : Any> resolveName(forClass: Class<T>): String =
  * unwrap companion class to enclosing class given a Java Class
  */
 private inline fun <T : Any> unwrapCompanionClass(clazz: Class<T>): Class<*> {
-    if (clazz.enclosingClass != null) {
+    clazz.enclosingClass?.let { enclosingClass ->
         try {
-            val field = clazz.enclosingClass.getField(clazz.simpleName)
+            val field = enclosingClass.getField(clazz.simpleName)
             if (Modifier.isStatic(field.modifiers) && field.type == clazz) {
                 // && field.get(null) === obj
                 // the above might be safer but problematic with initialization order
-                return clazz.enclosingClass
+                return enclosingClass
             }
         } catch(e: Exception) {
             //ok, it is not a companion object

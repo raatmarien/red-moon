@@ -70,18 +70,24 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.core:core:1.0.0'
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'com.google.android.material:material:1.0.0'
+
+    // Android/platform deps
+    implementation "androidx.core:core:1.2.0"
+    implementation "androidx.appcompat:appcompat:1.1.0"
+    implementation "androidx.preference:preference:1.1.0"
+    implementation "androidx.preference:preference-ktx:1.1.0"
+    implementation "com.google.android.material:material:1.1.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // Written by me
+    implementation "me.smichel.android:kpreferences:0.7.0"
+
+    // 3rd party
     implementation 'com.luckycatlabs:SunriseSunsetCalculator:1.2'
     implementation 'com.github.paolorotolo:appintro:4.1.0'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'org.greenrobot:eventbus:3.1.1'
-    implementation 'me.smichel.android:kpreferences:0.7.0'
     // annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.0.1'
 
-    implementation "androidx.preference:preference:1.1.0-rc01"
-    implementation "androidx.preference:preference-ktx:1.1.0-rc01"
 }
 
 repositories {

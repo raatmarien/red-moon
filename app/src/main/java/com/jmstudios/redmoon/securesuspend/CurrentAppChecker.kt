@@ -25,7 +25,7 @@ class CurrentAppChecker(private val context: Context) {
             if (atLeastAPI(21)) {
                 getCurrentAppFromUsageStats(default)
             } else {
-                currentAppFromActivityManager
+                currentAppFromActivityManager ?: default
             }
         } catch (e: Exception) {
             default
@@ -67,11 +67,11 @@ class CurrentAppChecker(private val context: Context) {
         return findLastApp(default)
     }
 
-    private val currentAppFromActivityManager: App
+    private val currentAppFromActivityManager: App?
         @Suppress("DEPRECATION") get() {
             val bc = ContextWrapper(context).baseContext
             val am = bc.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
-            val ta = am.getRunningTasks(1)[0].topActivity
+            val ta = am.getRunningTasks(1)[0].topActivity ?: return null
             return App(ta.packageName, ta.className)
         }
 }
