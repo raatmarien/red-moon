@@ -4,11 +4,15 @@
  * Copyright (c) 2017  Stephen Michel <s@smichel.me>
  * SPDX-License-Identifier: GPL3.0+
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <Preference
         android:key="@string/pref_key_github"
         android:title="@string/pref_title_project_page"
-        android:summary="@string/pref_summary_project_page" >
+        android:summary="@string/pref_summary_project_page"
+        app:iconSpaceReserved="false"
+        >
         <intent
             android:action="android.intent.action.VIEW"
             android:data="@string/project_page_url" />
@@ -17,7 +21,9 @@
     <Preference
         android:key="@string/pref_key_email"
         android:title="@string/pref_title_email_developer"
-        android:summary="@string/pref_summary_email_developer">
+        android:summary="@string/pref_summary_email_developer"
+        app:iconSpaceReserved="false"
+        >
         <intent
             android:action="android.intent.action.VIEW"
             android:data="@string/contact_email_adress" />
