@@ -85,7 +85,7 @@ dependencies {
     // 3rd party
     implementation 'com.luckycatlabs:SunriseSunsetCalculator:1.2'
     implementation 'com.github.paolorotolo:appintro:4.1.0'
-    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'org.greenrobot:eventbus:3.2.0'
     // annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.0.1'
 
 }
