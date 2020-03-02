@@ -30,7 +30,7 @@ other parts of their life. That's where you come in! You can:
 - Read through the [issues] and give a <g-emoji alias="+1" class="emoji" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png" ios-version="6.0">👍</g-emoji> to the ones you care about most.
 - Open [new issues] with feedback, feature requests, or bug reports.
 - Help translate using [Weblate]. 
-- Join the chat at [![Matrix](art/badge_matrix.svg)](https://matrix.to/#/#redmoon:matrix.org),
+- Come chat at [![Matrix](art/badge_matrix.svg)](https://matrix.to/#/#redmoon:matrix.org),
     [![IRC](art/badge_irc.svg)](https://kiwiirc.com/client/irc.freenode.net/#redmoon),
     or [![Gitter](https://img.shields.io/gitter/room/LibreShift/red-moon.svg)](https://gitter.im/LibreShift/red-moon)
 
