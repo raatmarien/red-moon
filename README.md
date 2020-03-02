@@ -91,17 +91,9 @@ here's a short list of what I've been doing.
       align="right"
       alt="GNU GPLv3 Image">](http://www.gnu.org/licenses/gpl-3.0.en.html)
 
-*Red Moon* is a derivative of *[Shades](https://github.com/cngu/shades)* by
-[Chris Nguyen](https://github.com/cngu), used under the
-[MIT License](https://github.com/cngu/shades/blob/e240edc1df3e6dd319cd475a739570ff8367d7f8/LICENSE).
-*Red Moon* is licensed under the
-[GNU General Public License version 3](https://www.gnu.org/licenses/gpl-3.0.html),
-or (at your option) any later version by
-[the contributors](https://github.com/raatmarien/red-moon/graphs/contributors).
+*Red Moon* is licensed under the [GNU General Public License version 3] or (at your option) any later version by [the contributors]. It is a derivative of *[Shades]* by [Chris Nguyen], used under the [MIT License].
 
-All used artwork is released into the public domain. Some of the icons
-use cliparts from [openclipart.org](https://openclipart.org/), which
-are all released in the public domain, namely:
+All used artwork is released into the public domain. Some of the icons use cliparts from [openclipart.org], which are all released in the public domain, namely:
 
 * https://openclipart.org/detail/121903/full-moon
 * https://openclipart.org/detail/219211/option-button-symbol-minimal-svg-markup
@@ -117,3 +109,9 @@ are all released in the public domain, namely:
 [new issues]: https://github.com/raatmarien/red-moon/issues/new
 [Weblate]: https://hosted.weblate.org/projects/red-moon/strings/
 [labels]: https://github.com/LibreShift/red-moon/labels
+[Shades]: https://github.com/cngu/shades
+[Chris Nguyen]: https://github.com/cngu
+[MIT License]: https://github.com/cngu/shades/blob/e240edc1df3e6dd319cd475a739570ff8367d7f8/LICENSE
+[GNU General Public License version 3]: https://www.gnu.org/licenses/gpl-3.0.html
+[the contributors]: https://github.com/raatmarien/red-moon/graphs/contributors
+[openclipart.org]: https://openclipart.org/
