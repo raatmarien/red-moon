@@ -1,36 +1,11 @@
 ### Added
-- Preliminary support for devices running Android Oreo (8.0) and newer — @AdamNiederer
-- Support for devices running Android versions going back to Ice Cream Sandwitch (4.0). Previous minimum was Jelly Bean (4.2.x).
-- Added Spanish (American) translation — @mvelizbravo
-- Added Spanish (Argentina) translation — @Andy-thor
-- Added Telagu translation — @veeven
+- Filter toggles when the schedule is updated
 
 ### Changed
-- More intuitive behavior when saving filters with the same name — @david-hil
-- Updated slider labels
-- New changelog format
-- Updated Arabic translation — Ammar
-- Updated Basque translation Dabid — Martinez
-- Updated Chinese (Simplified) translation — @gensitu, @Therhokar
-- Updated Chinese (Traditional) translation — @gensitu, @louies0623
-- Updated Dutch translation — @ltGuillaume, @wb9688
-- Updated French translation — @dmaulat, @wellinkstein
-- Updated German translation — Andreas Kleinert, @Atalanttore, @elumbella, @JoKeyser
-- Updated Greek translation — @AndLydakis
-- Updated Hungarian translation — @notramo
-- Updated Italian translation — random r
-- Updated Japanese translation — librada, @naofum
-- Updated Lithuanian translation — @mobtechpd, @welaq
-- Updated Norwegian translation Bokmål — @comradekingu
-- Updated Persian translation — @ahangarha
-- Updated Polish translation — @verdulo
-- Updated Portuguese (Brazil) translation — @elchevive, @mv-santos
-- Updated Russian translation — @mesnevi
-- Updated Spanish translation — Alberto, ChemaBautista, @larjona, @mvelizbravo, @wakutiteo
-- Updated Turkish translation — @emintufan, @monolifed
-- Updated Ukrainian translation — Володимир Бриняк
+- Update translations
 
 ### Fixed
-- Schedule now updates correctly when changing time zones — @SeonD
-- Notification no longer can become out of date while filter is paused — @david-hil
-- Changelog works with the dark theme
+- Fix alignment in on/off switch at the top of schedule/exclude screens
+
+### Removed
+- Remove prompt to rate the app from the Google Play version
