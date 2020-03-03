@@ -48,7 +48,6 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission
         android:name="android.permission.PACKAGE_USAGE_STATS"
-        xmlns:tools="http://schemas.android.com/tools"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
@@ -121,22 +120,31 @@
         <activity
             android:name=".ScheduleActivity"
             android:label="@string/activity_schedule"
-            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme" >
+            <!-- When we bump minsdk<=17, replace meta-data (here and below) with: -->
+            <!-- android:parentActivityName=".MainActivity" -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
 
         <activity
             android:name=".SecureSuspendActivity"
             android:label="@string/activity_secure_suspend"
-            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
 
         <activity
             android:name=".AboutActivity"
             android:label="@string/activity_about"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
 
         <service android:name=".schedule.LocationUpdateService" />
         <service android:name=".filter.FilterService" />

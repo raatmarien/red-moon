@@ -107,6 +107,7 @@ class MainActivity : ThemedAppCompatActivity() {
 
     override fun onNewIntent(intent: Intent) {
         Log.i("onNewIntent")
+        super.onNewIntent(intent)
         val fromShortcut = intent.getBooleanExtra(EXTRA_FROM_SHORTCUT_BOOL, false)
         if (fromShortcut) { toggleAndFinish() }
     }

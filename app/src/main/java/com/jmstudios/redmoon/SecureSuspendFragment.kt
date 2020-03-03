@@ -48,16 +48,19 @@ class SecureSuspendFragment : PreferenceFragmentCompat() {
         )
     }
 
-    // TODO: Fix on API < 21
     private fun createEnableUsageStatsDialog() {
-        AlertDialog.Builder(activity).apply {
-            setMessage(R.string.dialog_message_permission_usage_stats)
-            setTitle(R.string.dialog_title_permission_usage_stats)
-            setPositiveButton(R.string.dialog_button_ok) { _, _ ->
-                val intent = Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS)
-                startActivityForResult(intent, RESULT_USAGE_ACCESS)
-            }
-        }.show()
+        if (atLeastAPI(21)) {
+            AlertDialog.Builder(activity).apply {
+                setMessage(R.string.dialog_message_permission_usage_stats)
+                setTitle(R.string.dialog_title_permission_usage_stats)
+                setPositiveButton(R.string.dialog_button_ok) { _, _ ->
+                    val intent = Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS)
+                    startActivityForResult(intent, RESULT_USAGE_ACCESS)
+                }
+            }.show()
+        } else {
+            Log.e("Usage stats unavailable on API<21, this should not happen")
+        }
     }
 
     companion object : Logger() {

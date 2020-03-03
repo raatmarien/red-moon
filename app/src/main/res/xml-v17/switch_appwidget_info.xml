@@ -19,5 +19,5 @@
     android:initialLayout="@layout/appwidget_switch"
     android:resizeMode="none"
     android:previewImage="@drawable/preview"
-    >
+    android:widgetCategory="home_screen">
 </appwidget-provider>
