@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2016 Marien Raat <marienraat@riseup.net>
- * SPDX-License-Identifier: GPL-3.0+
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 package com.jmstudios.redmoon
 

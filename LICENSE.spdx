@@ -3,4 +3,4 @@ DataLicense: CC0-1.0
 PackageName: Red Moon
 PackageOriginator: Stephen Michel
 PackageHomePage: https://github.com/LibreShift/red-moon
-PackageLicenseDeclared: GPL-3.0+
+PackageLicenseDeclared: GPL-3.0-or-later
