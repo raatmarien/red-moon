@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  * Copyright (c) 2016  Marien Raat <marienraat@riseup.net>
  * Copyright (c) 2017  Stephen Michel <s@smichel.me>
  *
@@ -42,7 +41,8 @@
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.GET_TASKS" />
@@ -52,15 +52,21 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
-        android:allowBackup="true"
         android:name="com.jmstudios.redmoon.RedMoonApplication"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/LaunchScreenTheme"
-        android:supportsRtl="true" >
+        android:supportsRtl="true"
+        android:theme="@style/LaunchScreenTheme">
+
+        <activity
+            android:name="com.jmstudios.redmoon.Intro"
+            android:label="@string/activity_intro"
+            android:theme="@style/AppThemeNoActionBar" />
+
         <activity
             android:name="com.jmstudios.redmoon.MainActivity"
-            android:label="@string/activity_main" >
+            android:label="@string/activity_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -70,14 +76,48 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES"/>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name="com.jmstudios.redmoon.Intro"
-            android:label="@string/activity_intro"
-            android:theme="@style/AppThemeNoActionBar" />
+            android:name=".ScheduleActivity"
+            android:label="@string/activity_schedule"
+            android:theme="@style/AppTheme">
+            <!-- When we bump minsdk<=17, replace meta-data (here and below) with: -->
+            <!-- android:parentActivityName=".MainActivity" -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".SecureSuspendActivity"
+            android:label="@string/activity_secure_suspend"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/activity_about"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".widget.ShortcutCreationActivity"
+            android:label="@string/activity_shortcut"
+            android:theme="@style/TransparentTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <receiver android:name="com.jmstudios.redmoon.BootReceiver">
             <intent-filter>
@@ -94,60 +134,20 @@
 
         <receiver android:name="com.jmstudios.redmoon.widget.SwitchAppWidgetProvider">
             <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
-            <meta-data android:name="android.appwidget.provider"
+            <meta-data
+                android:name="android.appwidget.provider"
                 android:resource="@xml/switch_appwidget_info" />
         </receiver>
 
-        <receiver android:name=".schedule.ScheduleReceiver">
-        </receiver>
-        <receiver android:name=".filter.NextProfileCommandReceiver">
-        </receiver>
-        <receiver android:name=".securesuspend.WhitelistChangeReceiver">
-        </receiver>
-
-        <activity
-            android:name=".widget.ShortcutCreationActivity"
-            android:label="@string/activity_shortcut"
-            android:theme="@style/TransparentTheme" >
-          <intent-filter>
-            <action android:name="android.intent.action.CREATE_SHORTCUT"/>
-            <category android:name="android.intent.category.DEFAULT"/>
-          </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".ScheduleActivity"
-            android:label="@string/activity_schedule"
-            android:theme="@style/AppTheme" >
-            <!-- When we bump minsdk<=17, replace meta-data (here and below) with: -->
-            <!-- android:parentActivityName=".MainActivity" -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-
-        <activity
-            android:name=".SecureSuspendActivity"
-            android:label="@string/activity_secure_suspend"
-            android:theme="@style/AppTheme" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-
-        <activity
-            android:name=".AboutActivity"
-            android:label="@string/activity_about"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
+        <receiver android:name=".schedule.ScheduleReceiver" />
+        <receiver android:name=".filter.NextProfileCommandReceiver" />
+        <receiver android:name=".securesuspend.WhitelistChangeReceiver" />
 
         <service android:name=".schedule.LocationUpdateService" />
         <service android:name=".filter.FilterService" />
+
         <service
             android:name=".widget.TileReceiver"
             android:icon="@drawable/notification_icon_half_moon"
@@ -158,5 +158,4 @@
             </intent-filter>
         </service>
     </application>
-
 </manifest>
