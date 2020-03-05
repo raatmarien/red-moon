@@ -34,17 +34,17 @@ other parts of their life. That's where you come in! You can:
     [![IRC](art/badge_irc.svg)](https://kiwiirc.com/client/irc.freenode.net/#redmoon),
     or [![Gitter](https://img.shields.io/gitter/room/LibreShift/red-moon.svg)](https://gitter.im/LibreShift/red-moon)
 
+<a href="https://hosted.weblate.org/engage/red-moon/?utm_source=widget">
+<img src="https://hosted.weblate.org/widgets/red-moon/-/horizontal-auto.svg" alt="Translation status" />
+</a>
+
 ## Looking for co-maintainers
 
 Red Moon is still maintained, and I have no plans to change that. I would actually like to do more development and get Red Moon feature-complete. However, it is hard for me to get motivated to do that when I'm the only developer (especially when there are [other](https://snowdrift.coop) projects I'm involved in that *do* have others working on them).
 
 If you're interested in becoming a co-maintainer, I'm willing to spend time walking you through the code base.
 
-## Screenshots & translation stats
-
-<a href="https://hosted.weblate.org/engage/red-moon/en/?utm_source=widget">
-<img src="https://hosted.weblate.org/widgets/red-moon/en/strings/multi-auto.svg" alt="Translation status" align="right" height="732" />
-</a>
+## Screenshots
 
 Screenshots are slightly out of date.
 
