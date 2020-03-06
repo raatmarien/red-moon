@@ -58,11 +58,15 @@ Screenshots are slightly out of date.
 
 To build the app on GNU+Linux, clone the repository, then, from the root directory, run
 
-`./gradlew build`
+```
+./gradlew build
+```
 
 To install the app on a connected device or running emulator, run
 
-`./gradlew installFdroidDebug` or `./gradlew installPlaystoreDebug`
+```
+./gradlew installDebug
+```
 
 ### Pull requests
 
