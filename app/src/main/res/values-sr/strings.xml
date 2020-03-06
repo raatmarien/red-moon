@@ -22,7 +22,7 @@
 
     <string name="pref_title_turn_on">Укључи у</string>
     <string name="pref_title_turn_off">Искључи у</string>
-    <string name="pref_title_location">Од свитања до сумрака</string>
+    <string name="pref_title_use_location">Од свитања до сумрака</string>
     <string name="location_not_set">Локација није постављена</string>
     <string name="latitude_short">Ширина</string>
     <string name="longitude_short">Дужина</string>
@@ -111,7 +111,7 @@
     <string name="notification_action_next_filter">Следећи филтер</string>
 
     <string name="pref_category_button_backlight_disclaimer">Нема ефекта на неким уређајима</string>
-    <string name="pref_summary_location_off">Времена из локације</string>
+    <string name="pref_summary_use_location">Времена из локације</string>
     <string name="pref_title_integration">Интеграција са осталима апликацијама</string>
     <string name="pref_title_version">Издање</string>
 
@@ -130,7 +130,7 @@
     <string name="snackbar_location_updated">Локација нађена!</string>
     <string name="filter_name_dim_only">Само затамни</string>
 
-    <string name="location">Локација</string>
+    <string name="pref_title_location">Локација</string>
     <string name="pref_summary_integration">Неке апликације, као нпр. „LibreTasks“ или „Tasker“, дозвољавају да аутоматизујете задатке када се десе одређени догађаји. Црвени Месец шаље јавно обавештење када се укључи и искључи да те апликације могу да одговоре. Ако не користите или не програмирате те апликације, занемарите следећи параграф.
 \n
 \nЦрвени месец шаље јавни интент са радњом `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Тај интент садржи екстра булову са кључем `jmstudios.bundle.key.FILTER_IS_ON`, који показује да се Црвени месец укључује или искључује.</string>
@@ -139,6 +139,7 @@
     <string name="notification_status_paused_with_info">Паузирана. Отпусти обавештење за заустављање.</string>
     <string name="notification_action_whitelist_add">Искључи апликацију</string>
     <string name="notification_action_whitelist_remove">Филтрирај апликацију</string>
+    <string name="pref_category_schedule">Распоред</string>
     <string name="pref_title_schedule">Распоред</string>
     <string name="pref_summary_schedule_sun" formatted="false">Од сумрака (%on) до свитања (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Прилагођено (од %on до %off)</string>

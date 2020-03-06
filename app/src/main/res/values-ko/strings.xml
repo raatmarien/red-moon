@@ -45,6 +45,7 @@
     <string name="notification_action_next_filter">다음 필터</string>
     <string name="pref_title_intensity">투명도</string>
     <string name="pref_title_time_toggle">타이머</string>
+    <string name="pref_category_schedule">일정</string>
     <string name="pref_title_schedule">일정</string>
     <string name="pref_summary_schedule_sun" formatted="false">일몰 (%on) 에서 일출 (%off) 까지</string>
     <string name="pref_summary_schedule_custom" formatted="false">사용자 지정 (%on 에서 %off 까지)</string>
@@ -55,8 +56,8 @@
     <string name="pref_title_turn_off">종료 시간</string>
     <string name="pref_title_start_time">시작 시간</string>
     <string name="pref_title_stop_time">종료 시간</string>
-    <string name="pref_title_location">일몰에서 일출까지</string>
-    <string name="pref_summary_location_off">현 위치를 기반으로 하기</string>
+    <string name="pref_title_use_location">일몰에서 일출까지</string>
+    <string name="pref_summary_use_location">현 위치를 기반으로 하기</string>
     <string name="location_not_set">위치가 설정되지 않음</string>
     <string name="latitude_short">위도</string>
     <string name="longitude_short">경도</string>
@@ -112,7 +113,7 @@
     <string name="toast_warning_no_location">위치를 갱신하려면 위치 서비스를 활성화 하세요</string>
     <string name="set_dialog">설정</string>
     <string name="time_toggle_title">자동 토글</string>
-    <string name="location">위치</string>
+    <string name="pref_title_location">위치</string>
     <string name="pref_title_startup">시작</string>
     <string name="time_toggle_options_array_0">수동</string>
     <string name="time_toggle_options_array_1">자동 (일광)</string>

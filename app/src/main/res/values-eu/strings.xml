@@ -37,12 +37,13 @@
     <string name="pref_title_lower_brightness">Sistemaren distira jaitsi</string>
 
     <string name="pref_title_time_toggle">Erlojua</string>
+    <string name="pref_category_schedule">Ordutegia</string>
     <string name="pref_title_schedule">Ordutegia</string>
     <string name="pref_summary_schedule_custom" formatted="false">Pertsonalizatua (%on-tik %off-ra)</string>
     <string name="pref_summary_schedule_none">Desaktibatuta</string>
     <string name="pref_title_start_time">Hasiera ordua</string>
     <string name="pref_title_stop_time">Gelditze ordua</string>
-    <string name="pref_summary_location_off">Zure kokapenaren arabera</string>
+    <string name="pref_summary_use_location">Zure kokapenaren arabera</string>
 
     <string name="button_add_filter">Gehitu</string>
     <string name="button_remove_filter">Ezabatu</string>

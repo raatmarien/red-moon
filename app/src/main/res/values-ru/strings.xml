@@ -23,7 +23,7 @@
     <string name="pref_title_turn_off">Приостановить в</string>
     <string name="pref_title_start_time">Время начала</string>
     <string name="pref_title_stop_time">Время остановки</string>
-    <string name="location">Местоположение</string>
+    <string name="pref_title_location">Местоположение</string>
     <string name="location_not_set">Местоположение не указано</string>
     <string name="latitude_short">Широта</string>
     <string name="longitude_short">Долгота</string>
@@ -108,8 +108,8 @@
     <string name="notification_action_next_filter">Следующий фильтр</string>
     <string name="pref_category_button_backlight_disclaimer">Не работает на некоторых устройствах</string>
     <string name="pref_title_button_backlight">Подсветка аппаратных кнопок</string>
-    <string name="pref_title_location">От заката до рассвета</string>
-    <string name="pref_summary_location_off">Автоматически</string>
+    <string name="pref_title_use_location">От заката до рассвета</string>
+    <string name="pref_summary_use_location">Автоматически</string>
     <string name="pref_title_integration">Совместимость с другими приложениями</string>
     <string name="pref_summary_integration">Некоторые приложения, вроде LibreTasks или Tasker, позволяют автоматически выполнять некие задачи, когда происходят определённые события. Red Moon шлёт открытое уведомление при включении и включении, так что такие приложения могут реагировать на него. Если вы не пользуетесь и не разрабатываете подобные приложения, вы можете пропустить следующий абзац.
 \n
@@ -127,6 +127,7 @@
     <string name="filter_name_dim_only">Только затемнение</string>
     <string name="activity_schedule">Расписание</string>
     <string name="notification_status_paused_with_info">Приостановлено. Смахните уведомление, чтобы остановить.</string>
+    <string name="pref_category_schedule">Расписание</string>
     <string name="pref_title_schedule">Расписание</string>
     <string name="pref_summary_schedule_sun" formatted="false">От заката (%on) до рассвета (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Особое (от %on до %off)</string>

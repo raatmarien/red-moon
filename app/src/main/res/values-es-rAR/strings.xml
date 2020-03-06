@@ -19,7 +19,7 @@
     <string name="pref_title_turn_off">Apagar en</string>
     <string name="pref_title_start_time">Hora de inicio</string>
     <string name="pref_title_stop_time">Tiempo de parada</string>
-    <string name="pref_summary_location_off">Basado en su ubicación</string>
+    <string name="pref_summary_use_location">Basado en su ubicación</string>
     <string name="pref_summary_secure_suspend">Cuando esta característica está habilitada, Red Moon se detendrá automáticamente cuando ciertas aplicaciones están abiertas. Por defecto, esto incluye aplicaciones que no funcionan cuando Red Moon se está ejecutando*, como la instalación de apks. Puede cambiar este comportamiento para la pantalla actual de la aplicación actual a partir de la notificación. Por ejemplo, es posible que desee agregar aplicaciones sensibles al color, como la cámara.
 \n
 \nEsta característica puede reducir ligeramente a la vida útil de la batería de su dispositivo.

@@ -18,7 +18,7 @@
     <string name="time_toggle_title">Veksle modus</string>
     <string name="pref_title_turn_on">Gjennoppta om</string>
     <string name="pref_title_turn_off">Pause om</string>
-    <string name="location">Plassering</string>
+    <string name="pref_title_location">Plassering</string>
     <string name="location_not_set">Sted ikke fastsatt</string>
     <string name="snackbar_searching_location">Søker etter plassering</string>
     <string name="menu_dark_theme">Mørkt tema</string>
@@ -80,8 +80,8 @@ lysstyrkenivå.</string>
     <string name="notification_action_next_filter">Neste filter</string>
     <string name="pref_category_button_backlight_disclaimer">Har ingen effekt på noen enheter</string>
     <string name="pref_title_button_backlight">Maskinvareknapp for bakgrunnsbelysning</string>
-    <string name="pref_title_location">Solnedgang til soloppgang</string>
-    <string name="pref_summary_location_off">Basert på din plassering</string>
+    <string name="pref_title_use_location">Solnedgang til soloppgang</string>
+    <string name="pref_summary_use_location">Basert på din plassering</string>
     <string name="pref_title_secure_suspend">Sett på pause i ekskluderte programmer</string>
     <string name="text_switch_on">På</string>
     <string name="text_switch_off">Av</string>
@@ -118,6 +118,7 @@ Rød Måne kringkaster en offentlig intensjon med handlingen `com.jmstudios.redm
     <string name="notification_status_paused_with_info">Pauset. Forkast merknad for å stoppe.</string>
     <string name="notification_action_whitelist_add">Ekskluderprogram</string>
     <string name="notification_action_whitelist_remove">Filtreringsprogram</string>
+    <string name="pref_category_schedule">Syklus</string>
     <string name="pref_title_schedule">Syklus</string>
     <string name="pref_summary_schedule_sun" formatted="false">Solnedgang (%on) til soloppgang (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Egendefinert (%on til %off)</string>

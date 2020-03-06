@@ -6,7 +6,7 @@
     <string name="notification_status_paused">已暂停</string>
     <string name="pref_category_other">其他</string>
     <string name="button_remove_filter">删除</string>
-    <string name="pref_title_location">日落到日出</string>
+    <string name="pref_title_use_location">日落到日出</string>
     <string name="latitude_short">纬度</string>
     <string name="longitude_short">经度</string>
     <string name="dialog_button_ok">确定</string>
@@ -69,7 +69,7 @@
     <string name="pref_category_button_backlight_disclaimer">对某些设备不起作用</string>
     <string name="pref_title_secure_suspend">被排除应用运行时暂停红月</string>
     <string name="pref_title_button_backlight">硬件按钮背光</string>
-    <string name="pref_summary_location_off">基于您的位置</string>
+    <string name="pref_summary_use_location">基于您的位置</string>
     <string name="pref_summary_secure_suspend">本功能启用时，红月将会在特定应用开启时暂停。一般来说，这包括了那些在红月运行时无法工作的应用*，如应用安装器。您可以在通知中改变对当前占据屏幕的应用的应对方式。比如说，您也许希望添加会被颜色变化所影响的应用，如相机应用。
 \n
 \n该特性会稍微减少您设备的电池寿命。
@@ -103,11 +103,12 @@
     <string name="pref_entry_button_backlight_system">系统管理</string>
     <string name="pref_entry_button_backlight_filter_dim_level">使用滤镜的亮度降低级别</string>
     <string name="pref_entry_button_backlight_turn_off">关闭</string>
-    <string name="location">位置</string>
+    <string name="pref_title_location">位置</string>
     <string name="activity_schedule">时间表</string>
     <string name="notification_status_paused_with_info">已暂停。要恢复运行，请关闭通知。</string>
     <string name="notification_action_whitelist_add">排除应用</string>
     <string name="notification_action_whitelist_remove">过滤应用</string>
+    <string name="pref_category_schedule">时间表</string>
     <string name="pref_title_schedule">时间表</string>
     <string name="pref_summary_schedule_sun" formatted="false">日出（%on）到日落（%off）</string>
     <string name="pref_summary_schedule_custom" formatted="false">自定义（%on 到 %off）</string>

@@ -39,8 +39,8 @@
 
     <string name="pref_title_turn_on">Увімкніть в</string>
     <string name="pref_title_turn_off">Вимкніть в</string>
-    <string name="pref_title_location">Від заходу до світанку</string>
-    <string name="pref_summary_location_off">Виходячи з вашого місцезнаходження</string>
+    <string name="pref_title_use_location">Від заходу до світанку</string>
+    <string name="pref_summary_use_location">Виходячи з вашого місцезнаходження</string>
 
     <string name="pref_summary_secure_suspend">"Коли ця функція включена, Red Moon автоматично призупиняється, коли певні застосунки відкриті. За замовчуванням це включає застосунки, які не працюватимуть під час роботи функції Red Moon *, такі як встановлення apks. Ви можете змінити цю поведінку для поточного застосунку на панелі сповіщень.  Наприклад, ви можете додати світлочутливі застосунки, такі як камеру.
 \n
@@ -128,7 +128,7 @@
     <string name="toast_warning_no_location">Увімкнути служби локації для оновлення місцезнаходження</string>
     <string name="set_dialog">Встановити</string>
     <string name="time_toggle_title">Автоматичне перемикання</string>
-    <string name="location">Місцезнаходження</string>
+    <string name="pref_title_location">Місцезнаходження</string>
     <string name="pref_title_startup">Запуск</string>
 
     <string name="time_toggle_options_array_0">Вручну</string>
@@ -136,6 +136,7 @@
     <string name="time_toggle_options_array_2">Автоматично (користувацький)</string>
 <string name="activity_schedule">Графік</string>
     <string name="notification_status_paused_with_info">Призупинено Відхилити сповіщення, щоб зупинити.</string>
+    <string name="pref_category_schedule">Графік</string>
     <string name="pref_title_schedule">Графік</string>
     <string name="pref_summary_schedule_sun" formatted="false">Від заходу (%on) до сходу сонця (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Користувацький (%on to %off)</string>

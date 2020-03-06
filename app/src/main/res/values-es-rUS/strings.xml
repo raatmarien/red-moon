@@ -38,6 +38,7 @@
     <string name="pref_title_lower_brightness">Reducir brillo del sistema</string>
 
     <string name="pref_title_time_toggle">Horario de funcionamiento</string>
+    <string name="pref_category_schedule">Horario</string>
     <string name="pref_title_schedule">Horario</string>
     <string name="pref_summary_schedule_sun" formatted="false">Desde el ocaso (%on) hasta el amanecer (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Personalizado (%on hasta %off)</string>
@@ -49,8 +50,8 @@
     <string name="pref_title_turn_off">Detener a las</string>
     <string name="pref_title_start_time">Hora de inicio</string>
     <string name="pref_title_stop_time">Hora de termino</string>
-    <string name="pref_title_location">Del ocaso al amanecer</string>
-    <string name="pref_summary_location_off">Basado en tu ubicación</string>
+    <string name="pref_title_use_location">Del ocaso al amanecer</string>
+    <string name="pref_summary_use_location">Basado en tu ubicación</string>
 
     <string name="pref_summary_secure_suspend">De ser activada esta función, Red Moon pausara su ejecución momentáneamente cuando ciertas aplicaciones sean abiertas. Por defecto, esto incluye aplicaciones que no funcionan cuando Red Moon se esta ejecutando*, como la instalación de aplicaciones. Usted puede cambiar el comportamiento de la pantalla actual para la aplicación en uso desde la barra de notificación. Por ejemplo, usted podría querer agregar aplicaciones sensibles a el color, como la cámara.
 \n
@@ -139,7 +140,7 @@
     <string name="toast_warning_no_location">Active el servicio de geolocalización para actualizar su ubicación</string>
     <string name="set_dialog">Establecer</string>
     <string name="time_toggle_title">Pausar automáticamente</string>
-    <string name="location">Ubicación</string>
+    <string name="pref_title_location">Ubicación</string>
     <string name="pref_title_startup">Inicio</string>
 
     <string name="time_toggle_options_array_0">Modo manual</string>

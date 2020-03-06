@@ -22,7 +22,7 @@
     <string name="time_toggle_title">Automatic toggle</string>
     <string name="pref_title_turn_on">Turn on at</string>
     <string name="pref_title_turn_off">Turn off at</string>
-    <string name="pref_title_location">Sunset to sunrise</string>
+    <string name="pref_title_use_location">Sunset to sunrise</string>
     <string name="location_not_set">Location not set</string>
     <string name="latitude_short">Lat</string>
     <string name="longitude_short">Long</string>
@@ -82,7 +82,7 @@
     <string name="pref_category_button_backlight_disclaimer">No effect on some devices</string>
     <string name="pref_title_secure_suspend">Pause in excluded apps</string>
     <string name="pref_title_button_backlight">Hardware button backlight</string>
-    <string name="pref_summary_location_off">Based on your location</string>
+    <string name="pref_summary_use_location">Based on your location</string>
     <string name="pref_summary_secure_suspend">When this feature is enabled, Red Moon will automatically pause when certain apps are open. By default, this includes apps that won\'t work when Red Moon is running*, like installing apks. You can change this behaviour for the current screen of the current app from the notification. For example, you might want to add colour-sensitive apps, like the camera.
 \n
 \nThis feature may slightly lower the battery life of your device.
@@ -109,10 +109,11 @@ Red Moon will use this data only to determine whether you are using an app which
     <string name="pref_entry_button_backlight_filter_dim_level">Use filter dim level</string>
     <string name="pref_entry_button_backlight_turn_off">Turn off</string>
     <string name="action_next_profile">Next profile</string>
-    <string name="location">Location</string>
+    <string name="pref_title_location">Location</string>
     <string name="pref_title_start_time">Start time</string>
     <string name="activity_schedule">Schedule</string>
     <string name="notification_status_paused_with_info">Paused. Dismiss notification to stop.</string>
+    <string name="pref_category_schedule">Schedule</string>
     <string name="pref_title_schedule">Schedule</string>
     <string name="pref_summary_schedule_sun" formatted="false">Sunset (%on) to sunrise (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Custom (%on to %off)</string>

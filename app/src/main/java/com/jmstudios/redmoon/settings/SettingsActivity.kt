@@ -1,40 +1,33 @@
-/*
- * Copyright (c) 2016 Marien Raat <marienraat@riseup.net>
+/**
  * Copyright (c) 2017  Stephen Michel <s@smichel.me>
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-package com.jmstudios.redmoon
+package com.jmstudios.redmoon.settings
 
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.preference.PreferenceFragmentCompat
 
 import com.jmstudios.redmoon.R
-
-import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.util.*
 
-abstract class ThemedAppCompatActivity : AppCompatActivity() {
-
-    protected abstract val fragment: PreferenceFragmentCompat
-    protected abstract val tag: String
-
+class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTheme(R.style.AppTheme)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_settings)
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // Only create and attach a new fragment on the first Activity creation.
         if (savedInstanceState == null) {
             Log.i("onCreate - First creation")
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragment_container, fragment, tag)
+                .replace(R.id.fragment_container, SettingsFragment())
                 .commit()
         }
     }
@@ -45,9 +38,10 @@ abstract class ThemedAppCompatActivity : AppCompatActivity() {
                 onBackPressed()
                 return true
             }
-
+            else -> {
+                return super.onOptionsItemSelected(item)
+            }
         }
-        return super.onOptionsItemSelected(item)
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>,

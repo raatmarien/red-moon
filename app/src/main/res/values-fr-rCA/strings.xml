@@ -68,14 +68,15 @@
     <string name="toast_warning_install">Vous ne pourrez pas installer d\'APK quand Red Moon est allumé.</string>
     <string name="pref_title_translators">Aidez à traduire</string>
     <string name="notification_action_stop">Arrêter</string>
-    <string name="location">Emplacement</string>
+    <string name="pref_title_location">Emplacement</string>
     <string name="pref_title_secure_suspend">Mettre en pause dans les applis exclues</string>
     <string name="pref_title_intensity">Opacité</string>
     <string name="slide_text_get_started">Allumez et éteignez Red Moon avec l\'interrupteur dans le coin supérieur droit.</string>
     <string name="location_not_set">Emplacement non défini</string>
-    <string name="pref_summary_location_off">Basé sur votre emplacement</string>
+    <string name="pref_summary_use_location">Basé sur votre emplacement</string>
     <string name="pref_title_dim_level">Obscurité</string>
     <string name="slide_title_protect_eyes">Protéger vos yeux</string>
+    <string name="pref_category_schedule">Horaires</string>
     <string name="pref_title_schedule">Horaires</string>
     <string name="activity_secure_suspend">Suspendre dans les applis exclues</string>
     <string name="pref_title_start_time">Heure de début</string>
@@ -113,7 +114,7 @@
     <string name="activity_main">Red Moon</string>
     <string name="pref_category_button_backlight_disclaimer">Aucun effet sur certains appareils</string>
     <string name="add_new_profile_edit_hint">Mom du profil</string>
-    <string name="pref_title_location">De l\'aube au crépuscule</string>
+    <string name="pref_title_use_location">De l\'aube au crépuscule</string>
     <string name="pref_summary_schedule_custom" formatted="false">Personnalisé (%on à %off)</string>
     <string name="pref_title_email_developer">Envoyer un courriel aux développeurs</string>
     <string name="slide_title_improve_sleep">Améliorer votre sommeil</string>

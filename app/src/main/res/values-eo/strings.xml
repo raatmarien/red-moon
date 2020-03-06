@@ -39,8 +39,8 @@
 
     <string name="pref_title_turn_on">Ŝalti je</string>
     <string name="pref_title_turn_off">Malŝalti je</string>
-    <string name="pref_title_location">Tempo po suno</string>
-    <string name="pref_summary_location_off">Po via lokeco</string>
+    <string name="pref_title_use_location">Tempo po suno</string>
+    <string name="pref_summary_use_location">Po via lokeco</string>
 
     <string name="pref_summary_secure_suspend">Iuj aĵoj ne laboros dum Ruĝa luno funkcias*. Ekzemple vi ne povos instali apojn, permesigi aŭ uzi apon SuperUser (en superuzantigitaj aparatoj).
 \n

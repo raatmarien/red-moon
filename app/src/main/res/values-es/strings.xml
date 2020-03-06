@@ -18,7 +18,7 @@
     <string name="time_toggle_title">Modos de activación</string>
     <string name="pref_title_turn_off">Pausar a las</string>
     <string name="pref_title_turn_on">Reanudar a las</string>
-    <string name="pref_title_location">Del atardecer al amanecer</string>
+    <string name="pref_title_use_location">Del atardecer al amanecer</string>
     <string name="snackbar_searching_location">Buscando ubicación</string>
     <string name="menu_dark_theme">Tema oscuro</string>
     <string name="pref_title_email_developer">Envía un correo electrónico a los desarrolladores</string>
@@ -75,7 +75,7 @@
         Red Moon necesita acceder a los datos de uso para saber si la aplicación en primer plano está protegida y así poder suspender el filtro. Solo se utilizarán estos datos cuando sean necesarios.</string>
     <string name="dialog_title_permission_overlay">Superponerse sobre otras aplicaciones</string>
     <string name="notification_status_off">No</string>
-    <string name="pref_summary_location_off">Desfase horario desde ubicación</string>
+    <string name="pref_summary_use_location">Desfase horario desde ubicación</string>
     <string name="notification_action_turn_on">Reanudar</string>
     <string name="notification_action_turn_off">Detener</string>
     <string name="notification_action_stop">Detener</string>
@@ -105,7 +105,7 @@
     <string name="pref_entry_button_backlight_filter_dim_level">Filtrar igual que la pantalla</string>
     <string name="pref_title_button_backlight">Botones retroiluminados</string>
     <string name="set_dialog">Establecer</string>
-    <string name="location">Ubicación</string>
+    <string name="pref_title_location">Ubicación</string>
     <string name="notification_status_running">Activo, pausa para instalar apks</string>
     <string name="notification_status_running_no_warning">En funcionamiento</string>
     <string name="menu_restore_default_filters">Restaurar filtros por defecto</string>
@@ -113,6 +113,7 @@
     <string name="activity_schedule">Horario</string>
     <string name="notification_action_whitelist_add">Aplicaciones excluidas</string>
     <string name="notification_action_whitelist_remove">Filtrar aplicaciones</string>
+    <string name="pref_category_schedule">Horario</string>
     <string name="pref_title_schedule">Horario</string>
     <string name="pref_summary_schedule_custom" formatted="false">Personalizado (%on hasta %off)</string>
     <string name="pref_summary_schedule_none">Desactivado</string>

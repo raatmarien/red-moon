@@ -68,14 +68,15 @@
     <string name="toast_warning_install">Et voi asentaa APK:ita Red Moonin ollessa päällä.</string>
     <string name="pref_title_translators">Auta kääntämään</string>
     <string name="notification_action_stop">Pysäytä</string>
-    <string name="location">Sijainti</string>
+    <string name="pref_title_location">Sijainti</string>
     <string name="pref_title_secure_suspend">Keskeytä poissuljetuissa sovelluksissa</string>
     <string name="pref_title_intensity">Läpinäkymättömyys</string>
     <string name="slide_text_get_started">Käännä Red Moon päälle ja pois kytkimellä oikeassa yläkulmassa.</string>
     <string name="location_not_set">Sijaintia ei ole määritetty</string>
-    <string name="pref_summary_location_off">Sijaintisi perusteella</string>
+    <string name="pref_summary_use_location">Sijaintisi perusteella</string>
     <string name="pref_title_dim_level">Pimeys</string>
     <string name="slide_title_protect_eyes">Suojaa silmiäsi</string>
+    <string name="pref_category_schedule">Aikataulu</string>
     <string name="pref_title_schedule">Aikataulu</string>
     <string name="activity_secure_suspend">Keskeytä poissuljetuissa sovelluksissa</string>
     <string name="pref_title_start_time">Aloitusaika</string>
@@ -113,7 +114,7 @@
     <string name="activity_main">Red Moon</string>
     <string name="pref_category_button_backlight_disclaimer">Ei vaikutusta joihinkin laitteisiin</string>
     <string name="add_new_profile_edit_hint">Profiilin nimi</string>
-    <string name="pref_title_location">Auringonlaskusta auringonnousuun</string>
+    <string name="pref_title_use_location">Auringonlaskusta auringonnousuun</string>
     <string name="pref_summary_schedule_custom" formatted="false">Mukauta (%on → %off)</string>
     <string name="pref_title_email_developer">Lähetä sähköpostia kehittäjille</string>
     <string name="slide_title_improve_sleep">Paranta unesi</string>

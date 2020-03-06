@@ -17,7 +17,7 @@
     <string name="time_toggle_title">Mode d\'activation</string>
     <string name="pref_title_turn_on">Reprendre à</string>
     <string name="pref_title_turn_off">Suspendre à</string>
-    <string name="location">Localisation</string>
+    <string name="pref_title_location">Localisation</string>
     <string name="location_not_set">Localisation non définie</string>
     <string name="latitude_short">Latitude</string>
     <string name="longitude_short">Longitude</string>
@@ -89,7 +89,7 @@
     <string name="notification_action_stop">Éteindre</string>
     <string name="notification_action_next_filter">Filtre suivant</string>
     <string name="pref_category_button_backlight_disclaimer">Pas d\'effet sur certains appareils</string>
-    <string name="pref_summary_location_off">Basé sur votre emplacement</string>
+    <string name="pref_summary_use_location">Basé sur votre emplacement</string>
     <string name="pref_title_version">Version</string>
     <string name="pref_title_integration">Intégration avec d\'autres applications</string>
     <string name="snackbar_location_updated">Position trouvée !</string>
@@ -97,7 +97,7 @@
     <string name="filter_name_dim_only">Assombrir uniquement</string>
     <string name="pref_entry_button_backlight_turn_off">Éteindre</string>
     <string name="action_next_profile">Profil suivant</string>
-    <string name="pref_title_location">Du coucher au lever du soleil</string>
+    <string name="pref_title_use_location">Du coucher au lever du soleil</string>
     <string name="pref_title_button_backlight">Rétro-éclairage des boutons physiques</string>
     <string name="pref_summary_integration">Certaines applications, comme LibreTasks ou Tasker, vous permettent d’automatiser les tâches lorsque certains événements se produisent. Red Moon envoie une notification publique lorsqu’il s’allume et s’éteint, donc ces applications peuvent répondre. Si vous n\'utilisez ni développez pas une de ces applications, vous pouvez ignorer le paragraphe suivant. 
 \n 
@@ -109,6 +109,7 @@
     <string name="notification_status_paused_with_info">En pause. Enlever la notification pour arrêter.</string>
     <string name="notification_action_whitelist_add">Exclure l\'application</string>
     <string name="notification_action_whitelist_remove">Filtrer l\'application</string>
+    <string name="pref_category_schedule">Planification</string>
     <string name="pref_title_schedule">Planification</string>
     <string name="pref_summary_schedule_sun" formatted="false">Du coucher (%on) au lever du soleil (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Personnalisée (%on à %off)</string>

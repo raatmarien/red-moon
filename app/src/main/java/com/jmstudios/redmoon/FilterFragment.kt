@@ -58,21 +58,8 @@ class FilterFragment : PreferenceFragmentCompat() {
     private val lowerBrightnessPref: TwoStatePreference
         get() = pref(R.string.pref_key_lower_brightness) as TwoStatePreference
 
-    private val schedulePref: Preference
-        get() = pref(R.string.pref_key_schedule_header)!!
-
-    private val secureSuspendPref: Preference
-        get() = pref(R.string.pref_key_secure_suspend_header)!!
-
-    private val buttonBacklightPref: Preference
-        get() = pref(R.string.pref_key_button_backlight)!!
-
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.filter_preferences, rootKey)
-
-        updateSecureSuspendSummary()
-        updateScheduleSummary()
-        updateBacklightPrefSummary()
 
         if (!Permission.WriteSettings.isGranted) {
             lowerBrightnessPref.isChecked = false
@@ -83,9 +70,6 @@ class FilterFragment : PreferenceFragmentCompat() {
                     val checked = newValue as Boolean
                     if (checked) Permission.WriteSettings.request(requireActivity()) else true
                 }
-
-        schedulePref.intent = intent(ScheduleActivity::class)
-        secureSuspendPref.intent = intent(SecureSuspendActivity::class)
     }
 
     override fun onStart() {
@@ -93,44 +77,12 @@ class FilterFragment : PreferenceFragmentCompat() {
         super.onStart()
         EventBus.register(profileSelectorPref)
         EventBus.register(this)
-        updateSecureSuspendSummary()
-        updateScheduleSummary()
     }
 
     override fun onStop() {
         EventBus.unregister(this)
         EventBus.unregister(profileSelectorPref)
         super.onStop()
-    }
-
-    private fun updateScheduleSummary() {
-        schedulePref.summary = when {
-            !Config.scheduleOn -> getString(R.string.pref_summary_schedule_none)
-            Config.useLocation -> insertTimes(R.string.pref_summary_schedule_sun)
-            else -> insertTimes(R.string.pref_summary_schedule_custom)
-        }
-    }
-
-    private fun insertTimes(resId: Int): String {
-        return getString(resId)
-                .replace("%on", Config.scheduledStartTime)
-                .replace("%off", Config.scheduledStopTime)
-    }
-
-    private fun updateSecureSuspendSummary() {
-        secureSuspendPref.setSummary(if (Config.secureSuspend) {
-            R.string.text_switch_on
-        } else {
-            R.string.text_switch_off
-        })
-    }
-
-    private fun updateBacklightPrefSummary() {
-        buttonBacklightPref.setSummary(when(Config.buttonBacklightFlag) {
-            "system" -> R.string.pref_entry_button_backlight_system
-            "dim"    -> R.string.pref_entry_button_backlight_filter_dim_level
-            else     -> R.string.pref_entry_button_backlight_turn_off
-        })
     }
 
     //region presenter
@@ -141,11 +93,6 @@ class FilterFragment : PreferenceFragmentCompat() {
             dimLevelPref.setProgress(dimLevel)
             lowerBrightnessPref.isChecked = lowerBrightness
         }
-    }
-
-    @Subscribe
-    fun onButtonBacklightChanged(event: buttonBacklightChanged) {
-        updateBacklightPrefSummary()
     }
     //endregion
 }

@@ -27,14 +27,15 @@
     <string name="pref_title_dim_level">Kegelapan</string>
     <string name="pref_title_color_temp">Warna</string>
     <string name="pref_title_time_toggle">Timer</string>
+    <string name="pref_category_schedule">Jadwal</string>
     <string name="pref_title_schedule">Jadwal</string>
     <string name="pref_summary_schedule_sun" formatted="false">Matahari terbit (%on) ke matahari terbenam (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Kustom (%on ke %off)</string>
     <string name="pref_summary_schedule_none">Tidak ada</string>
     <string name="pref_title_start_time">Nyalakan waktu</string>
     <string name="pref_title_stop_time">Matikan waktu</string>
-    <string name="pref_title_location">Matahari terbit ke terbenam</string>
-    <string name="pref_summary_location_off">Berdasarkan lokasi Anda</string>
+    <string name="pref_title_use_location">Matahari terbit ke terbenam</string>
+    <string name="pref_summary_use_location">Berdasarkan lokasi Anda</string>
     <string name="button_add_filter">Tambahkan</string>
     <string name="button_remove_filter">Hapus</string>
     <string name="text_switch_on">Nyalakan</string>
@@ -78,7 +79,7 @@
     <string name="searching_location">Mencari lokasi</string>
     <string name="toast_warning_no_location">Nyalakan layanan lokasi untuk memperbarui lokasi</string>
     <string name="set_dialog">Atur</string>
-    <string name="location">Lokasi</string>
+    <string name="pref_title_location">Lokasi</string>
     <string name="time_toggle_options_array_0">Manual</string>
     <string name="time_toggle_options_array_1">Otomatis (matahari)</string>
     <string name="time_toggle_options_array_2">Otomatis (kustom)</string>

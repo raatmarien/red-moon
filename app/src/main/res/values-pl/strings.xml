@@ -18,7 +18,7 @@
     <string name="time_toggle_title">Automatyczne przełączanie</string>
     <string name="pref_title_turn_on">Wznawiaj o</string>
     <string name="pref_title_turn_off">Zatrzymuj o</string>
-    <string name="pref_title_location">Od wschodu do zachodu Słońca</string>
+    <string name="pref_title_use_location">Od wschodu do zachodu Słońca</string>
     <string name="location_not_set">Nie ustawiono lokalizacji</string>
     <string name="latitude_short">Szer.</string>
     <string name="longitude_short">Dł.</string>
@@ -82,7 +82,7 @@
     <string name="notification_action_turn_off">Wyłącz</string>
     <string name="notification_action_stop">Wyłącz</string>
     <string name="notification_action_next_filter">Następny profil</string>
-    <string name="pref_summary_location_off">Czas z lokalizacji</string>
+    <string name="pref_summary_use_location">Czas z lokalizacji</string>
     <string name="menu_about">O programie</string>
     <string name="activity_about">O Red Moon</string>
     <string name="pref_title_integration">Integracja z innymi aplikacjami</string>
@@ -105,7 +105,7 @@
     <string name="toast_warning_no_location">Włącz usługi lokalizacyjne by znaleźć lokalizację</string>
     <string name="snackbar_location_updated">Ustalono lokalizację!</string>
     <string name="set_dialog">Ustaw</string>
-    <string name="location">Lokalizacja</string>
+    <string name="pref_title_location">Lokalizacja</string>
     <string name="notification_status_running">Uruchomiono. Zatrzymaj aby instalować aplikacje</string>
     <string name="notification_status_running_no_warning">Uruchomiono</string>
     <string name="menu_restore_default_filters">Przywróć domyślne filtry</string>
@@ -113,6 +113,7 @@
     <string name="filter_name_dim_only">Tylko przyciemniaj</string>
     <string name="activity_schedule">Harmonogram</string>
     <string name="notification_status_paused_with_info">Wstrzymano. Odrzuć powiadomienie, aby zatrzymać.</string>
+    <string name="pref_category_schedule">Harmonogram</string>
     <string name="pref_title_schedule">Harmonogram</string>
     <string name="pref_summary_schedule_sun" formatted="false">Od wschodu (%on) do zachodu (%off) Słońca</string>
     <string name="pref_summary_schedule_custom" formatted="false">Własny (od %on do %off)</string>

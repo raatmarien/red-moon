@@ -35,6 +35,7 @@
     <string name="pref_title_lower_brightness">Redu luminozitatea</string>
 
     <string name="pref_title_time_toggle">Temporizator</string>
+    <string name="pref_category_schedule">Orar</string>
     <string name="pref_title_schedule">Orar</string>
     <string name="pref_summary_schedule_sun" formatted="false">Răsărit (%on) la apus (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Personalizat (%on la %off)</string>
@@ -46,8 +47,8 @@
     <string name="pref_title_turn_off">Dezactivează la</string>
     <string name="pref_title_start_time">Oră activare</string>
     <string name="pref_title_stop_time">Oră dezactivare</string>
-    <string name="pref_title_location">Răsărit la apus</string>
-    <string name="pref_summary_location_off">Pe baza locației</string>
+    <string name="pref_title_use_location">Răsărit la apus</string>
+    <string name="pref_summary_use_location">Pe baza locației</string>
 
     <string name="pref_summary_secure_suspend">Când setarea este activată, Red Moon se va suspenda când anumite aplicații sunt deschise. Ca opțiune standard, aceasta include aplicațiile care nu vor funcționa cât timp Red Moon este activat*, cum ar fi, instalarea apk-urilor. Puteți schimba această opțiune pentru ecranul curent al aplicației curente din notificare. Spre exemplu, ați putea dori să adăugați aplicații în care culorile sunt importante, cum ar fi Camera. 
 \n 
@@ -138,7 +139,7 @@
     <string name="toast_warning_no_location">Activează servicii locație pentru actualizarea locației</string>
     <string name="set_dialog">Setează</string>
     <string name="time_toggle_title">Comutator automat</string>
-    <string name="location">Locație</string>
+    <string name="pref_title_location">Locație</string>
     <string name="pref_title_startup">Pornire</string>
 
     <string name="time_toggle_options_array_0">Manual</string>

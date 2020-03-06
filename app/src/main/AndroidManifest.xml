@@ -62,7 +62,7 @@
         <activity
             android:name="com.jmstudios.redmoon.Intro"
             android:label="@string/activity_intro"
-            android:theme="@style/AppThemeNoActionBar" />
+            android:theme="@style/AppThemeIntro" />
 
         <activity
             android:name="com.jmstudios.redmoon.MainActivity"
@@ -81,20 +81,11 @@
         </activity>
 
         <activity
-            android:name=".ScheduleActivity"
-            android:label="@string/activity_schedule"
+            android:name=".settings.SettingsActivity"
+            android:label="@string/activity_settings"
             android:theme="@style/AppTheme">
             <!-- When we bump minsdk<=17, replace meta-data (here and below) with: -->
             <!-- android:parentActivityName=".MainActivity" -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-
-        <activity
-            android:name=".SecureSuspendActivity"
-            android:label="@string/activity_secure_suspend"
-            android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />

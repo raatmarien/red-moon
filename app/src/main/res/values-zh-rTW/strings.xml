@@ -9,7 +9,7 @@
     <string name="pref_category_other">其他</string>
 
     <string name="button_remove_filter">刪除</string>
-    <string name="pref_title_location">日落至日出</string>
+    <string name="pref_title_use_location">日落至日出</string>
     <string name="latitude_short">緯度</string>
     <string name="longitude_short">經度</string>
     <string name="dialog_button_ok">確定</string>
@@ -80,7 +80,7 @@
 
     <string name="pref_entry_button_backlight_turn_off">關閉</string>
 
-    <string name="location">位置</string>
+    <string name="pref_title_location">位置</string>
     <string name="activity_secure_suspend">被排除的應用程式在運行時，暫停紅月</string>
     <string name="activity_schedule">時間表</string>
     <string name="notification_status_running_no_warning">運行中</string>
@@ -92,6 +92,7 @@
 
     <string name="pref_category_button_backlight_disclaimer">對某些裝置不起作用</string>
 
+    <string name="pref_category_schedule">時間表</string>
     <string name="pref_title_schedule">時間表</string>
     <string name="pref_summary_schedule_sun" formatted="false">日出（%on）至日落（%off）</string>
     <string name="pref_summary_schedule_custom" formatted="false">自訂（%on至%off）</string>
@@ -101,7 +102,7 @@
 
     <string name="pref_title_start_time">開始時間</string>
     <string name="pref_title_stop_time">停止時間</string>
-    <string name="pref_summary_location_off">基於您的位置</string>
+    <string name="pref_summary_use_location">基於您的位置</string>
 
     <string name="pref_summary_secure_suspend">本功能啟用時，紅月將會在特定應用程式開啟時暫停。一般來說，這包括那些在紅月運行時無法工作的應用程式*，如應用程式安裝器。您可以在通知中改變對目前佔據螢幕的應用程式的應對方式。比如說，您也許希望添加會被顏色變化所影響的應用程式，如相機應用程式。
 \n

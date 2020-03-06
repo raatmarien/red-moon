@@ -134,9 +134,6 @@ object Config : Preferences(appContext) {
     //endregion
 
     //region state
-    val activeTheme: Int
-        get() = if (darkThemeFlag) R.style.AppThemeDark else R.style.AppTheme
-
     val buttonBacklightLevel: Float
         get() = when (buttonBacklightFlag) {
                     "system" -> (-1).toFloat()

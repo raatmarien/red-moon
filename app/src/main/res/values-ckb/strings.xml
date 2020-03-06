@@ -24,7 +24,7 @@
     <string name="time_toggle_title"/>
     <string name="pref_title_turn_on"/>
     <string name="pref_title_turn_off"/>
-    <string name="pref_title_location">شوێن</string>
+    <string name="pref_title_use_location">شوێن</string>
     <string name="location_not_set"/>
     <string name="latitude_short"/>
     <string name="longitude_short"/>

@@ -68,14 +68,15 @@
     <string name="toast_warning_install">You won\'t be able to install APKs while Red Moon is on.</string>
     <string name="pref_title_translators">Help translate</string>
     <string name="notification_action_stop">Stop</string>
-    <string name="location">Location</string>
+    <string name="pref_title_location">Location</string>
     <string name="pref_title_secure_suspend">Pause in excluded apps</string>
     <string name="pref_title_intensity">Opacity</string>
     <string name="slide_text_get_started">Turn Red Moon on and off with the switch in the top right corner.</string>
     <string name="location_not_set">Location not set</string>
-    <string name="pref_summary_location_off">Based on your location</string>
+    <string name="pref_summary_use_location">Based on your location</string>
     <string name="pref_title_dim_level">Darkness</string>
     <string name="slide_title_protect_eyes">Protecting your eyes</string>
+    <string name="pref_category_schedule">Schedule</string>
     <string name="pref_title_schedule">Schedule</string>
     <string name="activity_secure_suspend">Pause in excluded apps</string>
     <string name="pref_title_start_time">Start time</string>
@@ -113,7 +114,7 @@
     <string name="activity_main">Red Moon</string>
     <string name="pref_category_button_backlight_disclaimer">No effect on some devices</string>
     <string name="add_new_profile_edit_hint">Profile name</string>
-    <string name="pref_title_location">Sunset to sunrise</string>
+    <string name="pref_title_use_location">Sunset to sunrise</string>
     <string name="pref_summary_schedule_custom" formatted="false">Custom (%on to %off)</string>
     <string name="pref_title_email_developer">Email the developers</string>
     <string name="slide_title_improve_sleep">Improving your sleep</string>

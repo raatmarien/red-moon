@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ * Copyright (c) 2017  Stephen Michel <s@smichel.me>
+ * SPDX-License-Identifier: GPL3.0+
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/pref_category_schedule">
+
+        <SwitchPreference
+            android:key="@string/pref_key_schedule"
+            android:title="@string/pref_title_schedule"
+            android:defaultValue="true" />
+
+        <SwitchPreference
+            android:key="@string/pref_key_use_location"
+            android:title="@string/pref_title_use_location"
+            android:summary="@string/pref_summary_use_location"
+            android:dependency="@string/pref_key_schedule"
+            android:defaultValue="false" />
+
+        <com.jmstudios.redmoon.schedule.TimePickerPreference
+            android:key="@string/pref_key_start_time"
+            android:title="@string/pref_title_start_time"
+            android:defaultValue="22:00" />
+
+        <com.jmstudios.redmoon.schedule.TimePickerPreference
+            android:key="@string/pref_key_stop_time"
+            android:title="@string/pref_title_stop_time"
+            android:defaultValue="06:00" />
+
+        <Preference
+            android:key="@string/pref_key_location"
+            android:title="@string/pref_title_location" 
+            android:dependency="@string/pref_key_schedule"
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_category_other">
+
+        <Preference
+            android:key="@string/pref_key_secure_suspend_header"
+            android:title="@string/pref_title_secure_suspend" />
+
+        <SwitchPreference
+            android:key="@string/pref_key_dark_theme"
+            android:title="@string/pref_title_dark_theme"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_category_button_backlight_disclaimer">
+
+        <ListPreference
+            android:key="@string/pref_key_button_backlight"
+            android:title="@string/pref_title_button_backlight"
+            android:summary="%s"
+            android:entries="@array/pref_button_backlight_entries"
+            android:entryValues="@array/pref_button_backlight_values"
+            android:defaultValue="@string/pref_value_button_backlight_turn_off" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

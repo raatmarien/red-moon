@@ -3,7 +3,7 @@
  * Copyright (c) 2017  Stephen Michel <s@smichel.me>
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-package com.jmstudios.redmoon
+package com.jmstudios.redmoon.settings
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -12,6 +12,8 @@ import android.provider.Settings
 import androidx.preference.Preference
 import androidx.preference.SwitchPreference
 import androidx.preference.PreferenceFragmentCompat
+
+import com.jmstudios.redmoon.R
 
 import com.jmstudios.redmoon.securesuspend.CurrentAppChecker
 import com.jmstudios.redmoon.util.*
@@ -39,6 +41,11 @@ class SecureSuspendFragment : PreferenceFragmentCompat() {
                     working
                 }
             }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        activity?.setTitle(R.string.activity_secure_suspend)
     }
 
     private fun setSwitchBarTitle(on: Boolean) {

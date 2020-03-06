@@ -22,7 +22,7 @@
     <string name="time_toggle_title">Modalità di attivazione</string>
     <string name="pref_title_turn_on">Riprendi alle</string>
     <string name="pref_title_turn_off">Ferma alle</string>
-    <string name="pref_title_location">Dal tramonto all\'alba</string>
+    <string name="pref_title_use_location">Dal tramonto all\'alba</string>
     <string name="location_not_set">Posizione non impostata</string>
     <string name="latitude_short">Latitudine</string>
     <string name="longitude_short">Longitudine</string>
@@ -77,7 +77,7 @@
     <string name="pref_category_button_backlight_disclaimer">Non ha effetto su alcuni dispositivi</string>
     <string name="pref_title_secure_suspend">Sospendi nelle app escluse</string>
     <string name="pref_title_button_backlight">Retroilluminazione con pulsante hardware</string>
-    <string name="pref_summary_location_off">In base alla tua posizione</string>
+    <string name="pref_summary_use_location">In base alla tua posizione</string>
     <string name="pref_summary_secure_suspend">Quando questa funzione è attiva, Red Moon andrà automaticamente in pausa all\'apertura di certe app. Di base, questo include app che non funzionano quando Red Moon è attivo*, ad esempio installando apk. Dalle notifiche puoi cambiare il comportamento per lo schermo attuale dell\'app attuale. Per esempio, potresti voler aggiungere app sensibili al colore, come la fotocamera. 
 \n 
 \nQuesta funzione potrebbe diminuire la durata della batteria del tuo dispositivo. 
@@ -104,11 +104,12 @@ Red Moon userà questi dati solo per determinare che tu stia usando un\\\'app ch
     <string name="pref_entry_button_backlight_filter_dim_level">Usa il livello di oscuramento del filtro</string>
     <string name="pref_entry_button_backlight_turn_off">Spegni</string>
     <string name="action_next_profile">Prossimo profilo</string>
-    <string name="location">Posizione</string>
+    <string name="pref_title_location">Posizione</string>
     <string name="activity_schedule">Pianifica</string>
     <string name="notification_status_paused_with_info">In pausa. Elimina la notifica per arrestare.</string>
     <string name="notification_action_whitelist_add">Escludi app</string>
     <string name="notification_action_whitelist_remove">Filtra app</string>
+    <string name="pref_category_schedule">Pianifica</string>
     <string name="pref_title_schedule">Pianifica</string>
     <string name="pref_summary_schedule_sun" formatted="false">Dal tramonto (%on) all\'alba (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Personalizzato (dalle %on alle %off)</string>

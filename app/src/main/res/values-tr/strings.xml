@@ -58,6 +58,7 @@
     <string name="pref_title_color_temp">Renk</string>
     <string name="pref_title_lower_brightness">Sistem parlaklığını azalt</string>
     <string name="pref_title_time_toggle">Zamanlayıcı</string>
+    <string name="pref_category_schedule">Zamanlama</string>
     <string name="pref_title_schedule">Zamanlama</string>
     <!-- Start and stop times will be substituted for %on and %off -->
     <string name="pref_summary_schedule_sun" formatted="false">Gün batımından (%on) gün doğumuna (%off)</string>
@@ -70,8 +71,8 @@
     <string name="pref_title_turn_off">Kapatma zamanı</string>
     <string name="pref_title_start_time">Başlangıç zamanı</string>
     <string name="pref_title_stop_time">Bitiş zamanı</string>
-    <string name="pref_title_location">Gün Batımından Gün Doğumuna</string>
-    <string name="pref_summary_location_off">Konumunuza göre</string>
+    <string name="pref_title_use_location">Gün Batımından Gün Doğumuna</string>
+    <string name="pref_summary_use_location">Konumunuza göre</string>
     <string name="pref_summary_secure_suspend">Bu ayar etkinleştirildiğinde Red Moon belli uygulamalar açıkken kendiliğinden duraklayacaktır. Öntanımlı olarak bu, apk yükleme gibi Red Moon çalışıyorken* çalışmayacak uygulamaları içerir. Bildirimden geçerli uygulamanın geçerli ekranı için bu davranışı değiştirebilirsiniz. Örneğin, kamera gibi renge duyarlı uygulamaları eklemek isteyebilirsiniz. 
 \n 
 \nBu özellik aygıtınızın pil ömrünü biraz düşürebilir. 
@@ -150,7 +151,7 @@
     <string name="toast_warning_no_location">Konumu güncellemek için konum hizmetlerini aç</string>
     <string name="set_dialog">Ayarla</string>
     <string name="time_toggle_title">Kendiliğinden aç/kapa</string>
-    <string name="location">Konum</string>
+    <string name="pref_title_location">Konum</string>
     <string name="pref_title_startup">Başlangıç</string>
     <!-- Timer options (unused) -->
     <string name="time_toggle_options_array_0">Elle</string>

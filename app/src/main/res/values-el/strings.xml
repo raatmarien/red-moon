@@ -24,7 +24,7 @@
     <string name="time_toggle_title">Εναλλαγή λειτουργίας</string>
     <string name="pref_title_turn_on">Συνέχεια στις</string>
     <string name="pref_title_turn_off">Παύση στις</string>
-    <string name="pref_title_location">Από την αυγή ως τη δύση</string>
+    <string name="pref_title_use_location">Από την αυγή ως τη δύση</string>
     <string name="location_not_set">Δεν ορίστηκε</string>
     <string name="latitude_short">Γεωγρ. πλάτος</string>
     <string name="longitude_short">Γεωγρ. μήκος</string>
@@ -116,6 +116,7 @@
 
     <string name="pref_category_button_backlight_disclaimer">Κανένα αποτέλεσμα σε κάποιες συσκευές</string>
 
+    <string name="pref_category_schedule">Πρόγραμμα</string>
     <string name="pref_title_schedule">Πρόγραμμα</string>
     <string name="pref_summary_schedule_sun" formatted="false">Οι ώρες ενεργοποίησης και απενεργοποίησης θα αντικατασταθούν από τα %on και %off</string>
     <string name="pref_summary_schedule_none">Κανένα</string>
@@ -123,7 +124,7 @@
 
     <string name="pref_title_start_time">Ώρα έναρξης</string>
     <string name="pref_title_stop_time">Ώρα τερματισμού</string>
-    <string name="pref_summary_location_off">Βασισμένο στον τοποθεσία σας</string>
+    <string name="pref_summary_use_location">Βασισμένο στον τοποθεσία σας</string>
 
     <string name="pref_title_translators">Βοηθήστε στη μετάφραση</string>
     <string name="pref_summary_translators">andlydakis</string>
@@ -144,7 +145,7 @@
     <string name="pref_entry_button_backlight_turn_off">Απενεργοποίηση</string>
 
     <string name="action_next_profile">Επόμενο προφίλ</string>
-    <string name="location">Τοποθεσία</string>
+    <string name="pref_title_location">Τοποθεσία</string>
     <string name="notification_channel_overlay_name">Έλεγχος επικάλυψης</string>
     <string name="notification_channel_overlay_description">Ειδοποίηση μόνιμου ελέγχου επικάλυψης</string>
 </resources>

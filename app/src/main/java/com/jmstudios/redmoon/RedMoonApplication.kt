@@ -10,6 +10,7 @@ import com.jmstudios.redmoon.util.Logger
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
 
 import com.jmstudios.redmoon.model.Config
@@ -26,6 +27,11 @@ class RedMoonApplication: Application() {
         app = this
         super.onCreate()
         upgradeFrom(Config.fromVersionCode)
+        val theme = when (Config.darkThemeFlag) {
+            true -> AppCompatDelegate.MODE_NIGHT_YES
+            false -> AppCompatDelegate.MODE_NIGHT_NO
+        }
+        AppCompatDelegate.setDefaultNightMode(theme)
         //EventBus.builder().addIndex(eventBusIndex()).installDefaultEventBus()
     }
 

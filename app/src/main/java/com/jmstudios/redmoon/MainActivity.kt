@@ -31,10 +31,11 @@ import android.view.MenuItem
 import androidx.appcompat.widget.SwitchCompat
 
 import com.jmstudios.redmoon.R
-import com.jmstudios.redmoon.filter.Command
 
+import com.jmstudios.redmoon.filter.Command
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.model.ProfilesModel
+import com.jmstudios.redmoon.settings.SettingsActivity
 import com.jmstudios.redmoon.util.*
 
 import org.greenrobot.eventbus.Subscribe
@@ -58,6 +59,7 @@ class MainActivity : ThemedAppCompatActivity() {
         if (fromShortcut) { toggleAndFinish() }
 
         super.onCreate(savedInstanceState)
+
         if (!Config.introShown) { startActivity(intent(Intro::class)) }
         if (Config.lastChangelogShown < BuildConfig.VERSION_CODE) {
             showChangelog(this)
@@ -66,12 +68,6 @@ class MainActivity : ThemedAppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_activity_main, menu)
-
-        menu.findItem(R.id.menu_dark_theme).isChecked = Config.darkThemeFlag
-        mSwitch = (menu.findItem(R.id.screen_filter_switch).actionView as SwitchCompat).apply {
-            safeSetChecked(filterIsOn) // Side effect: sets listener
-        }
-
         return true
     }
 
@@ -121,9 +117,8 @@ class MainActivity : ThemedAppCompatActivity() {
             R.id.menu_about -> {
                 startActivity(intent(AboutActivity::class))
             }
-            R.id.menu_dark_theme -> {
-                Config.darkThemeFlag = !Config.darkThemeFlag
-                recreate()
+            R.id.menu_settings -> {
+                startActivity(intent(SettingsActivity::class))
             }
             R.id.menu_restore_default_filters -> {
                 ProfilesModel.restoreDefaultProfiles()

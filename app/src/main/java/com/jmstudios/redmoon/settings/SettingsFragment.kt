@@ -3,7 +3,7 @@
  * Copyright (c) 2017  Stephen Michel <s@smichel.me>
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-package com.jmstudios.redmoon
+package com.jmstudios.redmoon.settings
 
 import android.app.TimePickerDialog
 import android.os.Bundle
@@ -11,8 +11,11 @@ import androidx.preference.SwitchPreference
 import com.google.android.material.snackbar.Snackbar
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+
+import com.jmstudios.redmoon.R
 
 import com.jmstudios.redmoon.filter.Command
 import com.jmstudios.redmoon.model.Config
@@ -21,27 +24,52 @@ import com.jmstudios.redmoon.util.*
 
 import org.greenrobot.eventbus.Subscribe
 
-class ScheduleFragment : PreferenceFragmentCompat() {
-    private val schedulePref: SwitchPreference
-        get() = pref(R.string.pref_key_schedule) as SwitchPreference
-
+class SettingsFragment : PreferenceFragmentCompat() {
     private val automaticTurnOnPref: TimePickerPreference
         get() = pref(R.string.pref_key_start_time) as TimePickerPreference
 
     private val automaticTurnOffPref: TimePickerPreference
         get() = pref(R.string.pref_key_stop_time) as TimePickerPreference
 
+    private val locationPref: Preference?
+        get() = pref(R.string.pref_key_location)
+
     private val useLocationPref: SwitchPreference
         get() = pref(R.string.pref_key_use_location) as SwitchPreference
+
+    private val secureSuspendPref: Preference?
+        get() = pref(R.string.pref_key_secure_suspend_header)
+
+    private val themePref: SwitchPreference
+        get() = pref(R.string.pref_key_dark_theme) as SwitchPreference
 
     private var mSnackbar: Snackbar? = null
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(R.xml.schedule_preferences, rootKey)
+        setPreferencesFromResource(R.xml.settings, rootKey)
+
+        themePref.setOnPreferenceChangeListener { _, newValue ->
+            val theme = when (newValue as Boolean) {
+                true -> AppCompatDelegate.MODE_NIGHT_YES 
+                false -> AppCompatDelegate.MODE_NIGHT_NO
+            }
+            AppCompatDelegate.setDefaultNightMode(theme)
+            true
+        }
+
+        secureSuspendPref?.setOnPreferenceClickListener {
+            fragmentManager?.beginTransaction()?.let { t ->
+                t.replace(R.id.fragment_container, SecureSuspendFragment())
+                t.addToBackStack(null)
+                t.commit()
+            }
+            true
+        }
     }
 
     override fun onStart() {
         super.onStart()
+        activity?.setTitle(R.string.activity_settings)
         updatePrefs()
         EventBus.register(this)
         LocationUpdateService.update()
@@ -53,34 +81,39 @@ class ScheduleFragment : PreferenceFragmentCompat() {
     }
 
     private fun updatePrefs() {
-        updateSwitchBarTitle()
         updateTimePrefs()
         updateLocationPref()
+        updateSecureSuspendSummary()
     }
 
     override fun onDisplayPreferenceDialog(preference: Preference?) {
-        TimePickerDialog(context, { _, h, m ->
-            preference?.callChangeListener(Time(h, m))
-        },0, 0, false).show()
-    }
-
-    private fun updateSwitchBarTitle() {
-        schedulePref.setTitle(
-                if (Config.scheduleOn) R.string.text_switch_on
-                else R.string.text_switch_off
-        )
+        when (preference) {
+            is TimePickerPreference -> {
+                TimePickerDialog(context, { _, h, m ->
+                    preference.callChangeListener(Time(h, m))
+                }, 0, 0, false).show()
+            }
+            else -> super.onDisplayPreferenceDialog(preference)
+        }
     }
 
     private fun updateLocationPref() {
         val (latitude, longitude, time) = Config.location
-        useLocationPref.summaryOn = if (time == null) {
-            getString(R.string.location_not_set)
-        } else {
-            val lat  = getString(R.string.latitude_short)
-            val long = getString(R.string.longitude_short)
-
-            "$lat: ${latitude.round()}, $long: ${longitude.round()}"
+        locationPref?.summary = when (time) {
+            null -> getString(R.string.location_not_set)
+            else -> {
+                val lat  = getString(R.string.latitude_short)
+                val long = getString(R.string.longitude_short)
+                "$lat: ${latitude.round()}, $long: ${longitude.round()}"
+            }
         }
+    }
+
+    private fun updateSecureSuspendSummary() {
+        secureSuspendPref?.setSummary(when (Config.secureSuspend) {
+            true -> R.string.text_switch_on
+            false -> R.string.text_switch_off
+        })
     }
 
     private fun String.round(digitsAfterDecimal: Int = 3): String {

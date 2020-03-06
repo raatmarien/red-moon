@@ -23,7 +23,7 @@
     <string name="pref_title_turn_off">オフにする時刻</string>
     <string name="pref_title_start_time">開始時刻</string>
     <string name="pref_title_stop_time">停止時刻</string>
-    <string name="pref_title_location">日の出から日没</string>
+    <string name="pref_title_use_location">日の出から日没</string>
     <string name="location_not_set">位置情報が設定されていません</string>
     <string name="latitude_short">緯度</string>
     <string name="longitude_short">経度</string>
@@ -105,7 +105,7 @@
     <string name="notification_action_turn_off">オフにする</string>
     <string name="notification_action_stop">止める</string>
 
-    <string name="pref_summary_location_off">位置情報に基づく</string>
+    <string name="pref_summary_use_location">位置情報に基づく</string>
     <string name="notification_action_next_filter">次のフィルター</string>
 
     <string name="menu_about">アプリについて</string>
@@ -132,7 +132,7 @@
     <string name="searching_location">位置情報の検索中</string>
     <string name="toast_warning_no_location">位置情報サービスを有効にして、位置情報を更新してください</string>
     <string name="snackbar_location_updated">位置情報が見つかりました!</string>
-    <string name="location">位置情報</string>
+    <string name="pref_title_location">位置情報</string>
     <string name="set_dialog">設定</string>
     <string name="notification_status_running">実行中。apkをインストールする際はオフ</string>
     <string name="notification_status_running_no_warning">実行中</string>
@@ -143,6 +143,7 @@
     <string name="notification_status_paused_with_info">一時停止します。通知を閉じると停止します。</string>
     <string name="notification_action_whitelist_add">アプリを除外</string>
     <string name="notification_action_whitelist_remove">アプリに適用</string>
+    <string name="pref_category_schedule">スケジュール</string>
     <string name="pref_title_schedule">スケジュール</string>
     <string name="pref_summary_schedule_sun" formatted="false">日没 (%on) から日の出 (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">カスタム (%on から %off)</string>

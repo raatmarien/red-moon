@@ -40,6 +40,7 @@
     <string name="pref_title_color_temp">Kleur</string>
     <string name="pref_title_lower_brightness">Helderheid aanpassen</string>
     <string name="pref_title_time_toggle">Timer</string>
+    <string name="pref_category_schedule">Schema</string>
     <string name="pref_title_schedule">Schema</string>
     <!-- Start and stop times will be substituted for %on and %off -->
     <string name="pref_summary_schedule_sun" formatted="false">Zonsondergang (%on) tot zonsopgang (%off)</string>
@@ -52,8 +53,8 @@
     <string name="pref_title_turn_off">Uitzetten om</string>
     <string name="pref_title_start_time">Starttijd</string>
     <string name="pref_title_stop_time">Stoptijd</string>
-    <string name="pref_title_location">Zonsondergang tot zonsopgang</string>
-    <string name="pref_summary_location_off">Tijden gebaseerd op locatie</string>
+    <string name="pref_title_use_location">Zonsondergang tot zonsopgang</string>
+    <string name="pref_summary_use_location">Tijden gebaseerd op locatie</string>
     <string name="pref_summary_secure_suspend">Sommige functies van Android, zoals het installeren van APK\'s of het toekennen van permissies op Android 6.0+, zijn beschermd tegen filters over het scherm en zullen daarom niet werken als Red Moon is geactiveerd. Als deze functie aanstaat zal Red Moon automatisch pauzeren en nadien weer inschakelen. Voor andere apps (Camera, Gallerij) is deze functie per individueel scherm in te schakelen via de Red Moon notificatie.\n\nHet aanzetten van deze functie kan de batterijduur op sommige telefoons wat verkorten.\n\nOp sommige toestellen werkt deze functie helaas niet.</string>
     <!-- Short strings; might be used in multiple places -->
     <string name="button_add_filter">Toevoegen</string>
@@ -124,7 +125,7 @@
     <string name="toast_warning_no_location">Schakel Locatie-services in om de locatie te kunnen bijwerken</string>
     <string name="set_dialog">Instellen</string>
     <string name="time_toggle_title">Automatisch schakelen</string>
-    <string name="location">Locatie</string>
+    <string name="pref_title_location">Locatie</string>
     <string name="pref_title_startup">Opstarten</string>
     <!-- Timer options (unused) -->
     <string name="time_toggle_options_array_0">Handmatig</string>

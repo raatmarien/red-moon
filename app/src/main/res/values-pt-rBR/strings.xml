@@ -21,7 +21,7 @@
     <string name="pref_title_color_temp">Cor</string>
     <string name="pref_title_turn_on">Ligar às</string>
     <string name="pref_title_turn_off">Desligar às</string>
-    <string name="pref_title_location">Pôr-do-sol ao nascer do sol</string>
+    <string name="pref_title_use_location">Pôr-do-sol ao nascer do sol</string>
     <string name="location_not_set">Localização não definida</string>
     <string name="latitude_short">Latititude</string>
     <string name="snackbar_searching_location">Procurando por localização</string>
@@ -86,7 +86,7 @@
     <string name="notification_action_turn_off">Desligar</string>
     <string name="notification_action_stop">Desligar</string>
     <string name="notification_action_next_filter">Próximo perfil</string>
-    <string name="pref_summary_location_off">Horários a partir de localização</string>
+    <string name="pref_summary_use_location">Horários a partir de localização</string>
     <string name="pref_title_integration">Integração com outros aplicativos</string>
     <string name="pref_summary_integration">Alguns aplicativos, como o LibreTasks ou o Tasker, permitem que você automatize tarefas quando certos eventos acontecem. O Red Moon envia uma notificação pública quando liga e desliga, para que esses aplicativos possam responder. Se você não usa ou desenvolve nenhum desses aplicativos, você pode ignorar o próximo parágrafo
 
@@ -103,7 +103,7 @@
     <string name="pref_category_button_backlight_disclaimer">Sem efeito em alguns dispositivos</string>
     <string name="pref_title_button_backlight">Luz de fundo do botão de hardware</string>
     <string name="snackbar_location_updated">Localizado!</string>
-    <string name="location">Localização</string>
+    <string name="pref_title_location">Localização</string>
     <string name="pref_entry_button_backlight_system">Sistema configurado</string>
     <string name="pref_entry_button_backlight_filter_dim_level">Usar o filtro diminutivo</string>
     <string name="pref_entry_button_backlight_turn_off">Desligar</string>
@@ -114,6 +114,7 @@
     <string name="menu_restore_default_filters">Restaurar filtros padrões</string>
     <string name="notification_action_whitelist_add">Excluir aplicativo</string>
     <string name="notification_action_whitelist_remove">Filtrar aplicativo</string>
+    <string name="pref_category_schedule">Programar</string>
     <string name="pref_title_schedule">Programar</string>
     <string name="pref_summary_schedule_sun" formatted="false">Pôr-do-sol (%on) ao nascer do sol (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Personalizado (%on to %off)</string>

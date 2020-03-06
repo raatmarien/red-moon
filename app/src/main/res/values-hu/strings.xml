@@ -34,6 +34,7 @@
     <string name="pref_title_lower_brightness">Rendszer fényerejének csökkentése</string>
 
     <string name="pref_title_time_toggle">Időzítő</string>
+    <string name="pref_category_schedule">Ütemezés</string>
     <string name="pref_title_schedule">Ütemezés</string>
     <string name="pref_summary_schedule_sun" formatted="false">Napnyugtától (%on) napkeltéig (%off)</string>
     <string name="notification_action_whitelist_add">Alkalmazás kihagyása</string>
@@ -49,8 +50,8 @@
     <string name="pref_title_turn_off">Kikapcsolás:</string>
     <string name="pref_title_start_time">Indítási idő</string>
     <string name="pref_title_stop_time">Kikapcsolási idő</string>
-    <string name="pref_title_location">Napnyugtától Napkeltéig</string>
-    <string name="pref_summary_location_off">A helyzeted alapján</string>
+    <string name="pref_title_use_location">Napnyugtától Napkeltéig</string>
+    <string name="pref_summary_use_location">A helyzeted alapján</string>
 
     <string name="button_add_filter">Hozzáadás</string>
     <string name="button_remove_filter">Törlés</string>
@@ -113,7 +114,7 @@
     <string name="toast_warning_no_location">Kapcsold be a helyszolgáltatásokat a hely frissítéséhez</string>
     <string name="set_dialog">Beállít</string>
     <string name="time_toggle_title">Automatikus bekapcsolás</string>
-    <string name="location">Hely</string>
+    <string name="pref_title_location">Hely</string>
     <string name="pref_title_startup">Indítás</string>
     <string name="time_toggle_options_array_0">Manuális</string>
     <string name="time_toggle_options_array_1">Automatikus (nap)</string>

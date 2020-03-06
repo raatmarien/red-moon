@@ -23,29 +23,20 @@
  *     NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  *     CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 -->
-<resources>
-    <style name="LaunchScreenTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-      <item name="colorPrimary">@color/color_primary</item>
-      <item name="colorPrimaryDark">@color/color_primary_dark</item>
-      <item name="android:windowBackground">@color/color_primary</item>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="LaunchScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="android:windowBackground">@color/color_primary</item>
     </style>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-      <item name="colorPrimary">@color/color_primary</item>
-      <item name="colorPrimaryDark">@color/color_primary_dark</item>
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
     </style>
 
-    <style name="AppThemeDark" parent="Theme.AppCompat">
-      <item name="colorPrimary">@color/color_primary</item>
-      <item name="colorPrimaryDark">@color/color_primary_dark</item>
-    </style>
-
-    <style name="AppThemeNoActionBar"
-           parent="Theme.AppCompat.Light.NoActionBar"
-           xmlns:tools="http://schemas.android.com/tools" >
-      <!-- Translucent status bar is only available in API 19+ -->
-      <item
-          tools:targetApi="19"
-          name="android:windowTranslucentStatus">true</item>
+    <style name="AppThemeIntro" parent="AppTheme">
+        <!-- Translucent status bar is only available in API 19+ -->
+        <item name="android:windowTranslucentStatus" tools:targetApi="19">true</item>
     </style>
 </resources>

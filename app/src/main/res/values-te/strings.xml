@@ -19,9 +19,9 @@
     <string name="slide_title_get_started">మొదలు పెట్టండి!</string>
     <string name="filter_name_custom">అభిమతం</string>
     <string name="filter_name_default">అప్రమేయం</string>
-    <string name="location">స్థానం</string>
+    <string name="pref_title_location">స్థానం</string>
     <string name="pref_title_dim_level">చీకటి</string>
-    <string name="pref_summary_location_off">మీ స్థానం ఆధారంగా</string>
+    <string name="pref_summary_use_location">మీ స్థానం ఆధారంగా</string>
     <string name="location_not_set">స్థానం సెట్ చేయబడలేదు</string>
     <string name="longitude_short">దీర్ఘ</string>
     <string name="pref_summary_email_developer">మమ్మల్ని సంప్రదించడానికి ద్వితీయ మార్గం</string>

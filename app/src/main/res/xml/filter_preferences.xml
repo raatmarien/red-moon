@@ -55,39 +55,4 @@
         app:iconSpaceReserved="false"
         />
   </PreferenceCategory>
-
-  <PreferenceCategory
-      android:title="@string/pref_category_other"
-      app:iconSpaceReserved="false"
-      >
-    <Preference
-        android:title="@string/pref_title_schedule"
-        android:key="@string/pref_key_schedule_header"
-        app:iconSpaceReserved="false"
-        >
-    </Preference>
-
-    <Preference
-        android:title="@string/pref_title_secure_suspend"
-        android:key="@string/pref_key_secure_suspend_header"
-        app:iconSpaceReserved="false"
-        >
-    </Preference>
-
-  </PreferenceCategory>
-
-  <PreferenceCategory
-      android:title="@string/pref_category_button_backlight_disclaimer"
-      app:iconSpaceReserved="false"
-      >
-    <ListPreference
-        android:key="@string/pref_key_button_backlight"
-        android:title="@string/pref_title_button_backlight"
-        android:entries="@array/pref_button_backlight_entries"
-        android:entryValues="@array/pref_button_backlight_values"
-        android:defaultValue="@string/pref_value_button_backlight_turn_off"
-        app:iconSpaceReserved="false"
-        >
-    </ListPreference>
-  </PreferenceCategory>
 </PreferenceScreen>

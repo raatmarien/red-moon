@@ -42,7 +42,7 @@
     <string name="time_toggle_title">Automatiškai įjungti filtrą</string>
     <string name="pref_title_turn_on">Įjungti ties</string>
     <string name="pref_title_turn_off">Išjungti ties</string>
-    <string name="pref_title_location">Nuo saulėlydžio iki saulėtekio</string>
+    <string name="pref_title_use_location">Nuo saulėlydžio iki saulėtekio</string>
     <string name="location_not_set">Vieta nenustatyta</string>
     <string name="latitude_short">Platuma</string>
     <string name="longitude_short">Ilguma</string>
@@ -104,6 +104,7 @@
     <string name="notification_action_whitelist_remove">Filtruoti programėlę</string>
     <string name="notification_action_next_filter">Kitas filtras</string>
     <string name="pref_category_button_backlight_disclaimer">Kai kuriuose įrenginiuose neveikia</string>
+    <string name="pref_category_schedule">Tvarkaraštis</string>
     <string name="pref_title_schedule">Tvarkaraštis</string>
     <string name="pref_summary_schedule_sun" formatted="false">Nuo saulėlydžio (%on) iki saulėtekio (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Tinkintas (nuo %on iki %off)</string>
@@ -112,7 +113,7 @@
     <string name="pref_title_button_backlight">Aparatinis mygtuko apšvietimas</string>
     <string name="pref_title_start_time">Paleidimo laikas</string>
     <string name="pref_title_stop_time">Sustabdymo laikas</string>
-    <string name="pref_summary_location_off">Paremta jūsų buvimo vieta</string>
+    <string name="pref_summary_use_location">Paremta jūsų buvimo vieta</string>
     <string name="text_switch_on">Įjungta</string>
     <string name="text_switch_off">Išjungta</string>
     <string name="pref_title_version">Versija</string>

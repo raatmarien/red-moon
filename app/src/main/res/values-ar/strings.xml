@@ -23,7 +23,7 @@
     <string name="time_toggle_title">وضع التبديل</string>
     <string name="pref_title_turn_on">الإستئناف عند</string>
     <string name="pref_title_turn_off">الإيقاف عند</string>
-    <string name="location">الموقع</string>
+    <string name="pref_title_location">الموقع</string>
     <string name="location_not_set">الموقع غير مُحدد</string>
     <string name="latitude_short">خط العرض</string>
     <string name="longitude_short">خط الطول</string>
@@ -113,8 +113,8 @@
     <string name="pref_category_button_backlight_disclaimer">قد لا تتأثر بعض الاجهزة</string>
     <string name="pref_title_button_backlight">إضاءة أزرار التنقل للجهاز</string>
 
-    <string name="pref_title_location">من الشروق إلى الغروب</string>
-    <string name="pref_summary_location_off">استنادًا إلى موقعك</string>
+    <string name="pref_title_use_location">من الشروق إلى الغروب</string>
+    <string name="pref_summary_use_location">استنادًا إلى موقعك</string>
     <string name="pref_title_integration">التكامل مع التطبيقات الأخرى</string>
     <string name="pref_summary_integration">بعض التطبيقات, مثل LibreTasks أو Tasker, تُمكنك من عمل مهام تلقائية عند حدوث أحداث معينة. التطبيق يرسل تنبيه عام عند تشغيله او ايقافه, بحيث يمكن لتلك التطبيقات الإستجابة. إذا كنت لا تستعمل او تطور أحد هذه التطبيقات, بإمكانك تجاهل الفقرة التالية.
 
@@ -136,6 +136,7 @@
     <string name="notification_status_paused_with_info">متوقف مؤقتًا. احذف الإشعار كي يتوقف.</string>
     <string name="notification_action_whitelist_add">استبعد التطبيق</string>
     <string name="notification_action_whitelist_remove">استثني التطبيق</string>
+    <string name="pref_category_schedule">جدول</string>
     <string name="pref_title_schedule">جدول</string>
     <string name="pref_summary_schedule_sun" formatted="false">الغروب (%تشغيل) إلى الشروق (%إطفاء)</string>
     <string name="pref_summary_schedule_custom" formatted="false">مخصص (%تشغيل إلى %إطفاء)</string>
