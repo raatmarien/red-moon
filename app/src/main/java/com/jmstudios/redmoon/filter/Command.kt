@@ -90,7 +90,7 @@ enum class Command(val time: Float) {
             return valueOf(commandName)
         }
 
-        fun toggle(on: Boolean) {
+        fun toggle(on: Boolean = !filterIsOn) {
             if (on) ON.send() else OFF.send()
         }
 

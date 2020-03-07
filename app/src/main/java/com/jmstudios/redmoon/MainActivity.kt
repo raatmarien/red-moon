@@ -28,7 +28,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.widget.SwitchCompat
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 import com.jmstudios.redmoon.R
 
@@ -51,7 +51,7 @@ class MainActivity : ThemedAppCompatActivity() {
     override val fragment = FilterFragment()
     override val tag = "jmstudios.fragment.tag.FILTER"
 
-    private var mSwitch : SwitchCompat? = null
+    private val fab: FloatingActionButton get() = findViewById(R.id.fab_toggle)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val fromShortcut = intent.getBooleanExtra(EXTRA_FROM_SHORTCUT_BOOL, false)
@@ -64,6 +64,8 @@ class MainActivity : ThemedAppCompatActivity() {
         if (Config.lastChangelogShown < BuildConfig.VERSION_CODE) {
             showChangelog(this)
         }
+
+        fab.setOnClickListener { _ -> Command.toggle() }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -71,12 +73,8 @@ class MainActivity : ThemedAppCompatActivity() {
         return true
     }
 
-    fun SwitchCompat.safeSetChecked(checked: Boolean) {
-        setOnCheckedChangeListener { _, _ ->  }
-        isChecked = checked
-        setOnCheckedChangeListener { _, checked ->
-            Command.toggle(checked)
-        }
+    private fun setFabIcon(on: Boolean = filterIsOn) {
+        fab.setImageResource(if (on) R.drawable.fab_pause else R.drawable.fab_start)
     }
 
     override fun onStart() {
@@ -87,7 +85,7 @@ class MainActivity : ThemedAppCompatActivity() {
     override fun onResume() {
         Log.i("onResume")
         super.onResume()
-        mSwitch?.safeSetChecked(filterIsOn)
+        setFabIcon()
         EventBus.register(this)
     }
 
@@ -135,11 +133,11 @@ class MainActivity : ThemedAppCompatActivity() {
 
     @Subscribe fun onFilterIsOnChanged(event: filterIsOnChanged) {
         Log.i("FilterIsOnChanged")
-        mSwitch?.safeSetChecked(filterIsOn)
+        setFabIcon()
     }
 
     @Subscribe fun onOverlayPermissionDenied(event: overlayPermissionDenied) {
-        mSwitch?.safeSetChecked(false)
+        setFabIcon(false)
         Permission.Overlay.request(this)
     }
 }
