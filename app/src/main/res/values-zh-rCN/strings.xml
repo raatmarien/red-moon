@@ -16,10 +16,10 @@
     <string name="pref_title_time_toggle">定时</string>
     <string name="pref_title_startup">启动</string>
     <string name="button_add_filter">添加</string>
-    <string name="pref_title_dim_level">光暗</string>
+    <string name="pref_title_dim_level">暗度</string>
     <string name="pref_title_intensity">不透明度</string>
     <string name="pref_title_color_temp">颜色</string>
-    <string name="pref_title_lower_brightness">降低亮度</string>
+    <string name="pref_title_lower_brightness">降低系统亮度</string>
     <string name="location_not_set">未设置位置</string>
     <string name="dialog_title_remove_filter">确定要删除此滤镜？</string>
     <string name="snackbar_searching_location">正在搜索位置</string>
@@ -40,7 +40,7 @@
     <string name="filter_name_default">默认</string>
     <string name="filter_name_bed_reading">阅读</string>
     <string name="pref_summary_email_developer">另一个联系我们的方式</string>
-    <string name="pref_summary_project_page">查看更多信息、提交反馈和贡献</string>
+    <string name="pref_summary_project_page">发现更多信息、提交反馈和贡献</string>
     <string name="snackbar_warning_no_location">启用位置服务来更新位置</string>
     <string name="toast_warning_install">滤镜开启时，您将无法安装APK。</string>
     <string name="notification_action_resume">恢复</string>
@@ -109,7 +109,7 @@
     <string name="notification_action_whitelist_add">排除应用</string>
     <string name="notification_action_whitelist_remove">过滤应用</string>
     <string name="pref_category_schedule">时间表</string>
-    <string name="pref_title_schedule">时间表</string>
+    <string name="pref_title_schedule">按计划运行</string>
     <string name="pref_summary_schedule_sun" formatted="false">日出（%on）到日落（%off）</string>
     <string name="pref_summary_schedule_custom" formatted="false">自定义（%on 到 %off）</string>
     <string name="pref_summary_schedule_none">无</string>
@@ -121,4 +121,7 @@
     <string name="action_next_profile">下一个滤镜</string>
     <string name="notification_channel_overlay_name">屏幕叠加层控制</string>
     <string name="notification_channel_overlay_description">屏幕叠加层控制的持久通知</string>
+    <string name="activity_settings">设置</string>
+    <string name="menu_settings">设置</string>
+    <string name="pref_title_dark_theme">暗色主题</string>
 </resources>
