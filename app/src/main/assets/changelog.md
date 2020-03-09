@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog], and this project follows [Semantic Versioning].
 
+## [Unreleased] — ????-??-??
+### Changed
+- All non-filter preferences moved to their own screen
+- Replaced top switch with floating action button
+- Prevent changing filter preferences until overlay permission is granted
+
+### Fixed
+- Time preferences display summary in proper locale
+
 ## [3.5.0] — 2020-03-01
 ### Added
 - Filter toggles when the schedule is updated
