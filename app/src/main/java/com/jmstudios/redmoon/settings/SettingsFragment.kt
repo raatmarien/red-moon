@@ -7,13 +7,14 @@ package com.jmstudios.redmoon.settings
 
 import android.app.TimePickerDialog
 import android.os.Bundle
-import androidx.preference.SwitchPreference
-import com.google.android.material.snackbar.Snackbar
+import android.text.format.DateFormat
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.SwitchPreference
+import com.google.android.material.snackbar.Snackbar
 
 import com.jmstudios.redmoon.R
 
@@ -23,13 +24,14 @@ import com.jmstudios.redmoon.schedule.*
 import com.jmstudios.redmoon.util.*
 
 import org.greenrobot.eventbus.Subscribe
+import org.libreshift.preferences.TimePreference
 
 class SettingsFragment : PreferenceFragmentCompat() {
-    private val automaticTurnOnPref: TimePickerPreference
-        get() = pref(R.string.pref_key_start_time) as TimePickerPreference
+    private val automaticTurnOnPref: TimePreference
+        get() = pref(R.string.pref_key_start_time) as TimePreference
 
-    private val automaticTurnOffPref: TimePickerPreference
-        get() = pref(R.string.pref_key_stop_time) as TimePickerPreference
+    private val automaticTurnOffPref: TimePreference
+        get() = pref(R.string.pref_key_stop_time) as TimePreference
 
     private val locationPref: Preference?
         get() = pref(R.string.pref_key_location)
@@ -50,7 +52,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
         themePref.setOnPreferenceChangeListener { _, newValue ->
             val theme = when (newValue as Boolean) {
-                true -> AppCompatDelegate.MODE_NIGHT_YES 
+                true -> AppCompatDelegate.MODE_NIGHT_YES
                 false -> AppCompatDelegate.MODE_NIGHT_NO
             }
             AppCompatDelegate.setDefaultNightMode(theme)
@@ -86,14 +88,13 @@ class SettingsFragment : PreferenceFragmentCompat() {
         updateSecureSuspendSummary()
     }
 
-    override fun onDisplayPreferenceDialog(preference: Preference?) {
-        when (preference) {
-            is TimePickerPreference -> {
-                TimePickerDialog(context, { _, h, m ->
-                    preference.callChangeListener(Time(h, m))
-                }, 0, 0, false).show()
-            }
-            else -> super.onDisplayPreferenceDialog(preference)
+    override fun onDisplayPreferenceDialog(p: Preference?) {
+        if (p is TimePreference) {
+            TimePickerDialog(context, { _, h, m ->
+                p.time = TimePreference.Time(h, m)
+            }, p.hour, p.minute, DateFormat.is24HourFormat(context)).show()
+        } else {
+            super.onDisplayPreferenceDialog(p)
         }
     }
 
@@ -125,8 +126,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
         val enabled = Config.scheduleOn && !Config.useLocation
         automaticTurnOnPref.isEnabled  = enabled
         automaticTurnOffPref.isEnabled = enabled
-        automaticTurnOnPref.summary  = Config.scheduledStartTime
-        automaticTurnOffPref.summary = Config.scheduledStopTime
     }
 
     private fun showSnackbar(resId: Int, duration: Int = Snackbar.LENGTH_INDEFINITE) {

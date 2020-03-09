@@ -20,19 +20,19 @@
             android:dependency="@string/pref_key_schedule"
             android:defaultValue="false" />
 
-        <com.jmstudios.redmoon.schedule.TimePickerPreference
+        <org.libreshift.preferences.TimePreference
             android:key="@string/pref_key_start_time"
             android:title="@string/pref_title_start_time"
             android:defaultValue="22:00" />
 
-        <com.jmstudios.redmoon.schedule.TimePickerPreference
+        <org.libreshift.preferences.TimePreference
             android:key="@string/pref_key_stop_time"
             android:title="@string/pref_title_stop_time"
             android:defaultValue="06:00" />
 
         <Preference
             android:key="@string/pref_key_location"
-            android:title="@string/pref_title_location" 
+            android:title="@string/pref_title_location"
             android:dependency="@string/pref_key_schedule"
             />
 

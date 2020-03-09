@@ -75,6 +75,7 @@ dependencies {
 
     // Written by me
     implementation "me.smichel.android:kpreferences:0.7.0"
+    implementation project(":timepickerpreference")
 
     // 3rd party
     implementation 'com.luckycatlabs:SunriseSunsetCalculator:1.2'
