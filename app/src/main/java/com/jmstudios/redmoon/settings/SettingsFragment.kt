@@ -26,6 +26,7 @@ import com.jmstudios.redmoon.util.*
 
 import org.greenrobot.eventbus.Subscribe
 import org.libreshift.preferences.TimePreference
+import org.libreshift.preferences.TimePreferenceDialogFragmentCompat
 
 class SettingsFragment : PreferenceFragmentCompat() {
     private val automaticTurnOnPref: TimePreference
@@ -90,18 +91,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onDisplayPreferenceDialog(p: Preference?) {
         if (p is TimePreference) {
-            val (hour, minute) = p.time
-            TimePickerDialog(context, { _, h, m ->
-                enableSuntime(p.key, false)
-                p.time = TimePreference.Time(h, m)
-            }, hour, minute, DateFormat.is24HourFormat(context)).run {
-                if (p.showNeutralButton) {
-                    setButton(DialogInterface.BUTTON_NEUTRAL, p.neutralButtonText) { _, _ ->
-                        enableSuntime(p.key, true)
-                    }
-                }
-                show()
-            }
+            val DIALOG_FRAGMENT_TAG: String = "androidx.preference.PreferenceFragment.DIALOG"
+            val f = TimePreferenceDialogFragmentCompat.newInstance(p.key)
+            f.setTargetFragment(this, 0);
+            f.show(fragmentManager!!, DIALOG_FRAGMENT_TAG);
         } else {
             super.onDisplayPreferenceDialog(p)
         }
