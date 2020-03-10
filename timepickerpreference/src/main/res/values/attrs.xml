@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TimePreference">
+        <attr name="useSimpleSummary" format="boolean" />
+        <attr name="showNeutralButton" format="boolean" />
+        <attr name="neutralButtonText" format="string|reference" />
+    </declare-styleable>
+</resources>

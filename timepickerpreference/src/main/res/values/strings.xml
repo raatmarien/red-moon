@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?><!--
+ * Copyright (c) 2020  Stephen Michel <libreshift@smichel.me>
+ * SPDX-License-Identifier: GPL-3.0-or-later
+-->
+<resources>
+    <string name="btn_neutral_default">Default</string>
+</resources>

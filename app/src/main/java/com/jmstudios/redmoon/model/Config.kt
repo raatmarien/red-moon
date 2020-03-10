@@ -126,15 +126,21 @@ object Config : Preferences(appContext) {
         EventBus.post(scheduleChanged())
     }
 
-    var useLocation by BooleanPreference(R.string.pref_key_use_location, false) {
+    var startAtSunset by BooleanPreference(R.string.pref_key_use_location_start, false) {
         EventBus.post(useLocationChanged())
     }
 
+    var stopAtSunrise by BooleanPreference(R.string.pref_key_use_location_stop, false) {
+        EventBus.post(useLocationChanged())
+    }
+
+    val useLocation: Boolean get() = startAtSunset || stopAtSunrise
+
     val scheduledStartTime: String
-        get() = if (useLocation) sunsetTime else customStartTime
+        get() = if (startAtSunset) sunsetTime else customStartTime
 
     val scheduledStopTime: String
-        get() = if (useLocation) sunriseTime else customStopTime
+        get() = if (stopAtSunrise) sunriseTime else customStopTime
 
     private var _location by StringPreference(R.string.pref_key_location, "0,0") {
         ScheduleReceiver.rescheduleOffCommand()

@@ -14,16 +14,46 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 
-open class TimePreference(context: Context, attrs: AttributeSet) : DialogPreference(context, attrs)
+open class TimePreference(
+    context: Context,
+    attrs: AttributeSet,
+    defStyleAttr: Int,
+    defStyleRes: Int
+) : DialogPreference(context, attrs, defStyleAttr, defStyleRes)
 {
+    var showNeutralButton: Boolean
+    val neutralButtonText: String
+
     init {
-        // TODO: Get xml preferences and respond to them
-        // TODO: Make this configurable
-        setSummaryProvider(defaultSummaryProvider)
+        val a: TypedArray = context.obtainStyledAttributes(
+            attrs, R.styleable.TimePreference, defStyleAttr, defStyleAttr
+        )
+
+        showNeutralButton = a.getBoolean(R.styleable.TimePreference_showNeutralButton, false)
+
+        val nbText = a.getString(R.styleable.TimePreference_neutralButtonText)
+        neutralButtonText = nbText ?: context.getString(R.string.btn_neutral_default)
+
+        if (a.getBoolean(R.styleable.TimePreference_useSimpleSummary, true)) {
+            setSummaryProvider(defaultSummaryProvider)
+        }
+
+        a.recycle()
     }
 
+    constructor(
+        context: Context,
+        attrs: AttributeSet,
+        defStyleAttr: Int
+    ) : this(context, attrs, defStyleAttr, 0)
+
+    constructor(
+        context: Context,
+        attrs: AttributeSet
+    ) : this(context, attrs, R.attr.dialogPreferenceStyle)
+
     private var timeWasSet: Boolean = false
-    var time: Time? = null
+    var time: Time = Time()
         set(value) {
             val changed = field != value
             if (changed || !timeWasSet) {
@@ -36,32 +66,46 @@ open class TimePreference(context: Context, attrs: AttributeSet) : DialogPrefere
             }
         }
 
-    val minute: Int get() = time?.minute ?: 0
-    val hour: Int get() = time?.hour ?: 0
-
     override fun onGetDefaultValue(a: TypedArray, index: Int): String? {
         return a.getString(index)
-        // TODO: Experiment with returning a Time? here
     }
 
     override fun onSetInitialValue(defaultValue: Any?) {
-        val default: String = defaultValue as? String ?: Time().toString()
+        val default: String = defaultValue as? String ?: "$time"
         time = Time(getPersistedString(default))
     }
 
-    data class Time(val hour: Int = 0, val minute: Int = 0) {
-
+    data class Time(
+        val hour: Int = 0,
+        val minute: Int = 0
+    ) {
         init {
             if (hour !in 0..23 || minute !in 0..59) {
-                // TODO: Throw a more specific exception
-                throw Exception("Invalid hour ($hour) or minute($minute)")
+                throw IllegalArgumentException("Hour ($hour) or minute ($minute) out of range")
             }
         }
 
+        // Same semantics as the primary constructor: invalid input throws
         constructor(str: String) : this (
             hour = Integer.parseInt(str.substring(0..1)),
             minute = Integer.parseInt(str.substring(3..4))
-        )
+        ) {
+            if (str[2] != ':') {
+                throw IllegalArgumentException("Time string ($str) not formatted as HH:mm")
+            }
+        }
+
+        fun format(context: Context?): String {
+            if (context == null) {
+                return this.toString()
+            }
+            val timestr = Calendar.getInstance().run {
+                set(Calendar.HOUR_OF_DAY, hour)
+                set(Calendar.MINUTE, minute)
+                getTime()
+            }
+            return DateFormat.getTimeFormat(context).format(timestr)
+        }
 
         override fun toString(): String {
             return String.format("%02d:%02d", hour, minute)
@@ -70,13 +114,7 @@ open class TimePreference(context: Context, attrs: AttributeSet) : DialogPrefere
 
     class SimpleSummaryProvider : SummaryProvider<TimePreference> {
         override fun provideSummary(preference: TimePreference): String {
-            val time = Calendar.getInstance().run {
-                set(Calendar.HOUR_OF_DAY, preference.hour)
-                set(Calendar.MINUTE, preference.minute)
-                getTime()
-            }
-            val formatter = DateFormat.getTimeFormat(preference.context)
-            return formatter.format(time)
+            return preference.time.format(preference.context)
         }
     }
 

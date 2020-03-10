@@ -6,9 +6,10 @@ Examples of preference xml files (eg, `res/xml/preferences.xml`) TimePreference
 
 Optional properties:
 
-- `android:defaultValue` MUST be in the format `HH:MM`.
-- `libreshift:enableNeutralButton` is either `"true"` or `"false"`
-- `libreshift:neutralButtonText` is either a string or reference to one (`"@string/..."`)
+- `android:defaultValue` is a string in the format `HH:mm` (default "00:00").
+- `app:showNeutralButton` is `"true"` or `"false"` (default false)
+- `app:neutralButtonText` is a string or reference to one (`"@string/..."`) (default "Default")
+- `app:useSimpleSummary` is `"true"` or `"false"` (default true)
 
 ### Simplest
 
@@ -45,14 +46,14 @@ TODO: Add 2 screenshot of picker with 3rd option
         android:key="@string/pref_key_time_start"
         android:title="@string/pref_title_start_time"
         android:defaultValue="19:30"
-        libreshift:enableNeutralButton="true" />
+        app:showNeutralButton="true" />
 
     <!-- Custom text for neutral button -->
     <org.libreshift.preferences.TimePreference
         android:key="@string/pref_key_end_time"
         android:title="@string/pref_title_end_time"
         android:defaultValue="6:30"
-        libreshift:enableNeutralButton="true"
-        libreshift:neutralButtonText="Reset"/>
+        app:showNeutralButton="true"
+        app:neutralButtonText="Reset"/>
 </PreferenceScreen>
 ```
