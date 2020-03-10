@@ -37,7 +37,7 @@ import androidx.preference.PreferenceFragmentCompat
 //     preference.callChangeListener(Time(h, m))
 // }, 0, 0, false).show()
 
-open class TimePickerPreferenceDialogFragmentCompat() : DialogFragment(), DialogInterface.OnClickListener {
+open class TimePreferenceDialogFragmentCompat() : DialogFragment(), DialogInterface.OnClickListener {
     /**
      * The preference that requested this dialog. Available after [.onCreate] has
      * been called on the [PreferenceFragmentCompat] which launched this dialog.
@@ -137,9 +137,6 @@ open class TimePickerPreferenceDialogFragmentCompat() : DialogFragment(), Dialog
         onPrepareDialogBuilder(builder)
         // Create the dialog
         val dialog: Dialog = builder.create()
-        if (needInputMethod()) {
-            requestInputMethod(dialog)
-        }
         return dialog
     }
 
@@ -152,31 +149,6 @@ open class TimePickerPreferenceDialogFragmentCompat() : DialogFragment(), Dialog
      * Do not [AlertDialog.Builder.create] or [AlertDialog.Builder.show].
      */
     protected fun onPrepareDialogBuilder(builder: AlertDialog.Builder?) {}
-
-    /**
-     * Returns whether the preference needs to display a soft input method when the dialog is
-     * displayed. Default is false. Subclasses should override this method if they need the soft
-     * input method brought up automatically.
-     *
-     *
-     * Note: If your application targets P or above, ensure your subclass manually requests
-     * focus (ideally in [.onBindDialogView]) for the input field in order to
-     * correctly attach the input method to the field.
-     *
-     * @hide
-     */
-    @RestrictTo(LIBRARY)
-    protected fun needInputMethod(): Boolean {
-        return false
-    }
-
-    /**
-     * Sets the required flags on the dialog window to enable input method window to show up.
-     */
-    private fun requestInputMethod(dialog: Dialog) {
-        val window: Window? = dialog.getWindow()
-        window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
-    }
 
     /**
      * Creates the content view for the dialog (if a custom content view is required).
@@ -240,8 +212,8 @@ open class TimePickerPreferenceDialogFragmentCompat() : DialogFragment(), Dialog
         private const val SAVE_STATE_LAYOUT = "TimePreferenceDialogFragment.layout"
         private const val SAVE_STATE_ICON = "TimePreferenceDialogFragment.icon"
 
-        fun newInstance(key: String): TimePickerPreferenceDialogFragmentCompat {
-            return TimePickerPreferenceDialogFragmentCompat().apply {
+        fun newInstance(key: String): TimePreferenceDialogFragmentCompat {
+            return TimePreferenceDialogFragmentCompat().apply {
                 arguments = Bundle(1).apply { putString(ARG_KEY, key) }
             }
         }
