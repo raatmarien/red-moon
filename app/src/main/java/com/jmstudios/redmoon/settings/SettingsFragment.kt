@@ -5,10 +5,7 @@
  */
 package com.jmstudios.redmoon.settings
 
-import android.app.TimePickerDialog
-import android.content.DialogInterface
 import android.os.Bundle
-import android.text.format.DateFormat
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
@@ -67,6 +64,28 @@ class SettingsFragment : PreferenceFragmentCompat() {
             true
         }
 
+        automaticTurnOnPref.neutralButtonListener =
+            TimePreference.OnNeutralButtonPressListener { dialog ->
+                Config.startAtSunset = true
+                dialog.dismiss()
+            }
+
+        automaticTurnOnPref.setOnPreferenceChangeListener { _, _ ->
+            Config.startAtSunset = false
+            true
+        }
+
+        automaticTurnOffPref.neutralButtonListener =
+            TimePreference.OnNeutralButtonPressListener { dialog ->
+                Config.stopAtSunrise = true
+                dialog.dismiss()
+            }
+
+        automaticTurnOffPref.setOnPreferenceChangeListener { _, _ ->
+            Config.stopAtSunrise = false
+            true
+        }
+
         updatePrefs()
     }
 
@@ -91,21 +110,12 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onDisplayPreferenceDialog(p: Preference?) {
         if (p is TimePreference) {
-            val DIALOG_FRAGMENT_TAG: String = "androidx.preference.PreferenceFragment.DIALOG"
-            val f = TimePreferenceDialogFragmentCompat.newInstance(p.key)
-            f.setTargetFragment(this, 0);
-            f.show(fragmentManager!!, DIALOG_FRAGMENT_TAG);
+            TimePreferenceDialogFragmentCompat.newInstance(p.key).let {
+                it.setTargetFragment(this, 0)
+                it.show(fragmentManager!!, DIALOG_FRAGMENT_TAG)
+            }
         } else {
             super.onDisplayPreferenceDialog(p)
-        }
-    }
-
-    private fun enableSuntime(key: String, enabled: Boolean) {
-        val start = getString(R.string.pref_key_start_time)
-        val stop = getString(R.string.pref_key_stop_time)
-        when (key) {
-            start -> Config.startAtSunset = enabled
-            stop -> Config.stopAtSunrise = enabled
         }
     }
 
@@ -209,5 +219,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
     }
     //endregion
 
-    companion object : Logger()
+    companion object : Logger() {
+        const val DIALOG_FRAGMENT_TAG = "com.jmstudios.redmoon.DIALOG"
+    }
 }

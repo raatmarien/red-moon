@@ -2,6 +2,7 @@
 <resources>
     <declare-styleable name="TimePreference">
         <attr name="useSimpleSummary" format="boolean" />
+        <attr name="is24HourView" format="boolean" />
         <attr name="showNeutralButton" format="boolean" />
         <attr name="neutralButtonText" format="string|reference" />
     </declare-styleable>

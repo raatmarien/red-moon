@@ -2,49 +2,32 @@
  * Copyright (c) 2020  Stephen Michel <s@smichel.me>
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * Based in part on Android's PreferenceDialogFragmentCompat
+ * Based in part on Android's PreferenceDialogFragmentCompat, which is
  * Copyright 2018 The Android Open Source Project
  * Used under the Apache License, Version 2.0
  */
 package org.libreshift.preferences
 
-import androidx.annotation.RestrictTo.Scope.LIBRARY
-
 import android.app.Dialog
+import android.app.TimePickerDialog
 import android.content.Context
 import android.content.DialogInterface
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
+import android.os.Build
 import android.os.Bundle
-import android.text.TextUtils
-import android.view.LayoutInflater
-import android.view.View
-import android.view.Window
-import android.view.WindowManager
-import android.widget.TextView
-import androidx.annotation.LayoutRes
-import androidx.annotation.RestrictTo
-import androidx.appcompat.app.AlertDialog
+import android.text.format.DateFormat
+import android.util.Log
+import android.widget.TimePicker
 import androidx.fragment.app.DialogFragment
-import androidx.preference.DialogPreference
 import androidx.preference.DialogPreference.TargetFragment
 import androidx.preference.PreferenceFragmentCompat
 
 
-// TimePickerDialog(context, { _, h, m ->
-//     preference.callChangeListener(Time(h, m))
-// }, 0, 0, false).show()
-
-open class TimePreferenceDialogFragmentCompat() : DialogFragment(), DialogInterface.OnClickListener {
+open class TimePreferenceDialogFragmentCompat : DialogFragment(), TimePickerDialog.OnTimeSetListener {
     /**
      * The preference that requested this dialog. Available after [.onCreate] has
      * been called on the [PreferenceFragmentCompat] which launched this dialog.
-     *
-     * @return The [TimePreference] associated with this dialog
      */
-    var mPreference: TimePreference? = null
+    var preference: TimePreference? = null
         get() {
             if (field == null) {
                 val key = arguments!!.getString(ARG_KEY)!!
@@ -55,17 +38,12 @@ open class TimePreferenceDialogFragmentCompat() : DialogFragment(), DialogInterf
         }
         private set
 
-    private var mDialogTitle: CharSequence? = null
-    private var mPositiveButtonText: CharSequence? = null
-    private var mNegativeButtonText: CharSequence? = null
-    private var mDialogMessage: CharSequence? = null
+    private var neutralButtonText: CharSequence? = null
+    private var showNeutralButton: Boolean = false
+    private var is24HourView: Boolean = false
+    private var initialHour: Int = 0
+    private var initialMinute: Int = 0
 
-    @LayoutRes
-    private var mDialogLayoutRes = 0
-    private var mDialogIcon: BitmapDrawable? = null
-
-    /** Which button was clicked.  */
-    private var mWhichButtonClicked = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val fragment: TargetFragment
@@ -77,140 +55,105 @@ open class TimePreferenceDialogFragmentCompat() : DialogFragment(), DialogInterf
         }
         if (savedInstanceState == null) {
             val key = arguments!!.getString(ARG_KEY)!!
-            mPreference = fragment.findPreference(key)
-            mDialogTitle = mPreference?.dialogTitle
-            mPositiveButtonText = mPreference?.positiveButtonText
-            mNegativeButtonText = mPreference?.negativeButtonText
-            mDialogMessage = mPreference?.dialogMessage
-            mDialogLayoutRes = mPreference?.dialogLayoutResource ?: mDialogLayoutRes
-            val icon: Drawable? = mPreference?.dialogIcon
-            mDialogIcon = if (icon == null || icon is BitmapDrawable) {
-                icon as BitmapDrawable?
-            } else {
-                val bitmap = Bitmap.createBitmap(icon.intrinsicWidth,
-                        icon.intrinsicHeight, Bitmap.Config.ARGB_8888)
-                val canvas = Canvas(bitmap)
-                icon.setBounds(0, 0, canvas.width, canvas.height)
-                icon.draw(canvas)
-                BitmapDrawable(resources, bitmap)
-            }
+            preference = fragment.findPreference(key)
+            neutralButtonText = preference?.neutralButtonText
+            showNeutralButton = preference?.showNeutralButton ?: showNeutralButton
+            is24HourView = preference?.is24HourView ?: DateFormat.is24HourFormat(context)
+            initialHour = preference?.time?.hour ?: initialHour
+            initialMinute = preference?.time?.minute ?: initialMinute
         } else {
-            mDialogTitle = savedInstanceState.getCharSequence(SAVE_STATE_TITLE)
-            mPositiveButtonText = savedInstanceState.getCharSequence(SAVE_STATE_POSITIVE_TEXT)
-            mNegativeButtonText = savedInstanceState.getCharSequence(SAVE_STATE_NEGATIVE_TEXT)
-            mDialogMessage = savedInstanceState.getCharSequence(SAVE_STATE_MESSAGE)
-            mDialogLayoutRes = savedInstanceState.getInt(SAVE_STATE_LAYOUT, 0)
-            val bitmap = savedInstanceState.getParcelable<Bitmap>(SAVE_STATE_ICON)
-            if (bitmap != null) {
-                mDialogIcon = BitmapDrawable(resources, bitmap)
-            }
+            neutralButtonText = savedInstanceState.getCharSequence(SAVE_STATE_NEUTRAL_TEXT)
+            showNeutralButton = savedInstanceState.getBoolean(SAVE_STATE_SHOW_NEUTRAL)
+            is24HourView = savedInstanceState.getBoolean(SAVE_STATE_24_HOUR_VIEW)
+            initialHour = savedInstanceState.getInt(SAVE_STATE_INITIAL_HOUR)
+            initialMinute = savedInstanceState.getInt(SAVE_STATE_INITIAL_MINUTE)
         }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putCharSequence(SAVE_STATE_TITLE, mDialogTitle)
-        outState.putCharSequence(SAVE_STATE_POSITIVE_TEXT, mPositiveButtonText)
-        outState.putCharSequence(SAVE_STATE_NEGATIVE_TEXT, mNegativeButtonText)
-        outState.putCharSequence(SAVE_STATE_MESSAGE, mDialogMessage)
-        outState.putInt(SAVE_STATE_LAYOUT, mDialogLayoutRes)
-        if (mDialogIcon != null) {
-            outState.putParcelable(SAVE_STATE_ICON, mDialogIcon!!.bitmap)
-        }
+        outState.putCharSequence(SAVE_STATE_NEUTRAL_TEXT, neutralButtonText)
+        outState.putBoolean(SAVE_STATE_SHOW_NEUTRAL, showNeutralButton)
+        outState.putBoolean(SAVE_STATE_24_HOUR_VIEW, is24HourView)
+        outState.putInt(SAVE_STATE_INITIAL_HOUR, initialHour)
+        outState.putInt(SAVE_STATE_INITIAL_MINUTE, initialMinute)
     }
 
+    /**
+     * We'd have more control if we instantiated the dialog and populated the
+     * view directly, but putting a time picker inside a dialog is a black art.
+     * TimePickerDialog needs to subclass AlertDialog and use package-private
+     * methods to do it (specifically for layout in landscape orientation).
+     *
+     * So we'll just call TimePickerDialog and hack its output. This is also
+     * why we subclass DialogFragment instead of PreferenceDialogFragmentCompat.
+     * This means we only have access to the dialog, not its builder, but the
+     * only *real* downside is that we can't access the dialog view (ie, the
+     * time picker) directly, to offer onBindDialogView().
+     */
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val context: Context = activity!!
-        mWhichButtonClicked = DialogInterface.BUTTON_NEGATIVE
-        val builder: AlertDialog.Builder = AlertDialog.Builder(context)
-                .setTitle(mDialogTitle)
-                .setIcon(mDialogIcon)
-                .setPositiveButton(mPositiveButtonText, this)
-                .setNegativeButton(mNegativeButtonText, this)
-        val contentView: View? = onCreateDialogView(context)
-        if (contentView != null) {
-            onBindDialogView(contentView)
-            builder.setView(contentView)
-        } else {
-            builder.setMessage(mDialogMessage)
+
+        val dialog = TimePickerDialog(context, this, initialHour, initialMinute, is24HourView)
+
+        if (showNeutralButton) {
+            // I would pass null for the last argument, but kotlin's type checker yells at me
+            dialog.setButton(DialogInterface.BUTTON_NEUTRAL, neutralButtonText) { _, _ -> }
         }
-        onPrepareDialogBuilder(builder)
-        // Create the dialog
-        val dialog: Dialog = builder.create()
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            dialog.create()
+            // If we had a higher minApi, we could attach the listener here
+            // Instead, we need to wait until dialog.show() has been called
+        }
         return dialog
     }
 
-
     /**
-     * Prepares the dialog builder to be shown when the preference is clicked.
-     * Use this to set custom properties on the dialog.
+     * DialogFragment.onStart() is where dialog.show() is called, which means
+     * the view has been instantiated so now we can get a reference to the
+     * neutral button and override the onClick listener, to prevent the dialog
+     * from closing if we don't want it to.
      *
+     * This is a fragile implementation. It would be better to create our own
+     * TimePickerDialog subclass and override its show() and/or onClick methods.
+     * This would also allow us to persist values in the neutral button case.
+     * See: https://android.googlesource.com/platform/frameworks/base/+/master
+     *                          /core/java/android/app/TimePickerDialog.java#149
      *
-     * Do not [AlertDialog.Builder.create] or [AlertDialog.Builder.show].
+     * Maybe later, I've already spent a lot of time on this.
      */
-    protected fun onPrepareDialogBuilder(builder: AlertDialog.Builder?) {}
-
-    /**
-     * Creates the content view for the dialog (if a custom content view is required).
-     * By default, it inflates the dialog layout resource if it is set.
-     *
-     * @return The content view for the dialog
-     * @see DialogPreference.setLayoutResource
-     */
-    protected fun onCreateDialogView(context: Context?): View? {
-        val resId = mDialogLayoutRes
-        if (resId == 0) {
-            return null
+    override fun onStart() {
+        super.onStart()
+        val tpd = (dialog as TimePickerDialog)
+        tpd.getButton(DialogInterface.BUTTON_NEUTRAL).setOnClickListener {
+            preference?.neutralButtonListener?.onNeutralButtonPress(tpd)
         }
-        val inflater = LayoutInflater.from(context)
-        return inflater.inflate(resId, null)
     }
 
-    /**
-     * Binds views in the content view of the dialog to data.
-     *
-     *
-     * Make sure to call through to the superclass implementation.
-     *
-     * @param view The content view of the dialog, if it is custom
-     */
-    protected fun onBindDialogView(view: View) {
-        val dialogMessageView: View? = view.findViewById(R.id.message)
-        if (dialogMessageView != null) {
-            val message = mDialogMessage
-            var newVisibility: Int = View.GONE
-            if (!TextUtils.isEmpty(message)) {
-                if (dialogMessageView is TextView) {
-                    (dialogMessageView as TextView).text = message
-                }
-                newVisibility = View.VISIBLE
-            }
-            if (dialogMessageView.visibility !== newVisibility) {
-                dialogMessageView.visibility = newVisibility
+    /** Called when the user presses OK, after the dialog has closed. */
+    override fun onTimeSet(picker: TimePicker?, hour: Int, minute: Int) {
+        Log.i(TAG, "onTimeSet: $hour:$minute")
+        preference?.let {
+            val shouldSave = it.callChangeListener(TimePreference.Time(hour, minute))
+            if (shouldSave) {
+                it.time = TimePreference.Time(hour, minute)
             }
         }
     }
 
-    override fun onClick(dialog: DialogInterface?, which: Int) {
-        mWhichButtonClicked = which
-    }
-
-    override fun onDismiss(dialog: DialogInterface) {
-        super.onDismiss(dialog)
-        onDialogClosed(mWhichButtonClicked == DialogInterface.BUTTON_POSITIVE)
-    }
-
-    protected fun onDialogClosed(positiveResult: Boolean) {}
+    /** Called when dialog closes, regardless of which button was pressed */
+    // override fun onDismiss(dialog: DialogInterface) { }
 
     companion object {
+        private const val TAG = "TimePrefDialogFragment"
         // For persisting state
-        protected const val ARG_KEY = "key"
-        private const val SAVE_STATE_TITLE = "TimePreferenceDialogFragment.title"
-        private const val SAVE_STATE_POSITIVE_TEXT = "TimePreferenceDialogFragment.positiveText"
-        private const val SAVE_STATE_NEGATIVE_TEXT = "TimePreferenceDialogFragment.negativeText"
-        private const val SAVE_STATE_MESSAGE = "TimePreferenceDialogFragment.message"
-        private const val SAVE_STATE_LAYOUT = "TimePreferenceDialogFragment.layout"
-        private const val SAVE_STATE_ICON = "TimePreferenceDialogFragment.icon"
+        private const val ARG_KEY = "key"
+        private const val SAVE_STATE_NEUTRAL_TEXT = "TimePreferenceDialogFragment.neutralText"
+        private const val SAVE_STATE_SHOW_NEUTRAL = "TimePreferenceDialogFragment.showNeutral"
+        private const val SAVE_STATE_24_HOUR_VIEW = "TimePreferenceDialogFragment.is24HourView"
+        private const val SAVE_STATE_INITIAL_HOUR = "TimePreferenceDialogFragment.initialHour"
+        private const val SAVE_STATE_INITIAL_MINUTE = "TimePreferenceDialogFragment.initialMinute"
 
         fun newInstance(key: String): TimePreferenceDialogFragmentCompat {
             return TimePreferenceDialogFragmentCompat().apply {

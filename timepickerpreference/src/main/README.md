@@ -10,6 +10,7 @@ Optional properties:
 - `app:showNeutralButton` is `"true"` or `"false"` (default false)
 - `app:neutralButtonText` is a string or reference to one (`"@string/..."`) (default "Default")
 - `app:useSimpleSummary` is `"true"` or `"false"` (default true)
+- `app:is24HourView` is `"true"` or `"false"` (default system locale)
 
 ### Simplest
 

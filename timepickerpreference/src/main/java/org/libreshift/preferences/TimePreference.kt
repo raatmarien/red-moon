@@ -4,15 +4,14 @@
  */
 package org.libreshift.preferences
 
+import android.app.TimePickerDialog
 import android.content.Context
 import android.content.res.TypedArray
 import android.text.format.DateFormat
 import android.util.AttributeSet
 import androidx.preference.DialogPreference
 
-import java.text.SimpleDateFormat
 import java.util.Calendar
-import java.util.Date
 
 open class TimePreference(
     context: Context,
@@ -21,13 +20,33 @@ open class TimePreference(
     defStyleRes: Int
 ) : DialogPreference(context, attrs, defStyleAttr, defStyleRes)
 {
+    interface OnNeutralButtonPressListener {
+        fun onNeutralButtonPress(dialog: TimePickerDialog)
+
+        // Hack around lack of SAM for kotlin interfaces, see link:
+        // https://youtrack.jetbrains.com/issue/KT-7770#focus=streamItem-27-3290802.0-0
+        companion object {
+            inline operator fun invoke(crossinline op: (dialog: TimePickerDialog) -> Unit) =
+                object : OnNeutralButtonPressListener {
+                    override fun onNeutralButtonPress(dialog: TimePickerDialog) = op(dialog)
+                }
+
+        }
+    }
+
+    val is24HourView: Boolean
     var showNeutralButton: Boolean
     val neutralButtonText: String
+
+    var neutralButtonListener: OnNeutralButtonPressListener? = null
 
     init {
         val a: TypedArray = context.obtainStyledAttributes(
             attrs, R.styleable.TimePreference, defStyleAttr, defStyleAttr
         )
+
+        val default24H = DateFormat.is24HourFormat(context)
+        is24HourView = a.getBoolean(R.styleable.TimePreference_is24HourView, default24H)
 
         showNeutralButton = a.getBoolean(R.styleable.TimePreference_showNeutralButton, false)
 
@@ -35,7 +54,11 @@ open class TimePreference(
         neutralButtonText = nbText ?: context.getString(R.string.btn_neutral_default)
 
         if (a.getBoolean(R.styleable.TimePreference_useSimpleSummary, true)) {
-            setSummaryProvider(defaultSummaryProvider)
+            summaryProvider = defaultSummaryProvider
+        }
+
+        neutralButtonListener = OnNeutralButtonPressListener { dialog ->
+            dialog.updateTime(time.hour, time.minute)
         }
 
         a.recycle()
@@ -66,10 +89,12 @@ open class TimePreference(
             }
         }
 
+    /** To the Android system, we represent time as a string */
     override fun onGetDefaultValue(a: TypedArray, index: Int): String? {
         return a.getString(index)
     }
 
+    /** Internally, though, we store the time as a Time */
     override fun onSetInitialValue(defaultValue: Any?) {
         val default: String = defaultValue as? String ?: "$time"
         time = Time(getPersistedString(default))
@@ -97,14 +122,14 @@ open class TimePreference(
 
         fun format(context: Context?): String {
             if (context == null) {
+                // Can't format to local time, so just use the raw HH:mm
                 return this.toString()
             }
-            val timestr = Calendar.getInstance().run {
-                set(Calendar.HOUR_OF_DAY, hour)
-                set(Calendar.MINUTE, minute)
-                getTime()
+            val calendar = Calendar.getInstance().also {
+                it.set(Calendar.HOUR_OF_DAY, hour)
+                it.set(Calendar.MINUTE, minute)
             }
-            return DateFormat.getTimeFormat(context).format(timestr)
+            return DateFormat.getTimeFormat(context).format(calendar.time)
         }
 
         override fun toString(): String {
