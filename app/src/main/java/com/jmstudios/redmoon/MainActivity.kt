@@ -61,9 +61,7 @@ class MainActivity : ThemedAppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         if (!Config.introShown) { startActivity(intent(Intro::class)) }
-        if (Config.lastChangelogShown < BuildConfig.VERSION_CODE) {
-            showChangelog(this)
-        }
+        showChangelogAuto(this)
 
         fab.setOnClickListener { _ -> Command.toggle() }
     }

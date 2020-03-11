@@ -15,6 +15,15 @@ import com.jmstudios.redmoon.model.Config
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
+fun showChangelogAuto(activity: Activity): Dialog? {
+    val lastShown = Config.lastChangelogShown
+    Config.lastChangelogShown = BuildConfig.VERSION_CODE
+    return when (lastShown) {
+        0, BuildConfig.VERSION_CODE -> null // First run or already shown
+        else -> showChangelog(activity)
+    }
+}
+
 fun showChangelog(activity: Activity): Dialog? {
     val changelog = StringBuilder()
     val input = activity.assets.open("changelog.md")
@@ -31,6 +40,5 @@ fun showChangelog(activity: Activity): Dialog? {
         create()
     }
     dialog.show()
-    Config.lastChangelogShown = BuildConfig.VERSION_CODE
     return dialog
 }
