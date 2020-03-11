@@ -1,7 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog], and this project follows [Semantic Versioning].
 
-## [Unreleased] — ????-??-??
+## [4.0.0] — ????-??-??
+### Added
+- Start and stop times can be set to sunset and sunrise individually
+
 ### Changed
 - All non-filter preferences moved to their own screen
 - Replaced top switch with floating action button
@@ -9,6 +12,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixed
 - Time preferences display summary in proper locale
+
+### Removed
+- Removed "Sunrise to Sunset" preference, since you can set them individually
 
 ## [3.5.0] — 2020-03-01
 ### Added
@@ -216,6 +222,7 @@ All notable changes to this project will be documented in this file. The format 
 
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [Semantic Versioning]: https://semver.org/spec/v2.0.0.html
+[4.0.0]: https://github.com/LibreShift/red-moon/compare/v3.5.0...v4.0.0
 [3.4.0]: https://github.com/LibreShift/red-moon/compare/v3.4.0...v3.5.0
 [3.4.0]: https://github.com/LibreShift/red-moon/compare/v3.3.2...v3.4.0
 [3.3.2]: https://github.com/LibreShift/red-moon/compare/v3.3.1...v3.3.2
