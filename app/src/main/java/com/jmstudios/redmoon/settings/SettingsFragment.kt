@@ -5,15 +5,14 @@
  */
 package com.jmstudios.redmoon.settings
 
-import android.app.TimePickerDialog
 import android.os.Bundle
-import androidx.preference.SwitchPreference
-import com.google.android.material.snackbar.Snackbar
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.SwitchPreference
+import com.google.android.material.snackbar.Snackbar
 
 import com.jmstudios.redmoon.R
 
@@ -23,19 +22,18 @@ import com.jmstudios.redmoon.schedule.*
 import com.jmstudios.redmoon.util.*
 
 import org.greenrobot.eventbus.Subscribe
+import org.libreshift.preferences.TimePreference
+import org.libreshift.preferences.TimePreferenceDialogFragmentCompat
 
 class SettingsFragment : PreferenceFragmentCompat() {
-    private val automaticTurnOnPref: TimePickerPreference
-        get() = pref(R.string.pref_key_start_time) as TimePickerPreference
+    private val automaticTurnOnPref: TimePreference
+        get() = pref(R.string.pref_key_start_time) as TimePreference
 
-    private val automaticTurnOffPref: TimePickerPreference
-        get() = pref(R.string.pref_key_stop_time) as TimePickerPreference
+    private val automaticTurnOffPref: TimePreference
+        get() = pref(R.string.pref_key_stop_time) as TimePreference
 
     private val locationPref: Preference?
         get() = pref(R.string.pref_key_location)
-
-    private val useLocationPref: SwitchPreference
-        get() = pref(R.string.pref_key_use_location) as SwitchPreference
 
     private val secureSuspendPref: Preference?
         get() = pref(R.string.pref_key_secure_suspend_header)
@@ -50,7 +48,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
         themePref.setOnPreferenceChangeListener { _, newValue ->
             val theme = when (newValue as Boolean) {
-                true -> AppCompatDelegate.MODE_NIGHT_YES 
+                true -> AppCompatDelegate.MODE_NIGHT_YES
                 false -> AppCompatDelegate.MODE_NIGHT_NO
             }
             AppCompatDelegate.setDefaultNightMode(theme)
@@ -65,6 +63,30 @@ class SettingsFragment : PreferenceFragmentCompat() {
             }
             true
         }
+
+        automaticTurnOnPref.neutralButtonListener =
+            TimePreference.OnNeutralButtonPressListener { dialog ->
+                Config.startAtSunset = true
+                dialog.dismiss()
+            }
+
+        automaticTurnOnPref.setOnPreferenceChangeListener { _, _ ->
+            Config.startAtSunset = false
+            true
+        }
+
+        automaticTurnOffPref.neutralButtonListener =
+            TimePreference.OnNeutralButtonPressListener { dialog ->
+                Config.stopAtSunrise = true
+                dialog.dismiss()
+            }
+
+        automaticTurnOffPref.setOnPreferenceChangeListener { _, _ ->
+            Config.stopAtSunrise = false
+            true
+        }
+
+        updatePrefs()
     }
 
     override fun onStart() {
@@ -86,14 +108,14 @@ class SettingsFragment : PreferenceFragmentCompat() {
         updateSecureSuspendSummary()
     }
 
-    override fun onDisplayPreferenceDialog(preference: Preference?) {
-        when (preference) {
-            is TimePickerPreference -> {
-                TimePickerDialog(context, { _, h, m ->
-                    preference.callChangeListener(Time(h, m))
-                }, 0, 0, false).show()
+    override fun onDisplayPreferenceDialog(p: Preference?) {
+        if (p is TimePreference) {
+            TimePreferenceDialogFragmentCompat.newInstance(p.key).let {
+                it.setTargetFragment(this, 0)
+                it.show(fragmentManager!!, DIALOG_FRAGMENT_TAG)
             }
-            else -> super.onDisplayPreferenceDialog(preference)
+        } else {
+            super.onDisplayPreferenceDialog(p)
         }
     }
 
@@ -104,9 +126,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
             else -> {
                 val lat  = getString(R.string.latitude_short)
                 val long = getString(R.string.longitude_short)
-                "$lat: ${latitude.round()}, $long: ${longitude.round()}"
+                String.format("$lat: %.3f, $long: %.3f", latitude.toFloat(), longitude.toFloat())
             }
         }
+        locationPref?.isVisible = Config.useLocation
     }
 
     private fun updateSecureSuspendSummary() {
@@ -116,17 +139,16 @@ class SettingsFragment : PreferenceFragmentCompat() {
         })
     }
 
-    private fun String.round(digitsAfterDecimal: Int = 3): String {
-        val digits = this.indexOf(".") + digitsAfterDecimal
-        return this.padEnd(digits+1).substring(0..digits).trimEnd()
+    private fun updateTimePrefs() {
+        automaticTurnOnPref.summary = timeSummary(Config.scheduledStartTime,
+            getString(R.string.pref_summary_start_time_sunset), Config.startAtSunset)
+        automaticTurnOffPref.summary = timeSummary(Config.scheduledStopTime,
+            getString(R.string.pref_summary_stop_time_sunrise), Config.stopAtSunrise)
     }
 
-    private fun updateTimePrefs() {
-        val enabled = Config.scheduleOn && !Config.useLocation
-        automaticTurnOnPref.isEnabled  = enabled
-        automaticTurnOffPref.isEnabled = enabled
-        automaticTurnOnPref.summary  = Config.scheduledStartTime
-        automaticTurnOffPref.summary = Config.scheduledStopTime
+    private fun timeSummary(time: String, format: String, useFormat: Boolean): String {
+        val localeTime = TimePreference.Time(time).format(context)
+        return if (useFormat) String.format(format, localeTime) else localeTime
     }
 
     private fun showSnackbar(resId: Int, duration: Int = Snackbar.LENGTH_INDEFINITE) {
@@ -158,7 +180,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
     @Subscribe
     fun onUseLocationChanged(event: useLocationChanged) {
         LocationUpdateService.update()
-        updateTimePrefs()
+        updatePrefs()
         Command.toggle(Config.scheduleOn && inActivePeriod())
     }
 
@@ -190,11 +212,14 @@ class SettingsFragment : PreferenceFragmentCompat() {
     @Subscribe
     fun onLocationPermissionDialogClosed(event: Permission.Location) {
         if (!Permission.Location.isGranted) {
-            useLocationPref.isChecked = false
+            Config.startAtSunset = false
+            Config.stopAtSunrise = false
         }
         LocationUpdateService.update()
     }
     //endregion
 
-    companion object : Logger()
+    companion object : Logger() {
+        const val DIALOG_FRAGMENT_TAG = "com.jmstudios.redmoon.DIALOG"
+    }
 }

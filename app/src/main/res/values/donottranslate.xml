@@ -45,6 +45,8 @@
   <string name="pref_key_location" translatable="false">pref_key_location</string>
   <string name="pref_key_location_timestamp" translatable="false">pref_key_location_timestamp</string>
   <string name="pref_key_use_location" translatable="false">pref_key_use_location</string>
+  <string name="pref_key_use_location_start" translatable="false">pref_key_use_location_start</string>
+  <string name="pref_key_use_location_stop" translatable="false">pref_key_use_location_stop</string>
   <string name="pref_key_github" translatable="false">pref_key_github</string>
   <string name="pref_key_email" translatable="false">pref_key_email</string>
   <string name="pref_key_other" translatable="false">pref_key_other</string>

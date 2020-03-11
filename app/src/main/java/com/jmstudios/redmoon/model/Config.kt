@@ -48,7 +48,7 @@ private const val BROADCAST_FIELD  = "jmstudios.bundle.key.FILTER_IS_ON"
 object Config : Preferences(appContext) {
     private val Log = KLogging.logger("Config")
 
-    //region preferences
+    //region state
     var filterIsOn by BooleanPreference(R.string.pref_key_filter_is_on, false) {
         Log.i("Sending update broadcasts: filter is on: $it")
         //Broadcast to keep appwidgets in sync
@@ -65,7 +65,13 @@ object Config : Preferences(appContext) {
         })
         EventBus.post(filterIsOnChanged())
     }
-    
+
+    var brightnessLowered by BooleanPreference(R.string.pref_key_brightness_lowered, false)
+    var brightness by IntPreference(R.string.pref_key_brightness, 0)
+    var automaticBrightness by BooleanPreference(R.string.pref_key_automatic_brightness, true)
+    //endregion
+
+    //region filter
     var color by IntPreference(R.string.pref_key_color, 10) {
         activeProfile.run { if (it != color) activateProfile(copy(color = it)) }
     }
@@ -95,17 +101,9 @@ object Config : Preferences(appContext) {
             Log.i("custom set to $value")
             _custom = value.toString()
         }
+    //endregion
 
-    val secureSuspend by BooleanPreference(R.string.pref_key_secure_suspend, false) {
-        EventBus.post(secureSuspendChanged())
-    }
-
-    val buttonBacklightFlag by StringPreference(R.string.pref_key_button_backlight, "off") {
-        EventBus.post(buttonBacklightChanged())
-    }
-    
-    var darkThemeFlag by BooleanPreference(R.string.pref_key_dark_theme, false)
-
+    //region settings
     var scheduleOn by BooleanPreference(R.string.pref_key_schedule, true) {
         if (it) {
             Log.i("Schedule enabled")
@@ -128,25 +126,22 @@ object Config : Preferences(appContext) {
         EventBus.post(scheduleChanged())
     }
 
-    var useLocation by BooleanPreference(R.string.pref_key_use_location, false) {
+    var startAtSunset by BooleanPreference(R.string.pref_key_use_location_start, false) {
         EventBus.post(useLocationChanged())
     }
-    //endregion
 
-    //region state
-    val buttonBacklightLevel: Float
-        get() = when (buttonBacklightFlag) {
-                    "system" -> (-1).toFloat()
-                    "dim" -> 1 - (dimLevel.toFloat() / 100)
-                    else -> 0.toFloat()
-                }
+    var stopAtSunrise by BooleanPreference(R.string.pref_key_use_location_stop, false) {
+        EventBus.post(useLocationChanged())
+    }
+
+    val useLocation: Boolean get() = startAtSunset || stopAtSunrise
 
     val scheduledStartTime: String
-        get() = if (useLocation) sunsetTime else customStartTime
+        get() = if (startAtSunset) sunsetTime else customStartTime
 
     val scheduledStopTime: String
-        get() = if (useLocation) sunriseTime else customStopTime
-    
+        get() = if (stopAtSunrise) sunriseTime else customStopTime
+
     private var _location by StringPreference(R.string.pref_key_location, "0,0") {
         ScheduleReceiver.rescheduleOffCommand()
         ScheduleReceiver.rescheduleOnCommand()
@@ -194,18 +189,27 @@ object Config : Preferences(appContext) {
             }
         }
 
-    var introShown by BooleanPreference(R.string.pref_key_intro_shown, false)
+    val secureSuspend by BooleanPreference(R.string.pref_key_secure_suspend, false) {
+        EventBus.post(secureSuspendChanged())
+    }
 
-    var brightness by IntPreference(R.string.pref_key_brightness, 0)
-    
-    var automaticBrightness by BooleanPreference(R.string.pref_key_automatic_brightness, true)
+    var darkThemeFlag by BooleanPreference(R.string.pref_key_dark_theme, false)
 
-    var brightnessLowered by BooleanPreference(R.string.pref_key_brightness_lowered, false)
+    val buttonBacklightFlag by StringPreference(R.string.pref_key_button_backlight, "off") {
+        EventBus.post(buttonBacklightChanged())
+    }
+
+    val buttonBacklightLevel: Float
+        get() = when (buttonBacklightFlag) {
+            "system" -> (-1).toFloat()
+            "dim" -> 1 - (dimLevel.toFloat() / 100)
+            else -> 0.toFloat()
+        }
     //endregion
 
     //region application
+    var introShown by BooleanPreference(R.string.pref_key_intro_shown, false)
     var fromVersionCode by IntPreference(R.string.pref_key_from_version_code, -1)
-
     var lastChangelogShown by IntPreference(R.string.pref_key_last_changelog_shown, 0)
     //endregion
 }

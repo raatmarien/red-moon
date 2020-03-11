@@ -102,11 +102,14 @@ class RedMoonApplication: Application() {
 
     private fun upgradeToggleModePreferences() {
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this)
-        val scheduleKey = getString(R.string.pref_key_schedule)
-        val currentToggleMode: String = sharedPrefs.getString(scheduleKey, "manual") ?: "manual"
-        sharedPrefs.edit().remove(scheduleKey).apply()
-        Config.scheduleOn = currentToggleMode != "manual"
-        Config.useLocation = currentToggleMode == "sun"
+        val scheduleKey = "pref_key_automatic_filter"
+        val toggleMode: String = sharedPrefs.getString(scheduleKey, "manual") ?: "manual"
+        sharedPrefs.edit().run {
+            remove(scheduleKey)
+            putBoolean(scheduleKey, toggleMode != "manual")
+            putBoolean("pref_key_use_location", toggleMode == "sun")
+            apply()
+        }
     }
 
     companion object : Logger() {
