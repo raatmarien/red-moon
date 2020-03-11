@@ -28,6 +28,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 import com.jmstudios.redmoon.R
@@ -64,6 +65,7 @@ class MainActivity : ThemedAppCompatActivity() {
         showChangelogAuto(this)
 
         fab.setOnClickListener { _ -> Command.toggle() }
+        fab.visibility = View.VISIBLE
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

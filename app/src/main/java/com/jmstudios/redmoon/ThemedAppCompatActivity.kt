@@ -24,7 +24,7 @@ abstract class ThemedAppCompatActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.AppTheme)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_fragment_container)
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
