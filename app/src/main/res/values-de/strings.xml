@@ -131,4 +131,10 @@
     <string name="toast_warning_secured">Einige Features dieser App funktionieren womöglich nicht während Red Moon läuft.</string>
     <string name="notification_channel_overlay_name">Overlaykontrolle</string>
     <string name="notification_channel_overlay_description">Die ständige Notifikation der Overlaykontrolle</string>
+    <string name="activity_settings">Einstellungen</string>
+    <string name="menu_settings">Einstellungen</string>
+    <string name="pref_value_start_time_sunset">Sonnenuntergang</string>
+    <string name="pref_summary_start_time_sunset">Sonnenuntergang (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Sonnenaufgang</string>
+    <string name="pref_summary_stop_time_sunrise">Sonnenaufgang (%s)</string>
 </resources>
