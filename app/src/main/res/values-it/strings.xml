@@ -32,7 +32,7 @@
     <string name="pref_summary_email_developer">Un metodo alternativo di contatto</string>
     <string name="pref_title_project_page">Visita la pagina del progetto </string>
     <string name="pref_summary_project_page">Trova più informazioni, lascia commenti e contribuisci</string>
-    <string name="toast_warning_install">Non sarai in grado di installare APK quando il filtro é in esecuzione.</string>
+    <string name="toast_warning_install">Non sarai in grado di installare APK quando il filtro è in esecuzione.</string>
     <string name="snackbar_warning_no_location">Attiva is servizi di geolocalizzazione per aggiornare la posizione</string>
     <string name="help_snackbar_text">Premi il pulsante per attivare Red Moon</string>
     <string name="dialog_title_add_filter">Inserisci il nome del profilo</string>
@@ -88,8 +88,8 @@
     <string name="pref_title_version">Versione</string>
     <string name="pref_title_integration">Integrazione con altre app</string>
     <string name="pref_summary_integration">Alcune app, come LibreTasks o Tasker, ti permettono di automatizzare compiti quando accadono certi eventi. Red Moon manda una notifica pubblica quando si accende e spegne, in modo che queste app possano rispondere. Se non usi o sviluppi una di queste app, puoi ignorare il paragrafo seguente.
-
-Red Moon invia un intent pubblico tramite l\\\'azione `com.jmstudios.redmoon.RED_MOON_TOGGLED`. l\\\'intent contiene un extra booleano con la chiave `jmstudios.bundle.key.FILTER_IS_ON`, la quale indica se Red Moon si stia accendendo o spegnendo.</string>
+\n
+\nRed Moon invia un intent pubblico tramite l\'azione «com.jmstudios.redmoon.RED_MOON_TOGGLED». l\\\'intent contiene un extra booleano con la chiave «jmstudios.bundle.key.FILTER_IS_ON», la quale indica se Red Moon si stia accendendo o spegnendo.</string>
     <string name="snackbar_location_updated">Posizione trovata!</string>
     <string name="dialog_title_permission_overlay">Disegnando su altre app</string>
     <string name="dialog_message_permission_overlay">Permetti di disegnare sopra altre app nella prossima schermata per permettere a Red Moon di accendersi.</string>
@@ -110,7 +110,7 @@ Red Moon userà questi dati solo per determinare che tu stia usando un\\\'app ch
     <string name="notification_action_whitelist_add">Escludi app</string>
     <string name="notification_action_whitelist_remove">Filtra app</string>
     <string name="pref_category_schedule">Pianifica</string>
-    <string name="pref_title_schedule">Pianifica</string>
+    <string name="pref_title_schedule">Esegui come pianificato</string>
     <string name="pref_summary_schedule_sun" formatted="false">Dal tramonto (%on) all\'alba (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Personalizzato (dalle %on alle %off)</string>
     <string name="pref_summary_schedule_none">Nessuno</string>
@@ -121,4 +121,11 @@ Red Moon userà questi dati solo per determinare che tu stia usando un\\\'app ch
     <string name="toast_warning_secured">Alcune funzionalità di quest\'app potrebbero non funzionare quando Red Moon è attivo.</string>
     <string name="notification_channel_overlay_name">Controllo della sovraimpressione</string>
     <string name="notification_channel_overlay_description">La notifica persitente per il controllo della sovraimpressione</string>
+    <string name="activity_settings">Impostazioni</string>
+    <string name="menu_settings">Impostazioni</string>
+    <string name="pref_title_dark_theme">Tema scuro</string>
+    <string name="pref_value_start_time_sunset">Tramonto</string>
+    <string name="pref_summary_start_time_sunset">Tramonto (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Alba</string>
+    <string name="pref_summary_stop_time_sunrise">Alba (%s)</string>
 </resources>
