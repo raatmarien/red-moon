@@ -114,13 +114,13 @@
     <string name="pref_title_location">Standort</string>
     <string name="pref_summary_integration">Manche Apps wie LibreTasks oder Tasker ermöglichen es Ihnen, Aufgaben zu automatisieren, wenn bestimmte Ereignisse eintreten. Red Moon sendet eine öffentliche Notifikation, wenn es sich ein- und ausschaltet, so dass diese Apps darauf reagieren können. Wenn Sie keine dieser Apps benutzen oder entwickeln, dann können Sie den nächsten Absatz ignorieren. 
 \n 
-\nRed Moon sendet einen Public Intent mit der Aktion `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Der Intent enthält einen Booleschen Wert mit dem Schlüssel `jmstudios.bundle.key.FILTER_IS_ON`, der angibt, ob Red Moon an- oder ausgeschaltet wird.</string>
+\nRed Moon sendet einen Public Intent mit der Aktion „com.jmstudios.redmoon.RED_MOON_TOGGLED“. Der Intent enthält einen Booleschen Wert mit dem Schlüssel „jmstudios.bundle.key.FILTER_IS_ON“, der angibt, ob Red Moon an- oder ausgeschaltet wird.</string>
     <string name="activity_schedule">Zeitplan</string>
     <string name="notification_status_paused_with_info">Pausiert. Zum Beenden Benachrichtigung ausblenden.</string>
     <string name="notification_action_whitelist_add">App ausnehmen</string>
     <string name="notification_action_whitelist_remove">App filtern</string>
     <string name="pref_category_schedule">Zeitplan</string>
-    <string name="pref_title_schedule">Zeitplan</string>
+    <string name="pref_title_schedule">Wie geplant ausführen</string>
     <string name="pref_summary_schedule_sun" formatted="false">Sonnenuntergang (%on) bis Sonnenaufgang (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Benutzerdefiniert (%on bis %off)</string>
     <string name="pref_summary_schedule_none">Keiner</string>
@@ -128,7 +128,7 @@
     <string name="pref_title_stop_time">Endzeit</string>
     <string name="pref_title_translators">Beim Übersetzen helfen</string>
     <string name="pref_summary_translators">Übersetzer: smichel17, raatmarien, Mostafa Ahangarha</string>
-    <string name="toast_warning_secured">Einige Features dieser App funktionieren womöglich nicht während Red Moon läuft.</string>
+    <string name="toast_warning_secured">Einige Funktionen dieser App funktionieren womöglich nicht während Red Moon läuft.</string>
     <string name="notification_channel_overlay_name">Overlaykontrolle</string>
     <string name="notification_channel_overlay_description">Die ständige Notifikation der Overlaykontrolle</string>
     <string name="activity_settings">Einstellungen</string>
@@ -137,4 +137,5 @@
     <string name="pref_summary_start_time_sunset">Sonnenuntergang (%s)</string>
     <string name="pref_value_stop_time_sunrise">Sonnenaufgang</string>
     <string name="pref_summary_stop_time_sunrise">Sonnenaufgang (%s)</string>
+    <string name="pref_title_dark_theme">Dunkles Thema</string>
 </resources>
