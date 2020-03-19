@@ -77,7 +77,7 @@
     <string name="pref_title_dim_level">Obscurité</string>
     <string name="slide_title_protect_eyes">Protéger vos yeux</string>
     <string name="pref_category_schedule">Horaires</string>
-    <string name="pref_title_schedule">Horaires</string>
+    <string name="pref_title_schedule">Exécuter selon l’horaire</string>
     <string name="activity_secure_suspend">Suspendre dans les applis exclues</string>
     <string name="pref_title_start_time">Heure de début</string>
     <string name="searching_location">Recherche de l\'emplacement</string>
@@ -120,4 +120,11 @@
     <string name="slide_title_improve_sleep">Améliorer votre sommeil</string>
     <string name="dialog_button_cancel">Annuler</string>
     <string name="snackbar_location_updated">Emplacement trouvé!</string>
+    <string name="activity_settings">Paramètres</string>
+    <string name="menu_settings">Paramètres</string>
+    <string name="pref_title_dark_theme">Thème sombre</string>
+    <string name="pref_value_start_time_sunset">Crépuscule</string>
+    <string name="pref_summary_start_time_sunset">Crépuscule (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Aube</string>
+    <string name="pref_summary_stop_time_sunrise">Aube (%s)</string>
 </resources>
