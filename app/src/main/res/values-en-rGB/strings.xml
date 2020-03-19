@@ -114,7 +114,7 @@ Red Moon will use this data only to determine whether you are using an app which
     <string name="activity_schedule">Schedule</string>
     <string name="notification_status_paused_with_info">Paused. Dismiss notification to stop.</string>
     <string name="pref_category_schedule">Schedule</string>
-    <string name="pref_title_schedule">Schedule</string>
+    <string name="pref_title_schedule">Run as scheduled</string>
     <string name="pref_summary_schedule_sun" formatted="false">Sunset (%on) to sunrise (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Custom (%on to %off)</string>
     <string name="pref_summary_schedule_none">None</string>
@@ -126,4 +126,11 @@ Red Moon will use this data only to determine whether you are using an app which
     <string name="notification_action_whitelist_remove">Filter app</string>
     <string name="notification_channel_overlay_name">Overlay Control</string>
     <string name="notification_channel_overlay_description">The persistent overlay control notification</string>
+    <string name="activity_settings">Settings</string>
+    <string name="menu_settings">Settings</string>
+    <string name="pref_title_dark_theme">Dark theme</string>
+    <string name="pref_value_start_time_sunset">Sunset</string>
+    <string name="pref_summary_start_time_sunset">Sunset (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Sunrise</string>
+    <string name="pref_summary_stop_time_sunrise">Sunrise (%s)</string>
 </resources>
