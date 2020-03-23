@@ -59,7 +59,7 @@
     <string name="pref_title_lower_brightness">Sistem parlaklığını azalt</string>
     <string name="pref_title_time_toggle">Zamanlayıcı</string>
     <string name="pref_category_schedule">Zamanlama</string>
-    <string name="pref_title_schedule">Zamanlama</string>
+    <string name="pref_title_schedule">Zamanlanmış olarak çalıştır</string>
     <!-- Start and stop times will be substituted for %on and %off -->
     <string name="pref_summary_schedule_sun" formatted="false">Gün batımından (%on) gün doğumuna (%off)</string>
     <!-- Start and stop times will be substituted for %on and %off -->
@@ -161,4 +161,11 @@
     <string name="notification_action_whitelist_remove">Uygulamayı süz</string>
     <string name="notification_channel_overlay_name">Örten Tabaka Denetimi</string>
     <string name="notification_channel_overlay_description">Kalıcı örten tabaka denetim bildirimi</string>
+    <string name="activity_settings">Ayarlar</string>
+    <string name="menu_settings">Ayarlar</string>
+    <string name="pref_title_dark_theme">Karanlık gövde</string>
+    <string name="pref_value_start_time_sunset">Gün batımı</string>
+    <string name="pref_summary_start_time_sunset">Gün batımı (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Gün doğumu</string>
+    <string name="pref_summary_stop_time_sunrise">Gün doğumu (%s)</string>
 </resources>
