@@ -32,9 +32,9 @@
     <string name="button_add_filter">Ajouter</string>
     <string name="shortcut_title_toggle">Allumer/Éteindre Red Moon</string>
     <string name="notification_channel_overlay_description">La notification persistante du contrôle de la surimpression</string>
-    <string name="pref_summary_integration">Certaines applications, comme LibreTasks ou Tasker, vous permettent d\'automatiser les tâches lorsque certains évènements se produisent. Red Moon envoie une notification publique lorsqu\'il s\'allume et s\'éteint, afin que ces applications puissent répondre. Si vous n\'utilisez pas ou ne développez pas l\'une de ces applications, vous pouvez ignorer le paragraphe suivant.
-\n
-\nRed Moon diffuse une intention publique avec l\'action « com.jmstudios.redmoon.RED-MOON.RED-MOON-TOGGLED ». L\'intention contient un supplément booléen avec la clé « jmstudios.bundle.key.FILTER », qui indique si Red Moon est activé ou désactivé.</string>
+    <string name="pref_summary_integration">Certaines applications, comme LibreTasks ou Tasker, vous permettent d\'automatiser les tâches lorsque certains évènements se produisent. Red Moon envoie une notification publique lorsqu\'il s\'allume et s\'éteint, afin que ces applications puissent répondre. Si vous n\'utilisez pas ou ne développez pas l\'une de ces applications, vous pouvez ignorer le paragraphe suivant. 
+\n 
+\nRed Moon diffuse une intention publique avec l\'action « com.jmstudios.redmoon.RED-MOON.RED-MOON-TOGGLED ». L\'intention contient un supplément booléen avec la clé « jmstudios.bundle.key.FILTER », qui indique si Red Moon est activé ou désactivé.</string>
     <string name="activity_schedule">Horaires</string>
     <string name="pref_summary_translators">Traducteurs : smichel17, raatmarien, Mostafa Ahangarha</string>
     <string name="pref_title_lower_brightness">Réduire la luminosité du système</string>
