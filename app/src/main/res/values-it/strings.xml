@@ -106,7 +106,7 @@ Red Moon userà questi dati solo per determinare che tu stia usando un\\\'app ch
     <string name="action_next_profile">Prossimo profilo</string>
     <string name="pref_title_location">Posizione</string>
     <string name="activity_schedule">Pianifica</string>
-    <string name="notification_status_paused_with_info">In pausa. Elimina la notifica per arrestare.</string>
+    <string name="notification_status_paused_with_info">In pausa. Rimuovi la notifica per arrestare.</string>
     <string name="notification_action_whitelist_add">Escludi app</string>
     <string name="notification_action_whitelist_remove">Filtra app</string>
     <string name="pref_category_schedule">Pianifica</string>
