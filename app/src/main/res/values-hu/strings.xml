@@ -1,38 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources><string name="app_name">Red Moon</string>
-
+<resources>
+    <string name="app_name">Red Moon</string>
     <string name="activity_main">Red Moon</string>
     <string name="activity_shortcut">Red Moon kapcsoló</string>
     <string name="activity_intro">Bevezető</string>
-    <string name="activity_about">A Red Moon-ról</string>
+    <string name="activity_about">A Red Moon névjegye</string>
     <string name="activity_secure_suspend">Szüneteltetés a figyelmen kívül hagyott appokban</string>
     <string name="activity_schedule">Ütemezés</string>
     <string name="activity_timer">Időzítő</string>
-
-    <string name="menu_dark_theme">Sötét kinézet</string>
+    <string name="menu_dark_theme">Sötét téma</string>
     <string name="menu_restore_default_filters">Alapértelmezett szűrők visszaállítása</string>
     <string name="menu_show_intro">Bevezető megjelenítése</string>
     <string name="menu_about">Névjegy</string>
-
     <string name="notification_status_running">Használatban. Kapcsold ki apk fájlok telepítéséhez</string>
     <string name="notification_status_running_no_warning">Használatban</string>
     <string name="notification_status_paused">Szüneteltetve</string>
     <string name="notification_status_paused_with_info">Szüneteltetve. Zárd be az értesítést a kilépéshez.</string>
     <string name="notification_status_off">Kikapcsolva</string>
     <string name="notification_action_resume">Folytatás</string>
-    <string name="notification_action_pause">Szüneteltet</string>
+    <string name="notification_action_pause">Szünet</string>
     <string name="notification_action_turn_on">Bekapcsolás</string>
     <string name="notification_action_turn_off">Kikapcsolás</string>
     <string name="notification_action_stop">Leállítás</string>
     <string name="pref_category_filter">Szűrés</string>
     <string name="pref_category_other">Egyéb</string>
     <string name="pref_category_button_backlight_disclaimer">Nincs hatása néhány eszközön</string>
-
     <string name="pref_title_dim_level">Sötétség</string>
     <string name="pref_title_intensity">Átlátszóság</string>
     <string name="pref_title_color_temp">Szín</string>
     <string name="pref_title_lower_brightness">Rendszer fényerejének csökkentése</string>
-
     <string name="pref_title_time_toggle">Időzítő</string>
     <string name="pref_category_schedule">Ütemezés</string>
     <string name="pref_title_schedule">Ütemezés</string>
@@ -40,22 +36,18 @@
     <string name="notification_action_whitelist_add">Alkalmazás kihagyása</string>
     <string name="notification_action_whitelist_remove">Alkalmazás szűrése</string>
     <string name="notification_action_next_filter">Következő szűrő</string>
-
-    <string name="pref_summary_schedule_custom" formatted="false">Saját (%on -tól %off -ig)</string>
+    <string name="pref_summary_schedule_custom" formatted="false">Egyéni (%on -tól %off -ig)</string>
     <string name="pref_summary_schedule_none">Nincs</string>
     <string name="pref_title_secure_suspend">Szüneteltetés a kihagyandó alkalmazásokban</string>
     <string name="pref_title_button_backlight">Hardveres gomb háttérvilágítás</string>
-
     <string name="pref_title_turn_on">Bekapcsolás:</string>
     <string name="pref_title_turn_off">Kikapcsolás:</string>
     <string name="pref_title_start_time">Indítási idő</string>
     <string name="pref_title_stop_time">Kikapcsolási idő</string>
     <string name="pref_title_use_location">Napnyugtától Napkeltéig</string>
     <string name="pref_summary_use_location">A helyzeted alapján</string>
-
     <string name="button_add_filter">Hozzáadás</string>
     <string name="button_remove_filter">Törlés</string>
-
     <string name="text_switch_on">Bekapcsolva</string>
     <string name="text_switch_off">Kikapcsolva</string>
     <string name="pref_summary_secure_suspend">Ha ez a funkció be van kapcsolva, a Red Moon automatikusan szünetelni fog, amikor bizonyos alkalmazások meg vannak nyitva. Alapértelmezés szerint ez magában foglalja az olyan alkalmazásokat is, amelyek nem működnek a Red Moon futása alatt*, ilyen például az apk-k telepítése. Az aktuális alkalmazás képernyőjének ezt a viselkedését az értesítésből lehet megváltoztatni. Olyan színérzénkeny alkalmazások esetében lehet érdemes alkalmazni, mint például a kamera.
@@ -71,34 +63,34 @@
     <string name="pref_summary_project_page">További információ, visszajelzés és hozzájárulás</string>
     <string name="pref_title_email_developer">Email küldése a fejlesztőknek</string>
     <string name="pref_title_translators">Segíts a fordításban</string>
-    <string name="pref_summary_translators">Fordítók: anonymous, diyre</string>
+    <string name="pref_summary_translators">Fordítók: anonymous, diyre, zoli111</string>
     <string name="pref_title_integration">Integráció más alkalmazásokkal</string>
     <string name="pref_summary_integration">Néhány alkalmazás, mint például a LibreTasks vagy a Tasker, lehetővé teszik feladatok automatizálását bizonyos események bekövetkeztekor. A Red Moon egy nyilvános értesítést küld amikor be- vagy kikapcsol, így ezek az alkalmazások reagálhatnak. Ha nem használsz vagy fejlesztesz ilyen appokat, akkor figyelmen kívül hagyhatod a következő bekezdést.
 \n
 \nA Red Moon egy publikus intentet közvetít a `com.jmstudios.redmoon.RED_MOON_TOGGLED` művelettel. Az intent egy boolean extrát tartalmaz a `jmstudios.bundle.key.FILTER_IS_ON` kulccsal, ami jelzi, hogy a Red Moon be- vagy kikapcsol.</string>
-    <string name="toast_warning_install">Nem fogsz tudni APK-kat telepíteni, amíg a Red Moon be van kapcsolva.</string>
+    <string name="toast_warning_install">Nem fogsz tudni apk-kat telepíteni, amíg a Red Moon be van kapcsolva.</string>
     <string name="toast_warning_secured">Lehetséges, hogy ennek az alkalmazásnak egyes funkciói nem működnek, amíg a Red Moon fut.</string>
     <string name="snackbar_warning_no_location">A helyzeted frissítéséhez kapcsold be a helyszolgáltatásokat</string>
     <string name="snackbar_searching_location">Hely keresése</string>
     <string name="snackbar_location_updated">Hely megtalálva!</string>
     <string name="help_snackbar_text">Nyomd meg a kapcsolót a Red Moon bekapcsolásához</string>
-    <string name="dialog_title_add_filter">Szűrő név szerkesztése</string>
+    <string name="dialog_title_add_filter">Szűrő név megadása</string>
     <string name="edit_hint_add_filter">Szűrő neve</string>
     <string name="dialog_title_remove_filter">Törli ezt a szűrőt\?</string>
     <string name="dialog_title_permission_write_settings">Rendszerbeállítások módosítása</string>
     <string name="dialog_message_permission_write_settings">A következő ablakban engedélyezd a rendszerbeállítások módosítását, hogy a Red Moon változtathasson a fényerőn.</string>
     <string name="dialog_title_permission_usage_stats">Használati hozzáférés</string>
     <string name="dialog_button_ok">OK</string>
-    <string name="dialog_button_cancel">Mégsem</string>
+    <string name="dialog_button_cancel">Mégse</string>
     <string name="slide_title_welcome">Üdvözlünk!</string>
     <string name="slide_text_welcome">Üdvözlünk a Red Moon-ban!</string>
-    <string name="slide_title_protect_eyes">Óvjuk a szemet</string>
+    <string name="slide_title_protect_eyes">Védjük a szemeid</string>
     <string name="slide_text_protect_eyes">Éjszaka, amikor a telefon fénye bántja a szemeidet, halványítsd a képernyődet a Red Moon-nal.</string>
     <string name="slide_title_improve_sleep">Javítunk az alvás minőségén</string>
-    <string name="slide_text_improve_sleep">A kék fény gátolja a Melatonin termelődését, amely hormon segít az elalvásban esténként. A Red Moon használatával a képernyő kevesebb kék fényt bocsát ki, így elősegíti a könnyebb elalvást.</string>
-    <string name="slide_title_get_started">Kezdjük el!</string>
+    <string name="slide_text_improve_sleep">A kék fény gátolja a Melatonin hormon termelődését, amely segít az elalvásban esténként. A Red Moon használatával a képernyő kevesebb kék fényt bocsát ki, így elősegíti a könnyebb elalvást.</string>
+    <string name="slide_title_get_started">Kezdjünk hozzá!</string>
     <string name="slide_text_get_started">Kapcsold be vagy ki a Red Moon-t a jobb felső sarokban található kapcsolóval.</string>
-    <string name="filter_name_custom">Saját</string>
+    <string name="filter_name_custom">Egyéni</string>
     <string name="filter_name_default">Alapértelmezett</string>
     <string name="filter_name_bed_reading">Olvasás</string>
     <string name="filter_name_dim_only">Csak sötétítés</string>
@@ -116,7 +108,16 @@
     <string name="time_toggle_title">Automatikus bekapcsolás</string>
     <string name="pref_title_location">Hely</string>
     <string name="pref_title_startup">Indítás</string>
-    <string name="time_toggle_options_array_0">Manuális</string>
+    <string name="time_toggle_options_array_0">Kézi</string>
     <string name="time_toggle_options_array_1">Automatikus (nap)</string>
-    <string name="time_toggle_options_array_2">Automatikus (saját)</string>
+    <string name="time_toggle_options_array_2">Automatikus (egyéni)</string>
+    <string name="dialog_title_permission_overlay">Megjelenítés más alkalmazások felett</string>
+    <string name="pref_summary_email_developer">Másik módszer a kapcsolatfelvételre</string>
+    <string name="pref_title_dark_theme">Sötét téma</string>
+    <string name="pref_summary_stop_time_sunrise">Napkelte (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Napkelte</string>
+    <string name="pref_summary_start_time_sunset">Napnyugta (%s)</string>
+    <string name="pref_value_start_time_sunset">Napnyugta</string>
+    <string name="menu_settings">Beállítások</string>
+    <string name="activity_settings">Beállítások</string>
 </resources>
