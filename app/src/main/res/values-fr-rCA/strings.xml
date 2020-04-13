@@ -45,7 +45,7 @@
     <string name="slide_text_protect_eyes">La nuit, quand regarder votre téléphone vous fait mal aux yeux, vous pouvez utiliser Red Moon pour assombrir votre écran.</string>
     <string name="menu_show_intro">Rejouer la présentation</string>
     <string name="latitude_short">Latitude</string>
-    <string name="add_new_profile_dialog_title">Saisir un nom de profil</string>
+    <string name="add_new_profile_dialog_title">Entrez un nom de profil</string>
     <string name="pref_summary_secure_suspend">Lorsque cette fonctionnalité est activée, Red Moon s\'arrête automatiquement lorsque certaines applications sont ouvertes. Par défaut, ceci inclut les applications qui ne fonctionneront pas lorsque Red Moon est en cours d\'exécution, comme l\'installation d\'APK. Vous pouvez modifier ce comportement pour l\'écran actuel de l\'application en cours à partir de la notification. Par exemple, vous pouvez ajouter des applications sensibles aux couleurs, comme l\'appareil photo.
 \n
 \nCette fonctionnalité peut réduire légèrement la durée de vie de la batterie de votre appareil.
@@ -104,7 +104,7 @@
     <string name="dialog_title_permission_write_settings">Modification des paramètres système</string>
     <string name="dialog_title_permission_overlay">Dessiner par-dessus les autres applis</string>
     <string name="slide_text_improve_sleep">La lumière bleue supprime la production de mélatonine, une hormone qui vous aide à vous endormir la nuit. Red Moon enlève la lumière bleue de votre écran, vous assurant de vous endormir facilement.</string>
-    <string name="toast_warning_no_location">Autoriser les services de localisation pour mettre à jour l\'emplacement</string>
+    <string name="toast_warning_no_location">Autoriser les services de localisation pour actualiser l\'emplacement</string>
     <string name="pref_entry_button_backlight_turn_off">Éteindre</string>
     <string name="filter_name_bed_reading">Lecture</string>
     <string name="slide_title_get_started">Commencer!</string>
@@ -113,7 +113,7 @@
     <string name="pref_title_turn_on">Allumer à</string>
     <string name="activity_main">Red Moon</string>
     <string name="pref_category_button_backlight_disclaimer">Aucun effet sur certains appareils</string>
-    <string name="add_new_profile_edit_hint">Mom du profil</string>
+    <string name="add_new_profile_edit_hint">Nom du profil</string>
     <string name="pref_title_use_location">De l\'aube au crépuscule</string>
     <string name="pref_summary_schedule_custom" formatted="false">Personnalisé (%on à %off)</string>
     <string name="pref_title_email_developer">Envoyer un courriel aux développeurs</string>
