@@ -16,7 +16,7 @@
     <string name="pref_title_lower_brightness">Diminuer la luminosité du système</string>
     <string name="time_toggle_title">Mode d\'activation</string>
     <string name="pref_title_turn_on">Reprendre à</string>
-    <string name="pref_title_turn_off">Suspendre à</string>
+    <string name="pref_title_turn_off">Éteindre à</string>
     <string name="pref_title_location">Localisation</string>
     <string name="location_not_set">Localisation non définie</string>
     <string name="latitude_short">Latitude</string>
@@ -74,12 +74,12 @@
         Red Moon nécessite cette autorisation pour voir dans quelle application vous vous situez et suspendre son activité lorsque nécessaire. Red Moon n\'utilisera ces données que pour suspendre l\'affichage du filtre.</string>
     <!-- Currently unused -->
     <string name="add_new_profile_dialog_title">Entrez un nom de profil</string>
-    <string name="add_new_profile_edit_hint">Nom de profil</string>
+    <string name="add_new_profile_edit_hint">Nom du profil</string>
     <string name="remove_profile_dialog_title">Supprimer ce profil ?</string>
     <string name="pref_title_appearance">Profil</string>
-    <string name="searching_location">Recherche de localisation</string>
-    <string name="toast_warning_no_location">Activer les services de localisation pour actualiser la position</string>
-    <string name="set_dialog">OK</string>
+    <string name="searching_location">Recherche de l\'emplacement</string>
+    <string name="toast_warning_no_location">Autoriser les services de localisation pour actualiser l\'emplacement</string>
+    <string name="set_dialog">Définir</string>
     <string name="notification_status_running">En exécution. Éteindre pour installer des APK</string>
     <string name="notification_status_running_no_warning">En exécution</string>
     <string name="menu_restore_default_filters">Restaurer les filtres par défaut</string>
