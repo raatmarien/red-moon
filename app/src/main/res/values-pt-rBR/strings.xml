@@ -115,7 +115,7 @@
     <string name="notification_action_whitelist_add">Excluir aplicativo</string>
     <string name="notification_action_whitelist_remove">Filtrar aplicativo</string>
     <string name="pref_category_schedule">Programar</string>
-    <string name="pref_title_schedule">Programar</string>
+    <string name="pref_title_schedule">Executar como programado</string>
     <string name="pref_summary_schedule_sun" formatted="false">Pôr-do-sol (%on) ao nascer do sol (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Personalizado (%on to %off)</string>
     <string name="pref_summary_schedule_none">Nenhum</string>
@@ -128,4 +128,11 @@
     <string name="notification_status_paused_with_info">Suspenso. Descarte a notificação para parar.</string>
     <string name="notification_channel_overlay_name">Controle de sobreposição</string>
     <string name="notification_channel_overlay_description">A notificação persistente de controle de sobreposição</string>
+    <string name="pref_title_dark_theme">Tema escuro</string>
+    <string name="pref_summary_stop_time_sunrise">Nascer do Sol (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Nascer do sol</string>
+    <string name="pref_summary_start_time_sunset">Pôr do sol (%s)</string>
+    <string name="pref_value_start_time_sunset">Pôr do sol</string>
+    <string name="menu_settings">Configurações</string>
+    <string name="activity_settings">Configurações</string>
 </resources>
