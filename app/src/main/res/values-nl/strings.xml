@@ -38,7 +38,7 @@
     <string name="pref_title_dim_level">Duisternis</string>
     <string name="pref_title_intensity">Dekking</string>
     <string name="pref_title_color_temp">Kleur</string>
-    <string name="pref_title_lower_brightness">Helderheid aanpassen</string>
+    <string name="pref_title_lower_brightness">Systeemhelderheid verlagen</string>
     <string name="pref_title_time_toggle">Timer</string>
     <string name="pref_category_schedule">Schema</string>
     <string name="pref_title_schedule">Schema</string>
@@ -67,7 +67,7 @@
     <!-- About subscreen -->
     <string name="pref_title_version">Versie</string>
     <string name="pref_title_project_page">Bezoek de Red Moon website</string>
-    <string name="pref_summary_project_page">Meer informatie, suggesties of help mee</string>
+    <string name="pref_summary_project_page">Zoek meer informatie, laat feedback achter en lever een bijdrage</string>
     <string name="pref_title_email_developer">E-mail naar ontwikkelaars</string>
     <string name="pref_summary_email_developer">Een alternatieve manier om ons te bereiken</string>
     <string name="pref_title_translators">Help met vertalen</string>
@@ -131,9 +131,11 @@
     <string name="time_toggle_options_array_0">Handmatig</string>
     <string name="time_toggle_options_array_1">Automatisch (zon)</string>
     <string name="time_toggle_options_array_2">Automatisch (aangepast)</string>
-    <string name="pref_summary_stop_time_sunrise">Zonsopgang (%s)</string>
-    <string name="pref_value_stop_time_sunrise">Zonsopgang</string>
+    <string name="pref_summary_stop_time_sunrise">Zonsopkomst (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Zonsopkomst</string>
     <string name="pref_summary_start_time_sunset">Zonsondergang (%s)</string>
     <string name="pref_value_start_time_sunset">Zonsondergang</string>
     <string name="activity_settings">Instellingen</string>
+    <string name="pref_title_dark_theme">Donker thema</string>
+    <string name="menu_settings">Instellingen</string>
 </resources>
