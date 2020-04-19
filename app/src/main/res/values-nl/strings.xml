@@ -18,7 +18,7 @@
     <string name="menu_show_intro">Introductie</string>
     <string name="menu_about">Over Red Moon</string>
     <!-- Notification -->
-    <string name="notification_status_running">Geactiveerd. Deactiveer om APK\'s te installeren.</string>
+    <string name="notification_status_running">Geactiveerd. Deactiveer om APK\'s te installeren</string>
     <string name="notification_status_running_no_warning">Geactiveerd</string>
     <string name="notification_status_paused">Gepauzeerd</string>
     <string name="notification_status_paused_with_info">Gepauzeerd. Sluit om Red Moon te stoppen.</string>
