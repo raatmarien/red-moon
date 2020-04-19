@@ -4,8 +4,8 @@
     <string name="activity_shortcut">Activer Red Moon</string>
     <string name="notification_status_paused">En pause</string>
     <string name="pref_category_filter">Filtre</string>
-    <string name="activity_timer">Horaires du filtre</string>
-    <string name="pref_title_time_toggle">Horaires du filtre</string>
+    <string name="activity_timer">Minuterie</string>
+    <string name="pref_title_time_toggle">Minuterie</string>
     <string name="pref_title_startup">Démarrer</string>
     <string name="pref_category_other">Autre</string>
     <string name="button_add_filter">Ajouter</string>
