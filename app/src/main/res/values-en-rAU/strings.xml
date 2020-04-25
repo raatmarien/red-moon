@@ -28,7 +28,7 @@
     <string name="longitude_short">Long</string>
     <string name="snackbar_searching_location">Searching for location</string>
     <string name="menu_dark_theme">Dark theme</string>
-    <string name="pref_title_email_developer">Email the developers</string>
+    <string name="pref_title_email_developer">E-mail the developers</string>
     <string name="pref_summary_email_developer">A secondary way to contact us</string>
     <string name="pref_title_project_page">Visit the project page</string>
     <string name="pref_summary_project_page">Find more info, leave feedback and contribute</string>
