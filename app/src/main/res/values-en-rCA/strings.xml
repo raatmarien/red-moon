@@ -116,7 +116,7 @@
     <string name="add_new_profile_edit_hint">Profile name</string>
     <string name="pref_title_use_location">Sunset to sunrise</string>
     <string name="pref_summary_schedule_custom" formatted="false">Custom (%on to %off)</string>
-    <string name="pref_title_email_developer">Email the developers</string>
+    <string name="pref_title_email_developer">E-mail the developers</string>
     <string name="slide_title_improve_sleep">Improving your sleep</string>
     <string name="dialog_button_cancel">Cancel</string>
     <string name="snackbar_location_updated">Found location!</string>
