@@ -24,7 +24,7 @@
     <string name="pref_title_email_developer">Envía un correo electrónico a los desarrolladores</string>
     <string name="pref_summary_email_developer">Otro método para contactarnos</string>
     <string name="pref_title_project_page">Visita la página del proyecto</string>
-    <string name="toast_warning_install">Al activarlo no podrás instalar APKs.</string>
+    <string name="toast_warning_install">Al activarlo no podrás instalar APK.</string>
     <string name="snackbar_warning_no_location">Activa los servicios de ubicación para actualizar tu posición</string>
     <string name="help_snackbar_text">Activa Red Moon para empezar</string>
     <string name="dialog_title_add_filter">Escribe un nombre de perfil</string>
@@ -106,7 +106,7 @@
     <string name="pref_title_button_backlight">Botones retroiluminados</string>
     <string name="set_dialog">Establecer</string>
     <string name="pref_title_location">Ubicación</string>
-    <string name="notification_status_running">Activo, pausa para instalar apks</string>
+    <string name="notification_status_running">Activo, pausa para instalar APK</string>
     <string name="notification_status_running_no_warning">En funcionamiento</string>
     <string name="menu_restore_default_filters">Restaurar filtros por defecto</string>
     <string name="filter_name_dim_only">Tenue solamente</string>
