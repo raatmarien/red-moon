@@ -34,7 +34,7 @@
     <string name="pref_title_lower_brightness">Reducir brillo del sistema</string>
     <string name="pref_title_time_toggle">Horario de funcionamiento</string>
     <string name="pref_category_schedule">Horario</string>
-    <string name="pref_title_schedule">Horario</string>
+    <string name="pref_title_schedule">Ejecutar según lo programado</string>
     <string name="pref_summary_schedule_sun" formatted="false">Desde el ocaso (%on) hasta el amanecer (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Personalizado (%on hasta %off)</string>
     <string name="pref_summary_schedule_none">Desactivado</string>
@@ -61,7 +61,7 @@
     <string name="pref_title_version">Versión</string>
     <string name="pref_title_project_page">Visita la página del proyecto</string>
     <string name="pref_summary_project_page">Infórmate, contribuye y danos tu opinión</string>
-    <string name="pref_title_email_developer">Envía un correo a los desarrolladores</string>
+    <string name="pref_title_email_developer">Envía un correo electrónico a los desarrolladores</string>
     <string name="pref_summary_email_developer">Otra forma de contactarnos</string>
     <string name="pref_title_translators">Ayúdanos a traducir</string>
     <string name="pref_summary_translators">Traductores: smichel17, raatmarien, mvelizbravo</string>
@@ -120,4 +120,9 @@
     <string name="notification_channel_overlay_description">Control de superposición</string>
     <string name="activity_settings">Configuraciones</string>
     <string name="menu_settings">Configuraciones</string>
+    <string name="pref_title_dark_theme">Tema oscuro</string>
+    <string name="pref_summary_stop_time_sunrise">Amanecer (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Amanecer</string>
+    <string name="pref_summary_start_time_sunset">Puesta del sol (%s)</string>
+    <string name="pref_value_start_time_sunset">Puesta del sol</string>
 </resources>
