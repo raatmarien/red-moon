@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources><string name="activity_intro">Introducción</string>
+<resources>
+    <string name="activity_intro">Introducción</string>
     <string name="activity_timer">Temporizador</string>
-    <string name="notification_status_running">Ejecuntando. Apagar para instalar apks</string>
+    <string name="notification_status_running">Ejecuntando. Apagar para instalar APK</string>
     <string name="notification_status_paused">Pausado</string>
     <string name="notification_action_resume">Resumir</string>
     <string name="notification_action_turn_on">Encender</string>
