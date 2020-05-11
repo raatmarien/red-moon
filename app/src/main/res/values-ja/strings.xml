@@ -2,22 +2,18 @@
 <resources>
     <string name="app_name">Red Moon</string>
     <string name="activity_shortcut">Red Moonの切り替え</string>
-
     <string name="notification_status_paused">一時停止しました</string>
-
     <string name="pref_category_filter">フィルター</string>
     <string name="activity_timer">タイマー</string>
     <string name="pref_title_time_toggle">タイマー</string>
     <string name="pref_title_startup">起動</string>
     <string name="pref_category_other">その他</string>
-
     <string name="button_add_filter">追加</string>
     <string name="button_remove_filter">削除</string>
     <string name="pref_title_dim_level">明るさ</string>
     <string name="pref_title_intensity">透明度</string>
     <string name="pref_title_color_temp">色</string>
     <string name="pref_title_lower_brightness">低システム輝度</string>
-
     <string name="time_toggle_title">モードの切り替え</string>
     <string name="pref_title_turn_on">オンにする時刻</string>
     <string name="pref_title_turn_off">オフにする時刻</string>
@@ -28,57 +24,43 @@
     <string name="latitude_short">緯度</string>
     <string name="longitude_short">経度</string>
     <string name="snackbar_searching_location">位置情報の検索中</string>
-
     <string name="menu_dark_theme">ダークテーマ</string>
-
     <string name="pref_title_email_developer">開発者にメール</string>
     <string name="pref_summary_email_developer">お問い合わせの別の方法</string>
     <string name="pref_title_project_page">プロジェクトページをご覧ください</string>
     <string name="pref_summary_project_page">さらに詳しい情報を探す、フィードバックを残す、貢献する</string>
     <string name="toast_warning_install">Red Moon がオンのときは APK をインストールできません。</string>
     <string name="snackbar_warning_no_location">位置情報サービスを有効にして、位置情報を更新してください</string>
-
     <string name="help_snackbar_text">Red Moonを有効にするにはスイッチを押してください</string>
-
     <string name="dialog_title_add_filter">フィルター名を入力してください</string>
     <string name="edit_hint_add_filter">フィルター名</string>
     <string name="dialog_title_remove_filter">このフィルターを削除しますか?</string>
     <string name="dialog_button_ok">OK</string>
     <string name="dialog_button_cancel">キャンセル</string>
-
     <string name="shortcut_title_toggle">Red Moon の切り替え</string>
-
     <string name="activity_main">Red Moon</string>
     <string name="filter_name_custom">カスタム</string>
     <string name="filter_name_default">デフォルト</string>
     <string name="filter_name_bed_reading">読書</string>
-
     <string name="time_toggle_options_array_0">手動</string>
     <string name="time_toggle_options_array_1">自動 (太陽)</string>
     <string name="time_toggle_options_array_2">自動 (カスタム)</string>
-
     <string name="notification_action_resume">再開</string>
     <string name="notification_action_pause">一時停止</string>
-
     <string name="slide_title_welcome">ようこそ!</string>
     <string name="slide_text_welcome">Red Moon へようこそ!</string>
-
     <string name="slide_title_protect_eyes">あなたの目を保護します</string>
     <string name="slide_text_protect_eyes">夜間、携帯電話を見ていて目が痛いとき、
         Red Moon を使用して画面を暗くすることができます。</string>
-
     <string name="slide_title_improve_sleep">あなたの睡眠を改善します</string>
     <string name="slide_text_improve_sleep">ブルーライトは、夜眠りに落ちるために役立つホルモン、
         メラトニンの生産を抑制します。 Red Moon は、画面から青い光を除去して、
         容易に眠りに落ちることができるようにします。</string>
-
     <string name="slide_title_get_started">はじめましょう!</string>
     <string name="slide_text_get_started">右上のスイッチで Red Moon 
         をオン、オフにします。</string>
-
     <string name="activity_intro">はじめに</string>
     <string name="menu_show_intro">チュートリアル</string>
-
     <string name="text_switch_on">オン</string>
     <string name="text_switch_off">オフ</string>
     <string name="pref_summary_secure_suspend">この機能が有効で特定のアプリが開かれている時、Red Moonは自動的に一時停止になります。デフォルトでは、apk をインストールするようなRed Moonの実行中に動作しないアプリも一時停止の対象です※。現在開いているアプリでの画面に対する動作は通知から変更可能です。例えばカメラのように色が重要なアプリの追加が考えられます。
@@ -89,30 +71,23 @@
     <string name="dialog_message_permission_usage_stats">次の画面で使用状況へのアクセスを許可して、Red Moon がセキュリティで保護されたアプリを一時停止できるようにします。
 
         Red Moon がオンのときに作動しないと思われるアプリを使用しているかどうかを確認するためだけに、このデータを使用します。</string>
-
     <string name="activity_secure_suspend">除外したアプリで一時停止</string>
-
     <string name="pref_title_secure_suspend">除外したアプリで一時停止</string>
     <string name="dialog_title_permission_usage_stats">使用状況へのアクセス</string>
     <string name="dialog_title_permission_overlay">他のアプリ上に描画</string>
     <string name="dialog_message_permission_overlay">次の画面で他のアプリ上に描画を許可して、Red Moon をオンにできるようにします。</string>
-
     <string name="dialog_title_permission_write_settings">システム設定の変更</string>
     <string name="dialog_message_permission_write_settings">次の画面でシステム設定の変更を許可して、Red Moon が明るさレベルを変更できるようにします。</string>
-
     <string name="notification_status_off">オフ</string>
     <string name="notification_action_turn_on">オンにする</string>
     <string name="notification_action_turn_off">オフにする</string>
     <string name="notification_action_stop">止める</string>
-
     <string name="pref_summary_use_location">位置情報に基づく</string>
     <string name="notification_action_next_filter">次のフィルター</string>
-
     <string name="menu_about">アプリについて</string>
     <string name="activity_about">Red Moon について</string>
     <string name="pref_title_integration">他のアプリと統合</string>
     <string name="pref_title_version">バージョン</string>
-
     <string name="pref_summary_integration">LibreTasks や Tasker のような一部のアプリでは、特定のイベントが発生したときに、タスクを自動化することができます。Red Moon はオンまたはオフになったときに、それらのアプリが応答できるように公開の通知を送信します。使用しない、またはこれらのアプリを開発する場合、次のパラグラフを無視することができます。
 
         Red Moon は、アクション \'com.jmstudios.redmoon.RED_MOON_TOGGLED\' で公開インテントをブロードキャストします。インテントには、Red Moon がオンまたはオフに切り替えられているかどうかを示すブール値の拡張がキー \'jmstudios.bundle.key.FILTER_IS_ON\' で含まれます。</string>
@@ -124,11 +99,9 @@
     <string name="pref_title_appearance">プロファイル</string>
     <string name="pref_category_button_backlight_disclaimer">一部のデバイスでは効果がありません</string>
     <string name="pref_title_button_backlight">ハードウェアボタンのバックライト</string>
-
     <string name="pref_entry_button_backlight_system">システム管理</string>
     <string name="pref_entry_button_backlight_filter_dim_level">薄暗いレベルのフィルターを使用</string>
     <string name="pref_entry_button_backlight_turn_off">オフにする</string>
-
     <string name="searching_location">位置情報の検索中</string>
     <string name="toast_warning_no_location">位置情報サービスを有効にして、位置情報を更新してください</string>
     <string name="snackbar_location_updated">位置情報が見つかりました!</string>
@@ -136,23 +109,27 @@
     <string name="set_dialog">設定</string>
     <string name="notification_status_running">実行中。apkをインストールする際はオフ</string>
     <string name="notification_status_running_no_warning">実行中</string>
-<string name="menu_restore_default_filters">デフォルトのフィルターを復元</string>
+    <string name="menu_restore_default_filters">デフォルトのフィルターを復元</string>
     <string name="filter_name_dim_only">減光のみ</string>
-
     <string name="activity_schedule">スケジュール</string>
     <string name="notification_status_paused_with_info">一時停止します。通知を閉じると停止します。</string>
     <string name="notification_action_whitelist_add">アプリを除外</string>
     <string name="notification_action_whitelist_remove">アプリに適用</string>
     <string name="pref_category_schedule">スケジュール</string>
-    <string name="pref_title_schedule">スケジュール</string>
+    <string name="pref_title_schedule">予定通りに実行</string>
     <string name="pref_summary_schedule_sun" formatted="false">日没 (%on) から日の出 (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">カスタム (%on から %off)</string>
     <string name="pref_summary_schedule_none">なし</string>
     <string name="pref_title_translators">翻訳を手伝う</string>
     <string name="pref_summary_translators">翻訳者: smichel17, raatmarien, Mostafa Ahangarha, naofum</string>
-
     <string name="toast_warning_secured">Red Moon の実行中、このアプリの一部の機能が動作しない可能性があります。</string>
-
     <string name="notification_channel_overlay_name">オーバレイ制御</string>
     <string name="notification_channel_overlay_description">永続的なオーバーレイ制御の通知</string>
+    <string name="pref_title_dark_theme">ダークテーマ</string>
+    <string name="pref_summary_stop_time_sunrise">日の出 (%s)</string>
+    <string name="pref_value_stop_time_sunrise">日の出</string>
+    <string name="pref_summary_start_time_sunset">日没 (%s)</string>
+    <string name="pref_value_start_time_sunset">日没</string>
+    <string name="menu_settings">設定</string>
+    <string name="activity_settings">設定</string>
 </resources>
