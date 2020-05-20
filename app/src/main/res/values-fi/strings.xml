@@ -116,7 +116,7 @@
     <string name="add_new_profile_edit_hint">Profiilin nimi</string>
     <string name="pref_title_use_location">Auringonlaskusta auringonnousuun</string>
     <string name="pref_summary_schedule_custom" formatted="false">Mukauta (%on → %off)</string>
-    <string name="pref_title_email_developer">Lähetä sähköpostia kehittäjille</string>
+    <string name="pref_title_email_developer">Lähetä sähköposti kehittäjille</string>
     <string name="slide_title_improve_sleep">Paranta unesi</string>
     <string name="dialog_button_cancel">Peruuta</string>
     <string name="snackbar_location_updated">Löydetty sijainti!</string>
