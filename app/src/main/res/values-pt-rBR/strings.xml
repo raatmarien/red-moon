@@ -26,7 +26,7 @@
     <string name="latitude_short">Latititude</string>
     <string name="snackbar_searching_location">Procurando por localização</string>
     <string name="menu_dark_theme">Tema escuro</string>
-    <string name="pref_title_email_developer">Envie um email aos desenvolvedores</string>
+    <string name="pref_title_email_developer">Envie um e-mail aos desenvolvedores</string>
     <string name="pref_summary_email_developer">Uma forma secundária de contatar-nos</string>
     <string name="pref_title_project_page">Visitar a página do projeto</string>
     <string name="pref_summary_project_page">Ache mais informações, deixe feedback e contribua</string>
