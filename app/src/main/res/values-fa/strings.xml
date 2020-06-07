@@ -86,7 +86,7 @@
     <string name="notification_action_next_filter">فیلتر بعدی</string>
     <string name="pref_category_button_backlight_disclaimer">فاقد تاثیر در برخی دستگاه‌ها</string>
     <string name="pref_category_schedule">زمان‌بندی</string>
-    <string name="pref_title_schedule">زمان‌بندی</string>
+    <string name="pref_title_schedule">اجرا بر اساس زمان‌بندی</string>
     <string name="pref_summary_schedule_sun" formatted="false">غروب (%on) تا طلوع (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">سفارشی (%on تا %off)</string>
     <string name="pref_summary_schedule_none">هیچ‌کدام</string>
@@ -136,4 +136,11 @@
     <string name="pref_entry_button_backlight_filter_dim_level">استفاده از سطح کم‌نور صافی</string>
     <string name="notification_status_paused_with_info">مکث شده. اعلان را رد کنید تا متوقف شود.</string>
     <string name="notification_channel_overlay_description">اعلان کنترل پوششی مداوم</string>
+    <string name="pref_title_dark_theme">پوسته تیره</string>
+    <string name="pref_summary_stop_time_sunrise">طلوع (%s)</string>
+    <string name="pref_value_stop_time_sunrise">طلوع</string>
+    <string name="pref_summary_start_time_sunset">غروب (%s)</string>
+    <string name="pref_value_start_time_sunset">غروب</string>
+    <string name="menu_settings">تنظیمات</string>
+    <string name="activity_settings">تنظیمات</string>
 </resources>
