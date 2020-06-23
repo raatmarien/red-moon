@@ -48,7 +48,7 @@
     <string name="slide_title_improve_sleep">Migliora il sonno</string>
     <string name="slide_text_improve_sleep">La luce blu sopprime la produzione di melatonina, un ormone che ti aiuta ad addormentarti la notte. Red Moon rimuove la luce blu dal tuo schermo, assicurando che tu possa addormentarti facilmente.</string>
     <string name="slide_title_get_started">Inizia!</string>
-    <string name="slide_text_get_started">Attiva e disattiva Red Moon con il pulsante in alto a destra.</string>
+    <string name="slide_text_get_started">Abilita e disabilita Red Moon con il pulsante in alto a destra.</string>
     <string name="filter_name_custom">Personalizzato</string>
     <string name="filter_name_default">Predefinito</string>
     <string name="filter_name_bed_reading">Lettura</string>
@@ -96,25 +96,25 @@
     <string name="dialog_title_permission_write_settings">Modifica impostazioni di sistema</string>
     <string name="dialog_message_permission_write_settings">Permetti di modificare le impostazioni di sistema per permettere a Red Moon di cambiare il livello di luminosità.</string>
     <string name="dialog_title_permission_usage_stats">Dati di utilizzo</string>
-    <string name="dialog_message_permission_usage_stats">Permetti l\\\'accesso ai dati di utilizzo nella prossima schermata per autorizzare Red Moon a mettersi in pausa nelle app sicure.
-
-Red Moon userà questi dati solo per determinare che tu stia usando un\\\'app che non funzionerà se Red Moon é attiva.</string>
+    <string name="dialog_message_permission_usage_stats">Permetti l\'accesso ai dati di utilizzo nella prossima schermata per autorizzare Red Moon a mettersi in pausa nelle app sicure.
+\n
+\nRed Moon userà questi dati solo per determinare che tu stia usando un\'app che non funzionerà se Red Moon é attiva.</string>
     <string name="filter_name_dim_only">Oscura solamente</string>
     <string name="pref_entry_button_backlight_system">Gestita dal sistema</string>
     <string name="pref_entry_button_backlight_filter_dim_level">Usa il livello di oscuramento del filtro</string>
     <string name="pref_entry_button_backlight_turn_off">Spegni</string>
     <string name="action_next_profile">Prossimo profilo</string>
     <string name="pref_title_location">Posizione</string>
-    <string name="activity_schedule">Pianifica</string>
+    <string name="activity_schedule">Programma</string>
     <string name="notification_status_paused_with_info">In pausa. Rimuovi la notifica per arrestare.</string>
     <string name="notification_action_whitelist_add">Escludi app</string>
     <string name="notification_action_whitelist_remove">Filtra app</string>
     <string name="pref_category_schedule">Pianifica</string>
-    <string name="pref_title_schedule">Esegui come pianificato</string>
+    <string name="pref_title_schedule">Esegui come programmato</string>
     <string name="pref_summary_schedule_sun" formatted="false">Dal tramonto (%on) all\'alba (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Personalizzato (dalle %on alle %off)</string>
     <string name="pref_summary_schedule_none">Nessuno</string>
-    <string name="pref_title_start_time">Ora d\'inizio</string>
+    <string name="pref_title_start_time">Orario d\'inizio</string>
     <string name="pref_title_stop_time">Orario di arresto</string>
     <string name="pref_title_translators">Aiuta a tradurre</string>
     <string name="pref_summary_translators">Translators: smichel17, raatmarien, matteocoder</string>
