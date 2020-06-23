@@ -93,8 +93,8 @@
     <string name="pref_title_version">Version</string>
     <string name="pref_title_integration">Integration with other apps</string>
     <string name="pref_summary_integration">Some apps, like LibreTasks or Tasker, allow you to automate tasks when certain events happen. Red Moon sends a public notification when it turns on and off, so those apps can respond. If you don\'t use or develop one of those apps, you can ignore the next paragraph.
-
-Red Moon broadcasts a public intent with the action `com.jmstudios.redmoon.RED_MOON_TOGGLED`. The intent contains a boolean extra with the key `jmstudios.bundle.key.FILTER_IS_ON`, which indicates whether Red Moon is toggling on or off.</string>
+\n
+\nRed Moon broadcasts a public intent with the action `com.jmstudios.redmoon.RED_MOON_TOGGLED`. The intent contains a boolean extra with the key `jmstudios.bundle.key.FILTER_IS_ON`, which indicates whether Red Moon is toggling on or off.</string>
     <string name="snackbar_location_updated">Found location!</string>
     <string name="dialog_title_permission_overlay">Drawing over other apps</string>
     <string name="dialog_message_permission_overlay">Permit drawing over other apps in the next screen to allow Red Moon to turn on.</string>
@@ -102,8 +102,8 @@ Red Moon broadcasts a public intent with the action `com.jmstudios.redmoon.RED_M
     <string name="dialog_message_permission_write_settings">Permit modifying system settings in the next screen to allow Red Moon to change your brightness level.</string>
     <string name="dialog_title_permission_usage_stats">Usage access</string>
     <string name="dialog_message_permission_usage_stats">Permit usage access in the next screen to allow Red Moon to pause in secured apps.
-
-Red Moon will use this data only to determine whether you are using an app which will not work when Red Moon is on.</string>
+\n
+\nRed Moon will use this data only to determine whether you are using an app which will not work when Red Moon is on.</string>
     <string name="filter_name_dim_only">Dim only</string>
     <string name="pref_entry_button_backlight_system">System managed</string>
     <string name="pref_entry_button_backlight_filter_dim_level">Use filter dim level</string>
