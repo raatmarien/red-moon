@@ -61,11 +61,10 @@
     <string name="time_toggle_options_array_0">Manual</string>
     <string name="activity_secure_suspend">Pausar en aplicaciones excluidas</string>
     <string name="pref_title_secure_suspend">Pausar en aplicaciones excluidas</string>
-    <string name="pref_summary_secure_suspend">Cuando esta característica está habilitada, Red Moon se pausará automáticamente cuando se abran determinadas aplicaciones. De manera predeterminada, esto incluye aplicaciones que no funcionarían si Red Moon está funcionando*, como los instaladores. Puede cambiar este comportamiento para la pantalla actual de la aplicación actual desde la notificación. Por ejemplo, puede querer agregar aplicaciones que son sensibles al color, como la cámara.
-\n
-\n
-\nEsta característica puede reducir ligeramente la vida de la batería de su dispositivo.
-\n
+    <string name="pref_summary_secure_suspend">Cuando esta característica está habilitada, Red Moon se pausará automáticamente cuando se abran determinadas aplicaciones. De manera predeterminada, esto incluye aplicaciones que no funcionarían si Red Moon está funcionando*, como los instaladores. Puede cambiar este comportamiento para la pantalla actual de la aplicación actual desde la notificación. Por ejemplo, puede querer agregar aplicaciones que son sensibles al color, como la cámara. 
+\n 
+\nEsta característica puede reducir ligeramente la vida de la batería de su dispositivo. 
+\n 
 \n* Algunas aplicaciones están protegidas contra superposiciones para protegerse de interferencias, como instalar una aplicación que realmente no desea. No responderán a toques cuando Red Moon está funcionando, ya que Red Moon dibuja una capa de rojo transparente sobre la pantalla.</string>
     <string name="text_switch_on">Activado</string>
     <string name="text_switch_off">Desactivado</string>
@@ -88,8 +87,8 @@
     <string name="pref_title_version">Versión</string>
     <string name="pref_title_integration">Integración con otras aplicaciones</string>
     <string name="pref_summary_integration">Algunas aplicaciones como LibreTasks o Tasker permiten automatizar tareas. Red Moon envía una notificación global cuando se suspende y reanuda, por lo que esas aplicaciones pueden hacer cosas al cambiar el filtro. Puedes saltarte el siguiente párrafo si no eres desarrollador o no te interesa.
-
-        Red Moon emite un «intent» público con la acción `com.jmstudios.redmoon.RED_MOON_TOGGLED`. El «intent» contiene un valor booleano extra con la clave `jmstudios.bundle.key.FILTER_IS_ON`, indicando el estado del filtro.</string>
+\n
+\nRed Moon emite un «intent» público con la acción `com.jmstudios.redmoon.RED_MOON_TOGGLED`. El «intent» contiene un valor booleano extra con la clave `jmstudios.bundle.key.FILTER_IS_ON`, indicando el estado del filtro.</string>
     <!-- Currently unused -->
     <string name="add_new_profile_dialog_title">Escribe un nombre de perfil</string>
     <string name="add_new_profile_edit_hint">Nombre del perfil</string>
