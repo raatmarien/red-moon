@@ -1,10 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Röd måne</string>
-    <string name="activity_main">Röd måne</string>
+    <string name="app_name">Röd Måne</string>
+    <string name="activity_main">Röd Måne</string>
     <string name="activity_intro">Intro</string>
-    <string name="activity_about">Om Röd måne</string>
+    <string name="activity_about">Om Röd Måne</string>
     <string name="activity_schedule">Schema</string>
     <string name="menu_dark_theme">Mörkt tema</string>
     <string name="pref_title_email_developer">Skicka e-post till utvecklarna</string>
+    <string name="notification_channel_overlay_description">Beständig notifikation för att kontrollera skärmöverlagring</string>
+    <string name="slide_text_get_started">Sätt på och stäng av Röd Måne med brytaren i övre högra hörnet.</string>
+    <string name="slide_text_improve_sleep">Blått ljus hindrar produktionen av melatonin, ett hormon som hjälper dig att somna på natten. Röd Måne tar bort det blå ljuset från skärmen så att du kan somna lättare.</string>
+    <string name="slide_text_protect_eyes">På natten, när ögonen blir ansträngda av att titta på mobilskärmen, kan du använda Röd Måne för att dämpa skärmbeslysningen.</string>
+    <string name="toast_warning_install">Det kommer inte gå att installera APK-er när Röd Måne är igång.</string>
+    <string name="pref_summary_integration">Vissa appar, som LibreTasks eller Tasker, låter dig automatisera uppgifter som körs när specifika händelser inträffar. Röd Måne skickar en offentlig avisering när den sätts på och stängs av, så att dessa appar kan svara. Om du inte använder eller utvecklar någon av dessa appar, kan du strunta i nästa stycke.
+\n
+\nRöd måne sänder ut en Public Intent med händelsen `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Denna Intent innehåller en boolesk extra med nyckeln `jmstudios.bundle.key.FILTER_IS_ON`, vilken indikerar om Röd Måne växlar till på eller av.</string>
+    <string name="pref_title_integration">Integration med andra appar</string>
+    <string name="pref_title_translators">Hjälp till med översättning</string>
+    <string name="pref_summary_email_developer">Ett alternativt sätt att kontakta oss</string>
+    <string name="pref_summary_secure_suspend">När denna funktion är igång, kommer Röd Måne pausa automatiskt när vissa appar är öppna. Som standard inkluderar detta appar som annars inte fungerar när Röd Måne kör*, såsom installation av APK-er. Man kan ändra detta beteende, för aktuell skärm i en öppen app, genom Röd Månes systemavisering. Man kan till exempel lägga till appar känsliga för färgavvikelser, som kameran.
+\n
+\nDenna funktion kan minska enhetens batteritid marginellt.
+\n
+\n*Vissa appar hindrar användningen av ett skärmöverlagring, för att skydda mot påverkan, som att lura en att installera en app man inte vill ha. Dessa registrerar inte tryck på skärmen när Röd Måne är på, eftersom den fungerar genom skärmöverlagring (ritar ett genomskinligt rött lager ovanpå skärmen).</string>
+    <string name="pref_summary_schedule_custom" formatted="false">Användardefinierade (%on till %off)</string>
+    <string name="notification_status_running">Kör. Stäng av för att installera APK-er</string>
+    <string name="menu_restore_default_filters">Återställ standardfilter</string>
+    <string name="help_snackbar_text">Tryck på brytaren för att slå på Röd Måne</string>
+    <string name="notification_channel_overlay_name">Överlagringskontroll</string>
+    <string name="time_toggle_options_array_2">Automatisk (användardefinierad)</string>
+    <string name="time_toggle_options_array_1">Automatisk (sol)</string>
+    <string name="time_toggle_options_array_0">Manuell</string>
+    <string name="pref_title_turn_off">Stäng av vid</string>
+    <string name="pref_title_turn_on">Sätt på vid</string>
+    <string name="pref_title_startup">Vid uppstart</string>
+    <string name="time_toggle_title">Automatisk växling</string>
+    <string name="set_dialog">Välj</string>
+    <string name="toast_warning_no_location">Aktivera platstjänster för att uppdatera plats</string>
+    <string name="searching_location">Söker efter plats</string>
+    <string name="pref_title_appearance">Profil</string>
+    <string name="remove_profile_dialog_title">Ta bort denna profil\?</string>
+    <string name="add_new_profile_edit_hint">Profilnamn</string>
+    <string name="add_new_profile_dialog_title">Skriv in profilnamn</string>
+    <string name="action_next_profile">Nästa profil</string>
+    <string name="pref_entry_button_backlight_turn_off">Stäng av</string>
+    <string name="pref_entry_button_backlight_filter_dim_level">Dämpa efter filternivå</string>
+    <string name="pref_entry_button_backlight_system">Hanteras av systemet</string>
+    <string name="filter_name_dim_only">Dämpa bara</string>
+    <string name="filter_name_bed_reading">Läsning</string>
+    <string name="filter_name_default">Standard</string>
+    <string name="filter_name_custom">Användardefinierad</string>
+    <string name="slide_title_get_started">Kom igång!</string>
+    <string name="slide_title_improve_sleep">Förbättrar din sömn</string>
+    <string name="slide_title_protect_eyes">Skyddar dina ögon</string>
+    <string name="slide_text_welcome">Välkommen till Röd Måne!</string>
+    <string name="slide_title_welcome">Välkommen!</string>
+    <string name="shortcut_title_toggle">Växla Röd Måne på/av</string>
+    <string name="dialog_button_cancel">Avbryt</string>
+    <string name="dialog_button_ok">OK</string>
+    <string name="dialog_message_permission_usage_stats">Tillåt åtkomst till användningsdata på nästa skärm, för att låta Röd Måne automatiskt pausa i skyddade appar.
+\n
+\nRöd Måne kommer endast använda denna data till att avgöra om en app körs, som inte fungerar när Röd Måne är igång.</string>
+    <string name="dialog_title_permission_usage_stats">Åtkomst till användningsdata</string>
+    <string name="dialog_message_permission_write_settings">Tillåt ändring av systeminställningar på nästa skärm, för att låta Röd Måne ändra enhetens ljusstyrka.</string>
+    <string name="dialog_title_permission_write_settings">Ändra systeminställningar</string>
+    <string name="dialog_message_permission_overlay">Tillåt visning över andra appar på nästa skärm, för att Röd Måne ska kunna starta.</string>
+    <string name="dialog_title_permission_overlay">Visa över andra appar</string>
+    <string name="dialog_title_remove_filter">Ta bort den här profilen\?</string>
+    <string name="edit_hint_add_filter">Profilnamn</string>
+    <string name="dialog_title_add_filter">Skriv in profilnamn</string>
+    <string name="snackbar_location_updated">Plats hittades!</string>
+    <string name="snackbar_searching_location">Letar efter plats</string>
+    <string name="snackbar_warning_no_location">Akrivera platstjänster för att uppdatera plats</string>
+    <string name="toast_warning_secured">Vissa funktioner i denna app kanske inte fungerar när Röd Måne kör.</string>
+    <string name="pref_summary_translators">Översättare: Edanas, kingu, samuzamu, Umeaboy</string>
+    <string name="pref_summary_project_page">Hitta mer info, ge återkoppling och bidra</string>
+    <string name="pref_title_project_page">Besök projektets webbplats</string>
+    <string name="pref_title_version">Version</string>
+    <string name="longitude_short">Longitud</string>
+    <string name="latitude_short">Latitud</string>
+    <string name="location_not_set">Plats inte fastställd</string>
+    <string name="text_switch_off">Av</string>
+    <string name="text_switch_on">På</string>
+    <string name="button_remove_filter">Ta bort</string>
+    <string name="button_add_filter">Lägg till</string>
+    <string name="pref_title_dark_theme">Mörkt tema</string>
+    <string name="pref_title_location">Plats</string>
+    <string name="pref_summary_use_location">Baserad på plats</string>
+    <string name="pref_title_use_location">Solnedgång till soluppgång</string>
+    <string name="pref_summary_stop_time_sunrise">Soluppgång (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Soluppgång</string>
+    <string name="pref_title_stop_time">Sluttid</string>
+    <string name="pref_summary_start_time_sunset">Solnedgång (%s)</string>
+    <string name="pref_value_start_time_sunset">Solnedgång</string>
+    <string name="pref_title_start_time">Starttid</string>
+    <string name="pref_title_button_backlight">Fysisk knapp för bakgrundsbelysning</string>
+    <string name="pref_title_secure_suspend">Pausa i uteslutna appar</string>
+    <string name="pref_summary_schedule_none">Inget</string>
+    <string name="pref_summary_schedule_sun" formatted="false">Solnedgång (%on) till soluppgång (%off)</string>
+    <string name="pref_title_schedule">Kör efter schema</string>
+    <string name="pref_title_time_toggle">Filtreringstider</string>
+    <string name="pref_title_lower_brightness">Dämpa systemets ljusstyrka</string>
+    <string name="pref_title_color_temp">Färgton</string>
+    <string name="pref_title_intensity">Opacitet</string>
+    <string name="pref_title_dim_level">Mörkhet</string>
+    <string name="pref_category_schedule">Schema</string>
+    <string name="pref_category_button_backlight_disclaimer">Har ingen effekt på vissa enheter</string>
+    <string name="pref_category_other">Annat</string>
+    <string name="pref_category_filter">Filter</string>
+    <string name="notification_action_next_filter">Nästa filter</string>
+    <string name="notification_action_whitelist_remove">Filtrera app</string>
+    <string name="notification_action_whitelist_add">Uteslut app</string>
+    <string name="notification_action_stop">Stoppa</string>
+    <string name="notification_action_turn_off">Stäng av</string>
+    <string name="notification_action_turn_on">Sätt på</string>
+    <string name="notification_action_pause">Pausa</string>
+    <string name="notification_action_resume">Fortsätt</string>
+    <string name="notification_status_off">Av</string>
+    <string name="notification_status_paused_with_info">Pausad. Avvisa aviseringen för att stoppa.</string>
+    <string name="notification_status_paused">Pausad</string>
+    <string name="notification_status_running_no_warning">Kör</string>
+    <string name="menu_about">Om</string>
+    <string name="menu_settings">Inställningar</string>
+    <string name="menu_show_intro">Visa intro igen</string>
+    <string name="activity_timer">Filtreringstider</string>
+    <string name="activity_secure_suspend">Pausa i undantagna appar</string>
+    <string name="activity_settings">Inställningar</string>
+    <string name="activity_shortcut">Röd Måne på/av</string>
 </resources>
