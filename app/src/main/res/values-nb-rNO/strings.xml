@@ -98,9 +98,9 @@ lysstyrkenivå.</string>
 \nDenne funksjonen vil bruke litt mer batteri.
 \n
 \n*Noen programmer er sikret om skjermoverlegg for å beskytte seg fra tukling, som å lure deg til å installere et program du ikke ønsker. De vil ikke være følsomme for berøring når Rød Måne er påslått, siden det virker ved å tegne et gjennomsiktig rødt lag over skjermen.</string>
-    <string name="dialog_message_permission_usage_stats">"Tillat brukstilgang i den neste skjermen for å tillate at Rød Måne blir satt på pause i sikkerhetsprogrammer.
-
-Rød måne vil bruke denne dataen bare til å bestemme hvorvidt du bruker et annet program som ikke vil fungere når Rød  Måne er påslått."</string>
+    <string name="dialog_message_permission_usage_stats">Tillat brukstilgang i den neste skjermen for å tillate at Rød Måne blir satt på pause i sikkerhetsprogrammer.
+\n
+\nRød Måne vil bruke denne dataen bare til å bestemme hvorvidt du bruker et annet program som ikke vil fungere når Rød Måne er påslått.</string>
     <string name="pref_summary_integration">Noen programmer, som LibreTasks eller Tasker, lar deg automatisere oppgaver når bestemte hendelser inntreffer. Rød Måne sender en offentlig merknad når det skrur seg på og av, slik at de andre programmene kan svare. Hvis du ikke bruker eller utvikler en av disse programmene, kan du hoppe over neste avsnitt.
 
 Rød Måne kringkaster en offentlig intensjon med handlingen `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Denne intensjonen inneholder en boolsk ekstra med nøkkelen `jmstudios.bundle.key.FILTER_IS_ON`, som indikerer hvorvidt Rød Måne veksler seg på eller av.</string>
