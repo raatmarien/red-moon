@@ -69,9 +69,9 @@
     <string name="text_switch_on">Activado</string>
     <string name="text_switch_off">Desactivado</string>
     <string name="dialog_title_permission_usage_stats">Permitir recopilar aplicaciones en ejecución</string>
-    <string name="dialog_message_permission_usage_stats">Para activar esta función tienes que dejar que Red Moon vea las estadísticas de uso de aplicaciones en la siguiente pantalla.
-
-        Red Moon necesita acceder a los datos de uso para saber si la aplicación en primer plano está protegida y así poder suspender el filtro. Solo se utilizarán estos datos cuando sean necesarios.</string>
+    <string name="dialog_message_permission_usage_stats">Permita el acceso de uso en la siguiente pantalla para permitir que Red Moon haga una pausa en las aplicaciones seguras.
+\n
+\nRed Moon usará estos datos sólo para determinar si está usando una aplicación que no funcionará cuando Red Moon esté encendido.</string>
     <string name="dialog_title_permission_overlay">Superponerse sobre otras aplicaciones</string>
     <string name="notification_status_off">No</string>
     <string name="pref_summary_use_location">Desfase horario desde ubicación</string>
