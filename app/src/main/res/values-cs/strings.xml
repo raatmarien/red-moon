@@ -57,8 +57,8 @@
     <string name="pref_category_button_backlight_disclaimer">Nefunguje na všech zařízeních</string>
     <string name="pref_title_dim_level">Úroveň ztlumení</string>
     <string name="pref_title_intensity">Úroveň intenzity</string>
-    <string name="pref_title_color_temp">Teplota barev</string>
-    <string name="pref_title_lower_brightness">Snížení jasu</string>
+    <string name="pref_title_color_temp">Barva</string>
+    <string name="pref_title_lower_brightness">Snížení systémového jasu</string>
     <string name="pref_title_time_toggle">Časovač</string>
     <string name="pref_category_schedule">Plán</string>
     <string name="pref_title_schedule">Plán</string>
@@ -155,4 +155,11 @@
     <string name="time_toggle_options_array_0">Ručně</string>
     <string name="time_toggle_options_array_1">Automaticky (podle slunce)</string>
     <string name="time_toggle_options_array_2">Automaticky (podle uživatele)</string>
+    <string name="pref_title_dark_theme">Temné téma</string>
+    <string name="pref_summary_stop_time_sunrise">Východ slunce (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Východ slunce</string>
+    <string name="pref_summary_start_time_sunset">Západ slunce (%s)</string>
+    <string name="pref_value_start_time_sunset">Západ slunce</string>
+    <string name="menu_settings">Nastavení</string>
+    <string name="activity_settings">Nastavení</string>
 </resources>
