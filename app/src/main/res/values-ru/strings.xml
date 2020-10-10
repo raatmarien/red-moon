@@ -67,7 +67,7 @@
 \nЕсли эта настройка включена, Red Moon приостановит свою работу, когда одна из таких функций будет запущена. 
 \n 
 \nЭта настройка слегка снижает продолжительность работы устройства от аккумулятора. 
-\n
+\n 
 \n*Red Moon создаёт прозрачный слой красного цвета поверх всего экрана; подобные приложения не могут работать, если другие приложения размещаются поверх них. Это сделано для того, чтобы избежать несанкционированного выбора нежелаемых действий, или перехвата прикосновений с целью слежки за пользователем.</string>
     <string name="text_switch_on">Вкл</string>
     <string name="text_switch_off">Выкл</string>
@@ -128,7 +128,7 @@
     <string name="activity_schedule">Расписание</string>
     <string name="notification_status_paused_with_info">Приостановлено. Смахните уведомление, чтобы остановить.</string>
     <string name="pref_category_schedule">Расписание</string>
-    <string name="pref_title_schedule">Расписание</string>
+    <string name="pref_title_schedule">Запускать по расписанию</string>
     <string name="pref_summary_schedule_sun" formatted="false">От заката (%on) до рассвета (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Особое (от %on до %off)</string>
     <string name="pref_summary_schedule_none">Нет</string>
@@ -139,4 +139,11 @@
     <string name="notification_action_whitelist_remove">Удалить приложение из привилегированных</string>
     <string name="notification_channel_overlay_name">Наложение уведомлений</string>
     <string name="notification_channel_overlay_description">Постоянные уведомления о наложении</string>
+    <string name="pref_title_dark_theme">Тёмная тема</string>
+    <string name="pref_summary_stop_time_sunrise">Восход (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Восход</string>
+    <string name="pref_summary_start_time_sunset">Закат (%s)</string>
+    <string name="pref_value_start_time_sunset">Закат</string>
+    <string name="menu_settings">Настройки</string>
+    <string name="activity_settings">Настройки</string>
 </resources>
