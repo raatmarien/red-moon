@@ -22,7 +22,7 @@
     <string name="snackbar_searching_location">Buscando ubicación</string>
     <string name="menu_dark_theme">Tema oscuro</string>
     <string name="pref_title_email_developer">Envía un correo electrónico a los desarrolladores</string>
-    <string name="pref_summary_email_developer">Otro método para contactarnos</string>
+    <string name="pref_summary_email_developer">Otro método de contacto</string>
     <string name="pref_title_project_page">Visita la página del proyecto</string>
     <string name="toast_warning_install">Al activarlo no podrás instalar APK.</string>
     <string name="snackbar_warning_no_location">Activa los servicios de ubicación para actualizar tu posición</string>
@@ -46,7 +46,7 @@
     <string name="activity_shortcut">Des/activar Red Moon</string>
     <string name="pref_title_lower_brightness">Reducir brillo del sistema</string>
     <string name="location_not_set">Sin establecer</string>
-    <string name="pref_summary_project_page">Encuentre más información, deje comentarios y contribuya</string>
+    <string name="pref_summary_project_page">Para más información, proporcionar comentarios y contribuir a su desarrollo</string>
     <string name="slide_text_protect_eyes">De noche, cuando mirar al teléfono
         daña la vista, puedes utilizar Red Moon para limitar el brillo de tu pantalla.</string>
     <string name="slide_text_get_started">Utiliza el control de la esquina superior
@@ -61,20 +61,20 @@
     <string name="time_toggle_options_array_0">Manual</string>
     <string name="activity_secure_suspend">Pausar en aplicaciones excluidas</string>
     <string name="pref_title_secure_suspend">Pausar en aplicaciones excluidas</string>
-    <string name="pref_summary_secure_suspend">Cuando esta característica está habilitada, Red Moon se pausará automáticamente cuando se abran determinadas aplicaciones. De manera predeterminada, esto incluye aplicaciones que no funcionarían si Red Moon está funcionando*, como los instaladores. Puede cambiar este comportamiento para la pantalla actual de la aplicación actual desde la notificación. Por ejemplo, puede querer agregar aplicaciones que son sensibles al color, como la cámara. 
+    <string name="pref_summary_secure_suspend">Con esta opción activada la superposición de Red Moon se pausará automáticamente cuando se abran determinadas aplicaciones. Esto incluye de serie aplicaciones que no funcionarían con Red Moon estando encima*, como la pantalla de confirmación de instalación de APKs. Aparte de eso tienes control manual desde la notificación para detener el filtro, por ejemplo; al utilizar la cámara, donde ver los colores bien y sin adulterar es importante.
 \n 
-\nEsta característica puede reducir ligeramente la vida de la batería de su dispositivo. 
+\nActivarlo puede conllevar un gasto de batería extra en tu dispositivo. 
 \n 
-\n* Algunas aplicaciones están protegidas contra superposiciones para protegerse de interferencias, como instalar una aplicación que realmente no desea. No responderán a toques cuando Red Moon está funcionando, ya que Red Moon dibuja una capa de rojo transparente sobre la pantalla.</string>
+\n*Algunas aplicaciones se protegen de las superposiciones para evitar problemas de seguridad, como engañarte para que aprietes botones falsos alterando lo que ves en pantalla y así poder instalar otros programas fraudulentos... por lo que partes de su interfaz no irán, ya que Red Moon funciona dibujando en todo momento una capa roja semitransparente.</string>
     <string name="text_switch_on">Activado</string>
     <string name="text_switch_off">Desactivado</string>
     <string name="dialog_title_permission_usage_stats">Permitir recopilar aplicaciones en ejecución</string>
-    <string name="dialog_message_permission_usage_stats">Permita el acceso de uso en la siguiente pantalla para permitir que Red Moon haga una pausa en las aplicaciones seguras.
+    <string name="dialog_message_permission_usage_stats">Permite el acceso de estadísticas de uso en la siguiente pantalla para que Red Moon sepa cuando pausarse al mostrarse sobre aplicaciones seguras.
 \n
-\nRed Moon usará estos datos sólo para determinar si está usando una aplicación que no funcionará cuando Red Moon esté encendido.</string>
+\nRed Moon usará estos datos sólo para determinar si estás utilizando una aplicación que no funcione cuando esté en un primer plano.</string>
     <string name="dialog_title_permission_overlay">Superponerse sobre otras aplicaciones</string>
     <string name="notification_status_off">No</string>
-    <string name="pref_summary_use_location">Desfase horario desde ubicación</string>
+    <string name="pref_summary_use_location">Teniendo en cuenta el desfase horario de la ubicación actual</string>
     <string name="notification_action_turn_on">Reanudar</string>
     <string name="notification_action_turn_off">Detener</string>
     <string name="notification_action_stop">Detener</string>
@@ -107,21 +107,21 @@
     <string name="pref_title_location">Ubicación</string>
     <string name="notification_status_running">Activo, pausa para instalar APK</string>
     <string name="notification_status_running_no_warning">En funcionamiento</string>
-    <string name="menu_restore_default_filters">Restaurar filtros por defecto</string>
-    <string name="filter_name_dim_only">Tenue solamente</string>
+    <string name="menu_restore_default_filters">Restaurar filtros originales</string>
+    <string name="filter_name_dim_only">Brillo tenue</string>
     <string name="activity_schedule">Horario</string>
     <string name="notification_action_whitelist_add">Aplicaciones excluidas</string>
     <string name="notification_action_whitelist_remove">Filtrar aplicaciones</string>
     <string name="pref_category_schedule">Horario</string>
     <string name="pref_title_schedule">Ejecutar según lo programado</string>
-    <string name="pref_summary_schedule_custom" formatted="false">Personalizado (%on hasta %off)</string>
+    <string name="pref_summary_schedule_custom" formatted="false">Personalizado (de %on a %off)</string>
     <string name="pref_summary_schedule_none">Desactivado</string>
     <string name="notification_status_paused_with_info">En pausa. Descarta la notificación para detener.</string>
     <string name="pref_title_start_time">Hora de inicio</string>
     <string name="pref_title_stop_time">Hora de finalización</string>
     <string name="pref_title_translators">Ayuda a traducir</string>
-    <string name="pref_summary_translators">Traductores: smichel17, raatmarien, Mostafa Ahangarha</string>
-    <string name="toast_warning_secured">Algunas características de esta aplicación pueden no funcionar mientras Red Moon este en ejecución.</string>
+    <string name="pref_summary_translators">Traductores: smichel17, raatmarien, Mostafa, Swyter</string>
+    <string name="toast_warning_secured">Puede que algunas funciones de esta aplicación no funcionen correctamente mientras el filtro de Red Moon esté en un primer plano.</string>
     <string name="notification_channel_overlay_name">Control de superposición</string>
     <string name="notification_channel_overlay_description">La notificación persistente de control de superposición</string>
     <string name="pref_summary_schedule_sun" formatted="false">Del anochecer (%on) al amanecer (%off)</string>
