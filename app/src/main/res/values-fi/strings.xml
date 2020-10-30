@@ -16,7 +16,7 @@
     <string name="notification_status_running">Käynnissä. Sammuta asentaaksesi APK-tiedostoita</string>
     <string name="pref_title_color_temp">Väri</string>
     <string name="snackbar_searching_location">Etsitään sijaintia</string>
-    <string name="pref_summary_schedule_sun" formatted="false">Auringonlasku (% on) auringonnousuun (%off)</string>
+    <string name="pref_summary_schedule_sun" formatted="false">Auringonlasku (%on) auringonnousuun (%off)</string>
     <string name="pref_title_turn_off">Sammuta kello</string>
     <string name="snackbar_warning_no_location">Mahdollista sijaintipalvelut päivittääksesi sijainti</string>
     <string name="notification_channel_overlay_name">Päällekkäisohjaus</string>
