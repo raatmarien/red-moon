@@ -83,7 +83,9 @@
     <string name="dialog_title_permission_write_settings">Configuración del sistema</string>
     <string name="dialog_message_permission_write_settings">Active la configuración del sistema en la próxima pantalla para permitir a Red Moon modificar su nivel de brillo.</string>
     <string name="dialog_title_permission_usage_stats">Acceso a datos de uso</string>
-    <string name="dialog_message_permission_usage_stats">Permite acceder al historial de uso en la siguiente pantalla para permitir a Red Moon pausar automáticamente su ejecución en aplicaciones protegidas.Red Moon usará está información exclusivamente para determinar si esta utilizando una aplicación que no funcionara si Red Moon se está ejecutando.</string>
+    <string name="dialog_message_permission_usage_stats">Permite acceder al historial de uso en la siguiente pantalla para permitir a Red Moon pausar automáticamente su ejecución en aplicaciones protegidas.
+\n
+\nRed Moon usará está información exclusivamente para determinar si esta utilizando una aplicación que no funcionara si Red Moon se está ejecutando.</string>
     <string name="dialog_button_ok">Aceptar</string>
     <string name="dialog_button_cancel">Cancelar</string>
     <string name="shortcut_title_toggle">Alternar Red Moon</string>
