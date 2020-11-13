@@ -1,25 +1,21 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Црвени месец</string>
     <string name="activity_main">Црвени месец</string>
     <string name="activity_intro">Увод</string>
     <string name="menu_show_intro">Поново прикажи увод</string>
-
     <string name="notification_status_paused">Паузиран</string>
     <string name="notification_action_resume">Настави</string>
     <string name="notification_action_pause">Паузирај</string>
-
     <string name="pref_category_filter">Филтер</string>
     <string name="pref_title_startup">Покретање</string>
     <string name="pref_category_other">Остало</string>
-
     <string name="button_add_filter">Додај</string>
     <string name="button_remove_filter">Обриши</string>
     <string name="pref_title_dim_level">Затамњење</string>
-    <string name="pref_title_intensity">Интензитет</string>
-    <string name="pref_title_color_temp">Температура боје</string>
-    <string name="pref_title_lower_brightness">Умањи осветљеље</string>
-
+    <string name="pref_title_intensity">Непрозирност</string>
+    <string name="pref_title_color_temp">Боја</string>
+    <string name="pref_title_lower_brightness">Умањи системско осветљеље</string>
     <string name="pref_title_turn_on">Укључи у</string>
     <string name="pref_title_turn_off">Искључи у</string>
     <string name="pref_title_use_location">Од свитања до сумрака</string>
@@ -27,49 +23,37 @@
     <string name="latitude_short">Ширина</string>
     <string name="longitude_short">Дужина</string>
     <string name="snackbar_searching_location">Тражим локацију</string>
-
     <string name="menu_dark_theme">Тамна тема</string>
-
     <string name="pref_title_email_developer">Пошаљите е-поруку програмерима</string>
     <string name="pref_title_project_page">Посетите страницу пројекта</string>
     <string name="snackbar_warning_no_location">Укључите услугу лоцирања да бисте ажурирали локацију</string>
-
     <string name="help_snackbar_text">Притисните прекидач да укључите Црвени месец</string>
-
     <string name="dialog_title_add_filter">Унесите назив профила</string>
     <string name="edit_hint_add_filter">Назив профила</string>
     <string name="dialog_title_remove_filter">Обрисати овај профил?</string>
     <string name="dialog_button_ok">У реду</string>
     <string name="dialog_button_cancel">Одустани</string>
-
     <string name="slide_title_welcome">Добро дошли!</string>
     <string name="slide_text_welcome">Добро дошли у Црвени месец!</string>
-
     <string name="slide_title_protect_eyes">Штити ваше очи</string>
     <string name="slide_title_improve_sleep">Побољшава вам сан</string>
     <string name="slide_title_get_started">Почните!</string>
     <string name="filter_name_custom">Прилагођено</string>
     <string name="filter_name_default">Подразумеван</string>
     <string name="filter_name_bed_reading">Читање</string>
-
     <string name="time_toggle_options_array_0">Ручно</string>
     <string name="time_toggle_options_array_1">Аутоматски (сунце)</string>
     <string name="time_toggle_options_array_2">Аутоматски (прилагођено)</string>
-
     <string name="slide_text_get_started">Да укључите Црвени месец
         притисните прекидач у горњем
         десном углу.</string>
-
     <string name="slide_text_improve_sleep">Плаво светло потискује
         производњу мелатонина, хормона који помаже да заспите ноћу.
         Црвени месец уклања плаво светло са екрана, омогућујући тиме
         да лакше заспите.</string>
-
     <string name="shortcut_title_toggle">Укључи/искључи Црвени месец</string>
-
     <string name="slide_text_protect_eyes">Ако вам ноћу екран заслепљује
         очи, затамните га помоћу Црвеног месеца.</string>
-
     <string name="toast_warning_install">Нећете моћи да инсталирате апликације док је Црвени месец укључен.</string>
     <string name="pref_summary_project_page">Пронађите још информација, оставите повратне информације и допринесите</string>
     <string name="pref_summary_email_developer">Други начин да нас контактирате</string>
@@ -81,13 +65,11 @@
     <string name="text_switch_off">Иск</string>
     <string name="dialog_title_permission_usage_stats">Приступ статистици коришћења</string>
     <string name="activity_secure_suspend">Заустави у искљученим апликацијама</string>
-
     <string name="pref_title_secure_suspend">Паузирај у искљученим апликацијама</string>
-    <string name="pref_summary_secure_suspend"></string>
+    <string name="pref_summary_secure_suspend"/>
     <string name="dialog_message_permission_usage_stats">Дозволите Црвеном месецу да приступи статистикама коришћења апликација на следећем екрану да бисте укључили ово.
 
         Црвеном месецу је ово потребно да би открио безбедну апликацију и искључио филтер. Црвени месец користи ове податке само да заустави филтер кад је потребно.</string>
-
     <string name="menu_about">О програму</string>
     <string name="activity_about">О Црвеном месецу</string>
     <!-- Currently unused -->
@@ -98,49 +80,41 @@
     <string name="action_next_profile">Следећи профил</string>
     <string name="dialog_title_permission_overlay">Исцртавање преко других апликација</string>
     <string name="dialog_message_permission_overlay">Дозволите исцртавање преко других апликација на следећем екрану да бисте омогућили Црвеном месецу да се укључи.</string>
-
     <string name="dialog_title_permission_write_settings">Измена системских поставки</string>
     <string name="dialog_message_permission_write_settings">Дозволите измену системских
         поставки на следећем екрану да бисте омогућили Црвеном месецу
         да промени осветљеност екрана.</string>
-
     <string name="notification_status_off">Иск</string>
     <string name="notification_action_turn_on">Укључи</string>
     <string name="notification_action_turn_off">Искључи</string>
     <string name="notification_action_stop">Искључи</string>
     <string name="notification_action_next_filter">Следећи филтер</string>
-
     <string name="pref_category_button_backlight_disclaimer">Нема ефекта на неким уређајима</string>
     <string name="pref_summary_use_location">Времена из локације</string>
     <string name="pref_title_integration">Интеграција са осталима апликацијама</string>
     <string name="pref_title_version">Издање</string>
-
     <string name="pref_entry_button_backlight_system">Системско управљање</string>
     <string name="pref_entry_button_backlight_filter_dim_level">Користи ниво затамњења филтера</string>
     <string name="pref_entry_button_backlight_turn_off">Искључи</string>
-
     <string name="pref_title_button_backlight">Осветљење хардверских тастера</string>
-
     <string name="searching_location">Тражим локацију</string>
     <string name="toast_warning_no_location">Укључите услугу лоцирања да бисте ажурирали локацију</string>
     <string name="set_dialog">Постави</string>
     <string name="notification_status_running">Покренут. Искључи за инсталацију апликација</string>
     <string name="notification_status_running_no_warning">Покренут</string>
-<string name="menu_restore_default_filters">Врати подразумеване филтере</string>
+    <string name="menu_restore_default_filters">Врати подразумеване филтере</string>
     <string name="snackbar_location_updated">Локација нађена!</string>
     <string name="filter_name_dim_only">Само затамни</string>
-
     <string name="pref_title_location">Локација</string>
     <string name="pref_summary_integration">Неке апликације, као нпр. „LibreTasks“ или „Tasker“, дозвољавају да аутоматизујете задатке када се десе одређени догађаји. Црвени Месец шаље јавно обавештење када се укључи и искључи да те апликације могу да одговоре. Ако не користите или не програмирате те апликације, занемарите следећи параграф.
 \n
 \nЦрвени месец шаље јавни интент са радњом `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Тај интент садржи екстра булову са кључем `jmstudios.bundle.key.FILTER_IS_ON`, који показује да се Црвени месец укључује или искључује.</string>
-
     <string name="activity_schedule">Распоред</string>
     <string name="notification_status_paused_with_info">Паузирана. Отпусти обавештење за заустављање.</string>
     <string name="notification_action_whitelist_add">Искључи апликацију</string>
     <string name="notification_action_whitelist_remove">Филтрирај апликацију</string>
     <string name="pref_category_schedule">Распоред</string>
-    <string name="pref_title_schedule">Распоред</string>
+    <string name="pref_title_schedule">Ради по распореду</string>
     <string name="pref_summary_schedule_sun" formatted="false">Од сумрака (%on) до свитања (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Прилагођено (од %on до %off)</string>
     <string name="pref_summary_schedule_none">Ништа</string>
@@ -148,7 +122,12 @@
     <string name="pref_title_stop_time">Крај</string>
     <string name="pref_title_translators">Помозите превођење</string>
     <string name="pref_summary_translators">pejakm</string>
-
     <string name="toast_warning_secured">Неке функције ове апликације можда неће радити док је Црвени месец активан.</string>
-
-    </resources>
+    <string name="pref_title_dark_theme">Тамна тема</string>
+    <string name="pref_summary_stop_time_sunrise">Излазак сунца (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Излазак сунца</string>
+    <string name="pref_summary_start_time_sunset">Залазак сунца (%s)</string>
+    <string name="pref_value_start_time_sunset">Залазак сунца</string>
+    <string name="menu_settings">Поставке</string>
+    <string name="activity_settings">Поставке</string>
+</resources>
