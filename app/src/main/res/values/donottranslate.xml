@@ -72,7 +72,6 @@
   <!-- Other -->
   <string name="project_page_url" translatable="false">https://github.com/LibreShift/red-moon</string>
   <string name="translation_url" translatable="false">https://hosted.weblate.org/engage/red-moon/</string>
-  <string name="contact_email_adress" translatable="false">mailto:marienraat@riseup.net,s@smichel.me</string>
 
   <!-- Notification channel slug -->
   <string name="notification_channel_overlay_id" translatable="false">com.jmstudios.redmoon.overlay</string>
