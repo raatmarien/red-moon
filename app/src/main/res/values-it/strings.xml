@@ -9,7 +9,7 @@
     <string name="notification_action_resume">Riprendi</string>
     <string name="notification_action_pause">Ferma</string>
     <string name="pref_category_filter">Filtro</string>
-    <string name="activity_timer">Tempo di funzionamento</string>
+    <string name="activity_timer">Temporizzatore</string>
     <string name="pref_title_time_toggle">Tempo di funzionamento</string>
     <string name="pref_title_startup">Avvio</string>
     <string name="pref_category_other">Altro</string>
