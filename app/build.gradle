@@ -46,7 +46,7 @@ android {
 
         debug {
             applicationIdSuffix '.debug'
-            def repo = Grgit.open()
+            def repo = Grgit.open(currentDir: project.rootDir)
             def commitId = "${repo.log().get(0).getAbbreviatedId()}"
             if (repo.status().isClean()) {
                 versionNameSuffix "-$commitId"
