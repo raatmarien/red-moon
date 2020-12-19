@@ -30,7 +30,7 @@ open class TimePreferenceDialogFragmentCompat : DialogFragment(), TimePickerDial
     var preference: TimePreference? = null
         get() {
             if (field == null) {
-                val key = arguments!!.getString(ARG_KEY)!!
+                val key = requireArguments().getString(ARG_KEY)!!
                 val fragment: TargetFragment? = targetFragment as? TargetFragment
                 field = fragment?.findPreference(key)
             }
@@ -54,7 +54,7 @@ open class TimePreferenceDialogFragmentCompat : DialogFragment(), TimePickerDial
             fragment = it
         }
         if (savedInstanceState == null) {
-            val key = arguments!!.getString(ARG_KEY)!!
+            val key = requireArguments().getString(ARG_KEY)!!
             preference = fragment.findPreference(key)
             neutralButtonText = preference?.neutralButtonText
             showNeutralButton = preference?.showNeutralButton ?: showNeutralButton
@@ -92,7 +92,7 @@ open class TimePreferenceDialogFragmentCompat : DialogFragment(), TimePickerDial
      * time picker) directly, to offer onBindDialogView().
      */
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val context: Context = activity!!
+        val context: Context = requireActivity()
 
         val dialog = TimePickerDialog(context, this, initialHour, initialMinute, is24HourView)
 

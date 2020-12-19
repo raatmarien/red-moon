@@ -112,7 +112,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         if (p is TimePreference) {
             TimePreferenceDialogFragmentCompat.newInstance(p.key).let {
                 it.setTargetFragment(this, 0)
-                it.show(fragmentManager!!, DIALOG_FRAGMENT_TAG)
+                it.show(requireFragmentManager(), DIALOG_FRAGMENT_TAG)
             }
         } else {
             super.onDisplayPreferenceDialog(p)
