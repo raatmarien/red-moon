@@ -25,7 +25,7 @@
     <string name="latitude_short">Γεωγρ. πλάτος</string>
     <string name="longitude_short">Γεωγρ. μήκος</string>
     <string name="snackbar_searching_location">Αναζήτηση της τοποθεσίας σας</string>
-    <string name="pref_title_secure_suspend">Αυτόματη αναστολή φίλτρου σε αποκλεισμένες εφαρμογές</string>
+    <string name="pref_title_secure_suspend">Αυτόματη αναστολή φίλτρου σε μη συμπεριλαμβανόμενες εφαρμογές</string>
     <string name="pref_summary_secure_suspend">Όταν αυτή η λειτουργία είναι ενεργοποιημένη, το Κόκκινο Φεγγάρι θα αναστέλεται αυτόματα όταν ορισμένες εφαρμογές είναι ανοιχτές. Εξ ορισμού, αυτό θα ισχύει για εφαρμογές που δεν λειτουργούν όταν είναι ενεργοποιημένο το Κόκκινο Φεγγάρι*, όπως η εγκατάσταση εφαρμογών. Η συμπεριφορά αυτή μπορεί να αλλαχθεί για την τρέχουσα οθόνη της τρέχουσας εφαρμογής από την ειδοποίηση. Για παράδειγμα, ίσως επιθυμείς να προσθέσεις εφαρμογές ευαίσθητες στο χρώμα, όπως η φωτογραφική μηχανή.\t
 \n
 \nΑυτή η λειτουργία ενδέχεται να αυξήσει ελαφρώς την κατανάλωση της μπαταρίας της συσκευής σου.
@@ -80,9 +80,9 @@
     <string name="set_dialog">Όρισε</string>
     <string name="notification_status_running">Σε λειτουργία. Σε παύση για την εγκατάσταση των apks</string>
     <string name="notification_status_running_no_warning">Σε λειτουργία</string>
-    <string name="activity_about">Σχετικά με το Red Moon</string>
+    <string name="activity_about">Σχετικά με το Κόκκινο Φεγγάρι</string>
     <string name="activity_schedule">Πρόγραμμα</string>
-    <string name="menu_restore_default_filters">Επαναφορά αρχικών φίλτρων</string>
+    <string name="menu_restore_default_filters">Επαναφορά προεπιλεγμένων φίλτρων</string>
     <string name="menu_about">Σχετικά</string>
     <string name="notification_status_paused_with_info">Σε παύση. Κλείστε την ειδοποίηση για να σταματήσει.</string>
     <string name="notification_status_off">Κλείσιμο</string>
