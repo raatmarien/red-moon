@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">مانگی سوور</string>
     <string name="activity_main">مانگی سوور</string>
@@ -7,20 +7,17 @@
     <string name="notification_status_paused">ڕاگیراو</string>
     <string name="notification_action_resume"/>
     <string name="notification_action_pause">ڕاگرتن</string>
-
     <string name="pref_category_filter"/>
-    <string name="activity_timer"/>
+    <string name="activity_timer">کاتژمێر</string>
     <string name="pref_title_time_toggle"/>
     <string name="pref_title_startup"/>
     <string name="pref_category_other">هی تر</string>
-
     <string name="button_add_filter">زیادکرن</string>
     <string name="button_remove_filter">سڕینەوە</string>
     <string name="pref_title_dim_level"/>
     <string name="pref_title_intensity"/>
     <string name="pref_title_color_temp"/>
     <string name="pref_title_lower_brightness"/>
-
     <string name="time_toggle_title"/>
     <string name="pref_title_turn_on"/>
     <string name="pref_title_turn_off"/>
@@ -29,7 +26,6 @@
     <string name="latitude_short"/>
     <string name="longitude_short"/>
     <string name="snackbar_searching_location"/>
-
     <string name="pref_title_secure_suspend"/>
     <string name="pref_summary_secure_suspend"/>
     <string name="text_switch_on">کارا</string>
@@ -38,33 +34,25 @@
     <string name="pref_summary_project_page"/>
     <string name="toast_warning_install"/>
     <string name="snackbar_warning_no_location"/>
-
     <string name="dialog_title_add_filter">ناوی پرۆفایل بنووسە</string>
     <string name="edit_hint_add_filter">ناوی پرۆفایل</string>
     <string name="dialog_title_remove_filter">دەتەوێت ئەم پرۆفایلە بسڕیتەوە؟</string>
     <string name="set_dialog"/>
     <string name="dialog_button_ok">باشە</string>
     <string name="dialog_button_cancel">هەڵوەشاندنەوە</string>
-
     <string name="shortcut_title_toggle"/>
-
     <string name="slide_title_welcome">بەخێربێت!</string>
     <string name="slide_text_welcome">بەخێربێت بۆ مانگی سوور!</string>
-
     <string name="slide_title_protect_eyes"/>
     <string name="slide_text_protect_eyes"/>
-
     <string name="slide_title_improve_sleep"/>
     <string name="slide_text_improve_sleep"/>
-
     <string name="slide_title_get_started">دەست پێبکەین!</string>
     <string name="filter_name_default">بنەڕەت</string>
     <string name="filter_name_bed_reading"/>
-
     <string name="time_toggle_options_array_0"/>
     <string name="time_toggle_options_array_1"/>
-    <string name="time_toggle_options_array_2"></string>
-
+    <string name="time_toggle_options_array_2"/>
     <!-- Currently unused -->
     <string name="add_new_profile_dialog_title">ناوی پرۆفایل بنووسە</string>
     <string name="add_new_profile_edit_hint">ناوی پرۆفایل</string>
@@ -72,4 +60,14 @@
     <string name="pref_title_appearance"/>
     <string name="searching_location"/>
     <string name="toast_warning_no_location"/>
+    <string name="notification_status_running_no_warning">ڕاکە</string>
+    <string name="notification_status_running">ڕاکە. کوژاندنەوە بۆ دامەزراندنی APK</string>
+    <string name="menu_about">دەربارە</string>
+    <string name="menu_settings">ڕێکخستنەکان</string>
+    <string name="menu_restore_default_filters">هێنانەوەی فلتەری بنەڕەت</string>
+    <string name="activity_schedule">خشتە</string>
+    <string name="activity_secure_suspend">وەستان لە بەرنامە دوورکراوەکان</string>
+    <string name="activity_about">دەربارەی مانگی سوور</string>
+    <string name="activity_settings">ڕێکخستنەکان</string>
+    <string name="activity_shortcut">گۆڕینی مانگی سوور</string>
 </resources>
