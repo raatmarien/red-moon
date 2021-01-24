@@ -3,18 +3,14 @@
     <string name="app_name">紅月</string>
     <string name="activity_main">紅月</string>
     <string name="activity_shortcut">切換紅月</string>
-
     <string name="notification_status_paused">已暫停</string>
-
     <string name="pref_category_other">其他</string>
-
     <string name="button_remove_filter">刪除</string>
     <string name="pref_title_use_location">日落至日出</string>
     <string name="latitude_short">緯度</string>
     <string name="longitude_short">經度</string>
     <string name="dialog_button_ok">確定</string>
     <string name="dialog_button_cancel">取消</string>
-
     <string name="pref_category_filter">濾鏡</string>
     <string name="activity_timer">定時</string>
     <string name="pref_title_time_toggle">定時</string>
@@ -48,14 +44,11 @@
     <string name="pref_summary_project_page">檢視更多資訊、提交反饋和貢獻</string>
     <string name="snackbar_warning_no_location">啟用位置服務來更新位置</string>
     <string name="toast_warning_install">濾鏡運行時，您將無法安裝APK。</string>
-
     <string name="activity_intro">簡介</string>
     <string name="menu_show_intro">重播簡介</string>
-
     <string name="notification_action_resume">恢復</string>
     <string name="notification_action_pause">暫停</string>
     <string name="slide_title_welcome">歡迎！</string>
-
     <!-- Currently unused -->
     <string name="add_new_profile_dialog_title">輸入濾鏡名稱</string>
     <string name="add_new_profile_edit_hint">濾鏡名稱</string>
@@ -64,22 +57,18 @@
     <string name="searching_location">正在搜尋位置</string>
     <string name="toast_warning_no_location">啟用位置服務來更新位置</string>
     <string name="notification_status_running">運行中……須要安裝APK時會暫停</string>
-<string name="activity_about">關於紅月</string>
+    <string name="activity_about">關於紅月</string>
     <string name="menu_restore_default_filters">恢復預設濾鏡</string>
     <string name="menu_about">關於</string>
-
     <string name="notification_action_turn_on">開啟</string>
     <string name="notification_action_turn_off">關閉</string>
     <string name="notification_action_stop">停止</string>
     <string name="pref_title_version">版本</string>
-
     <string name="dialog_title_permission_overlay">在其他應用程式上出現</string>
     <string name="dialog_title_permission_write_settings">修改系統設定</string>
     <string name="dialog_title_permission_usage_stats">使用紀錄存取權</string>
     <string name="filter_name_dim_only">僅降低光暗</string>
-
     <string name="pref_entry_button_backlight_turn_off">關閉</string>
-
     <string name="pref_title_location">位置</string>
     <string name="activity_secure_suspend">被排除的應用程式在運行時，暫停紅月</string>
     <string name="activity_schedule">時間表</string>
@@ -89,9 +78,7 @@
     <string name="notification_action_whitelist_add">排除應用程式</string>
     <string name="notification_action_whitelist_remove">過濾應用程式</string>
     <string name="notification_action_next_filter">下一個濾鏡</string>
-
     <string name="pref_category_button_backlight_disclaimer">對某些裝置不起作用</string>
-
     <string name="pref_category_schedule">時間表</string>
     <string name="pref_title_schedule">時間表</string>
     <string name="pref_summary_schedule_sun" formatted="false">日出（%on）至日落（%off）</string>
@@ -99,53 +86,46 @@
     <string name="pref_summary_schedule_none">無</string>
     <string name="pref_title_secure_suspend">被排除應用程式運行時暫停紅月</string>
     <string name="pref_title_button_backlight">硬體按鈕背光</string>
-
     <string name="pref_title_start_time">開始時間</string>
     <string name="pref_title_stop_time">停止時間</string>
     <string name="pref_summary_use_location">基於您的位置</string>
-
-    <string name="pref_summary_secure_suspend">本功能啟用時，紅月將會在特定應用程式開啟時暫停。一般來說，這包括那些在紅月運行時無法工作的應用程式*，如應用程式安裝器。您可以在通知中改變對目前佔據螢幕的應用程式的應對方式。比如說，您也許希望添加會被顏色變化所影響的應用程式，如相機應用程式。
-\n
-\n該特性會稍微減少您裝置的電池壽命。
-\n
-\n*一些應用被保護在覆蓋層之外，以防它們受到干擾，如欺騙您安裝您不打算安裝的應用程式。它們在紅月生效時不會迴應觸碰操作，因為紅月正是通過繪製一紅色透明覆蓋層來工作的。</string>
-
+    <string name="pref_summary_secure_suspend">本功能啟用時，紅月將會在特定應用程式開啟時暫停。一般來說，這包括那些在紅月運行時無法工作的應用程式*，如應用程式安裝器。您可以在通知中改變對目前佔據螢幕的應用程式的應對方式。比如說，您也許希望添加會被顏色變化所影響的應用程式，如相機應用程式。 
+\n 
+\n該特性會稍微減少您裝置的電池壽命。 
+\n 
+\n*一些應用被保護在覆蓋層之外，以防它們受到干擾，如欺騙您安裝您不打算安裝的應用程式。它們在紅月生效時不會回應觸碰操作，因為紅月正是通過繪製一紅色透明覆蓋層來工作的。</string>
     <string name="text_switch_on">開啟</string>
     <string name="text_switch_off">關閉</string>
-
     <string name="pref_title_translators">幫助翻譯</string>
     <string name="pref_summary_translators">翻譯者：smichel17、raatmarien</string>
-
     <string name="pref_title_integration">與其他應用程式的整合</string>
     <string name="pref_summary_integration">某些應用程式（如LibreTasks、Tasker）能讓您設定在特定事件發生時自動運行任務。紅月會在開啟或關閉時發送一條公開通知以使這些應用程式回應。如果您沒有使用或開發這類應用程式，您可以不理會下一段。 
 \n 
 \n紅月會通過操作「com.jmstudios.redmoon.RED_MOON_TOGGLED」廣播一個Intent。該Intent包含一個鍵值為「jmstudios.bundle.key.FILTER_IS_ON」的布林extra，用於指示紅月的開關狀態。</string>
-
     <string name="toast_warning_secured">紅月運行時，此應用程式的某些功能可能會失效。</string>
-
     <string name="snackbar_location_updated">找到位置！</string>
     <string name="dialog_message_permission_overlay">請在下一個窗口中授權紅月出現在其他應用程式上。</string>
-
     <string name="dialog_message_permission_write_settings">請在下一個窗口授權紅月修改系統設定。</string>
-
     <string name="dialog_message_permission_usage_stats">在下一個窗口中給予紅月使用情況訪問權限，以便在安全應用中暫停。 
 \n 
 \n紅月僅將相關數據用於判斷您是否在使用紅月運行時無法運作的應用。</string>
-
     <string name="slide_text_welcome">歡迎使用紅月！</string>
-
     <string name="slide_title_protect_eyes">保護您的眼睛</string>
     <string name="slide_text_protect_eyes">當你在晚上看著手機，眼睛感到不適時，您可以用紅月來調低螢幕光暗。</string>
-
     <string name="slide_title_improve_sleep">改善您的睡眠</string>
     <string name="slide_text_improve_sleep">藍光會抑制褪黑激素的分泌，使您難以入眠。紅月消除您屏幕上的藍光，保證您能輕鬆入睡。</string>
-
     <string name="slide_title_get_started">開始吧！</string>
     <string name="slide_text_get_started">用右上角的開關啟用或停用紅月。</string>
-
     <string name="pref_entry_button_backlight_system">系統管理</string>
     <string name="pref_entry_button_backlight_filter_dim_level">使用濾鏡的亮度降低級別</string>
     <string name="action_next_profile">下一個濾鏡</string>
     <string name="notification_channel_overlay_name">疊加控制</string>
     <string name="notification_channel_overlay_description">持久性疊加控制通知</string>
+    <string name="pref_title_dark_theme">暗色主題</string>
+    <string name="pref_summary_stop_time_sunrise">日出 (%s)</string>
+    <string name="pref_value_stop_time_sunrise">日出</string>
+    <string name="pref_summary_start_time_sunset">日落 (%s)</string>
+    <string name="pref_value_start_time_sunset">日落</string>
+    <string name="menu_settings">設定</string>
+    <string name="activity_settings">設定</string>
 </resources>
