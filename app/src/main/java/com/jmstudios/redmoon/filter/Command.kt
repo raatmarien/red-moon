@@ -85,7 +85,7 @@ enum class Command(val time: Float) {
         private var filterWasOn: Boolean? = null
 
         fun getCommand(intent: Intent): Command {
-            val commandName = intent.getStringExtra(EXTRA_COMMAND)
+            val commandName = intent.getStringExtra(EXTRA_COMMAND) ?: ""
             Log.i("Recieved flag: $commandName")
             return valueOf(commandName)
         }
