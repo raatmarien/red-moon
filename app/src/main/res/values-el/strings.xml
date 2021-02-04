@@ -48,8 +48,8 @@
     <string name="dialog_title_add_filter">Δώστε όνομα προφίλ</string>
     <string name="edit_hint_add_filter">Όνομα προφίλ</string>
     <string name="dialog_title_remove_filter">Διαγραφή του προφίλ;</string>
-    <string name="dialog_button_ok">ΟΚ</string>
-    <string name="dialog_button_cancel">Άκυρο</string>
+    <string name="dialog_button_ok">Εντάξει</string>
+    <string name="dialog_button_cancel">Ακύρωση</string>
     <string name="shortcut_title_toggle">Εναλλαγή φίλτρου</string>
     <string name="slide_title_welcome">Καλωσόρισες!</string>
     <string name="slide_text_welcome">Καλωσόρισες στο Κόκκινο Φεγγάρι!</string>
