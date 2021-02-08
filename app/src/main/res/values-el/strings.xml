@@ -49,7 +49,7 @@
     <string name="edit_hint_add_filter">Όνομα προφίλ</string>
     <string name="dialog_title_remove_filter">Διαγραφή του προφίλ;</string>
     <string name="dialog_button_ok">Εντάξει</string>
-    <string name="dialog_button_cancel">Ακύρωση</string>
+    <string name="dialog_button_cancel">Άκυρο</string>
     <string name="shortcut_title_toggle">Εναλλαγή φίλτρου</string>
     <string name="slide_title_welcome">Καλωσόρισες!</string>
     <string name="slide_text_welcome">Καλωσόρισες στο Κόκκινο Φεγγάρι!</string>
@@ -61,7 +61,7 @@
     <string name="slide_title_get_started">Ξεκινήστε!</string>
     <string name="slide_text_get_started">Για να ενεργοποιήσετε το Κόκκινο Φεγγάρι, πατήστε
         τον διακόπτη πάνω δεξιά στη γωνία.</string>
-    <string name="filter_name_custom">Εξατομίκευση</string>
+    <string name="filter_name_custom">Προσαρμοσμένο</string>
     <string name="filter_name_default">Προεπιλογή</string>
     <string name="filter_name_bed_reading">Ανάγνωση</string>
     <string name="time_toggle_options_array_0">Χειροκίνητο</string>
