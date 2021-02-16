@@ -84,4 +84,25 @@
     <string name="time_toggle_options_array_1">Otomatis (matahari)</string>
     <string name="time_toggle_options_array_2">Otomatis (kustom)</string>
     <string name="notification_channel_overlay_name">Kontrol Overlay</string>
+    <string name="pref_entry_button_backlight_filter_dim_level">Gunakan tingkat redup filter</string>
+    <string name="pref_entry_button_backlight_system">Dikelola sistem</string>
+    <string name="slide_text_get_started">Hidupkan dan matikan Red Moon dengan tombol di sudut kanan atas.</string>
+    <string name="slide_text_improve_sleep">Cahaya biru menekan produksi Melatonin, hormon yang membantu Anda tertidur di malam hari. Red Moon mampu menghilangkan cahaya biru dari layar Anda, memastikan Anda dapat tertidur dengan mudah.</string>
+    <string name="slide_title_improve_sleep">Memperbaiki kualitas tidur Anda</string>
+    <string name="dialog_message_permission_write_settings">Izinkan memodifikasi pengaturan sistem di layar berikutnya supaya Red Moon dapat mengubah tingkat kecerahan.</string>
+    <string name="help_snackbar_text">Tekan tombol untuk mengaktifkan Red Moon</string>
+    <string name="time_toggle_title">Toggle otomatis</string>
+    <string name="pref_title_startup">Memulai</string>
+    <string name="pref_title_turn_on">Nyalakan pada</string>
+    <string name="pref_title_turn_off">Matikan pada</string>
+    <string name="pref_title_dark_theme">Tema gelap</string>
+    <string name="pref_summary_stop_time_sunrise">Matahari terbit (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Matahari terbit</string>
+    <string name="pref_summary_start_time_sunset">Matahari terbenam (%s)</string>
+    <string name="pref_value_start_time_sunset">Matahari terbenam</string>
+    <string name="pref_title_intensity">Opasitas</string>
+    <string name="notification_action_whitelist_add">Aplikasi yang dikecualikan</string>
+    <string name="menu_settings">Pengaturan</string>
+    <string name="activity_secure_suspend">Jeda di aplikasi yang dikecualikan</string>
+    <string name="activity_settings">Pengaturan</string>
 </resources>
