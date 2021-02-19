@@ -8,6 +8,7 @@ package com.jmstudios.redmoon.filter
 
 import android.content.ComponentName
 import android.content.Intent
+import android.os.Build
 
 import com.jmstudios.redmoon.util.*
 
@@ -68,7 +69,18 @@ enum class Command(val time: Float) {
     val intent: Intent
         get() = intent(FilterService::class).putExtra(EXTRA_COMMAND, name)
 
-    fun send(): ComponentName? = appContext.startService(intent)
+    fun send(): ComponentName? {
+        // Starting from SDK 26, startService doesn't allow to start a
+        // foreground service from background. Most of the time, FilterService
+        // is started from foreground anyways but there are exceptions: for
+        // instance when launched from a quick setting tile.
+        // See https://developer.android.com/about/versions/oreo/background
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            appContext.startForegroundService(intent)
+        } else {
+            appContext.startService(intent)
+        }
+    }
 
     abstract val turnOn: Boolean
 
