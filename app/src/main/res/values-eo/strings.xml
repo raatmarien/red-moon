@@ -1,66 +1,130 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">Ruĝa luno</string>
-
-    <string name="activity_main">Ruĝa luno</string>
-    <string name="activity_intro">Enigo</string>
-    <string name="activity_about">Pri Ruĝa luno</string>
-    <string name="activity_secure_suspend">Paŭzi en sekuraplikaĵoj</string>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ruĝa Luno</string>
+    <string name="activity_main">Ruĝa Luno</string>
+    <string name="activity_intro">Enkonduko</string>
+    <string name="activity_about">Pri Ruĝa Luno</string>
+    <string name="activity_secure_suspend">Paŭzi en ekskluzivitaj programoj</string>
     <string name="activity_timer">Tempumilo</string>
-
     <string name="menu_dark_theme">Malhela etoso</string>
     <string name="menu_restore_default_filters">Restarigi defaŭltajn filtrilojn</string>
     <string name="menu_show_intro">Reenkonduki</string>
     <string name="menu_about">Pri</string>
-
-    <string name="notification_status_running">Laboras. Elŝaltu por instali apojn</string>
+    <string name="notification_status_running">Ruliĝante. Malŝaltu por instali programojn</string>
     <string name="notification_status_running_no_warning">Laboras</string>
-    <string name="notification_status_paused">Paŭzigita</string>
-    <string name="notification_status_off">Elŝalti</string>
+    <string name="notification_status_paused">Paŭzinta</string>
+    <string name="notification_status_off">Malŝaltita</string>
     <string name="notification_action_resume">Daŭrigi</string>
-    <string name="notification_action_pause">Paŭzi</string>
+    <string name="notification_action_pause">Paŭzigi</string>
     <string name="notification_action_turn_on">Ŝalti</string>
-    <string name="notification_action_turn_off">Elŝalti</string>
-    <string name="notification_action_stop">Elŝalti</string>
+    <string name="notification_action_turn_off">Malŝalti</string>
+    <string name="notification_action_stop">Ĉesigi</string>
     <string name="notification_action_next_filter">Sekva filtrilo</string>
-
     <string name="pref_category_filter">Filtrilo</string>
     <string name="pref_category_other">Alia</string>
     <string name="pref_category_button_backlight_disclaimer">Ne laboras en ĉiu aparato</string>
-
-    <string name="pref_title_dim_level">Malhelignivelo</string>
-    <string name="pref_title_intensity">Intenseco</string>
-    <string name="pref_title_color_temp">Kolortemperaturo</string>
-    <string name="pref_title_lower_brightness">Etigi sisteman helecon</string>
-
+    <string name="pref_title_dim_level">Malheleco</string>
+    <string name="pref_title_intensity">Opakeco</string>
+    <string name="pref_title_color_temp">Koloro</string>
+    <string name="pref_title_lower_brightness">Malheligi la sistemon</string>
     <string name="pref_title_time_toggle">Tempumilo</string>
-    <string name="pref_title_secure_suspend">Paŭzi en sekuraj apoj</string>
-    <string name="activity_shortcut">Ŝanĝilo de Ruĝa luno</string>
+    <string name="pref_title_secure_suspend">Paŭzi en ekskluzivitaj programoj</string>
+    <string name="activity_shortcut">Baskulo de Ruĝa Luno</string>
     <string name="pref_title_button_backlight">Fonlumado de aparatbutonoj</string>
-
     <string name="pref_title_turn_on">Ŝalti je</string>
     <string name="pref_title_turn_off">Malŝalti je</string>
-    <string name="pref_title_use_location">Tempo po suno</string>
+    <string name="pref_title_use_location">De sunsubiro ĝis sunleviĝo</string>
     <string name="pref_summary_use_location">Po via lokeco</string>
-
-    <string name="pref_summary_secure_suspend">Iuj aĵoj ne laboros dum Ruĝa luno funkcias*. Ekzemple vi ne povos instali apojn, permesigi aŭ uzi apon SuperUser (en superuzantigitaj aparatoj).
+    <string name="pref_summary_secure_suspend">Se ĉi tiu funkcio estas ŝaltita, Ruĝa Luno aŭtomate paŭzos dum certaj programoj ruliĝas. Implicite, tiuj inkluzivas programojn, kiuj ne funkcios kune kun Ruĝa Luno*, ekz. instalilon de programoj. Vi povas ŝanĝi tian konduton por la nuna ekrano de la nuna programo per la sciigo. Ekzemple, vi eble volas aldoni kolorrilatajn programojn, kiel la fotilon.
 \n
-\nKiam tiu ĉi agordaĵo ŝaltita, Ruĝa luno paŭziĝos dum unu de tiuj apoj laboras.
+\nĈi tiu funkcio eble iomete konsumos energion en la baterio de via aparato.
 \n
-\nTio iomete manĝos vian pilon de via aparato. Ankaŭ, tiu ĉi funkcio ne laboras en tiuj aparatoj.
-\n
-\nRuĝa luno pentras travideblan ruĝan tavolon super la ekrano; tiuj apoj ne laboros se alia aplikaĵo pentras super ili. Tiel, neniu malbona apo ne eblos fari nedezirataĵojn aŭ spionaĵon je via tajpado.</string>
-
+\n*Iuj programoj estas sekuraj kontraŭ superdesegnaĵoj por protekti sin kontraŭ trompoj, ekz. por igi vin instali nedeziratan programon. Tiaj ne respondos al tuŝoj se Ruĝa Luno funkcios, ĉar ĝi funkcias desegnante travideblan ruĝan tavolon super la ekrano.</string>
     <string name="button_add_filter">Aldoni</string>
-    <string name="button_remove_filter">Forigi</string>
-
-    <string name="text_switch_on">Ŝalti</string>
-    <string name="text_switch_off">Elŝalti</string>
-
-    <string name="location_not_set">Lokeco ne agordita</string>
-    <string name="latitude_short">Larĝeco</string>
-    <string name="longitude_short">Longeco</string>
-
+    <string name="button_remove_filter">Forviŝi</string>
+    <string name="text_switch_on">Ŝaltita</string>
+    <string name="text_switch_off">Malŝaltita</string>
+    <string name="location_not_set">Loko ne estis agordita</string>
+    <string name="latitude_short">Latitudo</string>
+    <string name="longitude_short">Longitudo</string>
     <string name="pref_title_version">Versio</string>
-
     <string name="pref_title_project_page">Vizitu la projektpaĝon</string>
-    </resources>
+    <string name="dialog_message_permission_usage_stats">Permesu atingon al uzoprotokolo en la sekva ekrano por ebligi al Ruĝa Luno paŭzi en sekuraj programoj.
+\n
+\nRuĝa Luno uzos tiujn datenojn nur por determini ĉu vi uzas programon, kiu ne funkcios kune kun Ruĝa Luno.</string>
+    <string name="notification_channel_overlay_description">La konstanta sciigo pri superdesegnado</string>
+    <string name="notification_channel_overlay_name">Regado de Superdesegnado</string>
+    <string name="dialog_message_permission_write_settings">Permesu agordi la sistemon en la sekva ekrano por ebligi al Ruĝa Luno ŝanĝi la ekranbrilon.</string>
+    <string name="slide_text_improve_sleep">Blua lumo malhelpas la produktadon de la hormono melatonino, kiu helpas vin endormiĝi nokte. Ruĝa Luno forigas la bluan lumon de via ekrano, plifaciligante vian endormiĝon.</string>
+    <string name="slide_text_protect_eyes">Nokte, kiam rigardi vian telefonon doloras viajn okulojn, vi povas uzi Ruĝan Lunon por malheligi vian ekranon.</string>
+    <string name="pref_summary_integration">Iuj programoj, kiel LibreTasks aŭ Tasker, permesas vin aŭtomatigi taskojn kiam certaj eventoj okazas. Ruĝa Luno sendas publikan sciigon kiam ĝi ŝaltiĝasas aŭ malŝaltiĝas; tiel tiuj programoj povas respondi. Se vi ne uzas aŭ kontribuas al unu el tiuj programoj, vi povas ignori la ĉi-suban alineon.
+\n
+\nRuĝa Luno dissendas publikan intencon per la ago `com.jmstudios.redmoon.RED_MOON_TOGGLED`. La intenco enhavas bulean kromaĵon kun la ŝlosilo `jmstudios.bundle.key.FILTER_IS_ON`, kiu indikas ĉu Ruĝa Luno estas ŝaltita aŭ malŝaltita.</string>
+    <string name="dialog_message_permission_overlay">Permesu desegnadon super aliaj programoj en la sekva ekrano por permesi al Ruĝa Luno ŝalti.</string>
+    <string name="toast_warning_secured">Iuj funkcioj de ĉi tiu programo eble ne funkcios dum Ruĝa Luno funkcias.</string>
+    <string name="notification_status_paused_with_info">Paŭzinta. Fermu sciigon por malpaŭzi.</string>
+    <string name="slide_text_get_started">Ŝaltu kaj malŝaltu Ruĝan Lunon per la baskulo ĉe la supra dekstra angulo.</string>
+    <string name="dialog_title_permission_usage_stats">Atingo al uzoprotokolo</string>
+    <string name="toast_warning_install">Vi ne povos instali programojn dum Ruĝa Luno funkcios.</string>
+    <string name="slide_title_improve_sleep">Plibonigi vian dormon</string>
+    <string name="snackbar_warning_no_location">Ŝalti lokservon por ĝisdatigi lokon</string>
+    <string name="toast_warning_no_location">Ŝalti lokservon por ĝisdatigi lokon</string>
+    <string name="time_toggle_options_array_2">Aŭtomate (propre)</string>
+    <string name="help_snackbar_text">Baskuligu por ŝalti Ruĝan Lunon</string>
+    <string name="pref_summary_email_developer">Alia metodo kontakti nin</string>
+    <string name="pref_summary_project_page">Informiĝu, sugestu, kaj kontribuu</string>
+    <string name="pref_entry_button_backlight_turn_off">Malŝalti</string>
+    <string name="pref_entry_button_backlight_filter_dim_level">Laŭ malheliga nivelo de filtrilo</string>
+    <string name="pref_entry_button_backlight_system">Administri per sistemo</string>
+    <string name="filter_name_dim_only">Nur malheligi</string>
+    <string name="dialog_title_permission_write_settings">Agordi sistemon</string>
+    <string name="dialog_title_permission_overlay">Desegni super aliaj programoj</string>
+    <string name="pref_title_email_developer">Retpoŝte mesaĝi la programistojn</string>
+    <string name="pref_summary_schedule_custom" formatted="false">Propre (de %on ĝis %off)</string>
+    <string name="pref_title_schedule">Ruli laŭ horaro</string>
+    <string name="slide_title_protect_eyes">Protekti viajn okulojn</string>
+    <string name="filter_name_custom">Propra</string>
+    <string name="filter_name_default">Implicito</string>
+    <string name="pref_category_schedule">Horaro</string>
+    <string name="time_toggle_options_array_0">Mane</string>
+    <string name="pref_title_startup">Lanĉo</string>
+    <string name="time_toggle_title">Aŭtomata baskulado</string>
+    <string name="set_dialog">Agordi</string>
+    <string name="filter_name_bed_reading">Legado</string>
+    <string name="slide_title_get_started">Ek!</string>
+    <string name="slide_text_welcome">Bonvenon al Ruĝa Luno!</string>
+    <string name="shortcut_title_toggle">Baskuligi Ruĝan Lunon</string>
+    <string name="notification_action_whitelist_remove">Filtri programon</string>
+    <string name="notification_action_whitelist_add">Ekskluzivi programon</string>
+    <string name="activity_schedule">Horaro</string>
+    <string name="pref_summary_translators">Tradukintoj: smichel17, raatmarien, Mostafa Ahangarha</string>
+    <string name="pref_title_stop_time">Fina horo</string>
+    <string name="pref_title_start_time">Komenca horo</string>
+    <string name="pref_summary_schedule_sun" formatted="false">De sunsubiro (%on) ĝis sunleviĝo (%off)</string>
+    <string name="slide_title_welcome">Bonvenon!</string>
+    <string name="snackbar_location_updated">Troviĝis loko!</string>
+    <string name="action_next_profile">Sekva profilo</string>
+    <string name="snackbar_searching_location">Serĉante lokon</string>
+    <string name="pref_title_integration">Integrado kun aliaj programoj</string>
+    <string name="pref_title_translators">Traduki</string>
+    <string name="dialog_title_remove_filter">Ĉu forviŝi ĉi tiun filtrilon\?</string>
+    <string name="edit_hint_add_filter">Nomo de filtrilo</string>
+    <string name="dialog_title_add_filter">Tajpu nomon de filtrilo</string>
+    <string name="dialog_button_cancel">Nuligi</string>
+    <string name="dialog_button_ok">Bone</string>
+    <string name="searching_location">Serĉante lokon</string>
+    <string name="time_toggle_options_array_1">Aŭtomate (laŭ suno)</string>
+    <string name="add_new_profile_dialog_title">Tajpu nomon de profilo</string>
+    <string name="pref_title_appearance">Profilo</string>
+    <string name="remove_profile_dialog_title">Ĉu forviŝi ĉi tiun profilon\?</string>
+    <string name="add_new_profile_edit_hint">Nomo de profilo</string>
+    <string name="pref_summary_schedule_none">Nenio</string>
+    <string name="pref_title_dark_theme">Malhela etoso</string>
+    <string name="pref_title_location">Loko</string>
+    <string name="pref_summary_stop_time_sunrise">Sunleviĝo (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Sunleviĝo</string>
+    <string name="pref_summary_start_time_sunset">Sunsubiro (%s)</string>
+    <string name="pref_value_start_time_sunset">Sunsubiro</string>
+    <string name="activity_settings">Agordoj</string>
+    <string name="menu_settings">Agordoj</string>
+</resources>
