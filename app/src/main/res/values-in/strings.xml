@@ -19,7 +19,7 @@
     <string name="notification_action_turn_on">Nyalakan</string>
     <string name="notification_action_turn_off">Matikan</string>
     <string name="notification_action_stop">Berhenti</string>
-    <string name="notification_action_whitelist_remove">Filter app</string>
+    <string name="notification_action_whitelist_remove">Aplikasi yang difilter</string>
     <string name="notification_action_next_filter">Filter selanjutnya</string>
     <string name="pref_category_filter">Filter</string>
     <string name="pref_category_other">Lainnya</string>
@@ -28,7 +28,7 @@
     <string name="pref_title_color_temp">Warna</string>
     <string name="pref_title_time_toggle">Timer</string>
     <string name="pref_category_schedule">Jadwal</string>
-    <string name="pref_title_schedule">Jadwal</string>
+    <string name="pref_title_schedule">Jadwalkan sesuai jadwal</string>
     <string name="pref_summary_schedule_sun" formatted="false">Matahari terbit (%on) ke matahari terbenam (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Kustom (%on ke %off)</string>
     <string name="pref_summary_schedule_none">Tidak ada</string>
@@ -105,4 +105,26 @@
     <string name="menu_settings">Pengaturan</string>
     <string name="activity_secure_suspend">Jeda di aplikasi yang dikecualikan</string>
     <string name="activity_settings">Pengaturan</string>
+    <string name="notification_channel_overlay_description">Pemberitahuan kontrol overlay persisten</string>
+    <string name="shortcut_title_toggle">Toggle Red Moon</string>
+    <string name="pref_summary_integration">Beberapa aplikasi, seperti LibreTasks atau Tasker, memungkinkan Anda mengotomatiskan tugas saat peristiwa tertentu terjadi. Red Moon mengirimkan pemberitahuan publik saat dihidupkan dan dimatikan, sehingga aplikasi tersebut dapat merespons. Jika Anda tidak menggunakan atau mengembangkan salah satu aplikasi tersebut, Anda dapat mengabaikan paragraf berikutnya.
+\n
+\nRed Moon menyiarkan maksud publik dengan tindakan `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Maksud berisi ekstra boolean dengan kunci `jmstudios.bundle.key.FILTER_IS_ON`, yang menunjukkan apakah Red Moon sedang mengaktifkan atau menonaktifkan.</string>
+    <string name="latitude_short">Garis lintang</string>
+    <string name="pref_summary_secure_suspend">Ketika fitur ini aktifk, Red Moon akan secara otomatis menjeda ketika aplikasi tertentu. Secara default, termasuk aplikasi yang tidak akan berfungsi saat Red Moon berjalan*, seperti menginstal apk. Anda dapat mengubah perilaku ini untuk layar aplikasi dari notifikasi. Misalnya, Anda mungkin ingin menambahkan aplikasi peka warna, seperti kamera.
+\n
+\nFitur ini mungkin sedikit menurunkan masa pakai baterai perangkat Anda.
+\n
+\n*Beberapa aplikasi diamankan dari overlay untuk melindungi diri dari gangguan, seperti menipu Anda agar menginstal aplikasi yang tidak Anda inginkan. Mereka tidak akan menanggapi sentuhan ketika Red Moon menyala, karena bekerja dengan menggambar lapisan merah transparan di atas layar.</string>
+    <string name="activity_shortcut">Toggle Red Moon</string>
+    <string name="dialog_message_permission_usage_stats">Izinkan akses penggunaan di layar berikutnya untuk memungkinkan Red Moon berhenti sejenak di aplikasi yang aman.
+\n
+\nRed Moon akan menggunakan data ini hanya untuk menentukan apakah Anda menggunakan aplikasi yang tidak akan berfungsi saat Red Moon menyala.</string>
+    <string name="dialog_message_permission_overlay">Izinkan menggambar di atas aplikasi lain di layar berikutnya agar Red Moon menyala.</string>
+    <string name="dialog_title_permission_overlay">Menggambar di atas aplikasi lain</string>
+    <string name="longitude_short">Garis bujur</string>
+    <string name="pref_title_button_backlight">Tombol lampu latar perangkat keras</string>
+    <string name="pref_title_secure_suspend">Jeda di aplikasi yang dikecualikan</string>
+    <string name="pref_title_lower_brightness">Kecerahan sistem yang lebih rendah</string>
+    <string name="notification_status_paused_with_info">Dijeda. Singkirkan pemberitahuan untuk berhenti.</string>
 </resources>
