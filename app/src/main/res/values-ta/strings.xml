@@ -77,4 +77,19 @@
     <string name="pref_summary_stop_time_sunrise">சூரிய உதயம் (%s )</string>
     <string name="pref_summary_email_developer">எங்களை தொடர்பு கொள்ள இரண்டாம் வழி</string>
     <string name="notification_status_running_no_warning">இயங்கிக் கொண்டிருக்கிறது</string>
+    <string name="pref_title_translators">மொழிபெயர்க்க உதவுங்கள்</string>
+    <string name="pref_title_version">பதிப்பு</string>
+    <string name="button_add_filter">சேர்</string>
+    <string name="button_remove_filter">நீக்கு</string>
+    <string name="pref_summary_use_location">உங்கள் இருப்பிடத்தின் அடிப்படையில்</string>
+    <string name="pref_title_location">இருப்பிடம்</string>
+    <string name="pref_value_stop_time_sunrise">சூரிய உதயம்</string>
+    <string name="pref_category_schedule">திட்டமிடு</string>
+    <string name="pref_title_color_temp">நிறம்</string>
+    <string name="pref_title_schedule">திட்டமிட்டபடி இயக்கு</string>
+    <string name="pref_summary_schedule_none">எதுவும் இல்லை</string>
+    <string name="notification_action_stop">நிறுத்து</string>
+    <string name="pref_category_other">மற்றவை</string>
+    <string name="menu_settings">அமைப்புகள்</string>
+    <string name="activity_settings">அமைப்புகள்</string>
 </resources>
