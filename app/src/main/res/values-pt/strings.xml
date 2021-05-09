@@ -112,7 +112,7 @@
     <string name="dialog_button_ok">OK</string>
     <string name="location_not_set">Localização não definida</string>
     <string name="slide_text_get_started">Ligue o Red Moon pressionando o otão no canto superior direito.</string>
-    <string name="slide_text_protect_eyes">À noite, olhar para seu celular machucam seus olhos. Pode utilizar o Red Moon para escurecer a seu ecrã.</string>
+    <string name="slide_text_protect_eyes">À noite, olhar para o seu televóvel machucam os seus olhos. Pode utilizar o Red Moon para escurecer a seu ecrã.</string>
     <string name="menu_show_intro">Repetir introdução</string>
     <string name="notification_action_stop">Parar</string>
     <string name="filter_name_bed_reading">Leitura</string>
