@@ -60,7 +60,7 @@
     <string name="action_next_profile">அடுத்த சுயவிவரம்</string>
     <string name="dialog_button_ok">சரி</string>
     <string name="location_not_set">இருப்பிடம் அமைக்கப்படவில்லை</string>
-    <string name="notification_action_resume">மீண்டும் தொடங்கு</string>
+    <string name="notification_action_resume">தொடர்க</string>
     <string name="notification_status_paused">இடை நிறுத்தப்பட்டுள்ளது</string>
     <string name="notification_action_pause">இடைநிறுத்து</string>
     <string name="notification_status_off">நிறுத்து</string>
