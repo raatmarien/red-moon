@@ -35,10 +35,10 @@
     <string name="pref_category_other">Kita</string>
     <string name="button_add_filter">Pridėti</string>
     <string name="button_remove_filter">Ištrinti</string>
-    <string name="pref_title_dim_level">Pritemdymo lygis</string>
-    <string name="pref_title_intensity">Intensyvumo lygis</string>
+    <string name="pref_title_dim_level">Tamsumas</string>
+    <string name="pref_title_intensity">Skaidrumas</string>
     <string name="pref_title_color_temp">Spalva</string>
-    <string name="pref_title_lower_brightness">Sumažinti ryškumą</string>
+    <string name="pref_title_lower_brightness">Sumažinti sistemos ryškumą</string>
     <string name="time_toggle_title">Automatiškai įjungti filtrą</string>
     <string name="pref_title_turn_on">Įjungti ties</string>
     <string name="pref_title_turn_off">Išjungti ties</string>
@@ -105,7 +105,7 @@
     <string name="notification_action_next_filter">Kitas filtras</string>
     <string name="pref_category_button_backlight_disclaimer">Kai kuriuose įrenginiuose neveikia</string>
     <string name="pref_category_schedule">Tvarkaraštis</string>
-    <string name="pref_title_schedule">Tvarkaraštis</string>
+    <string name="pref_title_schedule">Paleisti kaip numatyta</string>
     <string name="pref_summary_schedule_sun" formatted="false">Nuo saulėlydžio (%on) iki saulėtekio (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Tinkintas (nuo %on iki %off)</string>
     <string name="pref_summary_schedule_none">Nėra</string>
@@ -130,4 +130,35 @@
     <string name="filter_name_dim_only">Tik pritemdyti</string>
     <string name="pref_entry_button_backlight_turn_off">Išjungti</string>
     <string name="action_next_profile">Kitas profilis</string>
+    <string name="notification_channel_overlay_description">Nuolatinis uždangos valdymo pranešimas</string>
+    <string name="notification_channel_overlay_name">Uždangos valdymas</string>
+    <string name="pref_entry_button_backlight_filter_dim_level">Naudokite filtro blankųjį lygį</string>
+    <string name="pref_entry_button_backlight_system">Sistema valdoma</string>
+    <string name="slide_title_welcome">Sveiki!</string>
+    <string name="pref_summary_integration">Kai kurios programos, pvz., „LibreTasks“ ar „Tasker“, leidžia automatizuoti užduotis įvykus tam tikriems įvykiams. „Red Moon“ siunčia viešą pranešimą, kai jis įsijungia ir išsijungia, kad šios programėlės galėtų reaguoti. Jei nenaudojate ar nekuriate vienos iš tų programęlių, galite nepaisyti kitos pastraipos.
+\n
+\n„Red Moon“ transliuoja viešą ketinimą vykdydamas veiksmą „com.jmstudios.redmoon.RED_MOON_TOGGLED“. Tiksle yra loginis papildas su raktu `jmstudios.bundle.key.FILTER_IS_ON`, kuris nurodo, ar „Red Moon“ įjungiamas, ar išjungiamas.</string>
+    <string name="dialog_title_permission_overlay">Piešimas virš kitų programėlių</string>
+    <string name="dialog_message_permission_overlay">Leiskite piešti virš kitų programėlių kitame ekrane, kad „Red Moon“ galėtų įsijungti.</string>
+    <string name="dialog_message_permission_usage_stats">Leiskite naudoti prieigą kitame lange, kad „Red Moon“ galėtų pristabdyti savo veikimą apsaugotose programėlėse.
+\n
+\n„Red Moon“ naudos šiuos duomenis tik norėdamas nustatyti, ar naudojate programėlė, kuri neveiks, kai įjungtas raudonasis mėnulis.</string>
+    <string name="dialog_title_permission_usage_stats">Naudojimosi prieiga</string>
+    <string name="dialog_message_permission_write_settings">Leiskite modifikuoti sistemos nustatymus kitame lange, kad „Red Moon“ galėtų pakeisti jūsų ryškumo lygį.</string>
+    <string name="dialog_title_permission_write_settings">Sistemos nustatymų keitimas</string>
+    <string name="snackbar_location_updated">Vieta rasta!</string>
+    <string name="toast_warning_secured">Kai kurios šios programos funkcijos gali neveikti, kol veikia „Red Moon“.</string>
+    <string name="pref_summary_secure_suspend">Kai ši funkcija įgalinta, „Red Moon“ automatiškai pristabdys, kai bus atidarytos tam tikros programos. Pagal numatytuosius nustatymus tai apima programas, kurios neveiks, kai veikia „Red Moon“ *, pvz., diegiant programėles. Pranešime galite pakeisti šią elgseną dabartiniame programos ekrane. Pvz., galbūt norėsite pridėti spalvoms jautrias programas, pvz., fotoaparatą.
+\n
+\nŠi funkcija gali šiek tiek sutrumpinti jūsų prietaiso baterijos veikimo laiką.
+\n
+\n* Kai kurios programos yra apsaugotos nuo uždangų, kad apsisaugotų nuo manipuliacijų, pvz., apgaulės būdu priverčiant įdiegiant nenorimą programą. Šios programos neatsakys į prisilietimus, kai bus įjungtas Red Moon, nes programėlė veikia per ekraną nupiešdama skaidrų raudoną sluoksnį.</string>
+    <string name="pref_title_dark_theme">Tamsi tema</string>
+    <string name="pref_title_location">Vietovė</string>
+    <string name="pref_summary_stop_time_sunrise">Saulėtekis (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Saulėtekis</string>
+    <string name="pref_summary_start_time_sunset">Saulėlydis (%s)</string>
+    <string name="pref_value_start_time_sunset">Saulėlydis</string>
+    <string name="menu_settings">Nustatymai</string>
+    <string name="activity_settings">Nustatymai</string>
 </resources>
