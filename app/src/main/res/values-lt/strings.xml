@@ -73,8 +73,8 @@
     <!-- Automatic filter -->
     <!-- time_toggle_options_array -->
     <string name="time_toggle_options_array_0">Niekada</string>
-    <string name="time_toggle_options_array_1">Saulė</string>
-    <string name="time_toggle_options_array_2">Pritaikytas laikas</string>
+    <string name="time_toggle_options_array_1">Automatinis (saulė)</string>
+    <string name="time_toggle_options_array_2">Automatinis (pasirinktinis)</string>
     <string name="activity_main">Red Moon</string>
     <!-- Currently unused -->
     <string name="add_new_profile_dialog_title">Įvesti profilio pavadinimo</string>
@@ -107,7 +107,7 @@
     <string name="pref_category_schedule">Tvarkaraštis</string>
     <string name="pref_title_schedule">Paleisti kaip numatyta</string>
     <string name="pref_summary_schedule_sun" formatted="false">Nuo saulėlydžio (%on) iki saulėtekio (%off)</string>
-    <string name="pref_summary_schedule_custom" formatted="false">Tinkintas (nuo %on iki %off)</string>
+    <string name="pref_summary_schedule_custom" formatted="false">Pasirinktinis (nuo %on iki %off)</string>
     <string name="pref_summary_schedule_none">Nėra</string>
     <string name="pref_title_secure_suspend">Pristabdyti išskirtose programėlėse</string>
     <string name="pref_title_button_backlight">Aparatinis mygtuko apšvietimas</string>
@@ -118,7 +118,7 @@
     <string name="text_switch_off">Išjungta</string>
     <string name="pref_title_version">Versija</string>
     <string name="pref_title_translators">Padėti versti</string>
-    <string name="pref_summary_translators">Vertėjai: Kompiuterių meistras +37060040, Moo</string>
+    <string name="pref_summary_translators">Vertėjai: Kompiuterių meistras +37060040, Moo, Gediminas Murauskas</string>
     <string name="pref_title_integration">Integracija su kitomis programėlėmis</string>
     <string name="slide_text_welcome">Sveiki atvykę į Red Moon!</string>
     <string name="slide_title_protect_eyes">Apsauga jūsų akims</string>
