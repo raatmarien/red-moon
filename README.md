@@ -83,7 +83,7 @@ here's a short list of what I've been doing.
 - 100 characters per line; 80 if you can.
 - Indent 4 spaces, or 8 spaces if the previous line ends with `=`.
 - `CONSTANTS` and `ENUMS` use all caps, `variableNames` use camelCase.
-- Form suggests function: Group and align similar actions, and *don't* align dissimmilar ones, even if you could.
+- Form suggests function: Group and align similar actions, and *don't* align dissimilar ones, even if you could.
 - Good comments explain *why* something is done; if you find yourself describing *what* the code does, consider:
     - Refactoring into smaller functions with descriptive names
     - Converting comments to logs. Code that requires comments probably also requires good logs to debug.
@@ -97,7 +97,7 @@ here's a short list of what I've been doing.
 
 *Red Moon* is licensed under the [GNU General Public License version 3] or (at your option) any later version by [the contributors]. It is a derivative of *[Shades]* by [Chris Nguyen], used under the [MIT License].
 
-All used artwork is released into the public domain. Some of the icons use cliparts from [openclipart.org], which are all released in the public domain, namely:
+All used artwork is released into the public domain. Some of the icons use clip art from [openclipart.org], which are all released in the public domain, namely:
 
 * https://openclipart.org/detail/121903/full-moon
 * https://openclipart.org/detail/219211/option-button-symbol-minimal-svg-markup
