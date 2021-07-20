@@ -1,155 +1,130 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">Red Moon</string>
-
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Red Moon</string>
     <string name="activity_main">Red Moon</string>
     <string name="activity_shortcut">Перемикач Red Moon</string>
     <string name="activity_intro">Вступ</string>
     <string name="activity_about">Про Red Moon</string>
     <string name="activity_secure_suspend">Пауза в виключених застосунках</string>
     <string name="activity_timer">Таймер</string>
-
     <string name="menu_dark_theme">Темна тема</string>
-    <string name="menu_restore_default_filters">Відновити фільтри за умовчанням</string>
+    <string name="menu_restore_default_filters">Відновити типові фільтри</string>
     <string name="menu_show_intro">Повторити вступ</string>
-    <string name="menu_about">Про</string>
-
+    <string name="menu_about">Про застосунок</string>
     <string name="notification_status_running">Працює. Вимкніть, щоб встановити застосунки</string>
     <string name="notification_status_running_no_warning">Працює</string>
     <string name="notification_status_paused">Призупинено</string>
-    <string name="notification_status_off">Викл</string>
+    <string name="notification_status_off">Вимк.</string>
     <string name="notification_action_resume">Продовжити</string>
     <string name="notification_action_pause">Пауза</string>
     <string name="notification_action_turn_on">Ввімкнути</string>
     <string name="notification_action_turn_off">Вимкнути</string>
     <string name="notification_action_stop">Вимкнути</string>
     <string name="notification_action_next_filter">Наступний фільтр</string>
-
     <string name="pref_category_filter">Фільтр</string>
     <string name="pref_category_other">Інше</string>
     <string name="pref_category_button_backlight_disclaimer">Ніякого ефекту на деяких пристроях</string>
-
     <string name="pref_title_dim_level">Затемнення</string>
     <string name="pref_title_intensity">Непрозорість</string>
     <string name="pref_title_color_temp">Колір</string>
-    <string name="pref_title_lower_brightness">Нижня яскравість системи</string>
-
+    <string name="pref_title_lower_brightness">Найнижча яскравість системи</string>
     <string name="pref_title_time_toggle">Таймер</string>
-    <string name="pref_title_secure_suspend">Пауза в виключених застосунках</string>
-    <string name="pref_title_button_backlight">Підсвічування кнопки апаратного забезпечення</string>
-
-    <string name="pref_title_turn_on">Увімкніть в</string>
-    <string name="pref_title_turn_off">Вимкніть в</string>
+    <string name="pref_title_secure_suspend">Пауза у виключених застосунках</string>
+    <string name="pref_title_button_backlight">Підсвічування апаратних кнопок</string>
+    <string name="pref_title_turn_on">Увімкнути о</string>
+    <string name="pref_title_turn_off">Вимкнути о</string>
     <string name="pref_title_use_location">Від заходу до світанку</string>
-    <string name="pref_summary_use_location">Виходячи з вашого місцезнаходження</string>
-
-    <string name="pref_summary_secure_suspend">"Коли ця функція включена, Red Moon автоматично призупиняється, коли певні застосунки відкриті. За замовчуванням це включає застосунки, які не працюватимуть під час роботи функції Red Moon *, такі як встановлення apks. Ви можете змінити цю поведінку для поточного застосунку на панелі сповіщень.  Наприклад, ви можете додати світлочутливі застосунки, такі як камеру.
+    <string name="pref_summary_use_location">Виходячи з вашого місцеперебування</string>
+    <string name="pref_summary_secure_suspend">Коли ця функція увімкнена, Red Moon автоматично призупиняється, коли певні застосунки відкриті. Типово це включає застосунки, які не працюватимуть під час роботи функції Red Moon *, як-от встановлені apk. Ви можете змінити цю поведінку для поточного застосунку на панелі сповіщень. Наприклад, ви можете додати світлочутливі застосунки, такі як камера.
 \n
-\nЦя функція може трохи знизити термін служби батареї вашого пристрою.
+\nЦя функція може дещо знизити термін служби батареї вашого пристрою.
 \n
-\n*Деякі застосунки захищені від накладень, щоб захистити себе від втручання, як обман у встановленні застосунку, який ви не хочете. Вони не будуть реагувати на контакт, коли Red Moon увімкнуто, оскільки це працює, малюючи прозорий червоний шар поверх екрану."</string>
-
+\n*Деякі застосунки захищені від накладень, щоб захистити себе від втручання, як обман у встановленні застосунку, який ви не хочете. Вони не реагуватимуть на торкання, коли Red Moon увімкнуто, оскільки він працює, накладаючи прозорий червоний шар поверх екрана.</string>
     <string name="button_add_filter">Додати</string>
     <string name="button_remove_filter">Видалити</string>
-
-    <string name="text_switch_on">Вкл</string>
-    <string name="text_switch_off">Викл</string>
-
+    <string name="text_switch_on">Увімкн.</string>
+    <string name="text_switch_off">Вимкн.</string>
     <string name="location_not_set">Місце розташування не встановлено</string>
     <string name="latitude_short">Широта</string>
     <string name="longitude_short">Довгота</string>
-
     <string name="pref_title_version">Версія</string>
-
-    <string name="pref_title_project_page">Відвідайте сторінку проекту</string>
-    <string name="pref_summary_project_page">Знайдіть більше інформації, залиште відгук і внесіть свій внесок</string>
-
+    <string name="pref_title_project_page">Відвідайте сторінку проєкту</string>
+    <string name="pref_summary_project_page">Довідатися більше, залишити відгук і зробити свій внесок</string>
     <string name="pref_title_email_developer">Написати розробникам</string>
-    <string name="pref_summary_email_developer">Другий спосіб зв\'язатися з нами</string>
-
-    <string name="pref_title_integration">Інтеграція з іншими додатками</string>
-    <string name="pref_summary_integration">Деякі програми, як-от LibreTasks або Tasker, дозволяють автоматизувати завдання, коли відбуваються певні події. Red Moon надсилає загальнодоступне сповіщення, коли він включається та вимикається, тому ці програми можуть відповісти. Якщо ви не використовуєте або не розробляєте одну з цих програм, ви можете ігнорувати наступний абзац.
+    <string name="pref_summary_email_developer">Додатковий спосіб зв\'язатися з нами</string>
+    <string name="pref_title_integration">Інтеграція з іншими застосунками</string>
+    <string name="pref_summary_integration">Деякі застосунки, як-от LibreTasks або Tasker, дозволяють автоматизувати завдання, коли відбуваються певні події. Red Moon надсилає загальнодоступне сповіщення, коли він вмикається та вимикається, тому ці застосунки можуть відповісти. Якщо ви не користуєтеся або не розробляєте однин з цих застосунків, ви можете ігнорувати наступний абзац.
 \n
-\nRed Moon виконує розсилку дії `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Розсилка також містить змінну типу boolean з ключем `jmstudios.bundle.key.FILTER_IS_ON`, яка вказує про включення або виключенні Red Moon.</string>
-
+\nRed Moon виконує розсилку дії `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Розсилка також містить змінну логічного типу з ключем `jmstudios.bundle.key.FILTER_IS_ON`, яка вказує про увімкнення або вимкнення Red Moon.</string>
     <string name="toast_warning_install">Ви не зможете встановлювати застосунки, поки Red Moon увімкнений.</string>
-
-    <string name="snackbar_warning_no_location">Увімкнути служби локації для оновлення місцезнаходження</string>
-    <string name="snackbar_searching_location">Пошук місця розташування</string>
-    <string name="snackbar_location_updated">Знайдено місцезнаходження!</string>
+    <string name="snackbar_warning_no_location">Увімкнути служби визначення розташування для оновлення місцеперебування</string>
+    <string name="snackbar_searching_location">Пошук місцеперебування</string>
+    <string name="snackbar_location_updated">Знайдено місцеперебування!</string>
     <string name="help_snackbar_text">Натисніть перемикач, щоб увімкнути Red Moon</string>
-
     <string name="dialog_title_add_filter">Введіть назву фільтра</string>
-    <string name="edit_hint_add_filter">Назва фільтру</string>
+    <string name="edit_hint_add_filter">Назва фільтра</string>
     <string name="dialog_title_remove_filter">Видалити цей фільтр?</string>
-
     <string name="dialog_title_permission_overlay">Поверх інших застосунків</string>
     <string name="dialog_message_permission_overlay">Дозволити накладення поверх інших застосунків на наступному екрані, щоб дозволити ввімкнути Red Moon.</string>
-
     <string name="dialog_title_permission_write_settings">Змінити налаштування системи</string>
     <string name="dialog_message_permission_write_settings">Дозволити модифікацію параметрів системи на наступному екрані, щоб дозволити Red Moon змінити рівень яскравості.</string>
-
     <string name="dialog_title_permission_usage_stats">Використання доступу</string>
     <string name="dialog_message_permission_usage_stats">Дозволити використання доступу на наступному екрані, щоб дозволити Red Moon призупинити роботу захищених застосунків.
 \n
-\nRed Moon буде використовувати ці дані лише для того, щоб визначити, чи використовуєте ви програму, яка не працюватиме, коли увімкнено Red Moon.</string>
-
-    <string name="dialog_button_ok">OK</string>
+\nRed Moon буде використовувати ці дані лише для того, щоб визначити, чи користуєтеся ви застосунком, який не працюватиме, коли увімкнено Red Moon.</string>
+    <string name="dialog_button_ok">Гаразд</string>
     <string name="dialog_button_cancel">Скасувати</string>
-
-    <string name="shortcut_title_toggle">Вкл/Викл Red Moon</string>
-
+    <string name="shortcut_title_toggle">Увімк./Вимк. Red Moon</string>
     <string name="slide_title_welcome">Ласкаво просимо!</string>
     <string name="slide_text_welcome">Ласкаво просимо до Red Moon!</string>
-
     <string name="slide_title_protect_eyes">Захист ваших очей</string>
-    <string name="slide_text_protect_eyes">Вночі, коли екран вашого телефону ріже вам очі, ви можете використовувати Red Moon, щоб затемнити екран.</string>
-
-    <string name="slide_title_improve_sleep">Покращення сну</string>
+    <string name="slide_text_protect_eyes">Вночі, коли екран вашого телефону ріже вам очі, ви можете скористатися Red Moon, щоб затемнити екран.</string>
+    <string name="slide_title_improve_sleep">Поліпшення сну</string>
     <string name="slide_text_improve_sleep">Синє світло пригнічує вироблення мелатоніну, гормону, який допомагає вам заснути вночі. Red Moon видаляє синє світло з екрана, що дозволяє вам легко заснути.</string>
-
     <string name="slide_title_get_started">Почати!</string>
     <string name="slide_text_get_started">Вмикайте і вимикайте Red Moon за допомогою перемикача у верхньому правому куті.</string>
-
     <string name="filter_name_custom">Користувацький</string>
-    <string name="filter_name_default">За замовчуванням</string>
+    <string name="filter_name_default">Типовий</string>
     <string name="filter_name_bed_reading">Читання</string>
-    <string name="filter_name_dim_only">Тільки затемнення</string>
-
-    <string name="pref_entry_button_backlight_system">Управління системою</string>
+    <string name="filter_name_dim_only">Лише затемнення</string>
+    <string name="pref_entry_button_backlight_system">Системний</string>
     <string name="pref_entry_button_backlight_filter_dim_level">Використовуйте фільтр рівня затемнення</string>
     <string name="pref_entry_button_backlight_turn_off">Вимкнути</string>
-
     <string name="action_next_profile">Наступний профіль</string>
-    <string name="add_new_profile_dialog_title">Введіть ім\'я профілю</string>
-    <string name="add_new_profile_edit_hint">Ім\'я профілю</string>
+    <string name="add_new_profile_dialog_title">Введіть назву профілю</string>
+    <string name="add_new_profile_edit_hint">Назва профілю</string>
     <string name="remove_profile_dialog_title">Видалити цей профіль?</string>
     <string name="pref_title_appearance">Профіль</string>
-    <string name="searching_location">Пошук місцезнаходження</string>
-    <string name="toast_warning_no_location">Увімкнути служби локації для оновлення місцезнаходження</string>
+    <string name="searching_location">Пошук місцеперебування</string>
+    <string name="toast_warning_no_location">Увімкнути служби визначення розташування для оновлення місцеперебування</string>
     <string name="set_dialog">Встановити</string>
     <string name="time_toggle_title">Автоматичне перемикання</string>
-    <string name="pref_title_location">Місцезнаходження</string>
+    <string name="pref_title_location">Місцеперебування</string>
     <string name="pref_title_startup">Запуск</string>
-
     <string name="time_toggle_options_array_0">Вручну</string>
     <string name="time_toggle_options_array_1">Автоматично (по сонцю)</string>
     <string name="time_toggle_options_array_2">Автоматично (користувацький)</string>
-<string name="activity_schedule">Графік</string>
-    <string name="notification_status_paused_with_info">Призупинено Відхилити сповіщення, щоб зупинити.</string>
-    <string name="pref_category_schedule">Графік</string>
-    <string name="pref_title_schedule">Графік</string>
+    <string name="activity_schedule">Розклад</string>
+    <string name="notification_status_paused_with_info">Призупинено. Відхилити сповіщення, щоб зупинити.</string>
+    <string name="pref_category_schedule">Розклад</string>
+    <string name="pref_title_schedule">Запускати за розкладом</string>
     <string name="pref_summary_schedule_sun" formatted="false">Від заходу (%on) до сходу сонця (%off)</string>
     <string name="pref_summary_schedule_custom" formatted="false">Користувацький (%on to %off)</string>
     <string name="pref_summary_schedule_none">Жоден</string>
     <string name="pref_title_start_time">Час початку</string>
     <string name="pref_title_stop_time">Час закінчення</string>
-    <string name="pref_title_translators">Допоможіть перекласти</string>
-    <string name="pref_summary_translators">Перекладач: Володимир Бриняк</string>
-
+    <string name="pref_title_translators">Допомогти перекласти</string>
+    <string name="pref_summary_translators">Перекладачі: Володимир Бриняк, Ігор Гордійчук</string>
     <string name="toast_warning_secured">Деякі функції цього застосунку можуть не працювати під час роботи Red Moon.</string>
-
     <string name="notification_action_whitelist_add">Виключити застосунок</string>
     <string name="notification_action_whitelist_remove">Фільтр застосунку</string>
     <string name="notification_channel_overlay_name">Контроль накладення</string>
     <string name="notification_channel_overlay_description">Постійне сповіщення про накладання</string>
+    <string name="pref_title_dark_theme">Темна тема</string>
+    <string name="pref_summary_stop_time_sunrise">Світанок (%s)</string>
+    <string name="pref_value_stop_time_sunrise">Світанок</string>
+    <string name="pref_summary_start_time_sunset">Захід сонця (%s)</string>
+    <string name="pref_value_start_time_sunset">Захід сонця</string>
+    <string name="menu_settings">Налаштування</string>
+    <string name="activity_settings">Налаштування</string>
 </resources>
